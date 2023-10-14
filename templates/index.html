@@ -689,11 +689,13 @@ reliable payment</div>
         <div class="row d-flex gap-5 justify-content-center align-items-center">
           <div class="col-md-6 d-flex justify-content-between flex-column">
             <div class="accordion d-flex flex-column gap-3" id="accordionExample">
+
+                {% for f in faq %}
               <div class="accordion-item bg-white p-3 rounded-0">
                 <div class="d-flex gap-5 justify-content-between align-items-center">
                   <div class="d-flex justify-content-between align-items-center gap-4">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">01</p>
-                    <p class="mb-0 fw-normal custom_text">The Program</p>
+                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">0{{forloop.counter}}</p>
+                    <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">{{f.question}}</p>
                   </div>
                   <h2 class="accordion-header">
                     <button
@@ -703,7 +705,7 @@ reliable payment</div>
                       data-bs-target="#collapseOne"
                       aria-expanded="true"
                       aria-controls="collapseOne">
-                      <img class="arrow-down " src="{% static 'open.svg'%}" alt="" />
+                      <img class="arrow-down " src="{% static 'open.svg'%}" style=" margin-right: 20px; " alt="" />
                     </button>
                   </h2>
                 </div>
@@ -712,390 +714,17 @@ reliable payment</div>
                   class="accordion-collapse collapse "
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      1. What is an angel investment school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      An angel investment school is a structured program that provides education and training to individuals interested in becoming angel investors. It covers various aspects of angel investing, from understanding startups to evaluating investment opportunities.
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     2. Who is this school designed for?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     The school is designed by “Technovate-Sabah Angel Club” for individuals from Azerbaijan who has stable annual income and able to invest between $3,000 and $50,000 annually.
 
-                        Startup investing is considered to be higher reward investment strategy. It is a way to exponentially grow your wealth in a short amount of time, but these investments carry a higher risk. This course will provide you introductory knowledge to start your journey as an angel investor.
-
-                        </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      3. How do I know if this program is right for me?
-                    </h6>
                     <p class="mx-3 fw-normal font_normal">
-                    This program is right for you, if you like to take risks in investments driven by desire to earn a lot more than any investment tool in the world or if you would like to be part of changing the world, region or a country.
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     4. What other dates will this program be offered in the future?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      Check back to this program web page or email us to inquire if future program dates or the timeline for future offerings have been confirmed yet. Generally, this school will be held in every quarterly.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="accordion-item bg-white p-3 rounded-0">
-                <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">02</p>
-                    <p class="mb-0 fw-normal custom_text">The Learning Experience</p>
-                  </div>
-                  <h2 class="accordion-header">
-                    <button
-                      class="accordionButton border-0 bg-transparent"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo">
-                      <img class="arrow-down fa-rotate-180" src="{% static 'open.svg'%}" alt="" />
-                    </button>
-                  </h2>
-                </div>
-                <div
-                  id="collapseTwo"
-                  class="accordion-collapse collapse "
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     1. What topics are typically covered in the school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     Angel investor school will cover a range of topics, including:
-                      <ul>
-                    <li>What is a start-up?</li>
-                    <li>Types of investment. What is angel investing? </li>
-                    <li>Deal Sourcing and Due Diligence </li>
-                    <li>Creating and managing a portfolio  </li>
-                    <li>Current situation of Ecosystem of Azerbaijan </li>
-                  </ul>
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      2. Is this school held online or offline?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     The main lessons are designed to be conducted online, but the last session will be offline where participants can attend, listen to panel discussions, ask questions, network with entrepreneurs etc.
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     3. How long does the school usually last?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     The school will be conducted online based on 3 main lessons which are designed by successful businesspeople (mentors/investors/entrepreneurs) from the USA during December 06-08, 2023. At the end of the school, participants will have a chance to attend offline closing ceremony, where they will listen to panel discussion of successful entrepreneurs, startup owners and businesspeople from Azerbaijan.
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      4. What are the benefits of taking an angel investment school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      By the end of the school, participants will be able to:
-                      <ul>
-                     <li>Understand what a start-up is, how to be successful at creating a start-up. </li>
-                     <li>Know the types of investments and differentiate angel investments from other types of investments.</li>
-                     <li>Create and manage an investment portfolio, be informed about deal sourcing and due diligence.</li>
-                     <li>Understand and analyze the current ecosystem of Azerbaijan.</li>
-                   </ul>
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      5. Will I have access to the learning materials after the school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     You will have access to learning materials (ppt presentations, recording of sessions etc.) upon the completion of the school. Access to the learning platform will be restricted to registered participants per the terms of agreement.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item bg-white p-3 rounded-0">
-                <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">03</p>
-                    <p class="mb-0 fw-normal custom_text">Technical Requirements</p>
-                  </div>
-                  <h2 class="accordion-header">
-                    <button
-                      class="accordionButton border-0 bg-transparent"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo">
-                      <img class="arrow-down" src="{% static 'open.svg'%}" alt="" />
-                    </button>
-                  </h2>
-                </div>
-                <div
-                  id="collapseThree"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      1. Do I need any prior experience to take this school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      No prior experience is typically required, but a basic understanding of investment concepts and an interest in startups can be helpful.
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      2. How do I enroll in an angel investment school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      Check with the school website where you will find “Enroll now” button to pay and register for the school. The link is following: <a href="https://angelinvestor.az/signup/"> https://angelinvestor.az/signup/ </a>
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     3. How much does the school cost?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      The school fee will range between $150-200. Thus, the earlier sign-up fee for the school will be $150, but later it will be increased by $200 before the start of the school.
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      4. Do I need any specific technical skills to take an online school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     Most online courses are designed to be user-friendly, and you don't need advanced technical skills. Basic computer skills, internet access, and familiarity with web browsing are usually sufficient.
-                    </p>
-                  </div>
-                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      5. What equipment and software do I need?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      You'll typically need a computer or a mobile device with internet access. Video conferencing tool: Zoom will mainly be used during the school.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item bg-white p-3 rounded-0">
-                <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">04</p>
-                    <p class="mb-0 fw-normal custom_text">Certification</p>
-                  </div>
-                  <h2 class="accordion-header">
-                    <button
-                      class="accordionButton border-0 bg-transparent"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo">
-                      <img class="arrow-down" src="{% static 'open.svg'%}" alt="" />
-                    </button>
-                  </h2>
-                </div>
-                <div
-                  id="collapseFour"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     1. Will I receive a certificate upon completion?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      Yes. Each participant will get a certificate of completion at the end of last session of the school.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      2. What are the requirements to earn the certificate?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      To get the certificate, each participant needs to attend all three sessions that will be online and the last event that will be held offline.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      3. Can I get a hard copy of the certificate?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      Yes. A hard copy of the certificate will be provided during the last offline session of the school.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      4. Do I receive alumni status after completing this program?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     Yes. You will be added to the Technovate-Sabah Angel Investment Club upon your request. Club members will have a chance to network with other school alumnus and involve in activities managed by the Club.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item bg-white p-3 rounded-0">
-                <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">05</p>
-                    <p class="mb-0 fw-normal custom_text">Payment Process</p>
-                  </div>
-                  <h2 class="accordion-header">
-                    <button
-                      class="accordionButton border-0 bg-transparent"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFive"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo">
-                      <img class="arrow-down" src="{% static 'open.svg'%}" alt="" />
-                    </button>
-                  </h2>
-                </div>
-                <div
-                  id="collapseFive"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      1. What is the school fee, and what forms of payment do you accept?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      The school fee will range between $150-200. Thus, the earlier sign-up fee for the school will be $150, but later it will be increased by $200 before the start of the school.
-Payment will only be made online through the website. No cash will be accepted.
-
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      2. Can I still register if the registration deadline has passed?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      No. You can’t register after the registration deadline since the school will start. You can wait and register for the next school in three months.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     3. I was not able to use the discount code provided. Can you help?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      Yes. Please email us (<a href="mailto:contact@technovate-sabah-angels.com"> contact@technovate-sabah-angels.com</a>) with the details of the problem you face, and we will assist you.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     4. What is the policy on refunds and withdrawals?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     The payments are non refundable.
-                    </p>
+                     {{f.answer}}
+                      </p>
                   </div>
 
                 </div>
-              </div>
-               <div class="accordion-item bg-white p-3 rounded-0">
-                <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">06</p>
-                    <p class="mb-0 fw-normal custom_text">Post-school benefits</p>
-                  </div>
-                  <h2 class="accordion-header">
-                    <button
-                      class="accordionButton border-0 bg-transparent"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseSix"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo">
-                      <img class="arrow-down" src="{% static 'open.svg'%}" alt="" />
-                    </button>
-                  </h2>
-                </div>
-                <div
-                  id="collapseSix"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     1. How do I join an angel investor club?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      Individuals who pay $150 to sign up for the school will automatically get a chance of one-year free subscription to the Angel Club, where they will have a chance to see and invest in global startups. Details will be sent to those who want to be part of Angel Club.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     2. Are there any prerequisites for becoming an angel investor after completing the school?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     Upon subscription to the Club, we will block $300 on your bank account for the next year until you invest at least $3000 in one or more startups. When the investment is made, your blocked amount will be unblocked.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     3. How much do I need to invest in startups during a year?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      You need to invest at least $3000 in one or more startups during the year. There is no upper limit for investment.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     4. What are the benefits of joining an angel investor club?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                    <ul>
-                    <li><strong>Creating a portfolio at dealum.com:</strong> As a first step to joining the club, we will send you an invitation to register at dealum.com. You need to create a portfolio at dealum.com and include main information such as your contact details, proposed investment amounts etc.</li>
-                    <li><strong>Seeing global startups: </strong>As dealum.com, you will have a chance to review many global projects related to different fields from all over the world. </li>
-                    <li><strong>Investing in global startups:</strong> You will attend pitching events once or twice a month and be able to listen to different startups and invest in those that you like. Please be informed that start-ups in pitching events are those that are shortlisted and selected by the team of the club.</li>
-                    <li><strong>Growing your network:</strong> Technovate-SABAH Angel Club is the first angel club in Azerbaijan that aims to unite potential investors under one roof. By being a member of this club, you will meet different Azerbaijani investors and grow your business network.</li>
-                    <li><strong>Being educated about investing: </strong>You will have a chance to meet with different local and international experts/mentors and learn from their experience which will make you more educated about investment. </li>
-                    <li><strong>Making huge profit:</strong> Unlike other investment types, angel investment is more secure and has a high chance of getting huge profit in the long run.</li>
-                  </ul>
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      5. How do I find startups to invest in?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      You will attend pitching events once or twice a month and be able to listen to different startups and invest in those that you like. Start-ups in pitching events are those that are shortlisted and selected by the team of the Club.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                     6. What types of startups are typically considered for investment?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                     At dealum.com, you will have a chance to review a variety of global projects related to different fields from all over the world.
-                    </p>
-                  </div>
-                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
-                    <h6 class="text-start mx-3 fw-bold fontMon">
-                      7. How can I stay updated on club activities?
-                    </h6>
-                    <p class="mx-3 fw-normal font_normal">
-                      To be updated on club activities, you can follow our website and social media accounts: <br>
-Website: <a href="http://www.technovate-sabah-angels.com"> http://www.technovate-sabah-angels.com </a><br>
-LinkedIn: <a href="https://www.linkedin.com/company/technovate-sabah-angels/">https://www.linkedin.com/company/technovate-sabah-angels/ </a>  <br>
-For more detailed information, you can email us: <a href="mailto:contact@technovate-sabah-angels.com">contact@technovate-sabah-angels.com </a>
 
-                    </p>
-                  </div>
-                </div>
               </div>
+
+                {% endfor%}
             </div>
           </div>
         </div>
@@ -1109,7 +738,7 @@ For more detailed information, you can email us: <a href="mailto:contact@technov
 
 <div class=" mt-5" style=" ">
     <div class="container">
-    <div class="row  ">
+    <div class="row" style="padding-top: 25px;padding-bottom: 25px;">
           <div class="col-lg-4 col-md-12"style="text-align: left;">
                 <div style="color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">Hot Offers</div>
               <div style="color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">Investment opportunities readily available.</div>
@@ -1118,8 +747,16 @@ For more detailed information, you can email us: <a href="mailto:contact@technov
           </div>
          <div class="col-lg-4 col-md-12"style="text-align: center;">
              <div class="" style=" display: flex; ">
-                 <div style=" margin-right:10px;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q1.svg'%}"><p style=" display: inline-block; ">Villa</p> </div>
-                 <div style="background:#302D54; border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q2.svg'%}"><p style="color:#fff; display: inline-block; ">Apartment</p> </div>
+                 <style>
+                     .tablinkk.active {
+                            background:#302D54;
+                     }
+                     .active p {
+                        color: #fff;
+                    }
+                 </style>
+                 <div onclick="openCityy(event, 'c1')" class="tablinkk active" style=" margin-right:10px;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q1.svg'%}"><p style=" display: inline-block; ">Villa</p> </div>
+                 <div onclick="openCityy(event, 'c2')" class="tablinkk" style=" border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block;width: 19px; margin: 0px 5px 0 0; " src="{% static 'building.png'%}"><p style=" display: inline-block; ">Apartment</p> </div>
              </div>
           </div>
          <div class="col-lg-4 col-md-12"style="text-align: center;">
@@ -1135,21 +772,21 @@ For more detailed information, you can email us: <a href="mailto:contact@technov
           <div class="col-lg-12 col-md-12"style="text-align: left;margin-top:20px;">
 
 
-                <div class="container">
+                <div id="c1" class="tabcontent container" style="display:block;">
   <div class="swiper_wrap">
       <div class="swiper-container">
         <div class="swiper-wrapper">
 
-            {% for o in offers %}
+            {% for o in villas %}
             <div class="swiper-slide">
 
                 <div style="width: 95%; height: 450px;">
                     <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
 
                     </div>
-                    <div style="    margin: 15px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
+                    <div style="    margin: 23px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
                     <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
-                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
+                    <div style="    margin: -5px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
                     <div style=" display: flex; ">
                         <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
                         <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
@@ -1166,7 +803,36 @@ For more detailed information, you can email us: <a href="mailto:contact@technov
     </div>
 </div>
 
+                <div id="c2" class="tabcontent container" style="display:block;">
+  <div class="swiper_wrap">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
 
+            {% for o in apartments %}
+            <div class="swiper-slide">
+
+                <div style="width: 95%; height: 450px;">
+                    <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                    <div style="    margin: 23px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
+                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
+                    <div style="    margin: -5px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
+                    <div style=" display: flex; ">
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 17px; margin-right: 6px;"src="{% static 'square.svg'%}">{{o.square}} </div>
+                    </div>
+                </div>
+          </div>
+          {% endfor%}
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
 
           </div>
 
@@ -1179,7 +845,21 @@ For more detailed information, you can email us: <a href="mailto:contact@technov
 
 
 
-
+<script>
+function openCityy(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinkk = document.getElementsByClassName("tablinkk");
+  for (i = 0; i < tablinkk.length; i++) {
+    tablinkk[i].className = tablinkk[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 
 <div class=" mt-5" style=" background:#F6F8FA;    padding: 60px 0 60px 0;">
@@ -1412,6 +1092,15 @@ window.onclick = function(event) {
       }
     });
 </script>
+
+
+  <script>
+      setTimeout(function(){
+    tabcontent2 = document.getElementById("c2");
+    tabcontent2.style.display = "none";
+}, 1000);
+  </script>
+
   </body>
 </html>
 

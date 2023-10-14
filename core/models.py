@@ -74,3 +74,16 @@ class Tablar(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=256)
+    answer = models.CharField(max_length=256)
+    sort = models.IntegerField()
+
+    class Meta:
+        ordering = ('sort',)
+
+    def __str__(self):
+        return self.question
