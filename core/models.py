@@ -8,6 +8,8 @@ class General(models.Model):
     address = models.CharField(max_length=256)
     email = models.CharField(max_length=256)
     phone = models.CharField(max_length=256)
+    whatsapp_link = models.CharField(max_length=256)
+    telegram_link = models.CharField(max_length=256)
     copyright = models.CharField(max_length=256)
     logo = models.FileField()
 
