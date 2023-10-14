@@ -9,9 +9,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{% static 'css/style.css'%}" />
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 
 	<style>
 .cc1 {
@@ -310,17 +310,19 @@ display:none !important;
   {% endif %}
 
     <header class="header bg-white container">
+         <div class="container">
         <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
             <div class="col-lg-6"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; "alt="NavbarLogo" /></a></div>
             <div class="col-lg-6">
                 <div style="display: inline-block;float: right;">
-                  <div style=" width: 70px; display: inline-block;"><img src="{% static 'telegram.svg'%}"> </div>
-                  <div style=" width: 70px;display: inline-block; "><img src="{% static 'whatsapp.svg'%}"></div>
+                  <div style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
                   <div style=" width: 190px;    display: inline-block; "><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
                   <div style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
                 </div>
             </div>
         </div>
+         </div>
 
 
 
@@ -378,26 +380,131 @@ display:none !important;
 
 
 
- <div class=" mt-5" >
+ <div class=" mt-5"  style=" background: #F6F8FA; ">
      <div class="container">
-            <div class="row  ">
+            <div class="row  " style=" padding-top: 46px;    padding-bottom: 40px; ">
                 <div class="col-lg-6 col-md-12">
-                    <div style="color: #808080; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">Alanya, Antalya</div>
-                    <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">Coracesium City</div>
+                    <div style="color: #808080; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">
+                        {{offer.address}}</div>
+                    <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">{{offer.name}}</div>
                 </div>
                 <div class="col-lg-6 col-md-12">
                      <br>
-                     <div style="color: #000; text-align: right; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 60px; /* 200% */ letter-spacing: -0.5px;">$112,000 - $159,000</div>
+                     <div style="color: #000; text-align: right; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 60px; /* 200% */ letter-spacing: -0.5px;">
+                         {{offer.price}}</div>
 
                 </div>
-                <div class="col-lg-12 col-md-12">
-                    <img src="{% static 'off.png'%}" style=" width: 100%; margin-top: 36px; border-radius: 10px; ">
-                </div>
+
 
 
 
             </div>
          </div>
+
+
+
+
+
+
+
+
+
+
+     <div>
+         <style>
+              .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide {
+      width: 60%;
+    }
+
+    .swiper-slide:nth-child(2n) {
+      width: 40%;
+    }
+
+    .swiper-slide:nth-child(3n) {
+      width: 20%;
+    }
+
+
+        .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: unset;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: unset;
+}
+</style>
+
+      <div class="mySwiper swiper" >
+        <div class="swiper-wrapper">
+        {% for i in offer.images.all%}
+      <div class="swiper-slide">
+          <div style="background-size:cover; width:100%; height:400px;background-image:url({{i.image.url}});"> </div>
+      </div>
+        {% endfor %}
+
+
+    </div>
+    <div class="swiper-button-prev" style="z-index:10000;background:#fff;width:50px;height:50px;position: absolute; border-radius: 50%; padding: 2px 0 0 0px; top: 40%; left: 50px;">
+                <img src="{%static 'leff.svg'%}">
+            </div>
+            <div class="swiper-button-next" style="z-index:10000;background:#fff;width:50px;height:50px;position: absolute; border-radius: 50%; padding: 2px 0 0 7px; top: 40%; right: 50px;">
+                <img src="{%static 'rightt.svg'%}">
+            </div>
+  </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 30,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+        watchSlidesVisibility: true,
+
+    });
+  </script>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        <div class="container">
             <div class="row  ">
@@ -407,7 +514,13 @@ display:none !important;
                     <div>Project Type</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '1.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">
+                            {% if offer.type == 'V'%}
+                            Villas
+                            {% else %}
+                            Apartments
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -416,7 +529,9 @@ display:none !important;
                     <div>Locations</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '2.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">
+                            {{offer.address}}
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -425,7 +540,7 @@ display:none !important;
                     <div>Surface</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '3.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.square}}</div>
                     </div>
                 </div>
                 </div>
@@ -434,7 +549,7 @@ display:none !important;
                     <div>Project Status</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '4.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.project_status}}</div>
                     </div>
                 </div>
                 </div>
@@ -443,7 +558,7 @@ display:none !important;
                     <div>Year Built</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '5.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.year_built}}</div>
                     </div>
                 </div>
                 </div>
@@ -452,7 +567,7 @@ display:none !important;
                     <div>Distance to Beach</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '6.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_beach}}</div>
                     </div>
                 </div>
                 </div>
@@ -461,7 +576,7 @@ display:none !important;
                     <div>Distance to Center</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '7.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_center}}</div>
                     </div>
                 </div>
                 </div>
@@ -470,7 +585,7 @@ display:none !important;
                     <div>Distance to Airport</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '8.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_airport}}</div>
                     </div>
                 </div>
                 </div>
@@ -479,7 +594,7 @@ display:none !important;
                     <div>State Guaranteed</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '9.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.state_guaranteed}}</div>
                     </div>
                 </div>
                 </div>
@@ -488,7 +603,7 @@ display:none !important;
                     <div>Sea View</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '10.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.sea_view}}</div>
                     </div>
                 </div>
                 </div>
@@ -497,17 +612,17 @@ display:none !important;
                     <div>Installment</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '11.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.installment}}</div>
                     </div>
                 </div>
                 </div>
                  <div class="col-lg-2 col-md-12">
                     <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div style=" font-size: 16px; line-height: 22px; height: 44px; ">Suitable for
+                    <div style=" font-size: 14px; line-height: 22px;   ">Suitable for
 Citizenship</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '12.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.suitable_for_citizenship}}</div>
                     </div>
                 </div>
                 </div>
@@ -528,13 +643,13 @@ Citizenship</div>
 
 
 
-<div class=" mt-5" style="background: linear-gradient(108deg, #2A224F 0%, #1F1E33 118.01%); ">
+<div class=" mt-5" style="padding-top:50px;background: linear-gradient(108deg, #2A224F 0%, #1F1E33 118.01%); ">
     <div class="container">
         <div class="row  ">
 
-            <div class="col-lg-4 col-md-12">
-                <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">INFORMATION<br>ABOUT PROPERTY</div>
-                <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;">PROPERTY DETAILS</div>
+            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
+                <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;    margin-bottom: 30px;">INFORMATION<br>ABOUT PROPERTY</div>
+                <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;    margin-bottom: 30px;">PROPERTY DETAILS</div>
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Sanitaires</div>
                     <div style="color: #fff; display: inline-block;    float: right;">2</div>
@@ -577,21 +692,17 @@ Citizenship</div>
 
 
             </div>
-            <div class="col-lg-4 col-md-12">
-                <br>
-                <br>
-                 <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;">PROPERTY DETAILS</div>
-               <div style="color: #FFF; text-align: justify; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">
-                   Coracesium City is located in Oba, Alanya, the charming and beautiful holiday resort of Antalya. In the project, you will live every moment of your life as if you were on holiday.
-Coracesium City is built on an area of ​​804.13 square meters and consists of 20 units. In the project, you can enjoy tranquility and peaceful life with your loved ones. There are apartment options in the project that appeal to all lifestyles. The project offers 1-bedroom, 2-bedroom, 3-bedroom, and 4-bedroom apartment options and the sizes of the apartments vary from 45 square meters to 162 square meters.
+            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
+                <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;      visibility: collapse;  margin-bottom: 30px;">INFORMATION<br>ABOUT PROPERTY</div>
 
-In the project, there are privileged social opportunities for you to experience happiness and summer to the fullest. These include an indoor swimming pool and a children's playground. The barbecue area is also included in the project for you to spend a nice weekend with your loved ones. For every moment you want to relax, there is a sauna in Coracesium City. In addition, a fitness center with state-of-the-art equipment for a healthy and sporty life is also included in the project. Coracesium City is the place you should choose for a peaceful and pleasant life in Alanya. Do not miss the exclusive opportunities of Coracesium City.
-               </div>
+                 <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal; margin-bottom: 30px;">PROPERTY DETAILS</div>
+               <div style="color: #FFF; text-align: left; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">
+                   {{offer.description | safe}}</div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
                 <div style="background:#D9D9D9;">
                     <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">Why you should invest Coracesium City?</div>
-                    <div style="color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Please fill out the form and we will contact you shortly.</div>
+                    <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Please fill out the form and we will contact you shortly.</div>
                     <form style=" padding: 39px 40px; ">
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" placeholder="First name *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" placeholder="Last name *" required>
@@ -609,41 +720,50 @@ In the project, there are privileged social opportunities for you to experience 
 
 
 
+<style>
+    .slider {
+  background: #04AA6D;
+  cursor: pointer;
+}
+</style>
 
 
-
-         <div class="row  ">
+         <div class="row" style=" padding-top: 100px; padding-bottom: 76px;">
                <div class="col-lg-8 col-md-12">
                    <div style="border-radius: 20px; border: 1px solid #DDDCE0; background: #FFF;">
-                       <div>Investment Calculator</div>
-                       <div>How much can you earn on this investmen?</div>
+                       <div style="    margin: 23px 0 6px 0;color: #000; text-align: center; font-family: Montserrat; font-size: 24px; font-style: normal; font-weight: 600; line-height: normal;">Investment Calculator</div>
+                       <div style="    margin: 0px 0 20px 0;color: #000; text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 182%; /* 25.48px */">How much can you earn on this investmen?</div>
 
-                        <div class="row  ">
-                            <div class="col-lg-6 col-md-12">
-                                <div>I want to invest</div>
-                                <div><input type="text" value="39,800"></div>
+                        <div class="row  " style=" padding: 5px 15px 34px 62px; ">
+                            <div class="col-lg-6 col-md-12" style=" margin-bottom: 20px; ">
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">I want to invest</div>
+                                <div><input style="border-radius: 8px; width: 70%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 24px;" type="text" value="39,800"></div>
+                                <div> <input class="slider" type="range" min="1" max="100" value="50" style="       margin: 10px 0 0 0; width: 70%;"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-12" style=" margin-bottom: 20px; ">
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">I want to invest</div>
+                                <div><input style="border-radius: 8px;width: 70%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 24px;" type="text" value="39,800"></div>
+                            <div> <input class="slider" type="range" min="1" max="100" value="50" style="       margin: 10px 0 0 0; width: 70%;"></div>
                             </div>
                             <div class="col-lg-6 col-md-12">
-                                <div>I want to invest</div>
-                                <div><input type="text" value="39,800"></div>
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">I want to invest</div>
+                                <div><input style="border-radius: 8px;width: 70%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 24px;" type="text" value="39,800"></div>
+                          <div> <input class="slider" type="range" min="1" max="100" value="50" style="     margin: 10px 0 0 0;   width: 70%;"></div>
                             </div>
                             <div class="col-lg-6 col-md-12">
-                                <div>I want to invest</div>
-                                <div><input type="text" value="39,800"></div>
-                            </div>
-                            <div class="col-lg-6 col-md-12">
-                                <div>I want to invest</div>
-                                <div><input type="text" value="39,800"></div>
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">I want to invest</div>
+                                <div><input style="border-radius: 8px;width: 70%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 24px;" type="text" value="39,800"></div>
+                            <div> <input class="slider" type="range" min="1" max="100" value="50" style="      margin: 10px 0 0 0;  width: 70%;"></div>
                             </div>
                         </div>
                    </div>
                     <div style=" text-align: center; ">
-                   <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.60);    display: inline-block;">
+                   <div style="margin: 53px 25px 61px 0; padding: 16px 20px 16px 20px;border-radius: 8px; background: rgba(32, 28, 55, 0.60);    display: inline-block;">
                        <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Total return on investment</div>
                        <div style="color: var(--White, #FFF); text-align: center; /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">£1,987,500</div>
                    </div>
 
-                   <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.60);    display: inline-block;">
+                   <div style="margin: 53px 25px 61px 0; padding: 16px 20px 16px 20px;border-radius: 8px; background: rgba(32, 28, 55, 0.60);    display: inline-block;">
                        <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Average annualised return</div>
                        <div style="color: var(--White, #FFF); text-align: center; /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">12.28%</div>
                    </div>
@@ -652,10 +772,12 @@ In the project, there are privileged social opportunities for you to experience 
 
 
                    <div>
-                       <div style="color: var(--yellow-5, #EDC161); font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;">Total expected value after 5 years</div>
-                       <div style="color: var(--White, #FFF); /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">£1,987,500</div>
+                       <div style=" width: 400px; float: right; ">
+                           <div style="color: var(--yellow-5, #EDC161); font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;">Total expected value after 5 years</div>
+                           <div style="margin-top:15px;color: var(--White, #FFF); /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">£1,987,500</div>
+                      </div>
                        <img src="{% static 'chart.svg'%}" style=" width: 100%; ">
-                       <div style=" display: flex; ">
+                       <div style=" display: flex;     padding-top: 83px;">
                            <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 1</div>
                            <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 2</div>
                            <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 3</div>
@@ -675,19 +797,19 @@ In the project, there are privileged social opportunities for you to experience 
                <div class="col-lg-4 col-md-12">
                    <div style="display: flex; padding: 32px 24px; flex-direction: column; align-items: center; gap: 18px; flex-shrink: 0; align-self: stretch;border: 1px solid #ffffff4a; border-radius: 20px; background: #2e2a50;">
                        <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 24px; font-style: normal; font-weight: 600; line-height: normal;">Rental Yields</div>
-                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Expected Dividend Yield</div>
+                       <div style="width: 100%; padding: 11px 0 17px 0;border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Expected Dividend Yield</div>
                            <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">7.04%</div>
                        </div>
 
-                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">5 Years Expected Return</div>
+                       <div style="width: 100%; padding: 11px 0 17px 0;border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">5 Years Expected Return</div>
                            <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">43.65%</div>
                        </div>
 
-                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Expected Gross Yield</div>
+                       <div style="width: 100%; padding: 11px 0 17px 0;border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Expected Gross Yield</div>
                            <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">10.97%</div>
                        </div>
 
-                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Dividends Frequency</div>
+                       <div style="width: 100%; padding: 11px 0 17px 0;border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Dividends Frequency</div>
                            <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">Monthly</div>
                        </div>
                    </div>
@@ -702,9 +824,9 @@ In the project, there are privileged social opportunities for you to experience 
 
 
 <div class=" mt-5" style=" ">
-    <div class="container">
-        <div style="color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">Discover Other Properties</div>
-        <div style="color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">Find your perfect property</div>
+    <div class="container" >
+        <div style="margin-top:40px;color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">Discover Other Properties</div>
+        <div style="margin-bottom:40px;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">Find your perfect property</div>
     <div class="row  ">
 
     </div>
@@ -716,7 +838,7 @@ In the project, there are privileged social opportunities for you to experience 
 
                 <div class="container">
   <div class="swiper_wrap">
-      <div class="swiper-container">
+      <div class="swiper sdsfsdfdsf">
         <div class="swiper-wrapper">
 
             {% for o in offers %}
@@ -726,13 +848,13 @@ In the project, there are privileged social opportunities for you to experience 
                     <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
 
                     </div>
-                    <div style="    margin: 15px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
-                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
-                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
-                    <div style=" display: flex; ">
-                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
-                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
-                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 17px; margin-right: 6px;"src="{% static 'square.svg'%}">{{o.square}} </div>
+                    <div style="  text-align: left;  margin: 15px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
+                    <div style="  text-align: left;  margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
+                    <div style="text-align: left;    margin: 0px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
+                    <div style="text-align: left; display: flex; ">
+                        <div style="    display: flex;margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><div style="background-image:url({% static 'bed.svg'%});background-size: contain; background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;"></div><div style=" margin-left: 5px; ">{{o.bed}}</div> </div>
+                        <div style="    display: flex;margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><div style="background-image:url({% static 'bath.svg'%});background-size: contain; background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;"></div><div style=" margin-left: 5px; ">{{o.bath}}</div>  </div>
+                        <div style="    display: flex;margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><div style="background-image:url({% static 'square.svg'%});background-size: contain; background-repeat: no-repeat; background-position: center;width: 25px; height: 25px;"></div><div style=" margin-left: 5px; ">{{o.square}}</div> </div>
                     </div>
                 </div>
           </div>
@@ -859,7 +981,7 @@ window.onclick = function(event) {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 <script>
-       var swiper = new Swiper('.swiper-container', {
+       var swiper = new Swiper('.sdsfsdfdsf', {
       slidesPerView: 4,
       slidesPerGroup: 3,
       spaceBetween: 10,
