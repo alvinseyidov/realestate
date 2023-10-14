@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap");
+:root {
+  --bgColorLightBlue: #00b696;
+  --bgColorGreen: #55be41e6;
+  --btnBgColor: #ff6600;
+}
+.bg_green {
+  background-color: var(--bgColorGreen) !important;
+}
+.button_bg {
+  background: #f2f2f2 !important;
+}
+.custom_text {
+  font: 400 1.25em/2 Montserrat !important ;
+}
+.btn_border {
+  border: 1px solid var(--bgColorGreen) !important;
+}
+.btn_border:hover {
+  background-color: var(--bgColorGreen) !important;
+  color: #fff !important;
+}
+
+.bgColorLightBlue {
+  background-color: var(--bgColorLightBlue) !important;
+}
+.bg_gray {
+  background-color: #f9f9f9 !important;
+}
+.text_green {
+  color: var(--bgColorGreen) !important;
+}
+.text_gray {
+  color: #abadab !important;
+}
+.text_blue {
+  color: #3e688c !important;
+}
+.fontMon {
+  font-family: Montserrat !important;
+}
+.font_bold {
+  font: bold 1em Montserrat !important;
+}
+.font_normal {
+  font: normal 1em Montserrat !important;
+}
+.font_500 {
+  font: 500 1em/27px Montserrat !important;
+}
+.font_22 {
+  font-size: 1.4em !important;
+}
+h1 {
+  color: #0b1b35;
+  font: bold Montserrat !important ;
+}
+h3 {
+  color: var(--bgColorGreen) !important;
+}
+p {
+  color: #000;
+  font: bold 1em Montserrat !important;
+}
+
+.btn_orange {
+  background-color: var(--btnBgColor) !important;
+  border: none;
+}
+.b_right {
+  border-right: 1px solid #fff !important;
+}
+.green_text {
+  color: #f7fb2d;
+  font-size: 0.6em !important ;
+}
+
+em,
+.em {
+  color: #ff6600 !important;
+}
+
+.button_hover.active:hover,
+.active {
+  position: relative;
+}
+.nav-link.active {
+  background: var(--bgColorGreen) !important;
+  color: #fff !important;
+}
+
+.button_hover:hover::before,
+.custom_hover .active::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--bgColorGreen); /* Üçgenin rengini buradan ayarlayabilirsiniz */
+  bottom: -8px; /* Üçgenin aşağı çıkıntısını buradan ayarlayabilirsiniz */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: .4s;
+}
+
+
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .navbar {
+      justify-content: center;
+  }
+}

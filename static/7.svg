@@ -1,0 +1,19 @@
+<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Center">
+<g id="Clip path group">
+<mask id="mask0_182_842" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="6" y="5" width="36" height="36">
+<g id="clip0_34_2180">
+<path id="Vector" d="M42 5H6V41H42V5Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_182_842)">
+<g id="Group">
+<path id="Vector_2" d="M36.75 8H11.25C10.0074 8 9 9.00736 9 10.25V35.75C9 36.9926 10.0074 38 11.25 38H36.75C37.9926 38 39 36.9926 39 35.75V10.25C39 9.00736 37.9926 8 36.75 8Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path id="Vector_3" d="M15 33.5L33.75 26" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 6"/>
+<path id="Vector_4" d="M16.5 28.25C18.5 25.3546 19.5 23.3546 19.5 22.25C19.5 20.5931 18.1569 19.25 16.5 19.25C14.8431 19.25 13.5 20.5931 13.5 22.25C13.5 23.3546 14.5 25.3546 16.5 28.25Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path id="Vector_5" d="M31.5 21.5C33.5 18.6046 34.5 16.6046 34.5 15.5C34.5 13.8431 33.1569 12.5 31.5 12.5C29.8431 12.5 28.5 13.8431 28.5 15.5C28.5 16.6046 29.5 18.6046 31.5 21.5Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</svg>

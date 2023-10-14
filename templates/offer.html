@@ -1,0 +1,896 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invest in Real Estate</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
+
+	<style>
+.cc1 {
+    text-align: center;
+}
+
+	/* -- CTA bar top -- */
+.cta-bar {
+ position: relative;
+ z-index: 99;
+ font-weight: 700;
+ padding: 13px;
+ color: #fff;
+ background: #83BF4F;
+ text-align: center;
+ padding-bottom: 3px;
+}
+
+.cta-bar p {
+ margin-bottom: 0 !important;
+}
+/* -- cta button -- */
+
+
+/* -- close button -- */
+.xit {
+ position: absolute;
+    top: 15px;
+    right: 19px;
+ cursor: pointer;
+ font-size: 20px;
+ color: #fff;
+}
+
+
+
+
+
+	.button-4 {
+	    min-width: 150px !important;
+	font-size: 1rem !important;
+	 padding: 13px 30px 13px 30px !important;
+	border: 1px solid #ff6600;
+
+  transition: .3s;
+}
+.button-4:hover {
+  background-color: #ffffff !important;
+  color: #ff6600 !important;
+      border: 1px solid #ff6600;
+}
+
+.linkk {
+
+  transition: .3s;
+}
+.linkk:hover {
+  color: #ff6600 !important;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(.9);
+  }
+    100% {
+    transform: scale(.9);
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+.xx1{
+    display: none !important;
+}
+.xxx0 {
+
+    z-index: 0 !important;
+
+}
+.xx2{
+    font-size: 28px !important;
+}
+.xx3 {
+    font-size: 15px !important;
+    margin-top: 15px !important;
+    margin-bottom: 21px !important;
+    line-height: 21px !important;
+}
+.xx4{
+
+font-size: 16px !important;
+}
+.xx5{
+
+font-size: 16px !important;
+    margin-bottom: 21px !important;
+}
+.xx0 {
+
+    height: 461px !important;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+.redffg{
+    margin-top: -22px !important;
+}
+.dfdfv{
+margin-top: -27px !important;
+}
+}
+
+
+
+
+	* {
+     font-family: 'Montserrat' !important;
+}
+@media only screen and (min-width: 700px) {
+
+.modal {
+  display: none !important;
+  }
+  }
+@media only screen and (max-width: 600px) {
+
+
+.ggg {
+float:left;
+}
+.cta-bar{
+display:none !important;
+}
+  .cccc{
+  padding: 14px 19px 14px 19px !important;
+  }
+
+  .ccc1{
+      font-size: 14px !important;
+  }
+  .ccc2{
+  margin-top: 31px !important;
+    width: 247px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .ccc3{
+	    top: 6px !important;
+  }
+
+  .ccc4{
+	    padding: 20px 11px 20px 19px !important;
+  }
+  .ccc5{
+	    padding-left: 69px !important;
+  }
+
+  .ccc6{
+	display: none !important;
+  }
+}
+
+#timerr {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #B1CDF1;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+
+#timer {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #B1CDF1;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+
+.spann1 {
+    font-size: 19px;
+    font-weight: 400;
+    width: 36px !important;
+    height: 35px !important;
+    border-radius: 5px;
+    padding-top:5px;
+    box-shadow: inset 0px 2px 7px 1px #065245ad !important;
+}
+.spann2 {
+    margin-top: 3px;
+}
+.spann {
+    font-size: 10px;
+}
+.spann2 {
+    display: block;
+    width: 41px !important;
+}
+	</style>
+
+
+    <style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+  </head>
+  <body>
+<button id="myBtn" style="display:none;">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" style="display:block;">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="    top: 60px; background-color: #00b696;text-align: center !important; ">
+    <span class="close" style=" position: absolute; top: 0; right: 10px; color:#fff;">&times;</span>
+    <p style="color:#fff;">Don't miss Early Bird Registration!</p>
+    <div id="timerr" style=" display: flex; gap: 13px; margin: auto; margin-bottom: 15px; margin-top: 6px; "></div>
+    <a href="/signup/" class="btn btn_orange rounded-5 text-white cccc button-4 " style="margin-left: 19px;margin-top: 0; padding: 14px 40px 14px 44px !important;font-size: 1rem !important;min-width: 100px !important;display: block; margin: auto;">Enroll Now</a>
+  </div>
+
+</div>
+  {% if general.is_active %}
+    <div class="cta-bar" style="   padding-bottom: 10px; padding-top: 10px;display: flex; justify-content: center; background-color:{{general.banner_background_color}};background-image:url({%if general.banner_background_image%}{{general.banner_background_image.url}}{%endif%});background-size: cover; background-position: center;">
+  <p style=" margin-right: 24px;display: inline;  margin-top: 15px; color:{{general.banner_text_color}} !important; ">{{general.banner_text}}</p><div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
+
+<a href="{% url 'index' %}" class="btn btn_orange rounded-5 text-white cccc button-4 " style="margin-left: 19px;margin-top: 0; padding: 14px 40px 14px 44px !important;font-size: 1rem !important;min-width: 100px !important;display: inline;">Enroll Now</a>
+<span class="xit"><img src="{% static 'close.png'%}" style=" width: 15px; " > </span>
+</div>
+  {% endif %}
+
+    <header class="header bg-white container">
+        <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+            <div class="col-lg-6"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6">
+                <div style="display: inline-block;float: right;">
+                  <div style=" width: 70px; display: inline-block;"><img src="{% static 'telegram.svg'%}"> </div>
+                  <div style=" width: 70px;display: inline-block; "><img src="{% static 'whatsapp.svg'%}"></div>
+                  <div style=" width: 190px;    display: inline-block; "><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
+                  <div style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </header>
+
+
+
+
+
+
+<style>
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+</style>
+
+
+
+
+
+
+
+
+
+ <div class=" mt-5" >
+     <div class="container">
+            <div class="row  ">
+                <div class="col-lg-6 col-md-12">
+                    <div style="color: #808080; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">Alanya, Antalya</div>
+                    <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">Coracesium City</div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                     <br>
+                     <div style="color: #000; text-align: right; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 60px; /* 200% */ letter-spacing: -0.5px;">$112,000 - $159,000</div>
+
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <img src="{% static 'off.png'%}" style=" width: 100%; margin-top: 36px; border-radius: 10px; ">
+                </div>
+
+
+
+            </div>
+         </div>
+
+       <div class="container">
+            <div class="row  ">
+
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Project Type</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '1.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Locations</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '2.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Surface</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '3.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Project Status</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '4.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Year Built</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '5.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Distance to Beach</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '6.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Distance to Center</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '7.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Distance to Airport</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '8.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>State Guaranteed</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '9.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Sea View</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '10.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Installment</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '11.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                 <div class="col-lg-2 col-md-12">
+                    <div style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div style=" font-size: 16px; line-height: 22px; height: 44px; ">Suitable for
+Citizenship</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static '12.svg'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">Apartments</div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+       </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class=" mt-5" style="background: linear-gradient(108deg, #2A224F 0%, #1F1E33 118.01%); ">
+    <div class="container">
+        <div class="row  ">
+
+            <div class="col-lg-4 col-md-12">
+                <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">INFORMATION<br>ABOUT PROPERTY</div>
+                <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;">PROPERTY DETAILS</div>
+                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Sanitaires</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">2</div>
+                </div>
+                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Balcon</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">1</div>
+                </div>
+
+                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Rooms</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">3</div>
+                </div>
+
+                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Chambres</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">3</div>
+                </div>
+
+                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Living area</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">125 m2</div>
+                </div>
+
+                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Number of WC</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">2</div>
+                </div>
+
+                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Indoor parking</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">1</div>
+                </div>
+
+                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Type of heating system</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">Floor</div>
+                </div>
+
+
+
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <br>
+                <br>
+                 <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;">PROPERTY DETAILS</div>
+               <div style="color: #FFF; text-align: justify; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">
+                   Coracesium City is located in Oba, Alanya, the charming and beautiful holiday resort of Antalya. In the project, you will live every moment of your life as if you were on holiday.
+Coracesium City is built on an area of ​​804.13 square meters and consists of 20 units. In the project, you can enjoy tranquility and peaceful life with your loved ones. There are apartment options in the project that appeal to all lifestyles. The project offers 1-bedroom, 2-bedroom, 3-bedroom, and 4-bedroom apartment options and the sizes of the apartments vary from 45 square meters to 162 square meters.
+
+In the project, there are privileged social opportunities for you to experience happiness and summer to the fullest. These include an indoor swimming pool and a children's playground. The barbecue area is also included in the project for you to spend a nice weekend with your loved ones. For every moment you want to relax, there is a sauna in Coracesium City. In addition, a fitness center with state-of-the-art equipment for a healthy and sporty life is also included in the project. Coracesium City is the place you should choose for a peaceful and pleasant life in Alanya. Do not miss the exclusive opportunities of Coracesium City.
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div style="background:#D9D9D9;">
+                    <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">Why you should invest Coracesium City?</div>
+                    <div style="color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Please fill out the form and we will contact you shortly.</div>
+                    <form style=" padding: 39px 40px; ">
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" placeholder="First name *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" placeholder="Last name *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" placeholder="Phone *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" placeholder="Email *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" placeholder="Message *" required>
+                        <button style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">Get in Touch</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+    </div>
+
+
+
+
+
+
+         <div class="row  ">
+               <div class="col-lg-8 col-md-12">
+                   <div style="border-radius: 20px; border: 1px solid #DDDCE0; background: #FFF;">
+                       <div>Investment Calculator</div>
+                       <div>How much can you earn on this investmen?</div>
+
+                        <div class="row  ">
+                            <div class="col-lg-6 col-md-12">
+                                <div>I want to invest</div>
+                                <div><input type="text" value="39,800"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div>I want to invest</div>
+                                <div><input type="text" value="39,800"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div>I want to invest</div>
+                                <div><input type="text" value="39,800"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div>I want to invest</div>
+                                <div><input type="text" value="39,800"></div>
+                            </div>
+                        </div>
+                   </div>
+                    <div style=" text-align: center; ">
+                   <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.60);    display: inline-block;">
+                       <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Total return on investment</div>
+                       <div style="color: var(--White, #FFF); text-align: center; /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">£1,987,500</div>
+                   </div>
+
+                   <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.60);    display: inline-block;">
+                       <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Average annualised return</div>
+                       <div style="color: var(--White, #FFF); text-align: center; /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">12.28%</div>
+                   </div>
+                        </div>
+
+
+
+                   <div>
+                       <div style="color: var(--yellow-5, #EDC161); font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;">Total expected value after 5 years</div>
+                       <div style="color: var(--White, #FFF); /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">£1,987,500</div>
+                       <img src="{% static 'chart.svg'%}" style=" width: 100%; ">
+                       <div style=" display: flex; ">
+                           <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 1</div>
+                           <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 2</div>
+                           <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 3</div>
+                           <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 4</div>
+                           <div style="width:20%;transform: rotate(-57.899deg);color: var(--white-75, rgba(255, 255, 255, 0.75)); text-align: right; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;">Year 5</div>
+                       </div>
+                       <div style="color: var(--White, #FFF); /* Headline / H2 */ font-family: Inter; font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">£987,500</div>
+                   </div>
+
+
+
+
+
+
+
+               </div>
+               <div class="col-lg-4 col-md-12">
+                   <div style="display: flex; padding: 32px 24px; flex-direction: column; align-items: center; gap: 18px; flex-shrink: 0; align-self: stretch;border: 1px solid #ffffff4a; border-radius: 20px; background: #2e2a50;">
+                       <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 24px; font-style: normal; font-weight: 600; line-height: normal;">Rental Yields</div>
+                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Expected Dividend Yield</div>
+                           <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">7.04%</div>
+                       </div>
+
+                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">5 Years Expected Return</div>
+                           <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">43.65%</div>
+                       </div>
+
+                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Expected Gross Yield</div>
+                           <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">10.97%</div>
+                       </div>
+
+                       <div style="border-radius: 8px; background: rgba(32, 28, 55, 0.40);"> <div style="color: var(--primary-slate-300, #8C87A8); text-align: center; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Dividends Frequency</div>
+                           <div style="color: var(--White, #FFF); text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 600; line-height: normal;">Monthly</div>
+                       </div>
+                   </div>
+               </div>
+
+
+         </div>
+    </div>
+    </div>
+
+
+
+
+<div class=" mt-5" style=" ">
+    <div class="container">
+        <div style="color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">Discover Other Properties</div>
+        <div style="color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">Find your perfect property</div>
+    <div class="row  ">
+
+    </div>
+
+
+        <div class="row  ">
+          <div class="col-lg-12 col-md-12"style="text-align: left;margin-top:20px;">
+
+
+                <div class="container">
+  <div class="swiper_wrap">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            {% for o in offers %}
+            <div class="swiper-slide">
+
+                <div style="width: 95%; height: 450px;">
+                    <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                    <div style="    margin: 15px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
+                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
+                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
+                    <div style=" display: flex; ">
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 17px; margin-right: 6px;"src="{% static 'square.svg'%}">{{o.square}} </div>
+                    </div>
+                </div>
+          </div>
+          {% endfor%}
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    <footer class="pt-5">
+      <section class="container-fluid bg-white d-flex justify-content-center align-items-center">
+        <div class="row container p-5">
+          <hr class="w-100" style=" margin-bottom: 49px; " />
+
+          <div class="col-md-6 xt-center   justify-content-center align-items-center">
+            <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                {{general.address}}
+            </p>
+              <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                <img style=" margin-right: 8px; " src="{% static 'phone.svg'%}"> {{general.phone}}
+            </p>
+              <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                <img style=" margin-right: 8px; " src="{% static 'email.svg'%}">{{general.email}}
+            </p>
+          </div>
+            <div class="col-md-6 text-center  justify-content-center align-items-center">
+            <a href="{% url 'index'%}"    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">Follow Us on</a>
+            <div style="    margin-top: 14px;">
+                {% for s in socials %}
+                <a style=" text-decoration: none; " href="{{s.link}}"><img style=" width: 30px; " src="{{s.icon.url}}"> </a>
+                {% endfor%}
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+        <section style=" height: 60px; background-color: #302D54; ">
+            <div class="container">
+            <div style="    padding-top: 16px;color: var(--Text-Colour-4, #AAA); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">© Company Name – All rights reserved</div>
+
+            </div>
+        </section>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d5c98c56f9.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+
+
+
+  <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+  <script type="text/javascript">
+        window.omnisend = window.omnisend || [];
+        omnisend.push(["accountID", "6526f28b8530cf73f8d2e6d3"]);
+        omnisend.push(["track", "$pageViewed"]);
+        !function(){var e=document.createElement("script");
+        e.type="text/javascript",e.async=!0,
+        e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
+        var t=document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e,t)}();
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+<script>
+       var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 4,
+      slidesPerGroup: 3,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        960: {
+          slidesPerView: 2,
+        }
+      }
+    });
+</script>
+
+  <script>
+       var swiper = new Swiper('.swiper-containerr', {
+      slidesPerView: 3,
+    spaceBetween: 10,
+     pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      breakpoints: {
+        960: {
+          slidesPerView: 2,
+        }
+      }
+    });
+</script>
+  </body>
+</html>
+
