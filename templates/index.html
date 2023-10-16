@@ -123,6 +123,24 @@ font-size: 16px !important;
 }
 
 @media only screen and (max-width: 600px) {
+.cccx1{
+display: block !important;
+}
+ .cccx2{
+ display:none !important;
+ }
+ .cccx3 {
+ width: unset !important;
+ padding: 0 5px 0 5px !important;
+ }
+   .cccx4 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
+   .cccx5 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
 .redffg{
     margin-top: -22px !important;
 }
@@ -375,6 +393,10 @@ display:none !important;
           .test:hover ~ .test2 {
             display: none;
           }
+
+          .row {
+    --bs-gutter-x: unset !important;
+    }
     </style>
 
   </head>
@@ -382,25 +404,18 @@ display:none !important;
 
 <!-- The Modal -->
 
-  {% if general.is_active %}
-    <div class="cta-bar" style="   padding-bottom: 10px; padding-top: 10px;display: flex; justify-content: center; background-color:{{general.banner_background_color}};background-image:url({%if general.banner_background_image%}{{general.banner_background_image.url}}{%endif%});background-size: cover; background-position: center;">
-  <p style=" margin-right: 24px;display: inline;  margin-top: 15px; color:{{general.banner_text_color}} !important; ">{{general.banner_text}}</p><div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
 
-<a href="{% url 'index' %}" class="btn btn_orange rounded-5 text-white cccc button-4 " style="margin-left: 19px;margin-top: 0; padding: 14px 40px 14px 44px !important;font-size: 1rem !important;min-width: 100px !important;display: inline;">Enroll Now</a>
-<span class="xit"><img src="{% static 'close.png'%}" style=" width: 15px; " > </span>
-</div>
-  {% endif %}
 
     <header class="header bg-white container" id="headerr">
         <div class="container">
         <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
-            <div class="col-lg-6"><a class="navbar-brand" href="#"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="#"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
                 <div style="display: inline-block;float: right;">
-                  <div style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
-                  <div style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
-                  <div style=" width: 190px;    display: inline-block; "><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
-                  <div style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
+                  <div class="cccx3" style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block; " class="cccx2"><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
+                  <div class="cccx5" style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
                 </div>
             </div>
         </div>
@@ -416,14 +431,14 @@ display:none !important;
         <div class="row  ">
           <div class="col-lg-6 col-md-12" style="background: linear-gradient(180deg, rgba(77, 145, 223, 0.50) 0%, #524C9B 100%);">
             <div style="padding-left: 142px; padding-top: 77px;    padding-right: 18px;">
-              <h1 class="pb-2 display-2   redffg" style="      width: 600px;color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 700; line-height: 40px;">
+              <h1 class="pb-2 display-2   redffg" style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 700; line-height: 40px;">
                 TURKISH CITIZENSHIP BY INVESTMENT NOW FROM<br>
             <span style=" font-size: 47px; line-height: 58px; ">$400,000</span></h1>
             <p class="pb-4 mt-4" style=" color: #FFF; text-align: justify; font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
              Welcome to Turkey Homes - your property, investment and lifestyle specialist. Our representatives in London and Turkey can guide you to find the perfect property, taking into consideration and consulting on your lifestyle and investment needs.
             </p>
               <a style=" border: 1px solid #fff; color: #fff; border-radius: 10px; padding: 14px 30px; ">About us</a>
-             <div style=" display: flex; margin: 69px 0 62px 0; ">
+             <div style=" display: flex; margin: 69px 0 62px 0; " class="cccx1">
                  <div style=" margin-right: 64px; ">
                      <div style="color: #FFF; text-align: center; font-family: Montserrat; font-size: 40px; font-style: normal; font-weight: 700; line-height: normal;">19K+</div>
                      <div style="color: #FFF; text-align: center; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: normal;">Real Estate</div>
@@ -463,7 +478,7 @@ display:none !important;
             <h1 class="" style="     margin-top: 31px; color: #302D54; text-align: center; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 44px; /* 146.667% */ letter-spacing: -0.5px;">
                 Your investment assistant</h1>
               <h2>at the real estate market in Alanya</h2>
-            <p class="pb-4 mt-4" style="   margin-bottom: 50px !important;  margin-top: 47px !important;width: 920px !important;   margin-right: auto !important; margin-left: auto !important; color: #000 !important; text-align: center !important; font-family: Montserrat !important; font-size: 20px !important; font-style: normal !important; font-weight: 500 !important; line-height: 35px !important; /* 175% */"	>
+            <p class="pb-4 mt-4" style="   margin-bottom: 50px !important;  margin-top: 47px !important;   margin-right: auto !important; margin-left: auto !important; color: #000 !important; text-align: center !important; font-family: Montserrat !important; font-size: 20px !important; font-style: normal !important; font-weight: 500 !important; line-height: 35px !important; /* 175% */"	>
               We provide detailed information about the projects you plan to invest in by organizing virtual tours and online meetings with our investment consultants. This approach simplifies your decision-making process by offering transparent information.
             </p>
 
@@ -477,10 +492,9 @@ display:none !important;
      <div style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #524C9B 100%);width: 100%; height: 400px; position: absolute; bottom: 0;"></div>
         <div class="row  " style=" z-index: 10000; position: relative; ">
           <div class="col-lg-12 col-md-12"style="text-align: center;">
+                            <img src="{% static 'yt.png'%}" style="margin: 0 auto 63px auto;width: 70%;position: relative;">
+             <img onclick="lightbox_open();" src="{% static 'yticon.svg'%}" style="cursor:pointer;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
 
-              <div style="margin: auto;     margin: 0 auto 63px auto;background-size: cover;background-image:url({% static 'yt.png'%});width: 920px; height: 480px;">
-                  <img onclick="lightbox_open();" src="{% static 'yticon.svg'%}" style="cursor:pointer; margin-top: 192px; ">
-              </div>
 
           </div>
 
@@ -750,13 +764,13 @@ function openCity(evt, cityName) {
               <div style=" padding-left: 148px; ">
               <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">Safe investment,<br>
 reliable payment</div>
-              <div style="    margin-top: 46px;color: #808080; text-align: justify;width: 445px; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">You can choose the most suitable project with high profit potential and buy it using secure payment methods. Our lawyers will be at your service in all cases to complete the entire process in accordance with the legal system</div>
+              <div style="    margin-top: 46px;color: #808080; text-align: justify; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">You can choose the most suitable project with high profit potential and buy it using secure payment methods. Our lawyers will be at your service in all cases to complete the entire process in accordance with the legal system</div>
  <button style="margin-top: 60px; background-color: #302D54; border: none; color: #fff; border-radius: 10px; padding: 13px 24px 13px 24px; ">Get a Consultation</button>
 </div>
           </div>
 
              <div class="col-lg-6 col-md-12"style="text-align: left;">
-<img src="{% static 'bg4.png'%}" style=" width: 550px; ">
+<img src="{% static 'bg4.png'%}" style=" width: 100%; ">
           </div>
 
         </div>

@@ -283,6 +283,33 @@ display:none !important;
   text-decoration: none;
   cursor: pointer;
 }
+
+
+@media only screen and (max-width: 600px) {
+.cccx1{
+display: block !important;
+}
+ .cccx2{
+ display:none !important;
+ }
+ .cccx3 {
+ width: unset !important;
+ padding: 0 5px 0 5px !important;
+ }
+   .cccx4 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
+   .cccx5 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
+
+}
+
+.row {
+    --bs-gutter-x: unset !important;
+    }
 </style>
   </head>
   <body>
@@ -296,21 +323,20 @@ display:none !important;
 </div>
   {% endif %}
 
-    <header class="header bg-white container">
-         <div class="container">
+    <header class="header bg-white container" id="headerr">
+        <div class="container">
         <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
-            <div class="col-lg-6"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; "alt="NavbarLogo" /></a></div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="#"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
                 <div style="display: inline-block;float: right;">
-                  <div style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
-                  <div style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
-                  <div style=" width: 190px;    display: inline-block; "><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
-                  <div style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
+                  <div class="cccx3" style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block; " class="cccx2"><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
+                  <div class="cccx5" style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
                 </div>
             </div>
         </div>
-         </div>
-
+</div>
 
 
 
