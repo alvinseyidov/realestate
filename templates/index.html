@@ -284,15 +284,104 @@ display:none !important;
   cursor: pointer;
 }
 </style>
+
+            <style>
+
+
+
+
+
+        @media screen and (max-width: 450px){
+        .left-side{
+            display:none !important;
+        }
+        .main-content .right-side {
+            width: 100%;
+            position: relative;
+        }
+        .sdfgsdf {
+            display: unset !important;
+        }
+        .sghsdfd {
+            width: auto !important;
+        }
+
+
+        #VisaChipCardVideo{
+            width: 450px !important;
+        }
+        #light{
+            width: 450px !important;
+            margin-left: -225px !important;
+            top: 55% !important;
+        }
+        }
+
+
+        #fade {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+          }
+
+          #light {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            max-width: 903px;
+            max-height: 480px;
+            margin-left: -450px;
+            margin-top: -180px;
+            z-index: 1002;
+            overflow: visible;
+          }
+
+          #boxclose {
+            float: right;
+            text-decoration: none;
+            cursor: pointer;
+            color: #fff;
+            border: 1px solid #AEAEAE;
+            border-radius: 12px;
+            background: #222222;
+            font-size: 26px;
+            display: inline-block;
+            line-height: 0px;
+            padding: 9px 5px 13px 5px;
+            position: absolute;
+            right: 2px;
+            top: 4px;
+            z-index: 1002;
+            opacity: 0.9;
+          }
+
+          .boxclose:before {
+            content: "×";
+          }
+
+          #fade:hover ~ #boxclose {
+            display:none;
+          }
+
+          .test:hover ~ .test2 {
+            display: none;
+          }
+    </style>
+
   </head>
   <body>
-<button id="myBtn" style="display:none;">Open Modal</button>
 
 <!-- The Modal -->
-<div id="myModal" class="modal" style="display:block;">
 
-
-</div>
   {% if general.is_active %}
     <div class="cta-bar" style="   padding-bottom: 10px; padding-top: 10px;display: flex; justify-content: center; background-color:{{general.banner_background_color}};background-image:url({%if general.banner_background_image%}{{general.banner_background_image.url}}{%endif%});background-size: cover; background-position: center;">
   <p style=" margin-right: 24px;display: inline;  margin-top: 15px; color:{{general.banner_text_color}} !important; ">{{general.banner_text}}</p><div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
@@ -302,7 +391,7 @@ display:none !important;
 </div>
   {% endif %}
 
-    <header class="header bg-white container">
+    <header class="header bg-white container" id="headerr">
         <div class="container">
         <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
             <div class="col-lg-6"><a class="navbar-brand" href="#"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
@@ -390,14 +479,13 @@ display:none !important;
           <div class="col-lg-12 col-md-12"style="text-align: center;">
 
               <div style="margin: auto;     margin: 0 auto 63px auto;background-size: cover;background-image:url({% static 'yt.png'%});width: 920px; height: 480px;">
-                  <img src="{% static 'yticon.svg'%}" style="cursor:pointer; margin-top: 192px; ">
+                  <img onclick="lightbox_open();" src="{% static 'yticon.svg'%}" style="cursor:pointer; margin-top: 192px; ">
               </div>
 
           </div>
 
         </div>
       </div>
-
 
 
 <div class="" style=" background:#F6F8FA;height: 500px;padding-top:69px; ">
@@ -542,7 +630,7 @@ display:none !important;
           <div class="col-lg-6 col-md-12"style="text-align: center;">
 
 <style>
-    .tablinks.active {
+    .tablinks.activee {
     border-left: 3px solid #000;
     padding: 6px 0 6px 19px;
 }
@@ -555,7 +643,7 @@ display:none !important;
                <div style=" padding-left: 101px; text-align: left; ">
 
                 {% for t in tablar%}
-                   <div class="tablinks {%if forloop.counter == 1%}active{%endif%}" style=" display: flex;     margin: 40px 0 40px 0;    cursor: pointer;" onclick="openCity(event, '{{t.id}}')">
+                   <div class="tablinks {%if forloop.counter == 1%}activee{%endif%}" style=" display: flex;     margin: 40px 0 40px 0;    cursor: pointer;" onclick="openCity(event, '{{t.id}}')">
                        <img class="" style=" width: 30px; " src="{{t.icon.url}}">
                        <p class="" style=" margin: 4px 0 1px 11px; " >{{t.title}}</p>
                    </div>
@@ -591,10 +679,10 @@ function openCity(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace(" activee", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.className += " activee";
 }
 </script>
 
@@ -648,7 +736,7 @@ function openCity(evt, cityName) {
 
 
 
-     <button style="margin-top: 60px; background-color: #302D54; border: none; color: #fff; border-radius: 10px; padding: 13px 24px 13px 24px; ">Book a Free Consultation</button>
+    <div style=" margin-top: 73px; "> <a href="#headerr" style="    text-decoration: none;margin-top: 60px; background-color: #302D54; border: none; color: #fff; border-radius: 10px; padding: 13px 24px 13px 24px; ">Book a Free Consultation</a></div>
           </div>
       </div>
 
@@ -748,8 +836,8 @@ reliable payment</div>
                         color: #fff;
                     }
                  </style>
-                 <div onclick="openCityy(event, 'c1')" class="tablinkk active" style=" margin-right:10px;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q1.svg'%}"><p style=" display: inline-block; ">Villa</p> </div>
-                 <div onclick="openCityy(event, 'c2')" class="tablinkk" style=" border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block;width: 19px; margin: 0px 5px 0 0; " src="{% static 'building.png'%}"><p style=" display: inline-block; ">Apartment</p> </div>
+                 <div onclick="openCityy(event, 'c1')" class="tablinkk active" style=" cursor:pointer;margin-right:10px;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q1.svg'%}"><p style=" display: inline-block; ">Villa</p> </div>
+                 <div onclick="openCityy(event, 'c2')" class="tablinkk" style="  cursor:pointer;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block;width: 19px; margin: 0px 5px 0 0; " src="{% static 'building.png'%}"><p style=" display: inline-block; ">Apartment</p> </div>
              </div>
           </div>
          <div class="col-lg-4 col-md-12"style="text-align: center;">
@@ -997,7 +1085,14 @@ function openCityy(evt, cityName) {
             </div>
         </section>
     </footer>
-
+  <div id="light">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+      <video id="VisaChipCardVideo"  style="width:900px;" controls>
+          <source src="{{general.home_popup_video.url}}" type="video/mp4">
+          <!--Browser does not support <video> tag -->
+        </video>
+    </div>
+ <div id="fade" onClick="lightbox_close();"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -1011,33 +1106,7 @@ function openCityy(evt, cityName) {
 
 
 
-  <script>
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 
 
 
@@ -1078,6 +1147,7 @@ window.onclick = function(event) {
         watchSlidesVisibility: true,
 pagination: {
         el: ".swiper-pagination",
+        clickable: true,
       },
 
       breakpoints: {
@@ -1096,6 +1166,34 @@ pagination: {
 }, 1000);
   </script>
 
+
+<script>
+    window.document.onkeydown = function(e) {
+        if (!e) {
+          e = event;
+        }
+        if (e.keyCode == 27) {
+          lightbox_close();
+        }
+      }
+
+      function lightbox_open() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        window.scrollTo(0, 0);
+        document.body.style.overflow = 'hidden';
+        document.getElementById('light').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+        lightBoxVideo.play();
+      }
+
+      function lightbox_close() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+        lightBoxVideo.pause();
+        document.body.style.overflow = 'scroll';
+      }
+    </script>
   </body>
 </html>
 
