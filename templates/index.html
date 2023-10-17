@@ -130,6 +130,19 @@ font-size: 16px !important;
     width: 80% !important;
     margin-bottom: 50px !important;
     }
+    .vvvx2{
+        top: 37% !important;
+    transform: translate(-50%,-50%);
+    width: 66px !important;
+    }
+    .vvvx3{
+        width: 151px !important;
+    font-size: 12px !important;
+        bottom: 26px !important;
+    }
+    .vvvx4{
+    font-size: 18px !important;
+    }
  .cccx2{
  display:none !important;
  }
@@ -504,7 +517,7 @@ display:none !important;
         <div class="row  " style=" z-index: 10000; position: relative; ">
           <div class="col-lg-12 col-md-12"style="text-align: center;">
                             <img src="{% static 'yt.png'%}" style="margin: 0 auto 63px auto;width: 70%;position: relative;">
-             <img onclick="lightbox_open();" src="{% static 'yticon.svg'%}" style="cursor:pointer;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+             <img class="vvvx2" onclick="lightbox_open();" src="{% static 'yticon.svg'%}" style="cursor:pointer;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
 
 
           </div>
@@ -561,8 +574,8 @@ display:none !important;
                             <div class="swiper-slide">
                                 <div style="     height: 310px;background: #fff; border-radius: 10px; margin-right: 5px; padding: 21px 30px 26px 30px;     ">
                             <img src="{{w.icon.url}}" class="img-responsive" style=" width: 65px; ">
-                             <div style="    margin: 15px 0 15px 0;color: #000; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
-                             <div style="width: 176px;bottom: 42px; position: absolute;color: #000; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: 20px;  padding-right: 28px; font-size: 13px;">{{w.text}}</div>
+                             <div class="vvvx4" style="    margin: 15px 0 15px 0;color: #000; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
+                             <div class="vvvx3" style="width: 176px;bottom: 42px; position: absolute;color: #000; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: 20px;  padding-right: 28px; font-size: 13px;">{{w.text}}</div>
                             </div>
                           </div>
                             {% endfor%}
