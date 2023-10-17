@@ -37,6 +37,17 @@ class Social(models.Model):
 
 
 
+class Feedback(models.Model):
+    user_image = models.ImageField()
+    full_name = models.CharField(max_length=256)
+    position = models.CharField(max_length=256)
+    text = models.TextField()
+    background_image = models.ImageField()
+
+    def __str__(self):
+        return self.full_name
+
+
 class Why(models.Model):
     icon = models.FileField()
     title = models.CharField(max_length=256)

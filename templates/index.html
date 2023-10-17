@@ -652,9 +652,9 @@ display:none !important;
       <div class="row  ">
           <div class="col-lg-6 col-md-12"style="text-align: center;">
 
-            <div style=" padding-left: 101px; text-align: left;margin-bottom: 70px; margin-top: 29px; padding-right: 45px;">
+            <div class="bbbx1" style=" padding-left: 101px; text-align: left;margin-bottom: 70px; margin-top: 29px; padding-right: 45px;">
             <h1 style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">Our advantages</h1>
-              <p style="color: #808080 !important; text-align: justify !important; font-family: Montserrat !important; font-size: 16px !important; font-style: normal !important; font-weight: 400 !important; line-height: 25px !important; /* 156.25% */">We rest our work on principles of professionalism and honesty. We are focused on long-term relationships and will do our best to provide a high return on your investments.</p>
+              <p style="color: #808080 !important; font-family: Montserrat !important; font-size: 16px !important; font-style: normal !important; font-weight: 400 !important; line-height: 25px !important; /* 156.25% */">We rest our work on principles of professionalism and honesty. We are focused on long-term relationships and will do our best to provide a high return on your investments.</p>
 
 
             </div>
@@ -678,7 +678,7 @@ display:none !important;
 </style>
 
 
-               <div style=" padding-left: 101px; text-align: left; ">
+               <div class="bbbx2" style=" padding-left: 101px; text-align: left; ">
 
                 {% for t in tablar%}
                    <div class="tablinks {%if forloop.counter == 1%}activee{%endif%}" style=" display: flex;     margin: 40px 0 40px 0;    cursor: pointer;" onclick="openCity(event, '{{t.id}}')">
@@ -692,13 +692,13 @@ display:none !important;
 
           </div>
 
-             <div class="col-lg-6 col-md-12"style="text-align: center;    padding-left: 35px;">
+             <div class="col-lg-6 col-md-12" style="text-align: center;padding-left: 18px;padding-right: 18px;">
 
         {% for i in tablar %}
                  <div id="{{i.id}}" class="tabcontent" style="{%if forloop.counter == 1%}display:block;{%endif%}text-align: left;">
                      <img src="{{i.image.url}}" style=" width: 70%; border-radius: 10px; ">
                   <div style="    padding: 15px 0 15px 18px;border-left:3px solid #000;color: #000; font-family: Montserrat; font-size: 25px; font-style: normal;    margin: 38px 0 25px 0; font-weight: 600; line-height: 35px; /* 140% */">{{i.title}}</div>
-                  <p style="color: #000; text-align: justify; font-family: Montserrat !important;    width: 70%; font-size: 20px !important; font-style: normal !important; font-weight: 400 !important; line-height: 30px !important; /* 150% */">{{i.text}}</p>
+                  <p class="bbbx3" style="color: #000; font-family: Montserrat !important;    width: 70%; font-size: 20px !important; font-style: normal !important; font-weight: 400 !important; line-height: 30px !important; /* 150% */">{{i.text}}</p>
                 </div>
 
                  {% endfor%}
@@ -733,11 +733,11 @@ function openCity(evt, cityName) {
 
 
 
- <div class=" mt-5" style="background-image:url({% static 'bg3.png'%});   height: 650px;  background-position: bottom; background-size: cover;    position: relative; ">
+ <div class="bbbx5 mt-5" style="background-image:url({% static 'bg3.png'%});   height: 650px;  background-position: bottom; background-size: cover;    position: relative; ">
       <div class="container" style=" text-align: center; ">
         <div class="row  ">
-            <h1 style="    margin: 75px 0 45px 0;color: #FFF; text-align: center; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">Investment Process in 3 Steps</h1>
-          <div class="col-lg-4 col-md-12"style="text-align: center;">
+            <h1 class="bbbx4" style="    margin: 75px 0 45px 0;color: #FFF; text-align: center; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">Investment Process in 3 Steps</h1>
+          <div class="col-lg-4 col-md-12"style="    margin-bottom: 22px;text-align: center;">
               <div>
             <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({% static 'c1.svg'%});background-size: cover"></div>
             <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px; background:#fff;border-radius: 10px; height: 200px; ">
@@ -748,7 +748,7 @@ function openCity(evt, cityName) {
 
           </div>
 
-             <div class="col-lg-4 col-md-12"style="text-align: center;">
+             <div class="col-lg-4 col-md-12"style="    margin-bottom: 22px;text-align: center;">
                  <div>
                  <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({% static 'c2.svg'%});background-size: cover"></div>
             <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
@@ -759,7 +759,7 @@ function openCity(evt, cityName) {
 
           </div>
 
-             <div class="col-lg-4 col-md-12"style="text-align: center;">
+             <div class="col-lg-4 col-md-12"style="    margin-bottom: 22px;text-align: center;">
                  <div>
                  <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({% static 'c3.svg'%});background-size: cover"></div>
             <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
@@ -781,11 +781,11 @@ function openCity(evt, cityName) {
 
 
 
-<div class=" mt-5" style="padding: 87px 0px;">
+<div class=" bbbx6 mt-5" style="padding: 87px 0px;">
      <div style=" "></div>
         <div class="row  ">
-          <div class="col-lg-6 col-md-12"style="text-align: left;">
-              <div style=" padding-left: 148px; ">
+          <div class="col-lg-6 col-md-12"style="text-align: left;padding-bottom: 31px;">
+              <div class="bbbx7" style=" padding-left: 148px;padding-right: 28px; ">
               <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">Safe investment,<br>
 reliable payment</div>
               <div style="    margin-top: 46px;color: #808080; text-align: justify; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">You can choose the most suitable project with high profit potential and buy it using secure payment methods. Our lawyers will be at your service in all cases to complete the entire process in accordance with the legal system</div>
@@ -864,7 +864,7 @@ reliable payment</div>
 
 
           </div>
-         <div class="col-lg-4 col-md-12"style="text-align: center;">
+         <div class="col-lg-4 col-md-12 bbbx8"style="text-align: center;">
              <div class="" style=" display: flex; ">
                  <style>
                      .tablinkk.active {
@@ -874,8 +874,8 @@ reliable payment</div>
                         color: #fff;
                     }
                  </style>
-                 <div onclick="openCityy(event, 'c1')" class="tablinkk active" style=" cursor:pointer;margin-right:10px;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q1.svg'%}"><p style=" display: inline-block; ">Villa</p> </div>
-                 <div onclick="openCityy(event, 'c2')" class="tablinkk" style="  cursor:pointer;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block;width: 19px; margin: 0px 5px 0 0; " src="{% static 'building.png'%}"><p style=" display: inline-block; ">Apartment</p> </div>
+                 <div onclick="openCityy(event, 'c1')" class="bbbx9 tablinkk active" style=" cursor:pointer;margin-right:10px;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q1.svg'%}"><p style=" display: inline-block; ">Villa</p> </div>
+                 <div onclick="openCityy(event, 'c2')" class="bbbx10 tablinkk" style="  cursor:pointer;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block;width: 19px; margin: 0px 5px 0 0; " src="{% static 'building.png'%}"><p style=" display: inline-block; ">Apartment</p> </div>
              </div>
           </div>
          <div class="col-lg-4 col-md-12"style="text-align: center;">
@@ -908,9 +908,9 @@ reliable payment</div>
                     <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
                     <div style="    margin: -5px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
                     <div style=" display: flex; ">
-                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
-                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
-                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 17px; margin-right: 6px;"src="{% static 'square.svg'%}">{{o.square}} </div>
+                        <div class="cvv1" style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
+                        <div class="cvv2" style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
+                        <div class="cvv3" style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 17px; margin-right: 6px;"src="{% static 'square.svg'%}">{{o.square}} </div>
                     </div>
                 </div>
           </div>
@@ -993,17 +993,18 @@ function openCityy(evt, cityName) {
       <div class="swiperr swiper-container" style=" padding: 0 0 59px 0; ">
         <div class="swiper-wrapper">
 
-
-          <div class="swiper-slide">
-                         <div style="background-image:url({% static 'h1.jpeg'%});border-radius:10px;height: 350px; background-size: cover;"></div>
+        {% for f in feedback %}
+          <div class="swiper-slide" style="padding-right: 9px; padding-left: 9px;">
+                         <div style="background-image:url({{f.background_image.url}});border-radius:10px;height: 350px; background-size: cover;"></div>
             <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -76px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100; position: inherit; ">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“Working with Company Name was a game-changer for my investments. Their expert guidance and dedication to my financial goals made all the difference. Highly recommended!”</div>
+                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“{{f.text | safe}}”</div>
                 <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url({% static 'user.jpeg'%}); height:50px; width:50px;border-radius:50%;">
+                    <div style="background-size:cover;background-image:url({{f.user_image.url}}); height:50px; width:50px;border-radius:50%;">
                     </div>
                     <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Dianne Russell</div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Manager Director</div>
+                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">
+                            {{f.full_name}}</div>
+                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">{{f.position}}</div>
                     </div>
                 </div>
 
@@ -1011,56 +1012,12 @@ function openCityy(evt, cityName) {
             </div>
           </div>
 
-            <div class="swiper-slide">
-                          <div style="background-image:url({% static 'h2.jpeg'%});border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -76px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100; position: inherit; ">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“Working with Company Name was a game-changer for my investments. Their expert guidance and dedication to my financial goals made all the difference. Highly recommended!”</div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url({% static 'user.jpeg'%}); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Dianne Russell</div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Manager Director</div>
-                    </div>
-                </div>
+            {% endfor%}
 
 
-            </div>
-          </div>
 
 
-            <div class="swiper-slide">
-                <div style="background-image:url({% static 'h3.jpeg'%});border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -76px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100; position: inherit; ">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“Working with Company Name was a game-changer for my investments. Their expert guidance and dedication to my financial goals made all the difference. Highly recommended!”</div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url({% static 'user.jpeg'%}); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Dianne Russell</div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Manager Director</div>
-                    </div>
-                </div>
 
-
-            </div>
-          </div>
-
-            <div class="swiper-slide">
-                       <div style="background-image:url({% static 'h3.jpeg'%});border-radius:10px;height: 350px; background-size: cover;"></div>  <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -76px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100; position: inherit; ">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“Working with Company Name was a game-changer for my investments. Their expert guidance and dedication to my financial goals made all the difference. Highly recommended!”</div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url({% static 'user.jpeg'%}); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Dianne Russell</div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Manager Director</div>
-                    </div>
-                </div>
-
-
-            </div>
-          </div>
 
 
         </div>
@@ -1089,7 +1046,7 @@ function openCityy(evt, cityName) {
 
     <footer class="pt-5">
       <section class="container-fluid bg-white d-flex justify-content-center align-items-center">
-        <div class="row container p-5">
+        <div class="bcvx row container p-5">
           <hr class="w-100" style=" margin-bottom: 49px; " />
 
           <div class="col-md-6 xt-center   justify-content-center align-items-center">
@@ -1103,7 +1060,7 @@ function openCityy(evt, cityName) {
                 <img style=" margin-right: 8px; " src="{% static 'email.svg'%}">{{general.email}}
             </p>
           </div>
-            <div class="col-md-6 text-center  justify-content-center align-items-center">
+            <div class=" bnmg col-md-6    justify-content-center align-items-center" style="text-align: center;">
             <a href="{% url 'index'%}"    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">Follow Us on</a>
             <div style="    margin-top: 14px;">
                 {% for s in socials %}
@@ -1190,7 +1147,7 @@ pagination: {
 
       breakpoints: {
         960: {
-          slidesPerView: 2,
+          slidesPerView: 1,
         }
       }
     });
