@@ -697,7 +697,7 @@ display:none !important;
              <div class="col-lg-6 col-md-12" style="text-align: center;padding-left: 18px;padding-right: 18px;">
 
         {% for i in tablar %}
-                 <div id="{{i.id}}" class="tabcontent" style="{%if forloop.counter == 1%}display:block;{%endif%}text-align: left;">
+                 <div id="{{i.id}}" class="tabcontent" style="{%if forloop.counter == 1 %}display:block;{%endif%}text-align: left;">
                      <img src="{{i.image.url}}" style=" width: 70%; border-radius: 10px; ">
                   <div style="    padding: 15px 0 15px 18px;border-left:3px solid #000;color: #000; font-family: Montserrat; font-size: 25px; font-style: normal;    margin: 38px 0 25px 0; font-weight: 600; line-height: 35px; /* 140% */">{{i.title}}</div>
                   <p class="bbbx3" style="color: #000; font-family: Montserrat !important;    width: 70%; font-size: 20px !important; font-style: normal !important; font-weight: 400 !important; line-height: 30px !important; /* 150% */">{{i.text}}</p>
@@ -737,14 +737,14 @@ function openCity(evt, cityName) {
 {% if sorting_sections.processes_active %}
  <div class="bbbx5 mt-5" style="background-image:url({% static 'bg3.png'%});   height: 650px;  background-position: bottom; background-size: cover;    position: relative; ">
       <div class="container" style=" text-align: center; ">
-        <div class="row  ">
+        <div class="row  " style=" justify-content: center; ">
             <h1 class="bbbx4" style="    margin: 75px 0 45px 0;color: #FFF; text-align: center; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">
                 {{processes_section.title}}</h1>
-          <div class="col-lg-4 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+          <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
               <div>
-            <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({% static 'c1.svg'%});background-size: cover"></div>
+            <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process1_icon.url}});background-size: cover"></div>
             <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px; background:#fff;border-radius: 10px; height: 200px; ">
-                <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 18px; font-style: normal; font-weight: 600; line-height: 28px; /* 155.556% */">
+                <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
                     {{processes_section.process1}}</div>
             </div>
 
@@ -752,23 +752,45 @@ function openCity(evt, cityName) {
 
           </div>
 
-             <div class="col-lg-4 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+             <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
                  <div>
-                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({% static 'c2.svg'%});background-size: cover"></div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process2_icon.url}});background-size: cover"></div>
             <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
-                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 18px; font-style: normal; font-weight: 600; line-height: 28px; /* 155.556% */">{{processes_section.process2}}</div>
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">{{processes_section.process2}}</div>
 
             </div>
                      </div>
 
           </div>
 
-             <div class="col-lg-4 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+             <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
                  <div>
-                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({% static 'c3.svg'%});background-size: cover"></div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process3_icon.url}});background-size: cover"></div>
             <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
-                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 18px; font-style: normal; font-weight: 600; line-height: 28px; /* 155.556% */">
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
                       {{processes_section.process3}}</div>
+
+            </div>
+
+          </div>
+                 </div>
+            <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+                 <div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process4_icon.url}});background-size: cover"></div>
+            <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
+                      {{processes_section.process4}}</div>
+
+            </div>
+
+          </div>
+                 </div>
+            <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+                 <div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process5_icon.url}});background-size: cover"></div>
+            <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
+                      {{processes_section.process5}}</div>
 
             </div>
 
