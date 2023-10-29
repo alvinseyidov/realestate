@@ -99,3 +99,11 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.question
+
+class Contact(models.Model):
+    name = models.CharField(max_length=256)
+    surname = models.CharField(max_length=256)
+    phone = models.CharField(max_length=256)
+
+    def __str__(self):
+        return f'{self.name} {self.surname} - {self.phone}'
