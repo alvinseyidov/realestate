@@ -60,24 +60,14 @@ class Why(models.Model):
     def __str__(self):
         return self.title
 
-class AdvisorContact(models.Model):
-    name = models.CharField(max_length=256)
-    surname = models.CharField(max_length=256)
-    phone = models.CharField(max_length=256)
 
-    class Meta:
-        verbose_name = "Advisora müraicət"
-        verbose_name_plural = "Advisora müraicətlər"
-
-    def __str__(self):
-        return f'{self.name} {self.surname}'
 
 
 
 class Tablar(models.Model):
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=256, null=True, blank=True)
     image = models.ImageField()
-    text = models.CharField(max_length=256)
+    text = models.CharField(max_length=256, null=True, blank=True)
     icon = models.FileField()
 
     class Meta:
