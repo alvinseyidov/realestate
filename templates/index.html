@@ -699,8 +699,8 @@ display:none !important;
         {% for i in tablar %}
                  <div id="{{i.id}}" class="tabcontent" style="{%if forloop.counter == 1 %}display:block;{%endif%}text-align: left;">
                      <img src="{{i.image.url}}" style=" width: 70%; border-radius: 10px; ">
-                  <div style="    padding: 15px 0 15px 18px;border-left:3px solid #000;color: #000; font-family: Montserrat; font-size: 25px; font-style: normal;    margin: 38px 0 25px 0; font-weight: 600; line-height: 35px; /* 140% */">{{i.title}}</div>
-                  <p class="bbbx3" style="color: #000; font-family: Montserrat !important;    width: 70%; font-size: 20px !important; font-style: normal !important; font-weight: 400 !important; line-height: 30px !important; /* 150% */">{{i.text}}</p>
+                  <div style="    padding: 15px 0 15px 18px;border-left:3px solid #000;color: #000; font-family: Montserrat; font-size: 25px; font-style: normal;    margin: 38px 0 25px 0; font-weight: 600; line-height: 35px; /* 140% */">{{i.title|default_if_none:""}}</div>
+                  <p class="bbbx3" style="color: #000; font-family: Montserrat !important;    width: 70%; font-size: 20px !important; font-style: normal !important; font-weight: 400 !important; line-height: 30px !important; /* 150% */">{{i.text|default_if_none:""}}</p>
                 </div>
 
                  {% endfor%}
