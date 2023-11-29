@@ -1,0 +1,1237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{general.site_title}}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
+
+	<style>
+.cc1 {
+    text-align: center;
+}
+
+	/* -- CTA bar top -- */
+.cta-bar {
+ position: relative;
+ z-index: 99;
+ font-weight: 700;
+ padding: 13px;
+ color: #fff;
+ background: #83BF4F;
+ text-align: center;
+ padding-bottom: 3px;
+}
+
+.cta-bar p {
+ margin-bottom: 0 !important;
+}
+/* -- cta button -- */
+
+
+/* -- close button -- */
+.xit {
+ position: absolute;
+    top: 15px;
+    right: 19px;
+ cursor: pointer;
+ font-size: 20px;
+ color: #fff;
+}
+
+
+
+
+
+	.button-4 {
+	    min-width: 150px !important;
+	font-size: 1rem !important;
+	 padding: 13px 30px 13px 30px !important;
+	border: 1px solid #ff6600;
+
+  transition: .3s;
+}
+.button-4:hover {
+  background-color: #ffffff !important;
+  color: #ff6600 !important;
+      border: 1px solid #ff6600;
+}
+
+.linkk {
+
+  transition: .3s;
+}
+.linkk:hover {
+  color: #ff6600 !important;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(.9);
+  }
+    100% {
+    transform: scale(.9);
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+.xx1{
+    display: none !important;
+}
+.xxx0 {
+
+    z-index: 0 !important;
+
+}
+.xx2{
+    font-size: 28px !important;
+}
+.xx3 {
+    font-size: 15px !important;
+    margin-top: 15px !important;
+    margin-bottom: 21px !important;
+    line-height: 21px !important;
+}
+.xx4{
+
+font-size: 16px !important;
+}
+.xx5{
+
+font-size: 16px !important;
+    margin-bottom: 21px !important;
+}
+.xx0 {
+
+    height: 461px !important;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+ .vvvx1{
+     margin-top: 53px !important;
+    width: 390px;
+    border-radius: 10px;
+    width: 80% !important;
+    margin-bottom: 50px !important;
+    }
+    .vvvx2{
+        top: 37% !important;
+    transform: translate(-50%,-50%);
+    width: 66px !important;
+    }
+    .vvvx3{
+        width: 151px !important;
+    font-size: 12px !important;
+        bottom: 26px !important;
+    }
+    .vvvx4{
+    font-size: 18px !important;
+    }
+ .cccx2{
+ display:none !important;
+ }
+ .cccx3 {
+ width: unset !important;
+ padding: 0 5px 0 5px !important;
+ }
+   .cccx4 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
+   .cccx5 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
+.redffg{
+    margin-top: -22px !important;
+}
+.dfdfv{
+margin-top: -27px !important;
+}
+}
+
+
+
+
+	* {
+     font-family: 'Montserrat' !important;
+}
+@media only screen and (min-width: 700px) {
+
+.modal {
+  display: none !important;
+  }
+  }
+@media only screen and (max-width: 600px) {
+
+
+.ggg {
+float:left;
+}
+.cta-bar{
+display:none !important;
+}
+  .cccc{
+  padding: 14px 19px 14px 19px !important;
+  }
+  
+  .ccc1{
+      font-size: 14px !important;
+  }
+  .ccc2{
+  margin-top: 31px !important;
+    width: 247px !important;
+    margin-bottom: 32px !important;
+  }
+  
+  .ccc3{
+	    top: 6px !important;
+  }
+  
+  .ccc4{
+	    padding: 20px 11px 20px 19px !important;
+  }
+  .ccc5{
+	    padding-left: 69px !important;
+  }
+  
+  .ccc6{
+	display: none !important;
+  }
+  .cccx7{
+  padding-left: 24px !important;
+  }
+  .cccx8 {
+
+  font-size: 30px !important;
+  }
+}
+
+#timerr {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #B1CDF1;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+
+#timer {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #B1CDF1;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+
+.spann1 {
+    font-size: 19px;
+    font-weight: 400;
+    width: 36px !important;
+    height: 35px !important;
+    border-radius: 5px;
+    padding-top:5px;
+    box-shadow: inset 0px 2px 7px 1px #065245ad !important;
+}
+.spann2 {
+    margin-top: 3px;
+}
+.spann {
+    font-size: 10px;
+}
+.spann2 {
+    display: block;
+    width: 41px !important;
+}
+	</style>
+
+
+    <style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+            <style>
+
+
+
+
+
+        @media screen and (max-width: 450px){
+        .left-side{
+            display:none !important;
+        }
+        .main-content .right-side {
+            width: 100%;
+            position: relative;
+        }
+        .sdfgsdf {
+            display: unset !important;
+        }
+        .sghsdfd {
+            width: auto !important;
+        }
+
+
+        #VisaChipCardVideo{
+            width: 450px !important;
+        }
+        #light{
+            width: 450px !important;
+            margin-left: -225px !important;
+            top: 55% !important;
+        }
+        }
+
+
+        #fade {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+          }
+
+          #light {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            max-width: 903px;
+            max-height: 480px;
+            margin-left: -450px;
+            margin-top: -180px;
+            z-index: 1002;
+            overflow: visible;
+          }
+
+          #boxclose {
+            float: right;
+            text-decoration: none;
+            cursor: pointer;
+            color: #fff;
+            border: 1px solid #AEAEAE;
+            border-radius: 12px;
+            background: #222222;
+            font-size: 26px;
+            display: inline-block;
+            line-height: 0px;
+            padding: 9px 5px 13px 5px;
+            position: absolute;
+            right: 2px;
+            top: 4px;
+            z-index: 1002;
+            opacity: 0.9;
+          }
+
+          .boxclose:before {
+            content: "×";
+          }
+
+          #fade:hover ~ #boxclose {
+            display:none;
+          }
+
+          .test:hover ~ .test2 {
+            display: none;
+          }
+
+          .row {
+    --bs-gutter-x: unset !important;
+    }
+    </style>
+
+  </head>
+  <body>
+
+<!-- The Modal -->
+
+
+
+    <header class="header bg-white container" id="headerr">
+        <div class="container">
+        <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
+                <div style="display: inline-block;float: right;">
+                  <div class="cccx3" style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block; " class="cccx2"><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
+                  <div class="cccx5" style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+    </header>
+
+{% if sorting_sections.main_section_active %}
+  <div class=" mt-5" style="background-image:url({{main_section.background_image.url}});    background-size: cover;">
+        <div class="row  ">
+          <div class="col-lg-6 col-md-12" style="background: linear-gradient(180deg, rgba(77, 145, 223, 0.50) 0%, #524C9B 100%);">
+            <div class="cccx7" style="padding-left: 142px; padding-top: 77px;    padding-right: 18px;">
+              <h1 class="cccx8 pb-2 display-2   redffg" style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 700; line-height: 40px;">
+                  {{main_section.title | safe}}
+                 </h1>
+            <p class="pb-4 mt-4" style=" color: #FFF;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
+                {{main_section.text | safe}}</p>
+              <a href="{{main_section.button_link}}" style="     text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 10px; padding: 14px 30px; ">{{main_section.button_text}}</a>
+             <div style=" display: flex; margin: 69px 0 62px 0; " class="cccx1">
+                 <div style=" margin-right: 64px; ">
+                     <div style="color: #FFF; text-align: center; font-family: Montserrat; font-size: 40px; font-style: normal; font-weight: 700; line-height: normal;">{{main_section.number1|default_if_none:""}}</div>
+                     <div style="color: #FFF; text-align: center; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: normal;">{{main_section.number1_text|default_if_none:""}}</div>
+                 </div>
+
+                 <div>
+                     <div style="color: #FFF; text-align: center; font-family: Montserrat; font-size: 40px; font-style: normal; font-weight: 700; line-height: normal;">{{main_section.number2|default_if_none:""}}</div>
+                     <div style="color: #FFF; text-align: center; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: normal;">{{main_section.number2_text|default_if_none:""}}</div>
+                 </div>
+             </div>
+                </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="vvvx1" style="background-color:#fff;padding-top: 1px;margin: auto; margin-top: 150px;width: 390px;border-radius: 10px;">
+                <div style="margin:35px 0px 35px 0 !important;text-align: center;color: #000; font-family: Montserrat; font-size: 25px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -0.5px;">
+                    Məsləhət Almaq üçün
+                </div>
+                <div style=" text-align: center; ">
+                    <form method="post" action="{% url 'contactform'%}">
+                        {% csrf_token%}
+                        <input required type="text" name="name" placeholder="Ad" style="       margin-bottom: 15px !important; padding: 0 0 0 26px;border-radius: 30px; border: 1px solid #D9D9D9; background: rgba(217, 217, 217, 0.00);margin: auto;display: block;width: 298px;height: 40px;flex-shrink:0;">
+                        <input required type="text" name="surname" placeholder="Soyad" style="      margin-bottom: 15px !important;  padding: 0 0 0 26px;border-radius: 30px; border: 1px solid #D9D9D9; background: rgba(217, 217, 217, 0.00);margin: auto;display: block;width: 298px;height: 40px;flex-shrink:0;">
+                        <input required type="text" name="phone" placeholder="Telefon" style="      margin-bottom: 20px !important;  padding: 0 0 0 26px;border-radius: 30px; border: 1px solid #D9D9D9; background: rgba(217, 217, 217, 0.00);margin: auto;display: block;width: 298px;height: 40px;flex-shrink:0;">
+                        <button type="submit" style="border-radius: 10px;     margin-bottom: 40px !important;background: #302D54;border: none; color: #fff; padding: 11px 23px;">Göndər</button>
+                    </form>
+                </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+{% endif%}
+{% if sorting_sections.youtube_video_active %}
+ <div class=" mt-5" >
+        <div class="row  ">
+          <div class="col-lg-12 col-md-12"style="text-align: center;">
+           {{video_section.title | safe}}
+            <p class="pb-4 mt-4" style="padding-right: 20px; padding-left: 20px;   margin-bottom: 50px !important;  margin-top: 47px !important;   margin-right: auto !important; margin-left: auto !important; color: #000 !important; text-align: center !important; font-family: Montserrat !important; font-size: 20px !important; font-style: normal !important; font-weight: 500 !important; line-height: 35px !important; /* 175% */"	>
+             {{video_section.text | safe}}
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+
+ <div class=" mt-5" style="background-image:url({{video_section.background_image.url}});    background-size: cover;    position: relative;">
+     <div style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #524C9B 100%);width: 100%; height: 400px; position: absolute; bottom: 0;"></div>
+        <div class="row  " style=" z-index: 10000; position: relative; ">
+          <div class="col-lg-12 col-md-12"style="text-align: center;">
+                            <img src="{{video_section.video_image.url}}" style="margin: 0 auto 63px auto;width: 70%;position: relative;">
+             <img class="vvvx2" onclick="lightbox_open();" src="{% static 'yticon.svg'%}" style="cursor:pointer;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+
+
+          </div>
+
+        </div>
+      </div>
+{% endif%}
+{% if sorting_sections.why_active %}
+<div class="" style=" background:#F6F8FA;height: 650px;padding-top:69px; ">
+      <div class="container">
+        <div class="row  ">
+          <div class="col-lg-4 col-md-12"style="text-align: center;">
+            <h1 class="display-2  redffg" style="    font-size: 55px;    margin-top: 65px; color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">
+                {{why_section.title}}
+               </h1>
+            <p class="" style=" color: #808080 !important; font-family: Montserrat !important; font-size: 16px !important; font-style: normal !important; font-weight: 400 !important; line-height: 25px !important; /* 156.25% */"	>
+                {{why_section.text}}
+
+            </p>
+
+          </div>
+            <div class="col-lg-8 col-md-12"style="text-align: center;">
+<style>
+    .img-responsive {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.swiper_wrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  text-align: left;
+}
+
+
+.swiper-button-prev, .swiper-button-next {
+     position: relative;
+}
+</style>
+
+
+
+
+
+
+
+
+                <div class="container">
+                  <div class="swiper_wrap">
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          {% for w in why%}
+                            <div class="swiper-slide">
+                                <div style="     height: 460px;background: #fff; border-radius: 10px; margin-right: 5px; padding: 21px 30px 26px 30px;     ">
+                            <img src="{{w.icon.url}}" class="img-responsive" style=" width: 65px; ">
+                             <div class="vvvx4" style="    margin: 15px 0 15px 0;color: #000; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
+                             <div class="vvvx3" style="width: 176px;bottom: 42px;color: #000; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: 20px;  padding-right: 28px; font-size: 13px;">{{w.text}}</div>
+                            </div>
+                          </div>
+                            {% endfor%}
+
+                        </div>
+
+                      </div>
+                       <!-- Add Arrows -->
+
+                    </div>
+                </div>
+
+
+
+                        <div style=" display: flex; justify-content: center; ">
+                                <div  class="swiper-button-prev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:24px 24px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-next" style="background-image:url({% static 'right.svg'%});background-color: #302D54; margin:24px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+
+
+
+
+
+
+          </div>
+
+        </div>
+        </div>
+
+      </div>
+{% endif%}
+<style>
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+</style>
+
+
+{% if sorting_sections.advantages_active %}
+ <div class=" mt-5" style=" ">
+
+
+      <div class="row  ">
+          <div class="col-lg-6 col-md-12"style="text-align: center;">
+
+            <div class="bbbx1" style=" padding-left: 101px; text-align: left;margin-bottom: 70px; margin-top: 29px; padding-right: 45px;">
+            <h1 style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">
+                {{advantage_section.title}}</h1>
+              <p style="color: #808080 !important; font-family: Montserrat !important; font-size: 16px !important; font-style: normal !important; font-weight: 400 !important; line-height: 25px !important; /* 156.25% */">
+                  {{advantage_section.text}}</p>
+
+
+            </div>
+            </div>
+            </div>
+
+
+
+
+        <div class="row  ">
+          <div class="col-lg-6 col-md-12"style="text-align: center;">
+
+<style>
+    .tablinks.activee {
+    border-left: 3px solid #000;
+    padding: 6px 0 6px 19px;
+}
+.tablinks {
+    padding-left: 19px;
+}
+</style>
+
+
+               <div class="bbbx2" style=" padding-left: 101px; text-align: left; ">
+
+                {% for t in tablar%}
+                   <div class="tablinks {%if forloop.counter == 1%}activee{%endif%}" style=" display: flex;     margin: 40px 0 40px 0;    cursor: pointer;" onclick="openCity(event, '{{t.id}}')">
+                       <img class="" style=" width: 30px; " src="{{t.icon.url}}">
+                       <p class="" style=" margin: 4px 0 1px 11px; " >{{t.title}}</p>
+                   </div>
+                   {% endfor %}
+
+            </div>
+
+
+          </div>
+
+             <div class="col-lg-6 col-md-12" style="text-align: center;padding-left: 18px;padding-right: 18px;">
+
+        {% for i in tablar %}
+                 <div id="{{i.id}}" class="tabcontent" style="{%if forloop.counter == 1 %}display:block;{%endif%}text-align: left;">
+                     <img src="{{i.image.url}}" style=" width: 70%; border-radius: 10px; ">
+                  <div style="    padding: 15px 0 15px 18px;border-left:3px solid #000;color: #000; font-family: Montserrat; font-size: 25px; font-style: normal;    margin: 38px 0 25px 0; font-weight: 600; line-height: 35px; /* 140% */">{{i.title|default_if_none:""}}</div>
+                  <p class="bbbx3" style="color: #000; font-family: Montserrat !important;    width: 70%; font-size: 20px !important; font-style: normal !important; font-weight: 400 !important; line-height: 30px !important; /* 150% */">{{i.text|default_if_none:""}}</p>
+                </div>
+
+                 {% endfor%}
+          </div>
+
+
+
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" activee", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " activee";
+}
+</script>
+
+        </div>
+      </div>
+{% endif%}
+
+
+
+
+
+{% if sorting_sections.processes_active %}
+ <div class="bbbx5 mt-5" style="background-image:url({% static 'bg3.png'%});   height: 650px;  background-position: bottom; background-size: cover;    position: relative; ">
+      <div class="container" style=" text-align: center; ">
+        <div class="row  " style=" justify-content: center; ">
+            <h1 class="bbbx4" style="    margin: 75px 0 45px 0;color: #FFF; text-align: center; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">
+                {{processes_section.title}}</h1>
+          <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+              <div>
+            <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process1_icon.url}});background-size: cover"></div>
+            <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px; background:#fff;border-radius: 10px; height: 200px; ">
+                <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
+                    {{processes_section.process1}}</div>
+            </div>
+
+                  </div>
+
+          </div>
+
+             <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+                 <div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process2_icon.url}});background-size: cover"></div>
+            <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">{{processes_section.process2}}</div>
+
+            </div>
+                     </div>
+
+          </div>
+
+             <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+                 <div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process3_icon.url}});background-size: cover"></div>
+            <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
+                      {{processes_section.process3}}</div>
+
+            </div>
+
+          </div>
+                 </div>
+            <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+                 <div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process4_icon.url}});background-size: cover"></div>
+            <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
+                      {{processes_section.process4}}</div>
+
+            </div>
+
+          </div>
+                 </div>
+            <div class="col-lg-2 col-md-12"style="    margin-bottom: 22px;text-align: center;">
+                 <div>
+                 <div style="background:#302D54;width: 70px; height: 70px; border-radius: 50%;background-image:url({{processes_section.process5_icon.url}});background-size: cover"></div>
+            <div style="width: 100%; margin-top: 18px;padding-top: 41px; margin-top: 18px;background:#fff;border-radius: 10px; height: 200px; ">
+                  <div style="text-align: left; padding-left: 23px; padding-right: 23px;color: #000; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 600; line-height: 20px; /* 155.556% */">
+                      {{processes_section.process5}}</div>
+
+            </div>
+
+          </div>
+                 </div>
+
+        </div>
+
+
+
+    <div style=" margin-top: 73px; "> <a href="{{processes_section.button_link}}" style="    text-decoration: none;margin-top: 60px; background-color: #302D54; border: none; color: #fff; border-radius: 10px; padding: 13px 24px 13px 24px; ">{{processes_section.button_text}}</a></div>
+          </div>
+      </div>
+{% endif%}
+
+{% if sorting_sections.get_consultation_active %}
+
+<div class=" bbbx6 mt-5" style="padding: 87px 0px;">
+     <div style=" "></div>
+        <div class="row  ">
+          <div class="col-lg-6 col-md-12"style="text-align: left;padding-bottom: 31px;">
+              <div class="bbbx7" style=" padding-left: 148px;padding-right: 28px; ">
+              <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">
+                  {{getconsultation_section.title | safe}}</div>
+              <div style="      margin-bottom: 35px;  margin-top: 46px;color: #808080; text-align: justify; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">
+                  {{getconsultation_section.text}}</div>
+ <a href="{{getconsultation_section.button_link}}" style="    text-decoration: none;margin-top: 60px; background-color: #302D54; border: none; color: #fff; border-radius: 10px; padding: 13px 24px 13px 24px; ">
+     {{getconsultation_section.button_text}}</a>
+</div>
+          </div>
+
+             <div class="col-lg-6 col-md-12"style="text-align: left;">
+<img src="{% static 'bg4.png'%}" style=" width: 100%; ">
+          </div>
+
+        </div>
+      </div>
+
+{% endif%}
+{% if sorting_sections.faq_active %}
+
+  <section class="container-fluid py-5 bg_gray">
+        <h2 class="fw-bold mb-4 text-center" style=" font-size: 45px; line-height: 60px; padding: 35px 0 49px 0px; ">FAQs</h2>
+        <div class="row d-flex gap-5 justify-content-center align-items-center">
+          <div class="col-md-6 d-flex justify-content-between flex-column">
+            <div class="accordion d-flex flex-column gap-3" id="accordionExample">
+
+                {% for f in faq %}
+              <div class="accordion-item bg-white p-3 rounded-0">
+                <div class="d-flex gap-5 justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center gap-4">
+                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">0{{forloop.counter}}</p>
+                    <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">{{f.question}}</p>
+                  </div>
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordionButton border-0 bg-transparent"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne">
+                      <img class="arrow-down " src="{% static 'open.svg'%}" style=" margin-right: 20px; " alt="" />
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse "
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
+
+                    <p class="mx-3 fw-normal font_normal">
+                     {{f.answer}}
+                      </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+                {% endfor%}
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% endif%}
+
+
+
+
+{% if sorting_sections.offers_active %}
+<div id="evler" class=" mt-5" style=" ">
+    <div class="container">
+    <div class="row" style="padding-top: 25px;padding-bottom: 25px;">
+          <div class="col-lg-4 col-md-12"style="text-align: left;">
+                <div style="color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">
+                    {{offers_section.title}}</div>
+              <div style="color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{offers_section.text}}</div>
+
+
+          </div>
+         <div class="col-lg-4 col-md-12 bbbx8"style="text-align: center;">
+             <div class="" style=" display: flex; ">
+                 <style>
+                     .tablinkk.active {
+                            background:#302D54;
+                     }
+                     .active p {
+                        color: #fff;
+                    }
+                 </style>
+                 <div onclick="openCityy(event, 'c1')" class="bbbx9 tablinkk active" style=" cursor:pointer;margin-right:10px;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block; " src="{% static 'q1.svg'%}"><p style=" display: inline-block; ">Villa</p> </div>
+                 <div onclick="openCityy(event, 'c2')" class="bbbx10 tablinkk" style="  cursor:pointer;border: 1px solid #c5c5c5; border-radius: 27px; padding: 10px 55px 0 55px; "><img style=" display: inline-block;width: 19px; margin: 0px 5px 0 0; " src="{% static 'building.png'%}"><p style=" display: inline-block; ">Apartment</p> </div>
+             </div>
+          </div>
+         <div class="col-lg-4 col-md-12"style="text-align: center;">
+              <div style=" display: flex; justify-content: center; ">
+                                <div  class="swiper-button-prev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 24px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-next" style="background-image:url({% static 'right.svg'%});background-color: #302D54; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+          </div>
+    </div>
+
+
+        <div class="row  ">
+          <div class="col-lg-12 col-md-12"style="text-align: left;margin-top:20px;">
+
+
+                <div id="c1" class="tabcontent container" style="display:block;">
+  <div class="swiper_wrap">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            {% for o in villas %}
+            <div class="swiper-slide">
+
+                <div style="width: 95%; height: 450px;">
+                    <a href="{% url 'offer' o.id%}"> <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                        </a>
+                    <div style="    margin: 23px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
+                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
+                    <div style="    margin: -5px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
+                    <div style=" display: flex; ">
+                        <div class="cvv1" style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
+                        <div class="cvv2" style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
+                        <div class="cvv3" style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 17px; margin-right: 6px;"src="{% static 'square.svg'%}">{{o.square}} </div>
+                    </div>
+                </div>
+          </div>
+          {% endfor%}
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
+
+                <div id="c2" class="tabcontent container" style="display:block;">
+  <div class="swiper_wrap">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            {% for o in apartments %}
+            <div class="swiper-slide">
+
+                <div style="width: 95%; height: 450px;">
+                     <a href="{% url 'offer' o.id%}"> <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div></a>
+                    <div style="    margin: 23px 0 15px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 27.6px; font-style: normal; font-weight: 600; line-height: normal;">{{o.price}}</div>
+                    <div style="    margin: 0px 0 10px 0;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;">{{o.name}}</div>
+                    <div style="    margin: -5px 0 10px 0;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{o.address}}</div>
+                    <div style=" display: flex; ">
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 25px; margin-right: 6px;" src="{% static 'bed.svg'%}">{{o.bed}} </div>
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 20px; margin-right: 6px;"src="{% static 'bath.svg'%}">{{o.bath}} </div>
+                        <div style="margin-right: 17px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; /* Paragraph - Regular */ font-family: Poppins; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"><img style=" width: 17px; margin-right: 6px;"src="{% static 'square.svg'%}">{{o.square}} </div>
+                    </div>
+                </div>
+          </div>
+          {% endfor%}
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
+
+          </div>
+
+
+
+        </div>
+
+        </div>
+      </div>
+{% endif %}
+
+
+<script>
+function openCityy(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinkk = document.getElementsByClassName("tablinkk");
+  for (i = 0; i < tablinkk.length; i++) {
+    tablinkk[i].className = tablinkk[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+{% if sorting_sections.feedbacks_active %}
+<div class=" mt-5" style=" background:#F6F8FA;    padding: 60px 0 60px 0;">
+
+        <div class="row  ">
+          <div class="col-lg-12 col-md-12" style="text-align: center;">
+            <div style="    margin: 3px 0 59px 0;color: #2B2B2B; text-align: center; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">
+                {{feedback_section.title}}</div>
+
+
+
+      <div class="swiperr swiper-container" style=" padding: 0 0 59px 0; ">
+        <div class="swiper-wrapper">
+
+        {% for f in feedback %}
+          <div class="swiper-slide" style="padding-right: 9px; padding-left: 9px;">
+                         <div style="background-image:url({{f.background_image.url}});border-radius:10px;height: 350px; background-size: cover;"></div>
+            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -76px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100; position: inherit; ">
+                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“{{f.text | safe}}”</div>
+                <div style=" display: flex;margin-top:20px; ">
+                    <div style="background-size:cover;background-image:url({{f.user_image.url}}); height:50px; width:50px;border-radius:50%;">
+                    </div>
+                    <div style=" padding: 5px 0 0 14px; ">
+                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">
+                            {{f.full_name}}</div>
+                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">{{f.position}}</div>
+                    </div>
+                </div>
+
+
+            </div>
+          </div>
+
+            {% endfor%}
+
+
+
+
+
+
+
+        </div>
+ <div class="swiper-pagination"></div>
+
+      </div>
+
+       <!-- Add Arrows -->
+
+
+
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+{% endif%}
+
+
+
+
+
+    <footer class="pt-5">
+      <section class="container-fluid bg-white d-flex justify-content-center align-items-center">
+        <div class="bcvx row container p-5">
+          <hr class="w-100" style=" margin-bottom: 49px; " />
+
+          <div class="col-md-6 xt-center   justify-content-center align-items-center">
+            <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                {{general.address}}
+            </p>
+              <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                <img style=" margin-right: 8px; " src="{% static 'phone.svg'%}"> {{general.phone}}
+            </p>
+              <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                <img style=" margin-right: 8px; " src="{% static 'email.svg'%}">{{general.email}}
+            </p>
+          </div>
+            <div class=" bnmg col-md-6    justify-content-center align-items-center" style="text-align: center;">
+            <a href="{% url 'index'%}"    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">Follow Us on</a>
+            <div style="    margin-top: 14px;">
+                {% for s in socials %}
+                <a style=" text-decoration: none; " href="{{s.link}}"><img style=" width: 30px; " src="{{s.icon.url}}"> </a>
+                {% endfor%}
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+        <section style=" height: 60px; background-color: #302D54; ">
+            <div class="container">
+            <div style="    padding-top: 16px;color: var(--Text-Colour-4, #AAA); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">{{general.copyright}}</div>
+
+            </div>
+        </section>
+    </footer>
+  <div id="light">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+      <video id="VisaChipCardVideo"  style="width:900px;" controls>
+          <source src="{{video_section.video_file.url}}" type="video/mp4">
+          <!--Browser does not support <video> tag -->
+        </video>
+    </div>
+ <div id="fade" onClick="lightbox_close();"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d5c98c56f9.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+        window.omnisend = window.omnisend || [];
+        omnisend.push(["accountID", "6526f28b8530cf73f8d2e6d3"]);
+        omnisend.push(["track", "$pageViewed"]);
+        !function(){var e=document.createElement("script");
+        e.type="text/javascript",e.async=!0,
+        e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
+        var t=document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e,t)}();
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+<script>
+       var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3.5,
+      slidesPerGroup: 3,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        960: {
+          slidesPerView: 2,
+        }
+      }
+    });
+</script>
+
+  <script>
+       var swiperr = new Swiper('.swiperr', {
+      slidesPerView: 2.5,
+    spaceBetween: 30,
+        watchSlidesVisibility: true,
+pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      breakpoints: {
+        960: {
+          slidesPerView: 1,
+        }
+      }
+    });
+</script>
+
+
+  <script>
+      setTimeout(function(){
+    tabcontent2 = document.getElementById("c2");
+    tabcontent2.style.display = "none";
+}, 1000);
+  </script>
+
+
+<script>
+    window.document.onkeydown = function(e) {
+        if (!e) {
+          e = event;
+        }
+        if (e.keyCode == 27) {
+          lightbox_close();
+        }
+      }
+
+      function lightbox_open() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        window.scrollTo(0, 0);
+        document.body.style.overflow = 'hidden';
+        document.getElementById('light').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+        lightBoxVideo.play();
+      }
+
+      function lightbox_close() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+        lightBoxVideo.pause();
+        document.body.style.overflow = 'scroll';
+      }
+    </script>
+
+  <script>
+      const boxes = document.querySelectorAll('.swiper-button-next');
+
+boxes.forEach(box => {
+  // ✅ Remove class from each element
+  box.classList.remove('swiper-button-disabled');
+
+
+});
+  </script>
+  </body>
+</html>
+
