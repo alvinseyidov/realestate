@@ -425,7 +425,20 @@ display:none !important;
     --bs-gutter-x: unset !important;
     }
     </style>
+<style>
+ @media screen and (max-width: 600px){
+    .header {
+        padding-left: 15px !important;
+    padding-right: 15px !important;
+    }
 
+    .row  {
+     padding-left: 15px !important;
+    padding-right: 15px !important;
+    }
+
+    }
+</style>
   </head>
   <body>
 
@@ -442,7 +455,6 @@ display:none !important;
                   <div class="cccx3" style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
                   <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
                   <div style=" width: 190px;    display: inline-block; " class="cccx2"><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
-                  <div class="cccx5" style=" width: 70px; display: inline-block;"><img src="{% static 'lang.svg'%}"></div>
                 </div>
             </div>
         </div>
@@ -459,14 +471,15 @@ display:none !important;
           <div class="col-lg-6 col-md-12" style="">
             <div class="cccx7" style="padding-left: 142px; padding-top: 177px;    padding-right: 18px;">
               <h1 class="cccx8 pb-2 display-2   redffg" style="color: #000; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 700; line-height: 40px;">
-                 Ağıllı İnsanlar üçün ağıllı İnvestisiya İmkanları!
+                  {{main_section.title}}
                  </h1>
             <p class="pb-4 mt-4" style=" color: #000;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
-               Ağıllı yatırım yalnız daha çox gəlir gətirən deyil, eyni zamanda daha az riskli, gələcəyə yönəlik, bərabərində real qazanc imkanları ilə yanaşı başqa üstünlüklər də gətirə bilən və təbii ki, istənilən vaxt digər vacib resurslara çevrilə bilən yatırımdır.</p>
+            {{main_section.text}}
+            </p>
 
                 <p class="pb-4 mt-4" style=" color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
-               Cəmi 80.000 AZN-dən başlayan investisiya ilə Antalyada Daşınmaz Əmlak sahibi ol!</p>
-                <a href="#evler" style="     text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; ">İmkanlara bax</a>
+                {{main_section.text2}} </p>
+                <a href=" {{main_section.button_link}} " style="     text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
 
                 </div>
           </div>
@@ -638,7 +651,7 @@ display:none !important;
 
 
 
- 
+
 
 
 

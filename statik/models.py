@@ -28,12 +28,9 @@ class SortingSections(models.Model):
 class MainSection(models.Model):
     title = models.TextField()
     text = models.TextField()
+    text2 = models.TextField()
     button_text = models.CharField(max_length=256)
     button_link = models.CharField(max_length=256)
-    number1 = models.CharField(max_length=256, null=True, blank=True)
-    number1_text = models.CharField(max_length=256, null=True, blank=True)
-    number2 = models.CharField(max_length=256, null=True, blank=True)
-    number2_text = models.CharField(max_length=256, null=True, blank=True)
     background_image = models.ImageField()
 
     def __str__(self):
