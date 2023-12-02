@@ -10,6 +10,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', core_views.index, name="index"),
     path('contactform/', core_views.contactform, name="contactform"),
+    path('waitlist/', core_views.contactform2, name="waitlist"),
     path('offer/<int:id>/', offer_views.offer, name="offer")
 ]
 

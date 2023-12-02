@@ -90,10 +90,29 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
+
+
+
+class Feature(models.Model):
+    image = models.ImageField()
+    title = models.CharField(max_length=256)
+    icon = models.FileField()
+    description = models.TextField()
+    color = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.title
+
+class Waitlist(models.Model):
+    email = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.email
+
 class Contact(models.Model):
     name = models.CharField(max_length=256)
     email = models.CharField(max_length=256)
     phone = models.CharField(max_length=256)
 
     def __str__(self):
-        return f'{self.name} {self.surname} - {self.phone}'
+        return f'{self.name} {self.email} - {self.phone}'

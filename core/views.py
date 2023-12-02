@@ -1,7 +1,38 @@
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, FAQ, Feedback, Contact
+from core.models import General, Social, Why, Tablar, FAQ, Feedback, Contact, Feature, Waitlist
 from offer.models import Offer
 from statik.models import *
+
+
+
+def contactform2(request):
+    general = General.objects.last()
+    socials = Social.objects.all()
+
+
+    main_section = MainSection.objects.last()
+
+
+
+
+    if request.method == 'POST':
+        email = ''
+
+        try:
+            email = request.POST.get('email')
+        except:
+            email = ''
+
+        Waitlist.objects.create(
+            email=email,
+        )
+
+        context = {
+            "general": general,
+            "socials": socials,
+            "main_section": main_section,
+        }
+        return render(request, "success2.html", context)
 
 
 def contactform(request):
@@ -54,6 +85,7 @@ def index(request):
     faq = FAQ.objects.all()
     feedback = Feedback.objects.all()
 
+    features = Feature.objects.all()
     main_section = MainSection.objects.last()
     why_section = WhySection.objects.last()
     advantage_section = AdvantageSection.objects.last()
@@ -72,6 +104,7 @@ def index(request):
 
     context = {
         "sorting_sections": sorting_sections,
+        "features": features,
         "faq": faq,
         "feedback": feedback,
         "villas": villas,
