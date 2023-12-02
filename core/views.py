@@ -16,23 +16,23 @@ def contactform(request):
 
     if request.method == 'POST':
         name = ''
-        surname = ''
+        email = ''
         phone = ''
         try:
             name = request.POST.get('name')
         except:
             name = ''
         try:
-            surname = request.POST.get('surname')
+            email = request.POST.get('email')
         except:
-            surname = ''
+            email = ''
         try:
             phone = request.POST.get('phone')
         except:
             phone = ''
         Contact.objects.create(
             name=name,
-            surname=surname,
+            email=email,
             phone=phone
         )
 
@@ -55,14 +55,19 @@ def index(request):
     feedback = Feedback.objects.all()
 
     main_section = MainSection.objects.last()
-    video_section = VideoSection.objects.last()
     why_section = WhySection.objects.last()
     advantage_section = AdvantageSection.objects.last()
     processes_section = ProcessesSection.objects.last()
     getconsultation_section = GetConsultationSection.objects.last()
     offers_section = OffersSection.objects.last()
+    form_section = FormSection.objects.last()
     feedback_section = FeedbackSection.objects.last()
+    muzakire = MuzakireEdek.objects.last()
     sorting_sections = SortingSections.objects.last()
+    banner1 = GeliriHesablaBanner.objects.last()
+    smart = SmartInvest.objects.last()
+    niye = NiyeSecirler.objects.last()
+    suallar = Suallar.objects.all()
 
 
     context = {
@@ -76,8 +81,13 @@ def index(request):
         "why": why,
         "socials": socials,
         "main_section" : main_section,
-    "video_section" :video_section,
     "why_section" :why_section,
+    "banner1" :banner1,
+    "muzakire" :muzakire,
+    "form_section" :form_section,
+    "niye" :niye,
+    "smart" :smart,
+    "suallar" :suallar,
     "advantage_section" :advantage_section,
     "processes_section" :processes_section,
     "getconsultation_section" :getconsultation_section,

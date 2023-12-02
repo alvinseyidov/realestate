@@ -92,7 +92,7 @@ class FAQ(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=256)
-    surname = models.CharField(max_length=256)
+    email = models.CharField(max_length=256)
     phone = models.CharField(max_length=256)
 
     def __str__(self):

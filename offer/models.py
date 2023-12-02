@@ -34,6 +34,12 @@ class Offer(models.Model):
 
     description = models.TextField()
 
+    ilkin_mebleg = models.CharField(max_length=256, null=True,blank=True)
+    maks_ayliq_kiraye = models.CharField(max_length=256, null=True,blank=True)
+    real_bazar_qiymeti = models.CharField(max_length=256, null=True,blank=True)
+    umumi_mebleg = models.CharField(max_length=256, null=True,blank=True)
+    on_il_sonraki_qiymet = models.CharField(max_length=256, null=True,blank=True)
+    umumi_net_gelir = models.CharField(max_length=256, null=True,blank=True)
 
     def __str__(self):
         return self.name
