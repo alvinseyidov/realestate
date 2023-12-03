@@ -16,6 +16,12 @@
 
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+      <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/vkuliev/3-addimda-agilli-yatirim', text: 'Webinara yazıl', color: '#00abff', textColor: '#ffffff', branding: undefined }); }</script>
+<!-- Calendly badge widget end -->
+
 	<style>
 .cc1 {
     text-align: center;
@@ -940,7 +946,7 @@ width:100% !important;
                      <div class="col-lg-6 col-md-12 sualbannercol" style=" padding-right: 20px; ">
                          {% for s in suallar %}
                          {% if forloop.counter > 3 %}
-                         <a class="sualbannerlink" href="#" style=" display: block;      margin: 23px 0 23px 0;width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
+                         <a class="sualbannerlink " href="#" style=" display: block;      margin: 23px 0 23px 0;width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
 
                          {% endif%}
                          {% endfor%}
@@ -1314,8 +1320,9 @@ width:100% !important;
                     <div class="col-lg-6 col-md-12"> <div class="discusstitle" style=" color: #fff; font-size: 38px; line-height: 50px; padding: 52px 59px; font-weight: 500; ">
                         {{muzakire.title}}</div></div>
                     <div class="col-lg-6 col-md-12">
-                        <div class="discusstext" style=" color: #fff; padding: 54px 104px 0 0px; font-size: 17px; ">{{muzakire.text}}</div>
-                            <a class="discussbutton" href="{{muzakire.button_link}}" style=" background-color: #000; color: #fff; text-decoration: none; padding: 13px 23px; border-radius: 26px; display: block; width: 250px; text-align: center; margin-top: 25px; ">{{muzakire.button_text}}</a>
+                        <div class="discusstext " style=" color: #fff; padding: 54px 104px 0 0px; font-size: 17px; ">{{muzakire.text}}</div>
+                            
+                                <a class="discussbutton"   style=" background-color: #000; color: #fff; text-decoration: none; padding: 13px 23px; border-radius: 26px; display: block; width: 250px; text-align: center; margin-top: 25px; ">{{muzakire.button_text}}</a>
                     </div>
                 </div>
             </div>
