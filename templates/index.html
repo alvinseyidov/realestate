@@ -601,8 +601,34 @@ width:100% !important;
 
     </header>
 
-{% if sorting_sections.main_section_active %}
-  <div class="" style="background-image:url({{main_section.background_image.url}});    background-size: cover;background-size: cover; height: 750px; background-position: center;">
+
+  <div class="mobilee" style="background-image:url({% static 'mainbg.jpg'%});    background-size: cover;background-size: cover;  background-position: right;">
+        <div class="row  ">
+          <div class="col-lg-6 col-md-12" style="">
+            <div class="cccx7" style="padding-top: 54px !important;padding-right: 18px;">
+              <h1 class="cccx8 pb-2 display-2   redffg" style="color: #000;font-family: Montserrat;font-size: 23px !important;font-style: normal;font-weight: 700;line-height: 34px;">
+                  {{main_section.title}}
+                 </h1>
+            <p class="pb-4 mt-4" style="       text-align: justify; margin-bottom: 0; margin-top: 0 !important;color: #000;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
+            {{main_section.text}}
+            </p>
+
+                <p class="pb-4 mt-4" style=" margin: 0 0 !important; padding-bottom: 0 !important;color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
+                {{main_section.text2}} </p>
+                <div style=" position: relative; ">
+                <img src="{% static 'man.png'%}" style=" width: 100%; ">
+                 <a href=" {{main_section.button_link}} " style="    position: absolute; bottom: 67px; left: 50%; width: 214px; transform: translate(-50%, -50%); text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
+
+                </div>
+
+                </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            </div>
+        </div>
+      </div>
+
+  <div class="desktopp" style="background-image:url({{main_section.background_image.url}});    background-size: cover;background-size: cover; height: 750px; background-position: center;">
         <div class="row  ">
           <div class="col-lg-6 col-md-12" style="">
             <div class="cccx7" style="padding-left: 142px; padding-top: 177px;    padding-right: 18px;">
@@ -623,7 +649,7 @@ width:100% !important;
             </div>
         </div>
       </div>
-{% endif%}
+
 
 <style>
     .strips__strip--expanded .displaynone {
