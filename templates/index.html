@@ -762,14 +762,14 @@ width:100% !important;
 
 
 <div class=" mt-5"  style="margin-top:70px !important;">
-        <div class="row  " style="padding-left: 142px; padding-right:142px;">
+        <div  id="row1" class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
                  <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">{{processes_section.title}}</div>
 
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process1_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process1_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                     <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
@@ -777,7 +777,7 @@ width:100% !important;
             </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process2_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process2_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                     <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
@@ -786,7 +786,7 @@ width:100% !important;
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process3_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process3_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                     <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
@@ -795,7 +795,7 @@ width:100% !important;
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process4_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process4_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
                 <div style=" padding-right: 47px; ">{{processes_section.process4_text}}</div>
@@ -2018,6 +2018,122 @@ myForm.addEventListener('submit', function(e) {
   e.preventDefault(); // You wouldn't prevent it
 });
   </script>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        var level = 0;
+        const icons = document.querySelectorAll('.icon');
+        var container = document.getElementById('row1');
+        var containerRect = container.getBoundingClientRect();
+        var scrollStopped = false;
+        var isTouchpadScroll = false;
+
+
+        function shouldStopScroll() {
+            return containerRect.top < 450 && containerRect.top > 50;
+        }
+
+        function indicateForward() {
+            if (containerRect.top < 600 && containerRect.top > -200) {
+                if (!isTouchpadScroll && level < 500) {
+                    level += 15;
+                }
+                if (isTouchpadScroll && level < 500) {
+                    level += 3.5;
+                }
+                changeBackGroundImage();
+            }
+        }
+
+        function indicateBack() {
+            if (containerRect.top < 600 && containerRect.top > -200) {
+                if (!isTouchpadScroll && level > 0) {
+                    level -= 15;
+                }
+                if (isTouchpadScroll && level > 0) {
+                    level -= 3.5;
+                }
+                changeBackGroundImage();
+            }
+        }
+
+        function changeBackGroundImage() {
+            if (level < 150) {
+                makeIconsDefault();
+                icons[0].style.backgroundImage = "url({% static 'i11.svg'%})";
+                icons[0].style.border = "1px solid rgb(55 111 255)";
+            }
+            if (level > 150 && level < 250) {
+                makeIconsDefault();
+                icons[1].style.backgroundImage = "url({% static 'i21.svg'%})";
+                icons[1].style.border = "1px solid rgb(55 111 255)";
+            }
+            if (level > 250 && level < 350) {
+                makeIconsDefault();
+                icons[2].style.backgroundImage = "url({% static 'i31.svg'%})";
+                icons[2].style.border = "1px solid rgb(55 111 255)";
+            }
+            if (level > 350 && level < 450) {
+                makeIconsDefault();
+                icons[3].style.backgroundImage = "url({% static 'i41.svg'%})";
+                icons[3].style.border = "1px solid rgb(55 111 255)";
+            }
+
+        }
+
+        function makeIconsDefault() {
+            icons[0].style.backgroundImage = "url({% static 'i1.svg'%})";
+            icons[0].style.border = "1px solid rgb(227, 229, 234)";
+
+            icons[1].style.backgroundImage = "url({% static 'i2.svg'%})";
+            icons[1].style.border = "1px solid rgb(227, 229, 234)";
+
+            icons[2].style.backgroundImage = "url({% static 'i3.svg'%})";
+            icons[2].style.border = "1px solid rgb(227, 229, 234)";
+
+            icons[3].style.backgroundImage = "url({% static 'i4.svg'%})";
+            icons[3].style.border = "1px solid rgb(227, 229, 234)";
+        }
+
+        $(document).on("wheel", function (event) {
+
+            if( Math.abs(event.originalEvent.wheelDeltaY) !== 120 ) {
+                isTouchpadScroll = true;
+            } else {
+                isTouchpadScroll = false;
+            }
+
+            console.log(event.originalEvent.wheelDeltaY);
+            containerRect = container.getBoundingClientRect();
+
+            if (shouldStopScroll() && scrollStopped === false) {
+                $("body").css("overflow", "hidden");
+                scrollStopped = true;
+
+            }
+
+            if (scrollStopped) {
+                if (event.originalEvent.deltaY > 0) {
+                    indicateForward();
+                    if (level > 450) {
+                        $("body").css("overflow", "auto");
+                        scrollStopped = false;
+                    }
+
+                } else {
+                    indicateBack();
+                    if (level < 50) {
+                        $("body").css("overflow", "auto");
+                        scrollStopped = false;
+                    }
+                }
+            }
+        });
+    });
+</script>
   </body>
 </html>
 
