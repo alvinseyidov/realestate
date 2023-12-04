@@ -981,7 +981,7 @@ width:100% !important;
                      <div class="col-lg-6 col-md-12 sualbannercol" style=" padding-right: 20px; ">
                          {% for s in suallar %}
                          {% if forloop.counter < 4 %}
-                         <a class="sualbannerlink" href="#" style="     margin: auto;    margin: 23px 0 23px auto;display: block;  width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
+                         <a class="sualbannerlink" href="#evler" style="     margin: auto;    margin: 23px 0 23px auto;display: block;  width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
 
                          {% endif%}
                          {% endfor%}
@@ -989,7 +989,7 @@ width:100% !important;
                      <div class="col-lg-6 col-md-12 sualbannercol" style=" padding-right: 20px; ">
                          {% for s in suallar %}
                          {% if forloop.counter > 3 %}
-                         <a class="sualbannerlink " href="#" style=" display: block;      margin: 23px 0 23px 0;width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
+                         <a class="sualbannerlink " href="#evler" style=" display: block;      margin: 23px 0 23px 0;width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
 
                          {% endif%}
                          {% endfor%}
@@ -1270,9 +1270,9 @@ width:100% !important;
             </div>
             <div class="col-lg-6 col-md-12" style="background-color:#02B5FD;">
                 <div class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; "><form action="{% url 'contactform'%}" method="post">{% csrf_token%}
-                    <div><input name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad"> </div>
-                    <div><input name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
-                    <div style=" position: relative; "><img style=" position: absolute; top: 5px; left: 46px; " src="{% static 'flag.png'%}"><span style=" position: absolute; left: 75px; top: 1px; font-weight: 500; ">+994</span> <input name="phone" id="phone"  placeholder="55-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 92px " type="text"> </div>
+                    <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad"> </div>
+                    <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
+                    <div style=" position: relative; "><img style=" position: absolute; top: 5px; left: 46px; " src="{% static 'flag.png'%}"><span style=" position: absolute; left: 75px; top: 1px; font-weight: 500; ">+994</span> <input required name="phone" id="phone"  placeholder="55-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 92px " type="text"> </div>
                     <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">{{form_section.form_button_text}}</button></div>
                     </form>
                 </div>
@@ -1545,15 +1545,15 @@ width:100% !important;
                       class="accordionButton border-0 bg-transparent"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
+                      data-bs-target="#collapseOne{{forloop.counter}}"
                       aria-expanded="true"
-                      aria-controls="collapseOne">
-                      <img class="arrow-down " src="{% static 'open.svg'%}" style=" margin-right: 20px; " alt="" />
+                      aria-controls="collapseOne{{forloop.counter}}">
+                      <img class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
                     </button>
                   </h2>
                 </div>
                 <div
-                  id="collapseOne"
+                  id="collapseOne{{forloop.counter}}"
                   class="accordion-collapse collapse "
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">

@@ -12,7 +12,16 @@
       <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
+  <script>
 
+ window.setTimeout(function(){
+
+        // Move to a new location or you can do something else
+        window.location.href = "/";
+
+    }, 6000);
+
+   </script>
 	<style>
 .cc1 {
     text-align: center;
@@ -454,10 +463,12 @@ display:none !important;
         <div class="row  ">
 
           <div class="col-lg-12 col-md-12">
-            <div class="vvvx1" style="background-color:#fff;padding-top: 1px;margin: auto;margin-top: 150px;width: 590px;border-radius: 10px;padding: 19px 10px;margin-bottom: 150px;">
+            <div class="vvvx1" style="    text-align: center;background-color:#fff;padding-top: 1px;margin: auto;margin-top: 150px;width: 590px;border-radius: 10px;padding: 19px 10px;margin-bottom: 150px;">
                 <div style="margin:50px 0px 50px 0 !important;text-align: center;color: #000; font-family: Montserrat; font-size: 25px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -0.5px;">
                     Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.
                 </div>
+
+                <div style=" display: inline; text-align: center; font-size: 18px; ">Əsas səhifəyə yönləndiriləcəksiniz...<div id="progressBar" style="     margin-left: 23px;display: inline;"></div></div>
 
 
             </div>
@@ -467,7 +478,16 @@ display:none !important;
 
 
 
-
+<script>
+    var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+  }
+  document.getElementById("progressBar").innerHTML = -(5 - timeleft);
+  timeleft -= 1;
+}, 1000);
+</script>
 
 
 
@@ -621,6 +641,8 @@ pagination: {
         document.body.style.overflow = 'scroll';
       }
     </script>
+
+
   </body>
 </html>
 
