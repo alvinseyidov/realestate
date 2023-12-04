@@ -21,7 +21,7 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/vkuliev/3-addimda-agilli-yatirim', text: 'Webinara yazıl', color: '#00abff', textColor: '#ffffff', branding: undefined }); }</script>
 <!-- Calendly badge widget end -->
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 	<style>
 .cc1 {
     text-align: center;
@@ -803,14 +803,14 @@ width:100% !important;
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div   style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
                 <div style=" padding-right: 47px; ">{{processes_section.process1_text}}</div>
             </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i21.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div   style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i21.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
                 <div style=" padding-right: 47px; ">{{processes_section.process2_text}}</div>
@@ -818,7 +818,7 @@ width:100% !important;
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i31.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div  style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i31.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
                 <div style=" padding-right: 47px; ">{{processes_section.process3_text}}</div>
@@ -826,7 +826,7 @@ width:100% !important;
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i41.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div   style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i41.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
                 <div style=" padding-right: 47px; ">{{processes_section.process4_text}}</div>
@@ -908,7 +908,7 @@ width:100% !important;
             <div class="col-lg-12 col-md-12" style="  ">
                 <div class="row">
                      <div class="col-lg-7 col-md-12">
-                         <div class="calculatortitle" style="font-size: 37px;font-weight: 500;padding: 0px 70px 100px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
+                         <div class="calculatortitle" style="font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
 
 
 
@@ -927,9 +927,32 @@ width:100% !important;
 
 
 
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
+<script>
+const xValues = [50,60,70,80,90,100,110,120,130,140,150];
+const yValues = [7,8,8,9,9,9,10,11,14,14,15];
 
-
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
 
                      </div>
                      <div class="col-lg-5 col-md-12">
