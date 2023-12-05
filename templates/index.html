@@ -17,12 +17,12 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
       <!-- Calendly badge widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<link href="https://assets.calendly.com/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/external/widget.js" type="text/javascript" async></script>
 <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/vkuliev/3-addimda-agilli-yatirim', text: 'Webinara yazıl', color: '#00abff', textColor: '#ffffff', branding: undefined }); }</script>
 <!-- Calendly badge widget end -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-	<style>
+ 	<style>
 .cc1 {
     text-align: center;
 }
@@ -199,7 +199,7 @@ display:none !important;
   .cccc{
   padding: 14px 19px 14px 19px !important;
   }
-  
+
   .ccc1{
       font-size: 14px !important;
   }
@@ -208,18 +208,18 @@ display:none !important;
     width: 247px !important;
     margin-bottom: 32px !important;
   }
-  
+
   .ccc3{
 	    top: 6px !important;
   }
-  
+
   .ccc4{
 	    padding: 20px 11px 20px 19px !important;
   }
   .ccc5{
 	    padding-left: 69px !important;
   }
-  
+
   .ccc6{
 	display: none !important;
   }
@@ -480,7 +480,7 @@ display:none !important;
         display:none !important;
         }
         .calculatorback{
-        background-image: url(/static/banner2.png); height: 450px;
+        background-image: url({% static 'banner2.png'%}); height: 450px;
         }
         .stepler{
             padding: 50px 15px 0 25px !important;
@@ -564,19 +564,23 @@ width:100% !important;
              display: block !important;
         }
 
-        .strips__strip:nth-child(2) {
-    top: 76vh !important;
+     .strips__strip:nth-child(2) {
+    /*top: 520px!important;*/
     }
 
     .strips__strip:nth-child(3) {
-    top: 176vh !important;
+    /*top: 1040px!important;*/
     }
 
     .strips__strip:nth-child(4) {
-    top: 2  76vh !important;
+    /*top: 1560px!important;*/
     }
+
+     .strips__strip_mob {
+         top: 25px!important;
+     }
     .strips {
-    min-height: 306vh !important;
+    min-height: 2085px !important;
     }
 
     }
@@ -661,13 +665,29 @@ width:100% !important;
       </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
     .strips__strip--expanded .displaynone {
     display: none !important;
 }
 </style>
 
-<div style="display: block;" class="desktopp mt-5" >
+<div style="display: block;" class="desktopp mt-5">
         <div class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-6 col-md-12" style=" margin-bottom: 49px; ">
                  <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;">Antalyada Daşınmaz Əmlak bugünün ən ağıllı yatırım imkanlarından biridir!</div>
@@ -680,7 +700,7 @@ width:100% !important;
  <div class="col-lg-12 col-md-12">
 
 <section class="strips" style="position:relative;">
-    {% for f in features%}
+
   <article class="strips__strip">
     <div class="strip__content">
 
@@ -691,11 +711,11 @@ width:100% !important;
 
 
         <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
-                  <div class="displaynone" style="background-image:url({{f.image.url}});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
-                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:{{f.color}};text-align: center;">
-                    <img src="{{f.icon.url}}" style=" width: 40px; margin: 21px 0 14px 0; ">
+                  <div class="displaynone" style="background-image:url({% static '1.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#1a3b70;text-align: center;">
+                    <img src="/media/icon1.png" style=" width: 40px; margin: 21px 0 14px 0; ">
                     <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
-                        {{f.title}}</div>
+                        İnvestisiyanız gündəlik dəyər qazanacaq!</div>
                     <a style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
                 </div>
           </div>
@@ -710,12 +730,169 @@ width:100% !important;
 
 
       <div class="strip__inner-text">
-        {{f.description | safe}}
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
+                  </div>
+        </div>
       </div>
 
     </div>
   </article>
-  {% endfor%}
+
+  <article class="strips__strip">
+    <div class="strip__content">
+
+
+
+
+
+
+
+        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
+                  <div class="displaynone" style="background-image:url({% static '2.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#2c599d;text-align: center;">
+                    <img src="media/icon2.png" style=" width: 40px; margin: 21px 0 14px 0; ">
+                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
+                        Zəlzələ riski sizi qətiyyən narahat etməyəcək!</div>
+                    <a style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
+                </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="strip__inner-text">
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form style=" text-align: left;position:relative; ">
+                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
+                  </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="strips__strip">
+    <div class="strip__content">
+
+
+
+
+
+
+
+        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
+                  <div class="displaynone" style="background-image:url({% static '3.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#5c83c4;text-align: center;">
+                    <img src="media/icon3.png" style=" width: 40px; margin: 21px 0 14px 0; ">
+                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
+                        EURO kimi güclü və stabil valyutada gəlir əldə edirsiniz!</div>
+                    <a style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
+                </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="strip__inner-text">
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form style=" text-align: left;position:relative; ">
+                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
+                  </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="strips__strip">
+    <div class="strip__content">
+
+
+
+
+
+
+
+        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
+                  <div class="displaynone" style="background-image:url({% static '4.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#f88125;text-align: center;">
+                    <img src="media/icon4.png" style=" width: 40px; margin: 21px 0 14px 0; ">
+                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
+                        Ən əsası: Dərhal gəlir əldə etməyə başlayırsınız!</div>
+                    <a style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
+                </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="strip__inner-text">
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form action="/waitlist" style=" text-align: left;position:relative; ">
+                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
+                  </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
 
   <div class="strip__close">x</div>
 </section>
@@ -727,7 +904,7 @@ width:100% !important;
 
 
 
-<div style="display: none;" class="mobilee mt-5" >
+<div style="display: none;" class="mobilee mt-5">
         <div class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-6 col-md-12" style=" margin-bottom: 49px; ">
                  <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;">Antalyada Daşınmaz Əmlak bugünün ən ağıllı yatırım imkanlarından biridir!</div>
@@ -739,9 +916,44 @@ width:100% !important;
           </div>
  <div class="col-lg-12 col-md-12">
 
-<section class="strips" style="position:relative;">
-    {% for f in features%}
-  <article class="strips__strip" style=" min-height: 76vh; ">
+<section class="strips strips_mob" style="position:relative;">
+
+  <article class="strips__strip strips__strip_mob" style=" min-height: 520px; ">
+    <div class="strip__content">
+
+        <div class="col-lg-3 col-md-6" style="width:100%; height: 520px !important;">
+                  <div class="displaynone" style="background-image:url({% static '1.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#1a3b70;text-align: center;">
+                    <img src="media/icon1.png" style=" width: 40px; margin: 21px 0 14px 0; ">
+                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
+                        İnvestisiyanız gündəlik dəyər qazanacaq!</div>
+                    <a class="show-details-btn" style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
+                </div>
+          </div>
+
+
+
+      <div class="strip__inner-text">
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12" style="margin-top: 13px;">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style="width: 240px; margin-top: 13px;" src="{% static 'chart.png'%}">
+                  </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="strips__strip strips__strip_mob" style=" min-height: 520px; ">
     <div class="strip__content">
 
 
@@ -750,13 +962,13 @@ width:100% !important;
 
 
 
-        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
-                  <div class="displaynone" style="background-image:url({{f.image.url}});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
-                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:{{f.color}};text-align: center;">
-                    <img src="{{f.icon.url}}" style=" width: 40px; margin: 21px 0 14px 0; ">
+        <div class="col-lg-3 col-md-6" style="width:100%;    height: 520px!important;">
+                  <div class="displaynone" style="background-image:url({% static '2.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#2c599d;text-align: center;">
+                    <img src="media/icon2.png" style=" width: 40px; margin: 21px 0 14px 0; ">
                     <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
-                        {{f.title}}</div>
-                    <a style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
+                        Zəlzələ riski sizi qətiyyən narahat etməyəcək!</div>
+                    <a class="show-details-btn" style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
                 </div>
           </div>
 
@@ -770,14 +982,123 @@ width:100% !important;
 
 
       <div class="strip__inner-text">
-        {{f.description | safe}}
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form style=" text-align: left;position:relative; ">
+                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12" style="margin-top: 13px;">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style="width: 240px; margin-top: 13px;" src="{% static 'chart.png'%}">
+                  </div>
+        </div>
       </div>
 
     </div>
   </article>
-  {% endfor%}
 
-  <div class="strip__close">x</div>
+  <article class="strips__strip strips__strip_mob" style=" min-height: 520px; ">
+    <div class="strip__content">
+
+
+
+
+
+
+
+        <div class="col-lg-3 col-md-6" style="width:100%;    height: 520px!important;">
+                  <div class="displaynone" style="background-image:url({% static '3.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#5c83c4;text-align: center;">
+                    <img src="media/icon3.png" style=" width: 40px; margin: 21px 0 14px 0; ">
+                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
+                        EURO kimi güclü və stabil valyutada gəlir əldə edirsiniz!</div>
+                    <a class="show-details-btn"  style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
+                </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="strip__inner-text">
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form style=" text-align: left;position:relative; ">
+                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12" style="margin-top: 13px;">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style="width: 240px; margin-top: 13px;" src="{% static 'chart.png'%}">
+                  </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="strips__strip strips__strip_mob" style=" min-height: 520px; ">
+    <div class="strip__content">
+
+
+
+
+
+
+
+        <div class="col-lg-3 col-md-6" style="width:100%;    height: 520px!important;">
+                  <div class="displaynone" style="background-image:url({% static '4.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
+                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#f88125;text-align: center;">
+                    <img src="media/icon4.png" style=" width: 40px; margin: 21px 0 14px 0; ">
+                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
+                        Ən əsası: Dərhal gəlir əldə etməyə başlayırsınız!</div>
+                    <a class="show-details-btn" style="background-color:#02B5FD;color: #fff;text-decoration: none;padding: 8px 22px;border-radius: 17px;">Ətraflı</a>
+                </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="strip__inner-text">
+        <div class="row" style=" position: absolute; ">
+                  <div class="col-lg-6 col-md-12">
+                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
+                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
+                      <form action="/waitlist" style=" text-align: left;position:relative; ">
+                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-6 col-md-12" style="margin-top: 13px;">
+                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
+                      <img style="width: 240px; margin-top: 13px;" src="{% static 'chart.png'%}">
+                  </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+
+  <div class="strip__close strip__close_mob">x</div>
 </section>
 
 </div>
@@ -795,89 +1116,88 @@ width:100% !important;
 
 
 
-<div class=" mobilee mt-5"  style="display:none;margin-top:70px !important;">
-        <div   class="row  " style="padding-left: 142px; padding-right:142px;">
+<div class=" mobilee mt-5" style="display:none;margin-top:70px !important;">
+        <div class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
-                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">{{processes_section.title}}</div>
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">Əslində bu, düşündüyünüzdən qat-qat asandır!</div>
 
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div   style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process1_text}}</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Əmlakınızı seçirsiniz</div>
+                <div style=" padding-right: 47px; ">Satışa tam hazır təkliflərimizin və ya özünüzün seçimləriniz arasından sizin şərtlərə və imkanlara ən uyğun daşınmaz əmlak seçimini edirsiniz!</div>
             </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div   style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i21.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i21.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process2_text}}</div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 stepler" style="">
-                <div style=" display: flex; ">
-                    <div  style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i31.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
-                </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process3_text}}</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Alqı-satqını tamamlayırıq</div>
+                <div style=" padding-right: 47px; ">Tamamilə sizin seçiminizdən asılı olaraq, nağd və ya kreditlə əmlakın sizin adınıza alınmasını tamamlayırıq.</div>
             </div>
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div   style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i41.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i31.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process4_text}}</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">İlk kirayəçinizi tapırıq</div>
+                <div style=" padding-right: 47px; ">Əmlakınız sizin adınıza rəsmiləşdikdən və çıxarışı alındıqdan dərhal sonra, vaxt itirmədən passiv gəlir qazanmağınız üçün hərəkətə keçirik! Sizin üçün kirayəçi tapırıq!</div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i41.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Qazanmağa başlayırsınız!</div>
+                <div style=" padding-right: 47px; ">Ağıllı bir investisiya sahibi olaraq hələ heç ödənişini tamamlamadığınız əmlakınızdan real gəlir qazanmağa başlayırsınız!</div>
             </div>
         </div>
 </div>
 
 
 
-<div class=" desktopp mt-5"  style="margin-top:70px !important;">
-        <div  id="row1" class="row  " style="padding-left: 142px; padding-right:142px;">
+<div class=" desktopp mt-5" style="margin-top:70px !important;">
+        <div id="row1" class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
-                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">{{processes_section.title}}</div>
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">Əslində bu, düşündüyünüzdən qat-qat asandır!</div>
 
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process1_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                     <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process1_text}}</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Əmlakınızı seçirsiniz</div>
+                <div style=" padding-right: 47px; ">Satışa tam hazır təkliflərimizin və ya özünüzün seçimləriniz arasından sizin şərtlərə və imkanlara ən uyğun daşınmaz əmlak seçimini edirsiniz!</div>
             </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process2_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i2.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                     <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process2_text}}</div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 stepler" style="">
-                <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process3_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
-                    <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
-                </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process3_text}}</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Alqı-satqını tamamlayırıq</div>
+                <div style=" padding-right: 47px; ">Tamamilə sizin seçiminizdən asılı olaraq, nağd və ya kreditlə əmlakın sizin adınıza alınmasını tamamlayırıq.</div>
             </div>
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process4_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i3.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
-                <div style=" padding-right: 47px; ">{{processes_section.process4_text}}</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">İlk kirayəçinizi tapırıq</div>
+                <div style=" padding-right: 47px; ">Əmlakınız sizin adınıza rəsmiləşdikdən və çıxarışı alındıqdan dərhal sonra, vaxt itirmədən passiv gəlir qazanmağınız üçün hərəkətə keçirik! Sizin üçün kirayəçi tapırıq!</div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i4.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Qazanmağa başlayırsınız!</div>
+                <div style=" padding-right: 47px; ">Ağıllı bir investisiya sahibi olaraq hələ heç ödənişini tamamlamadığınız əmlakınızdan real gəlir qazanmağa başlayırsınız!</div>
             </div>
         </div>
 </div>
-
 
 
 
@@ -1701,7 +2021,6 @@ function openCityy(evt, cityName) {
 
 
 
-
 <style>
     * {
   box-sizing: border-box;
@@ -1721,6 +2040,10 @@ function openCityy(evt, cityName) {
   cursor: pointer;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+    .strips__strip_mob {
+        position: relative!important;
+    }
 .strips__strip:nth-child(1) {
 
 }
@@ -2232,6 +2555,22 @@ myForm.addEventListener('submit', function(e) {
         });
     });
 </script>
-  </body>
+
+  <script>
+
+    $(document).ready(function () {
+        $(".show-details-btn").on("click", function () {
+            $(".strip__close_mob").trigger('click');
+            var buttonIndex = $('.show-details-btn').index(this);
+            var calculatedTop = (buttonIndex * 520 + 20);
+            $(".strip__close_mob").css("top", calculatedTop + "px");
+                 $(this).closest(".strips__strip_mob").attr("style", "min-height: 830px;");
+
+        });
+    });
+
+</script>
+  <div id="omnisend-dynamic-container" style="overflow: hidden; height: 0px;"><div id="omnisend-pixel-container"></div><div id="omnisend-jsonp-container"><script src="https://forms.soundestlink.com/REST/inShop/v1/getSettings?callback=_omnisend.setSettings&amp;responseType=jsonp&amp;shopHostname=127.0.0.1&amp;shopType=api&amp;brandID=6526f28b8530cf73f8d2e6d3"></script></div></div></body>
+
 </html>
 
