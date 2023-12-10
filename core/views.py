@@ -8,7 +8,7 @@ from django.http import JsonResponse
 
 def data(request, year, amount, mortgage):
     from openpyxl import load_workbook
-    import pythoncom
+    
     workbook = load_workbook(filename=os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
     sheet = workbook.active
     sheet["D2"] = int(amount)
@@ -18,91 +18,88 @@ def data(request, year, amount, mortgage):
     workbook.save(filename=os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
     workbook.close()
 
+    import xlwings as xw
+    wbxl=xw.Book(os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
+    print(wbxl.sheets['Sheet1'].range('E20').value)
+   
 
      
+
+     
+
+
+    data = {}
+
+    data['datatr'] = [
+        int(str(abs(wbxl.sheets['Sheet1'].range('E20').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('F20').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('G20').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('H20').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('I20').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('J20').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('K20').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('L20').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('M20').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('N20').value)).split('.')[0])]
+
+    data['dataaz'] = [
+        int(str(abs(wbxl.sheets['Sheet1'].range('E35').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('F35').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('G35').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('H35').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('I35').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('J35').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('K35').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('L35').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('M35').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('N35').value)).split('.')[0])]
+
+    data['databank'] = [
+        int(str(abs(wbxl.sheets['Sheet1'].range('E43').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('F43').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('G43').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('H43').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('I43').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('J43').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('K43').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('L43').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('M43').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('N43').value)).split('.')[0])]
+
+
+    data['datatr2'] = [
+       int(str(abs(wbxl.sheets['Sheet1'].range('E57').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('F57').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('G57').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('H57').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('I57').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('J57').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('K57').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('L57').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('M57').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('N57').value)).split('.')[0])]
+
+    data['dataaz2'] = [
+        int(str(abs(wbxl.sheets['Sheet1'].range('E72').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('F72').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('G72').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('H72').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('I72').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('J72').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('K72').value)).split('.')[0]),
+        int(str(abs(wbxl.sheets['Sheet1'].range('L72').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('M72').value)).split('.')[0]), 
+        int(str(abs(wbxl.sheets['Sheet1'].range('N72').value)).split('.')[0])]
+
+    data['field11'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
+    data['field12'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
+
+    data['field21'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
+    data['field22'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
+
     
-    import win32com.client
-    Excel = win32com.client.Dispatch("Excel.Application",pythoncom.CoInitialize())
-
-    file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx")
-    wb = Excel.Workbooks.Open(file)
-    sheet = wb.ActiveSheet
-    try:
-        print("valueeeeeeeeeeeeeee")
-        boo = sheet.Cells(3, 4).value
-        print(sheet.Cells(20, 5).value)
-        data = {}
-        
-        data['datatr'] = [
-        int(str(abs(sheet.Cells(20, 5).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(20, 6).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(20, 7).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(20, 8).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(20, 9).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(20, 10).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(20, 11).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(20, 12).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(20, 13).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(20, 14).value)).split('.')[0])]
-
-        data['dataaz'] = [
-        int(str(abs(sheet.Cells(35, 5).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(35, 6).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(35, 7).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(35, 8).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(35, 9).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(35, 10).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(35, 11).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(35, 12).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(35, 13).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(35, 14).value)).split('.')[0])]
-
-        data['databank'] = [
-        int(str(abs(sheet.Cells(43, 5).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(43, 6).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(43, 7).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(43, 8).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(43, 9).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(43, 10).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(43, 11).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(43, 12).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(43, 13).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(43, 14).value)).split('.')[0])]
-
-
-        data['datatr2'] = [
-        int(str(abs(sheet.Cells(57, 5).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(57, 6).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(57, 7).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(57, 8).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(57, 9).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(57, 10).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(57, 11).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(57, 12).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(57, 13).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(57, 14).value)).split('.')[0])]
-
-        data['dataaz2'] = [
-        int(str(abs(sheet.Cells(72, 5).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(72, 6).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(72, 7).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(72, 8).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(72, 9).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(72, 10).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(72, 11).value)).split('.')[0]),
-        int(str(abs(sheet.Cells(72, 12).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(72, 13).value)).split('.')[0]), 
-        int(str(abs(sheet.Cells(72, 14).value)).split('.')[0])]
-
-        data['field11'] =round(float(sheet.Cells(7, 4).value) * float(sheet.Cells(7, 4).value),2)
-        data['field12'] =round(float(sheet.Cells(7, 4).value) * float(sheet.Cells(4, 4).value),2)
-
-        data['field21'] =round(float(sheet.Cells(74, 9).value) * float(sheet.Cells(7, 4).value),2)
-        data['field22'] =round(float(sheet.Cells(75, 9).value) * float(sheet.Cells(4, 4).value),2)
-        wb.Close(True)
-    except:
-        wb.Close(True)
-    
+    wbxl.save()
+    wbxl.close()
         
 
 
