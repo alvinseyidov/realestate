@@ -1232,47 +1232,66 @@ width:100% !important;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-
-<script>
-const xValues = [50,60,70,80,90,100,110,120,130,140,150];
-const yValues = [7,8,8,9,9,9,10,11,14,14,15];
-
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{
-      fill: false,
-      lineTension: 0,
-      backgroundColor: "rgba(0,0,255,1.0)",
-      borderColor: "rgba(0,0,255,0.1)",
-      data: yValues
-    }]
-  },
-  options: {
-    legend: {display: false},
-    scales: {
-      yAxes: [{ticks: {min: 6, max:16}}],
-    }
+<style>
+  button.tablinks.active{
+    display: inline; cursor:pointer;margin-right:10px;border: 1px solid #02b5fd; border-radius: 27px; padding: 10px 55px 0 55px; 
+    padding: 10px 55px 10px 55px;
+    background-color: #02b5fd;
+    color: #fff;
   }
-});
+
+  button.tablinks{
+    display: inline; margin-right:10px;cursor:pointer;border: 1px solid #11218D; border-radius: 27px; padding: 10px 55px 0 55px;
+    padding: 10px 55px 10px 55px;
+    background-color: #fff;
+    color: #11218D;
+  }
+</style>
+  <button class="tablinks active" onclick="openCity(event, 'one')">İpoteka</button>
+  <button class="tablinks" onclick="openCity(event, 'two')">Nağd</button>
+
+
+<div id="one" class="tabcontent" style="display: block;">
+  <div id="chart1"></div>
+</div>
+
+<div id="two" class="tabcontent">
+  <div id="chart2"></div>
+</div>
+
+
+
+
+
+
+
+
+
+                         <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 </script>
+
+
+
+
+
+
+
+
+
+
 
                      </div>
                      <div class="col-lg-5 col-md-12">
@@ -1282,21 +1301,32 @@ new Chart("myChart", {
                         <div class="row  " style=" padding: 5px 15px 34px 62px; ">
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırmaq istədiyiniz ilkin kapital</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="39,800"></div>
-                                <div>  <input class="slider calculatorinput" type="range" min="1" max="100" value="50" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="100000"></div>
+                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="20000" max="2000000" step="1000" value="20000" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Müddət</div>
-                                <div><input class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 24px;" type="text" value="1 il"></div>
-                            <div> <input class="slider calculatorinput" type="range" min="1" max="100" value="50" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                                <div  style=" position: relative; "><span style=" font-weight: 500; font-size: 15px; position: absolute; top: 8px; left: 10px; color: #747474; ">İl</span><input min="2" max="10" id="muddetid" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="10"></div>
+                            <div> <input  id="muddetsliderid" class="slider calculatorinput" type="range" min="2" max="10" step="1" value="10" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən illik kirayə gəliri</div>
-                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="4900 (4.9%)"></div>
+                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field1" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="4900 (4.9%)"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" padding-top: 24px; ">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən illik əmlakın dəyərlənməsi</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="4300 (4.3%)"></div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field2" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="4300 (4.3%)"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12" style=" padding-top: 24px; ">
+                              <input type="radio" id="radio1" name="ipoteka" value="1">
+                              <label for="html">İpoteka</label>
+                              <input type="radio" id="radio2" name="ipoteka" value="0">
+                              <label for="html">Nağd</label>
+                            </div>
+
+                            
+                            <div>
+                                <button id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
                             </div>
                         </div>
                    </div>
@@ -2571,6 +2601,127 @@ myForm.addEventListener('submit', function(e) {
 
 </script>
   <div id="omnisend-dynamic-container" style="overflow: hidden; height: 0px;"><div id="omnisend-pixel-container"></div><div id="omnisend-jsonp-container"><script src="https://forms.soundestlink.com/REST/inShop/v1/getSettings?callback=_omnisend.setSettings&amp;responseType=jsonp&amp;shopHostname=127.0.0.1&amp;shopType=api&amp;brandID=6526f28b8530cf73f8d2e6d3"></script></div></div></body>
+
+   <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
+ <script>
+      var options = {
+          series: [{
+          name: 'Azərbaycan',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        }, {
+          name: 'Türkiyə',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        }, {
+          name: 'Bank',
+          data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
+        },
+        tooltip: {
+
+        },
+        };
+
+        var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+        var chart2 = new ApexCharts(document.querySelector("#chart2"), options);
+        chart1.render();
+        chart2.render();
+
+
+
+        
+   window.onload = function() {
+    var year = 10
+    var amount = 100000
+    $(document).ready(function(){
+      $("#muddetid").keyup(function(){
+        year = (this.value);
+      });
+    });
+
+
+    $(document).ready(function(){
+      $("#ilkinid").keyup(function(){
+        amount = (this.value);
+      });
+    });
+    
+    var mortgage = 1;
+
+    $("#hesabla").on("click",function(){
+    console.log("1");
+        $.ajax({
+            type:"GET",
+            url:`/data/${year}/${amount}/${mortgage}/`,
+            success:function(data){
+
+              if($('input[name="ipoteka"]:checked').val() == 1){
+              $('#field1').val(data['field11']);
+              $('#field2').val(data['field12']);
+              }
+              else{
+                $('#field1').val(data['field21']);
+              $('#field2').val(data['field22']);
+              }
+
+
+              console.log("dataaaa");
+              console.log(data)
+              console.log(data['datatr'])
+              console.log(data['databank'])
+
+             chart1.updateSeries([{
+          name: 'Azərbaycan',
+          data: data['dataaz']
+        }, {
+          name: 'Türkiyə',
+          data: data['datatr']
+        }, {
+          name: 'Bank',
+          data: data['databank']
+        }])
+
+        chart2.updateSeries([{
+          name: 'Azərbaycan',
+          data: data['dataaz2']
+        }, {
+          name: 'Türkiyə',
+          data: data['datatr2']
+        }, {
+          name: 'Bank',
+          data: data['databank']
+        }])
+
+
+            }
+        });
+    });
+}
+</script>
+
+<script>
+  $("#muddetsliderid").on("input change", function(e) { 
+      console.log("fdfd")
+    $("#muddetid").val(e.target.value)
+  });
+
+  $("#ilkinsliderid").on("input change", function(e) { 
+      console.log("fdfd")
+    $("#ilkinid").val(e.target.value)
+  });
+</script>
 
 </html>
 
