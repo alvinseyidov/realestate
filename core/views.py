@@ -8,7 +8,7 @@ from django.http import JsonResponse
 
 def data(request, year, amount, mortgage):
     from openpyxl import load_workbook
-    import pythoncom
+    
     workbook = load_workbook(filename=os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
     sheet = workbook.active
     sheet["D2"] = int(amount)
@@ -20,7 +20,7 @@ def data(request, year, amount, mortgage):
 
     
     import win32com.client
-    Excel = win32com.client.Dispatch("Excel.Application",pythoncom.CoInitialize())
+    Excel = win32com.client.Dispatch("Excel.Application")
 
     file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx")
     wb = Excel.Workbooks.Open(file)
