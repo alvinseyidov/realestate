@@ -18,6 +18,12 @@ def data(request, year, amount, mortgage):
     workbook.save(filename=os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
     workbook.close()
 
+
+    import pandas as pd
+    data = pd.read_excel(os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"),sheet_name="Sheet1")
+     
+    print("==============")
+    print(data)
     
     import win32com.client
     Excel = win32com.client.Dispatch("Excel.Application")
