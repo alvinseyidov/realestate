@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "realestate-407911",
+  "private_key_id": "364aa703fc2a245f7d440f9af79bb9e652e9d54b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDHg6mQ19kwxNI8\nWKHOrVoLOoq8Bdpq+3AmwN7qTsRqDZNU6YxK8GLNqCJFbIc7kTAOcST/u9vYeIGW\nXLoZUYh7jRlkO9FkwdxY/zna8btFvyFtZ/KIKdAVvuRq4Ynn649NTttHwySnnkLm\nIHfMGluijeCfAeO3csLFXvT0sYBNFG0skp20A9zD4p/ePokbmOzeSzTX2wCsf47d\nELBRW2UyF+F5xKgWF9Va9ayMzm45YgJA5msh9FYMlZIr3ijniYjXGkkIiGFz+SMw\nIhADzng8mk+/8mBarC+9KaapzxI0DTcDScoMkwkywkxD5Ctn3/S5mOUlLS8BLbDt\nDNlPLY6xAgMBAAECggEAFmCLh63V89TXeaI9P7eMtl6yCcWkSkR6PzZ5qhD8kaKF\nKExrikos4sEdWukBv+oYWD5TdoVk8oINksZCry1IYAci1m2pHiJqKucxX3+mT/vQ\nbXtvpdr+tjmrV9uFAqiWcYbLLGDUPyKOgU4Z8Z/xMCm2jE8DceNiug1c7wbri3lw\npwLJIF3PMyW7dUNCh/gfJK3cNU5zXctpm5Sxv+CyPyQgOR7Suxv/yr+hXimpfIU8\nb/B3UCy/ByGsXgHpSsCLNMHAo0sKCfCgQgEOytRgF5VlRFM1EzrGtBtUTK/qZfOW\nSlZSljtR2zWJX8O5RYe21Yl6hDW0KSAOcnfeedXZIQKBgQD13GCVCkDaGxNrZoRW\nuQWoxfFhSs7ff5OWYK+7QBNReOYLZFHnBCET6ge5aUk4C8lWOhk80RyN+gAO/OJn\nB3s8QC84bIvNmC+8u/IsR1tObNxyt4Lk8f+WbrYYdD0gy8qb5wG61OAzsGJe8ES/\nNBlRi7qBQD0MGw2LrHLbyyUEyQKBgQDPvf3SkhTM9PHfQyFPnWTI4dQF1g7OJ8ra\nYK4okzC0Ez7rMrgeUsUcxI2c19+0s0YzqAn/m2yOzYx9/Oi7JdauVwvBFDj96MEW\nQkSnZru/J0xvbEUDaaeRj7eTtiDoPB3jpDoYovQLqkX+ut2bJBYrvyiNu6jiNnKh\nz/DVs2M2qQKBgAhfkQqCZuMGuQqXWzp44rB0zVu66IDEH4qnkFSYQhAsReltaTys\n71N2TP0LkOrPu/Or1uAzXv2W3hmkkzFfF9tddD4/tCM0Y6vR2tWXOIzbOEbP6S1S\n8Jl2+8ypaMuNJUFaBL0QMvKPt0n0dOLuK06Tq65rOakH4tY28VJ7AK/BAoGBAILm\nFVysfXzTzuA+PWwcIdhOK7ntsnCGNFS73KFmdabSBbBPyiIZR2ikFRNCFwyWdeKw\nvHQaLCIjNKZiSQc7hXVfFeH4axzan2f2I6pTmnONQKVo1GedGGAo7aSee0e6MZ8x\n6QWDEEGVbftfJanO6EVycwwzteusITkCfJ87JIXZAoGBAI6N5AJ6qQj9xYivwdLP\nBMQtm530ERMaww0ZqRiiyBDDUdG79sRzKE7MYYqLou+c8dLKXSwX9yjAUZfJb/we\nILSKikroMhV/w5zSRZYi7FziF0wNUV1D4zroSiwcJFPDog2fYOffDd1MyZ2Rq7h5\nFnHdY0w2Pe8u+q9b5Q7g/z56\n-----END PRIVATE KEY-----\n",
+  "client_email": "realestateid@realestate-407911.iam.gserviceaccount.com",
+  "client_id": "111041512556696610059",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/realestateid%40realestate-407911.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

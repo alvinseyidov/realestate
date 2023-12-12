@@ -7,101 +7,143 @@ from statik.models import *
 from django.http import JsonResponse
 
 def data(request, year, amount, mortgage):
-    from openpyxl import load_workbook
-    
-    workbook = load_workbook(filename=os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
-    sheet = workbook.active
-    sheet["D2"] = int(amount)
-    sheet["D6"] = int(year)
 
-    # save the file
-    workbook.save(filename=os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
-    workbook.close()
 
-    import xlwings as xw
-    wbxl=xw.Book(os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/yield.xlsx"))
-    print(wbxl.sheets['Sheet1'].range('E20').value)
-   
 
-     
 
-     
+    from google.oauth2 import service_account
+    import googleapiclient.discovery
+    from googleapiclient.discovery import build
+
+    # Path to your service account key file
+    SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/realestategoogle.json")
+
+    # Define the scopes
+    SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+
+    # Create credentials using the service account key file
+    credentials = service_account.Credentials.from_service_account_file(
+        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
+    # Build the service
+    service = googleapiclient.discovery.build('sheets', 'v4', credentials=credentials)
+
+    # Now you can use 'service' to interact with the Google Sheets API
+
+
+
+
+
+
+    # Your spreadsheet ID and range
+    spreadsheet_id = '1H01hPz3N8ojofEKw0p1gZCf13BfF-ZoDX4VzAi-zGWg'
+    range_name = 'Sheet1!D2'
+    range_name2 = 'Sheet1!E20'
+
+    # Read data
+    sheet = service.spreadsheets()
+
+
+    values = [
+        [amount],  # First row
+        # Add more rows as needed
+    ]
+
+    # Prepare the request body
+    body = {
+        'values': values
+    }
+
+    request = service.spreadsheets().values().update(
+        spreadsheetId=spreadsheet_id,
+        range=range_name,
+        valueInputOption='RAW',
+        body=body)
+
+    response = request.execute()
+
+
+
+
+
+
 
 
     data = {}
+    READ_RANGES = ['Sheet1!E20', 'Sheet1!F20', 'Sheet1!G20', 'Sheet1!H20', 'Sheet1!I20', 'Sheet1!J20', 'Sheet1!K20', 'Sheet1!L20', 'Sheet1!L20', 'Sheet1!M20']
+    batch_get_request = service.spreadsheets().values().batchGet(
+        spreadsheetId=spreadsheet_id,
+        ranges=READ_RANGES)
+    batch_get_response = batch_get_request.execute()
+    all_values_flat = []
+    for value_range in batch_get_response.get('valueRanges', []):
+        for row in value_range.get('values', []):
+            all_values_flat.extend(row)
 
-    data['datatr'] = [
-        int(str(abs(wbxl.sheets['Sheet1'].range('E20').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('F20').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('G20').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('H20').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('I20').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('J20').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('K20').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('L20').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('M20').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('N20').value)).split('.')[0])]
+    data['datatr'] = all_values_flat
 
-    data['dataaz'] = [
-        int(str(abs(wbxl.sheets['Sheet1'].range('E35').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('F35').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('G35').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('H35').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('I35').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('J35').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('K35').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('L35').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('M35').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('N35').value)).split('.')[0])]
+    READ_RANGES2 = ['Sheet1!E35', 'Sheet1!F35', 'Sheet1!G35', 'Sheet1!H35', 'Sheet1!I35', 'Sheet1!J35', 'Sheet1!K35',
+                   'Sheet1!L35', 'Sheet1!L35', 'Sheet1!M35']
+    batch_get_request2 = service.spreadsheets().values().batchGet(
+        spreadsheetId=spreadsheet_id,
+        ranges=READ_RANGES2)
+    batch_get_response2 = batch_get_request2.execute()
+    all_values_flat2 = []
+    for value_range in batch_get_response2.get('valueRanges', []):
+        for row in value_range.get('values', []):
+            all_values_flat2.extend(row)
 
-    data['databank'] = [
-        int(str(abs(wbxl.sheets['Sheet1'].range('E43').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('F43').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('G43').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('H43').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('I43').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('J43').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('K43').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('L43').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('M43').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('N43').value)).split('.')[0])]
+    data['dataaz'] = all_values_flat2
+
+    READ_RANGES3 = ['Sheet1!E57', 'Sheet1!F57', 'Sheet1!G57', 'Sheet1!H57', 'Sheet1!I57', 'Sheet1!J57', 'Sheet1!K57',
+                   'Sheet1!L57', 'Sheet1!L57', 'Sheet1!M57']
+    batch_get_request3 = service.spreadsheets().values().batchGet(
+        spreadsheetId=spreadsheet_id,
+        ranges=READ_RANGES3)
+    batch_get_response3 = batch_get_request3.execute()
+    all_values_flat3 = []
+    for value_range in batch_get_response3.get('valueRanges', []):
+        for row in value_range.get('values', []):
+            all_values_flat3.extend(row)
+
+    data['datatr2'] = all_values_flat3
+
+    READ_RANGES4 = ['Sheet1!E72', 'Sheet1!F72', 'Sheet1!G72', 'Sheet1!H72', 'Sheet1!I72', 'Sheet1!J72', 'Sheet1!K72',
+                   'Sheet1!L72', 'Sheet1!L72', 'Sheet1!M72']
+    batch_get_request4 = service.spreadsheets().values().batchGet(
+        spreadsheetId=spreadsheet_id,
+        ranges=READ_RANGES4)
+    batch_get_response4 = batch_get_request4.execute()
+    all_values_flat4 = []
+    for value_range in batch_get_response4.get('valueRanges', []):
+        for row in value_range.get('values', []):
+            all_values_flat4.extend(row)
+
+    data['dataaz2'] = all_values_flat4
+
+    READ_RANGES5 = ['Sheet1!E43', 'Sheet1!F43', 'Sheet1!G43', 'Sheet1!H43', 'Sheet1!I43', 'Sheet1!J43', 'Sheet1!K43',
+                    'Sheet1!L43', 'Sheet1!L43', 'Sheet1!M43']
+    batch_get_request5 = service.spreadsheets().values().batchGet(
+        spreadsheetId=spreadsheet_id,
+        ranges=READ_RANGES5)
+    batch_get_response5 = batch_get_request5.execute()
+    all_values_flat5 = []
+    for value_range in batch_get_response5.get('valueRanges', []):
+        for row in value_range.get('values', []):
+            all_values_flat5.extend(row)
+
+    data['databank'] = all_values_flat5
 
 
-    data['datatr2'] = [
-       int(str(abs(wbxl.sheets['Sheet1'].range('E57').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('F57').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('G57').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('H57').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('I57').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('J57').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('K57').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('L57').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('M57').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('N57').value)).split('.')[0])]
 
-    data['dataaz2'] = [
-        int(str(abs(wbxl.sheets['Sheet1'].range('E72').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('F72').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('G72').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('H72').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('I72').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('J72').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('K72').value)).split('.')[0]),
-        int(str(abs(wbxl.sheets['Sheet1'].range('L72').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('M72').value)).split('.')[0]), 
-        int(str(abs(wbxl.sheets['Sheet1'].range('N72').value)).split('.')[0])]
 
-    data['field11'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
-    data['field12'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
+    data['field11'] = []
+    data['field12'] = []
+    data['field21'] = []
+    data['field22'] = []
 
-    data['field21'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
-    data['field22'] =round(float(wbxl.sheets['Sheet1'].range('E20').value) * float(wbxl.sheets['Sheet1'].range('E20').value),2)
 
-    
-    wbxl.save()
-    wbxl.close()
         
-
 
     return JsonResponse(data)
     
