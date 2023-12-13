@@ -1664,13 +1664,12 @@ function openCity(evt, cityName) {
 
 
 
-{% if sorting_sections.feedbacks_active %}
 <div class=" mt-5" style=" background:#F6F8FA;    padding: 60px 0 60px 0;">
 
         <div class="row  ">
           <div class="col-lg-12 col-md-12" style="text-align: center;">
             <div style="    margin: 3px 0 59px 0;color: #2B2B2B; text-align: center; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">
-              {{feedback_section.title}}</div>
+                {{feedback_section.title}}</div>
 
 
 
@@ -1722,8 +1721,6 @@ function openCity(evt, cityName) {
         </div>
 
       </div>
-{% endif%}
-
 
 
 
@@ -2388,7 +2385,7 @@ Expand.init();
 
   <script>
        var swiperr = new Swiper('.swiperr', {
-      slidesPerView: 2,
+      slidesPerView: 3,
     spaceBetween: 30,
         watchSlidesVisibility: true,
 pagination: {
