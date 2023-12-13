@@ -1324,9 +1324,19 @@ function openCity(evt, cityName) {
                               <label for="html">Nağd</label>
                             </div>
 
-                            
+                            <style>
+                                .loading{
+                                background-image: url({% static 'loading.gif'%});
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    color:black !important;
+                                    text-indent: -9999em;
+                                        text-transform: uppercase;
+                                }
+                            </style>
                             <div>
-                                <button id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
+                                <button class="" id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
                             </div>
                         </div>
                    </div>
@@ -2658,11 +2668,15 @@ myForm.addEventListener('submit', function(e) {
     var mortgage = 1;
 
     $("#hesabla").on("click",function(){
+    $(this).addClass("loading");
     console.log("1");
         $.ajax({
             type:"GET",
             url:`/data/${year}/${amount}/${mortgage}/`,
             success:function(data){
+            console.log("succes");
+
+             $('#hesabla').removeClass("loading");
 
               if($('input[name="ipoteka"]:checked').val() == 1){
               $('#field1').val(data['field11']);
