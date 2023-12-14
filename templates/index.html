@@ -1302,7 +1302,7 @@ function openCity(evt, cityName) {
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırmaq istədiyiniz ilkin kapital</div>
                                 <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="100000"></div>
-                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="20000" max="2000000" step="1000" value="20000" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="20000" max="2000000" step="1000" value="100000" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Müddət</div>
@@ -1310,15 +1310,15 @@ function openCity(evt, cityName) {
                             <div> <input  id="muddetsliderid" class="slider calculatorinput" type="range" min="2" max="10" step="1" value="10" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12">
-                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən illik kirayə gəliri</div>
-                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field1" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="4900 (4.9%)"></div>
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən <span id="yearspan">10</span> illik kirayə gəliri</div>
+                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field1" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" padding-top: 24px; ">
-                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən illik əmlakın dəyərlənməsi</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field2" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="4300 (4.3%)"></div>
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən <span id="yearspann">10</span> ilin sonundakı əmlakın dəyərlənməsi</div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field2" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" padding-top: 24px; ">
-                              <input type="radio" id="radio1" name="ipoteka" value="1">
+                              <input type="radio" id="radio1" checked="" name="ipoteka" value="1">
                               <label for="html">İpoteka</label>
                               <input type="radio" id="radio2" name="ipoteka" value="0">
                               <label for="html">Nağd</label>
@@ -2658,6 +2658,15 @@ myForm.addEventListener('submit', function(e) {
       });
     });
 
+    $(document).ready(function(){
+      $("#muddetsliderid").change(function(){
+        year = (this.value);
+
+      });
+    });
+
+
+
 
     $(document).ready(function(){
       $("#ilkinid").keyup(function(){
@@ -2666,25 +2675,430 @@ myForm.addEventListener('submit', function(e) {
     });
     
     var mortgage = 1;
+    console.log("--------");
+    console.log($('input[name="ipoteka"]:checked').val());
+    console.log("--------");
+
+
+
+
+
+
 
     $("#hesabla").on("click",function(){
     $(this).addClass("loading");
     console.log("1");
+
+    if($('input[name="ipoteka"]:checked').val() == 1){
+    mortgage = 1;}
+    else{
+    mortgage = 0;
+    }
+
+    $('#yearspan').text(year);
+    $('#yearspann').text(year);
+
+
+
+
         $.ajax({
             type:"GET",
             url:`/data/${year}/${amount}/${mortgage}/`,
             success:function(data){
+
+            if(data['year'] == 2){
+    chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+}
+else if(data['year'] == 3){
+
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il"]
+    },
+
+    });}
+else if(data['year'] == 4){
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
+    },
+
+    });}
+else if(data['year'] == 5){
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
+    },
+
+    });}
+else if(data['year'] == 6){
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
+    },
+
+    });}
+else if(data['year'] == 7){
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
+    },
+
+    });}
+else if(data['year'] == 8){
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
+    },
+
+    });}
+else if(data['year'] == 9){
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });}
+
+
+
             console.log("succes");
 
              $('#hesabla').removeClass("loading");
 
               if($('input[name="ipoteka"]:checked').val() == 1){
-              $('#field1').val(data['field11']);
-              $('#field2').val(data['field12']);
+              $('#field1').val(data['kiraye']);
+              $('#field2').val(data['deyer']);
               }
               else{
-                $('#field1').val(data['field21']);
-              $('#field2').val(data['field22']);
+                $('#field1').val(data['kiraye']);
+              $('#field2').val(data['deyer']);
               }
 
 
