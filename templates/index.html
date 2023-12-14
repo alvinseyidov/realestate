@@ -23,6 +23,9 @@
 <!-- Calendly badge widget end -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
  	<style>
+ 	.apexcharts-toolbar{
+ 	display: none !important;
+ 	}
 .cc1 {
     text-align: center;
 }
@@ -2607,11 +2610,15 @@ myForm.addEventListener('submit', function(e) {
     });
 
 </script>
+
   <div id="omnisend-dynamic-container" style="overflow: hidden; height: 0px;"><div id="omnisend-pixel-container"></div><div id="omnisend-jsonp-container"><script src="https://forms.soundestlink.com/REST/inShop/v1/getSettings?callback=_omnisend.setSettings&amp;responseType=jsonp&amp;shopHostname=127.0.0.1&amp;shopType=api&amp;brandID=6526f28b8530cf73f8d2e6d3"></script></div></div></body>
 
    <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
  <script>
       var options = {
+      zoom: {
+            enabled: false,
+          },
           series: [{
           name: 'Azərbaycan',
           data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
@@ -2629,9 +2636,7 @@ myForm.addEventListener('submit', function(e) {
         dataLabels: {
           enabled: false
         },
-        zoom: {
-            enabled: false,
-          },
+
         stroke: {
           curve: 'smooth'
         },
