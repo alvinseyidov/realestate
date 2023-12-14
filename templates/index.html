@@ -1301,8 +1301,8 @@ function openCity(evt, cityName) {
                         <div class="row  " style=" padding: 5px 15px 34px 62px; ">
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırmaq istədiyiniz ilkin kapital</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="100000"></div>
-                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="20000" max="2000000" step="1000" value="100000" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="50000"></div>
+                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="50000" max="2000000" step="1000" value="50000" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Müddət</div>
@@ -1336,7 +1336,7 @@ function openCity(evt, cityName) {
                                 }
                             </style>
                             <div>
-                                <button class="" id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
+                                <button class="loading" id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
                             </div>
                         </div>
                    </div>
@@ -2629,6 +2629,9 @@ myForm.addEventListener('submit', function(e) {
         dataLabels: {
           enabled: false
         },
+        zoom: {
+            enabled: false,
+          },
         stroke: {
           curve: 'smooth'
         },
@@ -2637,7 +2640,7 @@ myForm.addEventListener('submit', function(e) {
           categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
         },
         tooltip: {
-
+            show: false
         },
         };
 
@@ -3136,6 +3139,63 @@ chart1.updateOptions({
 }
 </script>
 
+  <script>
+      $.ajax({
+    type:"GET",
+    url:`/data/10/50000/1/`,
+    success:function(data){
+
+
+
+
+
+
+    console.log("succes");
+
+     $('#hesabla').removeClass("loading");
+
+      if($('input[name="ipoteka"]:checked').val() == 1){
+      $('#field1').val(data['kiraye']);
+      $('#field2').val(data['deyer']);
+      }
+      else{
+        $('#field1').val(data['kiraye']);
+      $('#field2').val(data['deyer']);
+      }
+
+
+      console.log("dataaaa");
+      console.log(data)
+      console.log(data['datatr'])
+      console.log(data['databank'])
+
+     chart1.updateSeries([{
+  name: 'Azərbaycan',
+  data: data['dataaz']
+}, {
+  name: 'Türkiyə',
+  data: data['datatr']
+}, {
+  name: 'Bank',
+  data: data['databank']
+}])
+
+chart2.updateSeries([{
+  name: 'Azərbaycan',
+  data: data['dataaz2']
+}, {
+  name: 'Türkiyə',
+  data: data['datatr2']
+}, {
+  name: 'Bank',
+  data: data['databank']
+}])
+
+
+    }
+});
+
+  </script>
 <script>
   $("#muddetsliderid").on("input change", function(e) { 
       console.log("fdfd")
