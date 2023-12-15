@@ -642,6 +642,10 @@ def contactform(request):
 
 
 def index(request):
+    if request.user_agent.is_mobile:
+        is_mobile = True
+    else:
+        is_mobile = False
     general = General.objects.last()
     socials = Social.objects.all()
     why = Why.objects.all()
@@ -668,6 +672,7 @@ def index(request):
     suallar = Suallar.objects.all()
 
     context = {
+        'is_mobile': is_mobile,
         "sorting_sections": sorting_sections,
         "features": features,
         "faq": faq,

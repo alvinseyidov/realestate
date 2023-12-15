@@ -673,6 +673,12 @@ width:100% !important;
         }
 
     }
+
+
+    .strip__close.strip__close--show {
+    font-size: 40px !important;
+    top: 3vh !important;
+}
       </style>
   </head>
   <body>
@@ -687,7 +693,7 @@ width:100% !important;
             <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
             <div class="col-lg-6 col-8">
                 <div style="display: inline-block;float: right;">
-                  <div class="cccx3" style=" width: 70px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx3" style=" width: 50px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
                   <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
                   <div style=" width: 190px;    display: inline-block; " class="cccx2"><p style=" display: inline-block;    margin: 0 13px 0 0px; ">TR</p><p style=" display: inline-block; ">{{general.phone}}</p><img style=" display: inline-block; " src="{% static 'fi-br-angle-small-down.svg'%}"> </div>
                 </div>
@@ -714,9 +720,12 @@ width:100% !important;
 
                 <p class="pb-4 mt-4" style=" margin: 0 0 !important; padding-bottom: 0 !important;color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
                 {{main_section.text2}} </p>
-                <div style=" position: relative; ">
+                <div style=" position: relative;text-align: center; ">
                 <img src="{% static 'man.png'%}" style=" width: 100%; ">
                   <div id="timerr" style=" display: contents; width: 100px; gap: 13px; "></div>
+                    <div style=" margin-top: 26px; margin-bottom: 34px; ">
+                     <a href=" {{main_section.button_link}} " style="     bottom: 67px; left: 50%; width: 214px; transform: translate(-50%, -50%); text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
+                    </div>
                 </div>
 
                 </div>
@@ -740,6 +749,9 @@ width:100% !important;
                 <p class="pb-4 mt-4" style=" color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
                 {{main_section.text2}} </p>
                 <div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
+
+                 <a href=" {{main_section.button_link}} " style="   display: block;width: 250px;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
+
 
                 </div>
           </div>
@@ -819,7 +831,8 @@ width:100% !important;
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
-                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          {% csrf_token %}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
                           <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
@@ -866,9 +879,10 @@ width:100% !important;
                   <div class="col-lg-6 col-md-12">
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                      <form style=" text-align: left;position:relative; ">
-                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          {% csrf_token %}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
                   <div class="col-lg-6 col-md-12">
@@ -914,9 +928,10 @@ width:100% !important;
                   <div class="col-lg-6 col-md-12">
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                      <form style=" text-align: left;position:relative; ">
-                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          {% csrf_token %}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
                   <div class="col-lg-6 col-md-12">
@@ -962,8 +977,9 @@ width:100% !important;
                   <div class="col-lg-6 col-md-12">
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                      <form action="/waitlist" style=" text-align: left;position:relative; ">
-                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          {% csrf_token %}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
                           <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
@@ -1023,7 +1039,8 @@ width:100% !important;
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
-                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          {% csrf_token%}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
                           <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
@@ -1070,9 +1087,10 @@ width:100% !important;
                   <div class="col-lg-6 col-md-12">
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                      <form style=" text-align: left;position:relative; ">
-                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                      <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          {% csrf_token%}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
                   <div class="col-lg-6 col-md-12" style="margin-top: 13px;">
@@ -1118,9 +1136,10 @@ width:100% !important;
                   <div class="col-lg-6 col-md-12">
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                      <form style=" text-align: left;position:relative; ">
-                          <input type="text" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
+                     <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          {% csrf_token%}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
                   <div class="col-lg-6 col-md-12" style="margin-top: 13px;">
@@ -1166,8 +1185,9 @@ width:100% !important;
                   <div class="col-lg-6 col-md-12">
                       <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
                     <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                      <form action="/waitlist" style=" text-align: left;position:relative; ">
-                          <input name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
+                      <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
+                          {% csrf_token%}
+                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
                           <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
                       </form>
                   </div>
@@ -1310,9 +1330,9 @@ width:100% !important;
 <div class=" mt-5" id="reall" style="margin-top:70px;padding-bottom: 49px;">
         <div class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style="  ">
-                <div class="row">
+                <div class="row ">
                      <div class="col-lg-7 col-md-12">
-                         <div class="calculatortitle" style="font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
+                         <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
 
 
 
@@ -1376,7 +1396,8 @@ function openCity(evt, cityName) {
 
 
                      </div>
-                     <div class="col-lg-5 col-md-12">
+                     <div class="col-lg-5 col-md-12 {% if is_mobile %}order-first{% endif%}">
+            <div class="calculatortitle mobilee" style="display:none;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
 
                        <div style="border-radius: 20px; border: 1px solid #DDDCE0; background: #FFF;">
 
@@ -1503,7 +1524,7 @@ function openCity(evt, cityName) {
                              <div style=" width: 265px;color: #02B5FD; font-weight: 600; ">01.</div>
                              <div>
                                  <div style=" font-size: 19px; font-weight: 500; margin-bottom: 22px; ">{{niye.title1}}</div>
-                                 <div>{{niye.text1}}</div>
+                                 <div>{{niye.text1 | safe}}</div>
                              </div>
                          </div>
                      </div>
