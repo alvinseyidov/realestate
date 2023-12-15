@@ -127,32 +127,76 @@ def data(request, year, amount, mortgage):
 
 
     #--------------------TR----------------------------
+    if mortgage == 1:
+        kiraye1 = estate_investment*kiraye_kof
+        kiraye2 = kiraye1*(1+rental_growth_tr/100)
+        kiraye3 = kiraye2*(1+rental_growth_tr/100)
+        kiraye4 = kiraye3*(1+rental_growth_tr/100)
+        kiraye5 = kiraye4*(1+rental_growth_tr/100)
+        kiraye6 = kiraye5*(1+rental_growth_tr/100)
+        kiraye7 = kiraye6*(1+rental_growth_tr/100)
+        kiraye8 = kiraye7*(1+rental_growth_tr/100)
+        kiraye9 = kiraye8*(1+rental_growth_tr/100)
+        kiraye10 = kiraye9*(1+rental_growth_tr/100)
 
-    kiraye1 = estate_investment*kiraye_kof
-    kiraye2 = kiraye1*(1+rental_growth_tr/100)
-    kiraye3 = kiraye2*(1+rental_growth_tr/100)
-    kiraye4 = kiraye3*(1+rental_growth_tr/100)
-    kiraye5 = kiraye4*(1+rental_growth_tr/100)
-    kiraye6 = kiraye5*(1+rental_growth_tr/100)
-    kiraye7 = kiraye6*(1+rental_growth_tr/100)
-    kiraye8 = kiraye7*(1+rental_growth_tr/100)
-    kiraye9 = kiraye8*(1+rental_growth_tr/100)
-    kiraye10 = kiraye9*(1+rental_growth_tr/100)
+        deyer_toplam1 = estate_investment+y1_growth
+        print(deyer_toplam1)
+        deyer_toplam2 = estate_investment + y1_growth+y2_growth
+        print(deyer_toplam2)
 
-    deyer_toplam1 = estate_investment+y1_growth
-    print(deyer_toplam1)
-    deyer_toplam2 = estate_investment + y1_growth+y2_growth
-    print(deyer_toplam2)
+        deyer_toplam3 = estate_investment + y1_growth+y2_growth+y3_growth
+        print(deyer_toplam3)
+        deyer_toplam4 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth
+        deyer_toplam5 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth
+        deyer_toplam6 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth
+        deyer_toplam7 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth
+        deyer_toplam8 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth+y8_growth
+        deyer_toplam9 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth+y8_growth+y9_growth
+        deyer_toplam10 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth+y8_growth+y9_growth+y10_growth
+    else:
+        kiraye1 = amount * kiraye_kof
+        kiraye2 = kiraye1 * (1 + rental_growth_tr / 100)
+        kiraye3 = kiraye2 * (1 + rental_growth_tr / 100)
+        kiraye4 = kiraye3 * (1 + rental_growth_tr / 100)
+        kiraye5 = kiraye4 * (1 + rental_growth_tr / 100)
+        kiraye6 = kiraye5 * (1 + rental_growth_tr / 100)
+        kiraye7 = kiraye6 * (1 + rental_growth_tr / 100)
+        kiraye8 = kiraye7 * (1 + rental_growth_tr / 100)
+        kiraye9 = kiraye8 * (1 + rental_growth_tr / 100)
+        kiraye10 = kiraye9 * (1 + rental_growth_tr / 100)
 
-    deyer_toplam3 = estate_investment + y1_growth+y2_growth+y3_growth
-    print(deyer_toplam3)
-    deyer_toplam4 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth
-    deyer_toplam5 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth
-    deyer_toplam6 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth
-    deyer_toplam7 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth
-    deyer_toplam8 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth+y8_growth
-    deyer_toplam9 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth+y8_growth+y9_growth
-    deyer_toplam10 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth+y7_growth+y8_growth+y9_growth+y10_growth
+        y1_growth_net = amount * appraisal_rate
+        y2_growth_net = (y1_growth_net + amount) * appraisal_rate
+        y3_growth_net = (y1_growth_net + y2_growth_net + amount) * appraisal_rate
+        y4_growth_net = (y1_growth_net + y2_growth_net + y3_growth_net + amount) * appraisal_rate
+        y5_growth_net = (
+                                    y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + amount) * appraisal_rate
+        y6_growth_net = (
+                                    y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + amount) * appraisal_rate
+        y7_growth_net = (
+                                    y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + amount) * appraisal_rate
+        y8_growth_net = (
+                                    y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net + amount) * appraisal_rate
+        y9_growth_net = (
+                                    y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net + y8_growth_net + amount) * appraisal_rate
+        y10_growth_net = (
+                                     y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net + y8_growth_net + y9_growth_net + amount) * appraisal_rate
+
+        deyer_toplam1 = amount + y1_growth_net
+        print(deyer_toplam1)
+        deyer_toplam2 = amount + y1_growth_net + y2_growth_net
+        print(deyer_toplam2)
+
+        deyer_toplam3 = amount + y1_growth_net + y2_growth_net + y3_growth_net
+        print(deyer_toplam3)
+        deyer_toplam4 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net
+        deyer_toplam5 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net
+        deyer_toplam6 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net
+        deyer_toplam7 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net
+        deyer_toplam8 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net + y8_growth_net
+        deyer_toplam9 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net + y8_growth_net + y9_growth_net
+        deyer_toplam10 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net + y8_growth_net + y9_growth_net + y10_growth_net
+
     #--------------------TR----------------------------
 
     #---------------------------------------------------------------------------------------------
