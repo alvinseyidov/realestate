@@ -6,132 +6,14 @@ from offer.models import Offer
 from statik.models import *
 from django.http import JsonResponse
 
-
-def data(request, year, amount, mortgage):
-    from google.oauth2 import service_account
-    import googleapiclient.discovery
-    from googleapiclient.discovery import build
-
-    # Path to your service account key file
-    SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "media/realestategoogle.json")
-
-    # Define the scopes
-    SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-
-    # Create credentials using the service account key file
-    credentials = service_account.Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-
-    # Build the service
-    service = googleapiclient.discovery.build('sheets', 'v4', credentials=credentials)
-
-    # Now you can use 'service' to interact with the Google Sheets API
-
-    # Your spreadsheet ID and range
-    spreadsheet_id = '1H01hPz3N8ojofEKw0p1gZCf13BfF-ZoDX4VzAi-zGWg'
-    range_name = 'Sheet1!D2'
-    range_name2 = 'Sheet1!E20'
-
-    # Read data
-    sheet = service.spreadsheets()
-
-    values = [
-        [amount],  # First row
-        # Add more rows as needed
-    ]
-
-    # Prepare the request body
-    body = {
-        'values': values
-    }
-
-    request = service.spreadsheets().values().update(
-        spreadsheetId=spreadsheet_id,
-        range=range_name,
-        valueInputOption='RAW',
-        body=body)
-
-    response = request.execute()
-
-    READ_RANGES = ['Sheet1!E20', 'Sheet1!F20', 'Sheet1!G20', 'Sheet1!H20', 'Sheet1!I20', 'Sheet1!J20', 'Sheet1!K20',
-                   'Sheet1!L20', 'Sheet1!L20', 'Sheet1!M20']
-    READ_RANGES2 = ['Sheet1!E35', 'Sheet1!F35', 'Sheet1!G35', 'Sheet1!H35', 'Sheet1!I35', 'Sheet1!J35', 'Sheet1!K35',
-                    'Sheet1!L35', 'Sheet1!L35', 'Sheet1!M35']
-    READ_RANGES3 = ['Sheet1!E57', 'Sheet1!F57', 'Sheet1!G57', 'Sheet1!H57', 'Sheet1!I57', 'Sheet1!J57', 'Sheet1!K57',
-                    'Sheet1!L57', 'Sheet1!L57', 'Sheet1!M57']
-    READ_RANGES4 = ['Sheet1!E72', 'Sheet1!F72', 'Sheet1!G72', 'Sheet1!H72', 'Sheet1!I72', 'Sheet1!J72', 'Sheet1!K72',
-                    'Sheet1!L72', 'Sheet1!L72', 'Sheet1!M72']
-    READ_RANGES5 = ['Sheet1!E43', 'Sheet1!F43', 'Sheet1!G43', 'Sheet1!H43', 'Sheet1!I43', 'Sheet1!J43', 'Sheet1!K43',
-                    'Sheet1!L43', 'Sheet1!L43', 'Sheet1!M43']
-
-
-    data = {}
-    batch_get_request = service.spreadsheets().values().batchGet(
-        spreadsheetId=spreadsheet_id,
-        ranges=READ_RANGES[:int(year)])
-    batch_get_response = batch_get_request.execute()
-    all_values_flat = []
-    for value_range in batch_get_response.get('valueRanges', []):
-        for row in value_range.get('values', []):
-            all_values_flat.extend(row)
-
-    data['datatr'] = all_values_flat
-
-    batch_get_request2 = service.spreadsheets().values().batchGet(
-        spreadsheetId=spreadsheet_id,
-        ranges=READ_RANGES2[:int(year)])
-    batch_get_response2 = batch_get_request2.execute()
-    all_values_flat2 = []
-    for value_range in batch_get_response2.get('valueRanges', []):
-        for row in value_range.get('values', []):
-            all_values_flat2.extend(row)
-
-    data['dataaz'] = all_values_flat2
-
-    batch_get_request3 = service.spreadsheets().values().batchGet(
-        spreadsheetId=spreadsheet_id,
-        ranges=READ_RANGES3[:int(year)])
-    batch_get_response3 = batch_get_request3.execute()
-    all_values_flat3 = []
-    for value_range in batch_get_response3.get('valueRanges', []):
-        for row in value_range.get('values', []):
-            all_values_flat3.extend(row)
-
-    data['datatr2'] = all_values_flat3
-
-    batch_get_request4 = service.spreadsheets().values().batchGet(
-        spreadsheetId=spreadsheet_id,
-        ranges=READ_RANGES4[:int(year)])
-    batch_get_response4 = batch_get_request4.execute()
-    all_values_flat4 = []
-    for value_range in batch_get_response4.get('valueRanges', []):
-        for row in value_range.get('values', []):
-            all_values_flat4.extend(row)
-
-    data['dataaz2'] = all_values_flat4
-
-    batch_get_request5 = service.spreadsheets().values().batchGet(
-        spreadsheetId=spreadsheet_id,
-        ranges=READ_RANGES5[:int(year)])
-    batch_get_response5 = batch_get_request5.execute()
-    all_values_flat5 = []
-    for value_range in batch_get_response5.get('valueRanges', []):
-        for row in value_range.get('values', []):
-            all_values_flat5.extend(row)
-
-    data['databank'] = all_values_flat5
-
-    # Declares and asks for user to input loan amount. Then converts to float
-    loanAmount = amount
+def calculate_mortgage(loanAmount,years, interestRate):
     loanAmount = float(loanAmount)
 
     # Declares and asks user to input number of payments in years. Then converts to float. Years * 12 to get
     #  total number of months
-    years = year
     years = float(years) * 12
 
     # Declares and asks user to input interest rate. Then converts to float and input interest rate is /100/12
-    interestRate = 7.08
     interestRate = float(interestRate) / 100 / 12
 
     # Formula to calculate monthly payments
@@ -139,125 +21,472 @@ def data(request, year, amount, mortgage):
                                     ** years) / ((1 + interestRate) ** years - 1)
 
     # Prints monthly payment on next line and reformat the string to a float using 2 decimal places
-    print("The monthly mortgage payment is\n (%.2f) " % mortgagePayment)
+    return mortgagePayment
+def data(request, year, amount, mortgage):
+    data = {}
 
-    data['field11'] = 4.889 * mortgagePayment / 100 * 12
-    data['field12'] = []
-    data['field21'] = []
-    data['field22'] = []
-    data['year'] = int(year)
+    kiraye_kof = 0.04889
+    kiraye_kof_az = 0.03111
+    interest_rate_percent = 7.08
+    rental_growth_tr = 5.9
+    rental_growth_az = 4
+    interest_rate = 0.0708
+    interest_rate_az = 0.065
+    interest_rate__percent_az = 6.5
+    appraisal_rate = 0.073
+    appraisal_rate_az = 0.05
+    appraisal = 1.073
+    appraisal_az = 1.05
+    first_amount = amount
+    leverage = amount * 0.8
+    estate_investment = first_amount+leverage
+    monthly_loan_tr = calculate_mortgage(amount, year, interest_rate_percent)
+    monthly_loan_az = calculate_mortgage(amount, year, interest_rate__percent_az)
+    diger_xerc_tr = 600
+    diger_xerc_az = 600
+    heyat_sigorta_tr = 120
+    heyat_sigorta_az = 240
 
-    if mortgage == 1:
-        if year == 2:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:F16'
-        elif year == 3:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:G16'
-        elif year == 4:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:H16'
-        elif year == 5:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:I16'
-        elif year == 6:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:J16'
-        elif year == 7:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:K16'
-        elif year == 8:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:L16'
-        elif year == 9:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:M16'
-        elif year == 10:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E16:N16'
-    else:
-        if year == 2:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:F53'
-        elif year == 3:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:G53'
-        elif year == 4:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:H53'
-        elif year == 5:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:I53'
-        elif year == 6:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:J53'
-        elif year == 7:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:K53'
-        elif year == 8:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:L53'
-        elif year == 9:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:M53'
-        elif year == 10:
-            RANGE_TO_SUM_KIRAYE = 'Sheet1!E53:N53'
-    read_request_kiraye = service.spreadsheets().values().get(
-        spreadsheetId=spreadsheet_id,
-        range=RANGE_TO_SUM_KIRAYE)
+    interest_rate_bank_az = 3
 
-    read_response_kiraye = read_request_kiraye.execute()
+    # ---------------------------------------------------------------------------------------------
+    #Turkey
+    # ---------------------------------------------------------------------------------------------
 
-    # Extract the values from the response
-    values = read_response_kiraye.get('values', [])
-    sum_of_values_kiraye = 0
+    y1_value = estate_investment * appraisal
+    y2_value = (y1_value) * appraisal
+    y3_value = (y2_value ) * appraisal
+    y4_value = (y3_value ) * appraisal
+    y5_value = (y4_value ) * appraisal
+    y6_value = (y5_value ) * appraisal
+    y7_value = (y6_value ) * appraisal
+    y8_value = (y7_value ) * appraisal
+    y9_value = (y8_value ) * appraisal
+    y10_value = (y9_value ) * appraisal
 
-    print(values)
-    for v in values[0]:
-        print(v)
-        sum_of_values_kiraye = sum_of_values_kiraye + int(v)
+    y1_growth = estate_investment * appraisal_rate
+    y2_growth = (y1_growth + estate_investment) * appraisal_rate
+    y3_growth = (y1_growth + y2_growth + estate_investment) * appraisal_rate
+    y4_growth = (y1_growth + y2_growth + y3_growth + estate_investment) * appraisal_rate
+    y5_growth = (y1_growth + y2_growth + y3_growth + y4_growth + estate_investment) * appraisal_rate
+    y6_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + estate_investment) * appraisal_rate
+    y7_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + estate_investment) * appraisal_rate
+    y8_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + estate_investment) * appraisal_rate
+    y9_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + estate_investment) * appraisal_rate
+    y10_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + y9_growth + estate_investment) * appraisal_rate
+
+    y1_val = (y1_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + estate_investment * kiraye_kof)
+    y1_yatirim_net_deyeri = estate_investment - 9 * monthly_loan_tr * 12 + y1_val
+
+    y2_val = (y2_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + estate_investment * kiraye_kof * (1 + rental_growth_tr / 100))
+    y2_yatirim_net_deyeri = estate_investment - 8 * monthly_loan_tr * 12 + y1_val+y2_val
+
+    x3 = estate_investment * kiraye_kof * (1 + rental_growth_tr / 100) * (1 + rental_growth_tr / 100)
+    y3_val = (y3_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x3)
+    y3_yatirim_net_deyeri = estate_investment - 7 * monthly_loan_tr * 12 + y1_val + y2_val + y3_val
+
+    x4 = x3 * (1 + rental_growth_tr / 100)
+    y4_val = (y4_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x4)
+    y4_yatirim_net_deyeri =  estate_investment - 6 * monthly_loan_tr * 12 + y1_val + y2_val + y3_val + y4_val
+
+    x5 = x4 * (1 + rental_growth_tr / 100)
+    y5_val = (y5_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x5)
+    y5_yatirim_net_deyeri =  estate_investment - 5 * monthly_loan_tr * 12 + y1_val + y2_val + y3_val + y4_val + y5_val
+
+    x6 = x5 * (1 + rental_growth_tr / 100)
+    y6_val = (y6_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x6)
+    y6_yatirim_net_deyeri =  estate_investment - 4 * monthly_loan_tr * 12 + y1_val + y2_val + y3_val + y4_val + y5_val +y6_val
+
+    x7 = x6 * (1 + rental_growth_tr / 100)
+    y7_val = (y7_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x7)
+    y7_yatirim_net_deyeri =  estate_investment - 3 * monthly_loan_tr * 12 + y1_val + y2_val + y3_val + y4_val + y5_val +y6_val + y7_val
+
+    x8 = x7 * (1 + rental_growth_tr / 100)
+    y8_val = (y8_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x8)
+    y8_yatirim_net_deyeri =  estate_investment - 2 * monthly_loan_tr * 12 + y1_val + y2_val + y3_val + y4_val + y5_val +y6_val + y7_val+y8_val
+
+    x9 = x8 * (1 + rental_growth_tr / 100)
+    y9_val = (y9_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x9)
+    y9_yatirim_net_deyeri =  estate_investment - 1 * monthly_loan_tr * 12 + y1_val + y2_val + y3_val + y4_val + y5_val +y6_val + y7_val+y8_val+y9_val
+
+    x10 = x9 * (1 + rental_growth_tr / 100)
+    print("yyy")
+    print(x9)
+    y10_val = (y10_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x10)
+    y10_yatirim_net_deyeri =  estate_investment  + y1_val + y2_val + y3_val + y4_val + y5_val +y6_val + y7_val+y8_val+y9_val+y10_val
+    datatr= [round(y1_yatirim_net_deyeri, 2),
+                      round(y2_yatirim_net_deyeri, 2),
+                      round(y3_yatirim_net_deyeri, 2),
+                      round(y4_yatirim_net_deyeri, 2),
+                      round(y5_yatirim_net_deyeri, 2),
+                      round(y6_yatirim_net_deyeri, 2),
+                      round(y7_yatirim_net_deyeri, 2),
+                      round(y8_yatirim_net_deyeri, 2),
+                      round(y9_yatirim_net_deyeri, 2),
+                      round(y10_yatirim_net_deyeri, 2)]
+
+    data['datatr'] = datatr[:year]
+
+
+    #---------------------------------------------------------------------------------------------
+    # AZ
+    #---------------------------------------------------------------------------------------------
+    y1_value_az = estate_investment * appraisal_az
+    y2_value_az = (y1_value_az) * appraisal_az
+    y3_value_az = (y2_value_az) * appraisal_az
+    y4_value_az = (y3_value_az) * appraisal_az
+    y5_value_az = (y4_value_az) * appraisal_az
+    y6_value_az = (y5_value_az) * appraisal_az
+    y7_value_az = (y6_value_az) * appraisal_az
+    y8_value_az = (y7_value_az) * appraisal_az
+    y9_value_az = (y8_value_az) * appraisal_az
+    y10_value_az = (y9_value_az) * appraisal_az
+
+    y1_growth_az = estate_investment * appraisal_rate_az
+    y2_growth_az = (y1_growth_az + estate_investment) * appraisal_rate_az
+    y3_growth_az = (y1_growth_az + y2_growth_az + estate_investment) * appraisal_rate_az
+    y4_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + estate_investment) * appraisal_rate_az
+    y5_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + estate_investment) * appraisal_rate_az
+    y6_growth_az = (
+                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + estate_investment) * appraisal_rate_az
+    y7_growth_az = (
+                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + estate_investment) * appraisal_rate_az
+    y8_growth_az = (
+                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + estate_investment) * appraisal_rate_az
+    y9_growth_az = (
+                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + estate_investment) * appraisal_rate_az
+    y10_growth_az = (
+                                y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + y9_growth_az + estate_investment) * appraisal_rate_az
+
+    y1_val_az = (
+                y1_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + estate_investment * kiraye_kof_az)
+    y1_yatirim_net_deyeri_az = estate_investment - 9 * monthly_loan_az * 12 + y1_val_az
+
+    y2_val_az = (
+                y2_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + estate_investment * kiraye_kof_az * (
+                    1 + rental_growth_az / 100))
+    y2_yatirim_net_deyeri_az = estate_investment - 8 * monthly_loan_az * 12 + y1_val_az + y2_val_az
+
+    x3 = estate_investment * kiraye_kof_az * (1 + rental_growth_az / 100) * (1 + rental_growth_az / 100)
+    y3_val_az = (y3_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x3)
+    y3_yatirim_net_deyeri_az = estate_investment - 7 * monthly_loan_az * 12 + y1_val_az + y2_val_az + y3_val_az
+
+    x4 = x3 * (1 + rental_growth_az / 100)
+    y4_val_az = (y4_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x4)
+    y4_yatirim_net_deyeri_az = estate_investment - 6 * monthly_loan_az * 12 + y1_val_az + y2_val_az + y3_val_az + y4_val_az
+
+    x5 = x4 * (1 + rental_growth_az / 100)
+    y5_val_az = (y5_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x5)
+    y5_yatirim_net_deyeri_az = estate_investment - 5 * monthly_loan_az * 12 + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az
+
+    x6 = x5 * (1 + rental_growth_az / 100)
+    y6_val_az = (y6_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x6)
+    y6_yatirim_net_deyeri_az = estate_investment - 4 * monthly_loan_az * 12 + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az
+
+    x7 = x6 * (1 + rental_growth_az / 100)
+    y7_val_az = (y7_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x7)
+    y7_yatirim_net_deyeri_az = estate_investment - 3 * monthly_loan_az * 12 + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az
+
+    x8 = x7 * (1 + rental_growth_az / 100)
+    y8_val_az = (y8_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x8)
+    y8_yatirim_net_deyeri_az = estate_investment - 2 * monthly_loan_az * 12 + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az
+
+    x9 = x8 * (1 + rental_growth_az / 100)
+    y9_val_az = (y9_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x9)
+    y9_yatirim_net_deyeri_az = estate_investment - 1 * monthly_loan_az * 12 + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az
+
+    x10 = x9 * (1 + rental_growth_az / 100)
+    print("yyy")
+    print(x9)
+    y10_val_az = (y10_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x10)
+    y10_yatirim_net_deyeri_az = estate_investment + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az + y10_val_az
+    dataaz = [round(y1_yatirim_net_deyeri_az, 2),
+                      round(y2_yatirim_net_deyeri_az, 2),
+                      round(y3_yatirim_net_deyeri_az, 2),
+                      round(y4_yatirim_net_deyeri_az, 2),
+                      round(y5_yatirim_net_deyeri_az, 2),
+                      round(y6_yatirim_net_deyeri_az, 2),
+                      round(y7_yatirim_net_deyeri_az, 2),
+                      round(y8_yatirim_net_deyeri_az, 2),
+                      round(y9_yatirim_net_deyeri_az, 2),
+                      round(y10_yatirim_net_deyeri_az, 2)]
+    data['dataaz'] = dataaz[:year]
+
+    # ---------------------------------------------------------------------------------------------
+    #Bank
+    # ---------------------------------------------------------------------------------------------
+    yx1 = amount * interest_rate_bank_az/100
+    y1_yatirim_net_deyeri_bank = amount+yx1
+
+    yx2 = (amount+yx1)* interest_rate_bank_az/100
+    y2_yatirim_net_deyeri_bank = amount+yx1+yx2
+
+    yx3 = (amount+yx1+yx2)*0.035
+    y3_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3
+
+    yx4 = (amount+yx1+yx2+yx3)*0.035
+    y4_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4
+
+    yx5 = (amount+yx1+yx2+yx3+yx4)*0.035
+    y5_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4+yx5
+
+    yx6 = (amount+yx1+yx2+yx3+yx4+yx5)*0.035
+    y6_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4+yx5+yx6
+
+    yx7 = (amount+yx1+yx2+yx3+yx4+yx5+yx6)*0.035
+    y7_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7
+
+    yx8 = (amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7)*0.035
+    y8_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7+yx8
+
+    yx9 = (amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7+yx8)*0.035
+    y9_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7+yx8+yx9
+
+    yx10 = (amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7+yx8+yx9)*0.035
+    y10_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7+yx8+yx9+yx10
+
+    databank = [round(y1_yatirim_net_deyeri_bank, 2),
+                        round(y2_yatirim_net_deyeri_bank, 2),
+                        round(y3_yatirim_net_deyeri_bank, 2),
+                      round(y4_yatirim_net_deyeri_bank, 2),
+                        round(y5_yatirim_net_deyeri_bank, 2),
+                        round(y6_yatirim_net_deyeri_bank, 2),
+                      round(y7_yatirim_net_deyeri_bank, 2),
+                        round(y8_yatirim_net_deyeri_bank, 2),
+                        round(y9_yatirim_net_deyeri_bank, 2),
+                      round(y10_yatirim_net_deyeri_bank, 2)]
+    data['databank'] = databank[:year]
+
+
+    # ---------------------------------------------------------------------------------------------
+    #Turkey Net
+    # ---------------------------------------------------------------------------------------------
+
+    y1_value = estate_investment * appraisal
+    y2_value = (y1_value) * appraisal
+    y3_value = (y2_value) * appraisal
+    y4_value = (y3_value) * appraisal
+    y5_value = (y4_value) * appraisal
+    y6_value = (y5_value) * appraisal
+    y7_value = (y6_value) * appraisal
+    y8_value = (y7_value) * appraisal
+    y9_value = (y8_value) * appraisal
+    y10_value = (y9_value) * appraisal
+
+    y1_growth = amount * appraisal_rate
+    y2_growth = (y1_growth + amount) * appraisal_rate
+    y3_growth = (y1_growth + y2_growth + amount) * appraisal_rate
+    y4_growth = (y1_growth + y2_growth + y3_growth + amount) * appraisal_rate
+    y5_growth = (y1_growth + y2_growth + y3_growth + y4_growth + amount) * appraisal_rate
+    y6_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + amount) * appraisal_rate
+    y7_growth = (
+                            y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + amount) * appraisal_rate
+    y8_growth = (
+                            y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + amount) * appraisal_rate
+    y9_growth = (
+                            y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + amount) * appraisal_rate
+    y10_growth = (
+                             y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + y9_growth + amount) * appraisal_rate
+
+    y1_val = (y1_growth - diger_xerc_tr + amount * kiraye_kof)
+    y1_yatirim_net_deyeri = amount + y1_val
+    print("neeet")
+    print(y1_growth)
+    print(amount * kiraye_kof)
+
+    y2_val = (y2_growth - diger_xerc_tr + amount * kiraye_kof * (1 + rental_growth_tr / 100))
+    y2_yatirim_net_deyeri = amount + y1_val + y2_val
+
+    x3 = amount * kiraye_kof * (1 + rental_growth_tr / 100) * (1 + rental_growth_tr / 100)
+    y3_val = (y3_growth - diger_xerc_tr + x3)
+    y3_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val
+
+    x4 = x3 * (1 + rental_growth_tr / 100)
+    y4_val = (y4_growth - diger_xerc_tr + x4)
+    y4_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val
+
+    x5 = x4 * (1 + rental_growth_tr / 100)
+    y5_val = (y5_growth - diger_xerc_tr + x5)
+    y5_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val + y5_val
+
+    x6 = x5 * (1 + rental_growth_tr / 100)
+    y6_val = (y6_growth - diger_xerc_tr + x6)
+    y6_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val
+
+    x7 = x6 * (1 + rental_growth_tr / 100)
+    y7_val = (y7_growth - diger_xerc_tr + x7)
+    y7_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val
+
+    x8 = x7 * (1 + rental_growth_tr / 100)
+    y8_val = (y8_growth - diger_xerc_tr + x8)
+    y8_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val
+
+    x9 = x8 * (1 + rental_growth_tr / 100)
+    y9_val = (y9_growth - diger_xerc_tr + x9)
+    y9_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val + y9_val
+
+    x10 = x9 * (1 + rental_growth_tr / 100)
+    print("yyy")
+    print(x9)
+    y10_val = (y10_growth - diger_xerc_tr + x10)
+    y10_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val + y9_val + y10_val
+    datatr2 = [round(y1_yatirim_net_deyeri, 2),
+               round(y2_yatirim_net_deyeri, 2),
+               round(y3_yatirim_net_deyeri, 2),
+               round(y4_yatirim_net_deyeri, 2),
+                       round(y5_yatirim_net_deyeri, 2),
+               round(y6_yatirim_net_deyeri, 2) ,
+               round(y7_yatirim_net_deyeri, 2),
+               round(y8_yatirim_net_deyeri, 2),
+                       round(y9_yatirim_net_deyeri, 2),
+               round(y10_yatirim_net_deyeri, 2)]
+
+    data['datatr2'] = datatr2[:year]
+
+    # ---------------------------------------------------------------------------------------------
+    # Azerbaijan Net
+    # ---------------------------------------------------------------------------------------------
+
+    y1_value_az = amount * appraisal_az
+    y2_value_az = (y1_value_az) * appraisal_az
+    y3_value_az = (y2_value_az) * appraisal_az
+    y4_value_az = (y3_value_az) * appraisal_az
+    y5_value_az = (y4_value_az) * appraisal_az
+    y6_value_az = (y5_value_az) * appraisal_az
+    y7_value_az = (y6_value_az) * appraisal_az
+    y8_value_az = (y7_value_az) * appraisal_az
+    y9_value_az = (y8_value_az) * appraisal_az
+    y10_value_az = (y9_value_az) * appraisal_az
+
+    y1_growth_az = amount * appraisal_rate_az
+    y2_growth_az = (y1_growth_az + amount) * appraisal_rate_az
+    y3_growth_az = (y1_growth_az + y2_growth_az + amount) * appraisal_rate_az
+    y4_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + amount) * appraisal_rate_az
+    y5_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + amount) * appraisal_rate_az
+    y6_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + amount) * appraisal_rate_az
+    y7_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + amount) * appraisal_rate_az
+    y8_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + amount) * appraisal_rate_az
+    y9_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + amount) * appraisal_rate_az
+    y10_growth_az = (
+                            y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + y9_growth_az + amount) * appraisal_rate_az
+
+    y1_val_az = (
+            y1_growth_az - diger_xerc_az   + amount * kiraye_kof_az)
+    y1_yatirim_net_deyeri_az = amount  + y1_val_az
+
+    y2_val_az = (y2_growth_az - diger_xerc_az   + amount * kiraye_kof_az * (1 + rental_growth_az / 100))
+    y2_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az
+    print("xexe")
+    print(amount * kiraye_kof_az)
+    print(amount * kiraye_kof_az * (1 + rental_growth_az / 100))
 
 
 
-    data['kiraye'] = sum_of_values_kiraye
+    x3 = amount * kiraye_kof_az * (1 + rental_growth_az / 100) * (1 + rental_growth_az / 100)
+    y3_val_az = (y3_growth_az - diger_xerc_az   + x3)
+    y3_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az + y3_val_az
+
+    x4 = x3 * (1 + rental_growth_az / 100)
+    y4_val_az = (y4_growth_az - diger_xerc_az   + x4)
+    y4_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az + y3_val_az + y4_val_az
+
+    x5 = x4 * (1 + rental_growth_az / 100)
+    y5_val_az = (y5_growth_az - diger_xerc_az   + x5)
+    y5_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az
+
+    x6 = x5 * (1 + rental_growth_az / 100)
+    y6_val_az = (y6_growth_az - diger_xerc_az   + x6)
+    y6_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az
+
+    x7 = x6 * (1 + rental_growth_az / 100)
+    y7_val_az = (y7_growth_az - diger_xerc_az   + x7)
+    y7_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az
+
+    x8 = x7 * (1 + rental_growth_az / 100)
+    y8_val_az = (y8_growth_az - diger_xerc_az   + x8)
+    y8_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az
+
+    x9 = x8 * (1 + rental_growth_az / 100)
+    y9_val_az = (y9_growth_az - diger_xerc_az   + x9)
+    y9_yatirim_net_deyeri_az = amount  + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az
+
+    x10 = x9 * (1 + rental_growth_az / 100)
+    print("yyy")
+    print(x9)
+    y10_val_az = (y10_growth_az - diger_xerc_az  - monthly_loan_az * 12 + x10)
+    y10_yatirim_net_deyeri_az = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az + y10_val_az
+    dataaz2 = [round(y1_yatirim_net_deyeri_az, 2),
+                       round(y2_yatirim_net_deyeri_az, 2),
+                       round(y3_yatirim_net_deyeri_az, 2),
+                      round(y4_yatirim_net_deyeri_az, 2),
+                       round(y5_yatirim_net_deyeri_az, 2),
+                       round(y6_yatirim_net_deyeri_az, 2)  ,
+                      round(y7_yatirim_net_deyeri_az, 2),
+                       round(y8_yatirim_net_deyeri_az, 2),
+                       round(y9_yatirim_net_deyeri_az, 2),
+                      round(y10_yatirim_net_deyeri_az, 2)]
+
+    data['dataaz2'] = dataaz2[:year]
+
+
+    # ---------------------------------------------------------------------------------------------
+    # ---------------------------------------------------------------------------------------------
 
 
 
+    y1_value_az = estate_investment * appraisal_az
+    y2_value_az = (y1_value_az) * appraisal_az
+    y3_value_az = (y2_value_az) * appraisal_az
+    y4_value_az = (y3_value_az) * appraisal_az
+    y5_value_az = (y4_value_az) * appraisal_az
+    y6_value_az = (y5_value_az) * appraisal_az
+    y7_value_az = (y6_value_az) * appraisal_az
+    y8_value_az = (y7_value_az) * appraisal_az
+    y9_value_az = (y8_value_az) * appraisal_az
+    y10_value_az = (y9_value_az) * appraisal_az
+
+    y1_value_bank = estate_investment * appraisal
+    y2_value_bank = (y1_value_bank) * appraisal
+    y3_value_bank = (y2_value_bank) * appraisal
+    y4_value_bank = (y3_value_bank) * appraisal
+    y5_value_bank = (y4_value_bank) * appraisal
+    y6_value_bank = (y5_value_bank) * appraisal
+    y7_value_bank = (y6_value_bank) * appraisal
+    y8_value_bank = (y7_value_bank) * appraisal
+    y9_value_bank = (y8_value_bank) * appraisal
+    y10_value_bank = (y9_value_bank) * appraisal
+
+    y1_value2 = estate_investment * appraisal
+    y2_value2 = (y1_value2) * appraisal
+    y3_value2 = (y2_value2) * appraisal
+    y4_value2 = (y3_value2) * appraisal
+    y5_value2 = (y4_value2) * appraisal
+    y6_value2 = (y5_value2) * appraisal
+    y7_value2 = (y6_value2) * appraisal
+    y8_value2 = (y7_value2) * appraisal
+    y9_value2 = (y8_value2) * appraisal
+    y10_value2 = (y9_value2) * appraisal
+
+    y1_value2_az = estate_investment * appraisal_az
+    y2_value2_az = (y1_value2_az) * appraisal_az
+    y3_value2_az = (y2_value2_az) * appraisal_az
+    y4_value2_az = (y3_value2_az) * appraisal_az
+    y5_value2_az = (y4_value2_az) * appraisal_az
+    y6_value2_az = (y5_value2_az) * appraisal_az
+    y7_value2_az = (y6_value2_az) * appraisal_az
+    y8_value2_az = (y7_value2_az) * appraisal_az
+    y9_value2_az = (y8_value2_az) * appraisal_az
+    y10_value2_az = (y9_value2_az) * appraisal_az
 
 
-
-
-
-
-    if mortgage == 1:
-        if year == 2:
-            RANGE_TO_SUM_DEYER = 'Sheet1!F21'
-        elif year == 3:
-            RANGE_TO_SUM_DEYER = 'Sheet1!G21'
-        elif year == 4:
-            RANGE_TO_SUM_DEYER = 'Sheet1!H21'
-        elif year == 5:
-            RANGE_TO_SUM_DEYER = 'Sheet1!I21'
-        elif year == 6:
-            RANGE_TO_SUM_DEYER = 'Sheet1!J21'
-        elif year == 7:
-            RANGE_TO_SUM_DEYER = 'Sheet1!K21'
-        elif year == 8:
-            RANGE_TO_SUM_DEYER = 'Sheet1!L21'
-        elif year == 9:
-            RANGE_TO_SUM_DEYER = 'Sheet1!M21'
-        elif year == 10:
-            RANGE_TO_SUM_DEYER = 'Sheet1!N21'
-    else:
-        if year == 2:
-            RANGE_TO_SUM_DEYER = 'Sheet1!F58'
-        elif year == 3:
-            RANGE_TO_SUM_DEYER = 'Sheet1!G58'
-        elif year == 4:
-            RANGE_TO_SUM_DEYER = 'Sheet1!H58'
-        elif year == 5:
-            RANGE_TO_SUM_DEYER = 'Sheet1!I58'
-        elif year == 6:
-            RANGE_TO_SUM_DEYER = 'Sheet1!J58'
-        elif year == 7:
-            RANGE_TO_SUM_DEYER = 'Sheet1!K58'
-        elif year == 8:
-            RANGE_TO_SUM_DEYER = 'Sheet1!L58'
-        elif year == 9:
-            RANGE_TO_SUM_DEYER = 'Sheet1!M58'
-        elif year == 10:
-            RANGE_TO_SUM_DEYER = 'Sheet1!N58'
-    read_request_deyer = service.spreadsheets().values().get(
-        spreadsheetId=spreadsheet_id,
-        range=RANGE_TO_SUM_DEYER)
-
-    read_response_deyer = read_request_deyer.execute()
-    cell_value = read_response_deyer.get('values', [])[0][0] if 'values' in read_response_deyer else 0
-
-    data['deyer'] = cell_value
+    data['field1'] = 120000
+    data['deyer'] = 23400
+    data['year'] = 10
+    data['kiraye'] = 34200
 
     return JsonResponse(data)
 
