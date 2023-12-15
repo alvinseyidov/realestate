@@ -22,6 +22,46 @@
 <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/vkuliev/3-addimda-agilli-yatirim', text: 'Webinara yazıl', color: '#00abff', textColor: '#ffffff', branding: undefined }); }</script>
 <!-- Calendly badge widget end -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+      <style>
+          .spann1 {
+    font-size: 19px;
+    font-weight: 400;
+    width: 36px !important;
+    height: 35px !important;
+    border-radius: 5px;
+    padding-top:5px;
+    box-shadow: inset 0px 2px 7px 1px #065245ad !important;
+}
+.spann2 {
+    margin-top: 3px;
+}
+.spann {
+    font-size: 10px;
+}
+.spann2 {
+    display: block;
+    width: 41px !important;
+}
+#timer {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #B1CDF1;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+      </style>
  	<style>
  	.apexcharts-toolbar{
  	display: none !important;
@@ -592,6 +632,48 @@ width:100% !important;
     display:none !important;
     }
 </style>
+
+      <style>
+          .spann2{
+
+          margin-right: 12px !important;
+              min-width: 70px !important;
+          }
+
+          .spann1{
+
+              padding: 11px 0 0 20px;
+    height: 52px !important;
+    width: 40px !important;
+    min-width: 62px !important;
+    font-size: 22px;
+        background-color: #000;
+    }
+
+    .spann{
+        min-width: 70px !important;
+    text-align: center;
+    padding-right: 10px;
+    color:#000 !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .cc2{
+
+            width: 25% !important;
+    margin: 0 !important;
+    }
+    .cc1{
+
+        padding: 11px 0 0 1px !important;
+        }
+
+        #timerr{
+            margin-bottom:20px !important;
+        }
+
+    }
+      </style>
   </head>
   <body>
 
@@ -634,8 +716,7 @@ width:100% !important;
                 {{main_section.text2}} </p>
                 <div style=" position: relative; ">
                 <img src="{% static 'man.png'%}" style=" width: 100%; ">
-                 <a href=" {{main_section.button_link}} " style="    position: absolute; bottom: 67px; left: 50%; width: 214px; transform: translate(-50%, -50%); text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
-
+                  <div id="timerr" style=" display: contents; width: 100px; gap: 13px; "></div>
                 </div>
 
                 </div>
@@ -658,7 +739,7 @@ width:100% !important;
 
                 <p class="pb-4 mt-4" style=" color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
                 {{main_section.text2}} </p>
-                <a href=" {{main_section.button_link}} " style="     text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
+                <div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
 
                 </div>
           </div>
@@ -2619,13 +2700,13 @@ myForm.addEventListener('submit', function(e) {
             enabled: false,
           },
           series: [{
-          name: 'Azərbaycan',
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
           data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
         }, {
-          name: 'Türkiyə',
+          name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
         }, {
-          name: 'Bank',
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
         }],
           chart: {
@@ -2722,25 +2803,25 @@ myForm.addEventListener('submit', function(e) {
 
             if($('input[name="ipoteka"]:checked').val() == 1){
             chart1.updateSeries([{
-          name: 'Azərbaycan',
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
           data: data['dataaz']
         }, {
-          name: 'Türkiyə',
+          name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: data['datatr']
         }, {
-          name: 'Bank',
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
         }])
         }else{
 
         chart1.updateSeries([{
-          name: 'Azərbaycan',
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
           data: data['dataaz2']
         }, {
-          name: 'Türkiyə',
+          name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: data['datatr2']
         }, {
-          name: 'Bank',
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
         }])
         }
@@ -2751,7 +2832,7 @@ myForm.addEventListener('submit', function(e) {
 
             if(data['year'] == 2){
     chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il"]
     },
@@ -2759,7 +2840,7 @@ myForm.addEventListener('submit', function(e) {
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il"]
     },
@@ -2767,22 +2848,14 @@ myForm.addEventListener('submit', function(e) {
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il"]
     },
@@ -2790,7 +2863,15 @@ myForm.addEventListener('submit', function(e) {
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il"]
     },
@@ -2801,7 +2882,7 @@ myForm.addEventListener('submit', function(e) {
 else if(data['year'] == 3){
 
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il"]
     },
@@ -2809,7 +2890,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il"]
     },
@@ -2817,22 +2898,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il"]
     },
@@ -2840,7 +2913,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il"]
     },
@@ -2848,7 +2929,7 @@ chart1.updateOptions({
     });}
 else if(data['year'] == 4){
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
     },
@@ -2856,7 +2937,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
     },
@@ -2864,22 +2945,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
     },
@@ -2887,7 +2960,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il"]
     },
@@ -2895,7 +2976,7 @@ chart1.updateOptions({
     });}
 else if(data['year'] == 5){
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
     },
@@ -2903,7 +2984,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
     },
@@ -2911,22 +2992,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
     },
@@ -2934,7 +3007,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il"]
     },
@@ -2942,7 +3023,7 @@ chart1.updateOptions({
     });}
 else if(data['year'] == 6){
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
     },
@@ -2950,7 +3031,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
     },
@@ -2958,22 +3039,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
     },
@@ -2981,7 +3054,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il"]
     },
@@ -2989,7 +3070,7 @@ chart1.updateOptions({
     });}
 else if(data['year'] == 7){
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
     },
@@ -2997,7 +3078,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
     },
@@ -3005,22 +3086,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
     },
@@ -3028,7 +3101,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il"]
     },
@@ -3036,7 +3117,7 @@ chart1.updateOptions({
     });}
 else if(data['year'] == 8){
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
     },
@@ -3044,7 +3125,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
     },
@@ -3052,22 +3133,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
     },
@@ -3075,7 +3148,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il"]
     },
@@ -3083,7 +3164,7 @@ chart1.updateOptions({
     });}
 else if(data['year'] == 9){
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
     },
@@ -3091,7 +3172,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
     },
@@ -3099,22 +3180,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
     },
@@ -3122,7 +3195,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
     },
@@ -3130,7 +3211,7 @@ chart1.updateOptions({
     });}
     else if(data['year'] == 10){
 chart1.updateOptions({
-     name: 'Azərbaycan',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
     },
@@ -3138,7 +3219,7 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Türkiyə',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
     },
@@ -3146,22 +3227,14 @@ chart1.updateOptions({
     });
 
     chart1.updateOptions({
-     name: 'Bank',
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
     },
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycan',
-    xaxis: {
-      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
-    },
-
-    });
-
-    chart2.updateOptions({
-     name: 'Türkiyə',
+     name: 'Azərbaycanda Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
     },
@@ -3169,7 +3242,15 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Bank',
+     name: 'Türkiyədə Yatırımın Net Dəyəri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank Depoziti Yatırımın Net Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
     },
@@ -3200,13 +3281,13 @@ chart1.updateOptions({
 
 
         chart2.updateSeries([{
-          name: 'Azərbaycan',
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
           data: data['dataaz2']
         }, {
-          name: 'Türkiyə',
+          name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: data['datatr2']
         }, {
-          name: 'Bank',
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
         }])
 
@@ -3248,24 +3329,24 @@ chart1.updateOptions({
       console.log(data['databank'])
 
      chart1.updateSeries([{
-  name: 'Azərbaycan',
+  name: 'Azərbaycanda Yatırımın Net Dəyəri',
   data: data['dataaz']
 }, {
-  name: 'Türkiyə',
+  name: 'Türkiyədə Yatırımın Net Dəyəri',
   data: data['datatr']
 }, {
-  name: 'Bank',
+  name: 'Bank Depoziti Yatırımın Net Dəyəri',
   data: data['databank']
 }])
 
 chart2.updateSeries([{
-  name: 'Azərbaycan',
+  name: 'Azərbaycanda Yatırımın Net Dəyəri',
   data: data['dataaz2']
 }, {
-  name: 'Türkiyə',
+  name: 'Türkiyədə Yatırımın Net Dəyəri',
   data: data['datatr2']
 }, {
-  name: 'Bank',
+  name: 'Bank Depoziti Yatırımın Net Dəyəri',
   data: data['databank']
 }])
 
@@ -3285,6 +3366,41 @@ chart2.updateSeries([{
     $("#ilkinid").val(e.target.value)
   });
 </script>
+
+  <script>
+    function updateTimer() {
+  future  = Date.parse("{{general.countdown_enddate|date:'M d, Y s:m:h'}}");
+  now     = new Date();
+  diff    = future - now;
+
+  days  = Math.floor( diff / (1000*60*60*24) );
+  hours = Math.floor( diff / (1000*60*60) );
+  mins  = Math.floor( diff / (1000*60) );
+  secs  = Math.floor( diff / 1000 );
+
+  d = days;
+  h = hours - days  * 24;
+  m = mins  - hours * 60;
+  s = secs  - mins  * 60;
+
+  document.getElementById("timer")
+    .innerHTML =
+      '<div class="spann2"><div class="spann1">' + d + '</div><div class="spann">gün</div></div>' +
+      '<div class="spann2"><div class="spann1">' + h + '</div><div class="spann">saat</div></div>' +
+      '<div class="spann2"><div class="spann1">' + m + '</div><div class="spann">dəq.</div></div>' +
+      '<div class="spann2"><div class="spann1">' + s + '</div><div class="spann">san.</div></div>' ;
+
+      document.getElementById("timerr")
+    .innerHTML =
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + d + '</div><div class="spann">gün</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + h + '</div><div class="spann">saat</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + m + '</div><div class="spann">dəq.</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + s + '</div><div class="spann">san.</div></div>' ;
+}
+
+setInterval('updateTimer()', 1000 );
+
+  </script>
 
 </html>
 

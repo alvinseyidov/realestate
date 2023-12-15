@@ -13,6 +13,7 @@ class General(models.Model):
     copyright = models.CharField(max_length=256)
     logo = models.FileField()
     home_popup_video = models.FileField()
+    countdown_enddate = models.DateTimeField()
 
     class Meta:
         verbose_name = "Ümumi Məlumatlar"
