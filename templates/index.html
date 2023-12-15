@@ -1312,6 +1312,12 @@ function openCity(evt, cityName) {
                                 <div  style=" position: relative; "><span style=" font-weight: 500; font-size: 15px; position: absolute; top: 8px; left: 10px; color: #747474; ">İl</span><input min="2" max="10" id="muddetid" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="10"></div>
                             <div> <input  id="muddetsliderid" class="slider calculatorinput" type="range" min="2" max="10" step="1" value="10" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
+                            <div class="col-lg-12 col-md-12" style=" padding-top: 12px; padding-bottom: 24px; ">
+                              <input type="radio" id="radio1" checked="" name="ipoteka" value="1">
+                              <label for="html">İpoteka</label>
+                              <input type="radio" id="radio2" name="ipoteka" value="0">
+                              <label for="html">Nağd</label>
+                            </div>
                             <div class="col-lg-12 col-md-12">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən <span id="yearspan">10</span> illik kirayə gəliri</div>
                               <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field1" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
@@ -1320,12 +1326,7 @@ function openCity(evt, cityName) {
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən <span id="yearspann">10</span> ilin sonundakı əmlakın dəyərlənməsi</div>
                                 <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">₼</span><input readonly id="field2" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
                             </div>
-                            <div class="col-lg-12 col-md-12" style=" padding-top: 24px; ">
-                              <input type="radio" id="radio1" checked="" name="ipoteka" value="1">
-                              <label for="html">İpoteka</label>
-                              <input type="radio" id="radio2" name="ipoteka" value="0">
-                              <label for="html">Nağd</label>
-                            </div>
+
 
                             <style>
                                 .loading{
@@ -2673,6 +2674,13 @@ myForm.addEventListener('submit', function(e) {
       });
     });
 
+    $(document).ready(function(){
+      $("#ilkinsliderid").change(function(){
+        amount = (this.value);
+
+      });
+    });
+
 
 
 
@@ -3090,6 +3098,53 @@ chart1.updateOptions({
      name: 'Bank',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il"]
+    },
+
+    });}
+    else if(data['year'] == 10){
+chart1.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azərbaycan',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyə',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Bank',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-ci il", "4-ci il", "5-ci il", "6-ci il", "7-ci il","8-ci il","9-ci il","10-ci il"]
     },
 
     });}
