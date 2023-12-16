@@ -17,8 +17,8 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
       <!-- Calendly badge widget begin -->
-<link href="https://assets.calendly.com/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/external/widget.js" type="text/javascript" async></script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/vkuliev/3-addimda-agilli-yatirim', text: 'Webinara yazıl', color: '#00abff', textColor: '#ffffff', branding: undefined }); }</script>
 <!-- Calendly badge widget end -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -760,18 +760,18 @@ width:100% !important;
         </div>
       </div>
 
-  <div class="desktopp" style="background-image:url({{main_section.background_image.url}});    background-size: cover;background-size: cover; height: 750px; background-position: center;">
+  <div class="desktopp" style="background-image:url({{main_section.background_image.url}});    background-size: cover;background-size: cover; height: 600px; background-position: center;">
         <div class="row  ">
           <div class="col-lg-6 col-md-12" style="">
-            <div class="cccx7" style="padding-left: 142px; padding-top: 85px;    padding-right: 18px;">
+            <div class="cccx7" style="padding-left: 142px; padding-top: 55px;    padding-right: 18px;">
               <h1 class="cccx8 pb-2 display-2   redffg" style="color: #000; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 700; line-height: 40px;">
                   {{main_section.title}}
                  </h1>
-            <p class="pb-4 mt-4" style=" color: #000;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
+            <p class="pb-2 mt-2" style=" color: #000;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
             {{main_section.text}}
             </p>
 
-                <p class="pb-4 mt-4" style=" color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
+                <p class="pb-2 mt-2" style=" color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
                 {{main_section.text2}} </p>
                 <div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
 <div style=" display: flex;padding-top:20px; ">
@@ -1864,19 +1864,38 @@ function openCity(evt, cityName) {
         <div class="row  " style="padding-left: 142px; padding-right:142px; ">
 
 
-            <div class="col-lg-12 col-md-12 discusss" style="height: 380px; background-size: cover; background-position: center;background-image:url({{muzakire.image.url}});">
+            <div class="col-lg-12 col-md-12 discusss" style="height: 630px; background-size: cover; background-position: center;background-color:#02b5fd;">
                 <div class="row  ">
-                    <div class="col-lg-6 col-md-12"> <div class="discusstitle" style=" color: #fff; font-size: 38px; line-height: 50px; padding: 52px 59px; font-weight: 500; ">
-                        {{muzakire.title}}</div></div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="discusstext " style=" color: #fff; padding: 54px 104px 0 0px; font-size: 17px; ">{{muzakire.text}}</div>
-
-                                <a onclick="Calendly.initPopupWidget({url:'https://calendly.com/vkuliev/3-addimda-agilli-yatirim'});return false;" class="discussbutton"   style=" cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 13px 23px; border-radius: 26px; display: block; width: 250px; text-align: center; margin-top: 25px; ">{{muzakire.button_text}}</a>
+                    <div class="col-lg-6 col-md-12"> <div class="discusstitle" style=" color: #fff; font-size: 38px; line-height: 50px; padding: 108px 59px 55px 59px; font-weight: 500; ">
+                        {{muzakire.title}}</div>
+                     <div class="discusstext " style=" color: #fff; padding:27px 59px 3px 59px; font-size: 17px; ">{{muzakire.text}}</div>
                     </div>
+                    <div class="col-lg-6 col-md-12" style=" padding-top: 17px; ">
+
+
+                        <style>
+                        @media screen and (max-width: 600px){
+                            .calendly-inline-widget{
+                                height: 620px !important;
+                                margin-right: 10px !important;
+                                }
+                                }
+                                     .calendly-inline-widget{
+                                    overflow-y: hidden !important;
+                                    margin-right: 14px;
+                                }
+                        </style>
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget"   data-url="https://calendly.com/vkuliev/3-addimda-agilli-yatirim?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->  </div>
                 </div>
             </div>
         </div>
 </div>
+
+
+
 {% if sorting_sections.youtube_video_active %}
  <div class=" mt-5" >
         <div class="row  ">
@@ -2745,13 +2764,13 @@ myForm.addEventListener('submit', function(e) {
    <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
  <script>
       var options = {
-      yaxis: {
-  labels: {
-    formatter: function (value) {
-     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-  },
-},
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+          },
+        },
       zoom: {
             enabled: false,
           },
@@ -3323,12 +3342,12 @@ chart1.updateOptions({
              $('#hesabla').removeClass("loading");
 
               if($('input[name="ipoteka"]:checked').val() == 1){
-              $('#field1').val(data['kiraye']);
-              $('#field2').val(data['deyer']);
+              $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               }
               else{
-                $('#field1').val(data['kiraye']);
-              $('#field2').val(data['deyer']);
+                $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               }
 
 
@@ -3373,12 +3392,12 @@ chart1.updateOptions({
      $('#hesabla').removeClass("loading");
 
       if($('input[name="ipoteka"]:checked').val() == 1){
-      $('#field1').val(data['kiraye']);
-      $('#field2').val(data['deyer']);
+      $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
       else{
-        $('#field1').val(data['kiraye']);
-      $('#field2').val(data['deyer']);
+        $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
 
 
