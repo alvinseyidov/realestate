@@ -2061,7 +2061,7 @@ function openCity(evt, cityName) {
                 {% for f in faq %}
               <div class="accordion-item bg-white p-3 rounded-0">
                 <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4"  data-bs-toggle="collapse"
+                  <div class="d-flex justify-content-between align-items-center gap-4" onclick="myFunc{{forloop.counter}}()"  data-bs-toggle="collapse"
                       data-bs-target="#collapseOne{{forloop.counter}}"
                       aria-expanded="true"
                       aria-controls="collapseOne{{forloop.counter}}" style="cursor: pointer;">
@@ -2076,8 +2076,15 @@ function openCity(evt, cityName) {
                       data-bs-target="#collapseOne{{forloop.counter}}"
                       aria-expanded="true"
                       aria-controls="collapseOne{{forloop.counter}}">
-                      <img class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
+                      <img id="arrow{{forloop.counter}}" class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
                     </button>
+
+                      <script>
+                        function myFunc{{forloop.counter}}() {
+                            let para{{forloop.counter}} = document.getElementById("arrow{{forloop.counter}}");
+                            para{{forloop.counter}}.classList.toggle("fa-rotate-180");
+                        }
+                    </script>
                   </h2>
                 </div>
                 <div
