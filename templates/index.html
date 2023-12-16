@@ -694,9 +694,13 @@ width:100% !important;
     }
 
 
-    .strip__close.strip__close--show {
+    .strip__close_desktop.strip__close--show {
     font-size: 40px !important;
     top: 3vh !important;
+}
+
+.strip__close.strip__close--show {
+    font-size: 40px !important;
 }
       </style>
   </head>
@@ -1015,7 +1019,7 @@ width:100% !important;
   </article>
 
 
-  <div class="strip__close">x</div>
+  <div class="strip__close strip__close_desktop">x</div>
 </section>
 
 </div>
@@ -1229,9 +1233,6 @@ width:100% !important;
 </div>
 </div>
 </div>
-
-
-
 
 
 
@@ -2182,7 +2183,6 @@ function openCityy(evt, cityName) {
 
 
 
-
 <style>
     * {
   box-sizing: border-box;
@@ -2428,12 +2428,14 @@ p {
 
 
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/d5c98c56f9.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="{% static 'js/main.js'%}"></script>
+
 
 <script>
     var Expand = (function() {
@@ -2460,6 +2462,11 @@ p {
 
   var close = function() {
     if (expanded) {
+        $(".strips__strip_mob").show();
+
+        $(".strips__strip_mob").attr("style", "min-height: 520px");
+        $(".strips_mob").attr("style", "position:relative;");
+        // $(".strips__strip").css("min-height", '520px');$('.strips__strip').hide();
       tile.removeClass('strips__strip--expanded');
       // remove delay from inner text
       tileText.css('transition', 'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)');
@@ -2486,6 +2493,7 @@ p {
 
 Expand.init();
 </script>
+
 
 
 
@@ -2602,7 +2610,6 @@ myForm.addEventListener('submit', function(e) {
 });
   </script>
 
-
 <script>
 
     $(document).ready(function () {
@@ -2622,10 +2629,10 @@ myForm.addEventListener('submit', function(e) {
         function indicateForward() {
             if (containerRect.top < 600 && containerRect.top > -200) {
                 if (!isTouchpadScroll && level < 500) {
-                    level += 7.5;
+                    level += 15;
                 }
                 if (isTouchpadScroll && level < 500) {
-                    level += 7;
+                    level += 3.5;
                 }
                 changeBackGroundImage();
             }
@@ -2634,10 +2641,10 @@ myForm.addEventListener('submit', function(e) {
         function indicateBack() {
             if (containerRect.top < 600 && containerRect.top > -200) {
                 if (!isTouchpadScroll && level > 0) {
-                    level -= 7.5;
+                    level -= 15;
                 }
                 if (isTouchpadScroll && level > 0) {
-                    level -= 7;
+                    level -= 3.5;
                 }
                 changeBackGroundImage();
             }
@@ -2646,38 +2653,38 @@ myForm.addEventListener('submit', function(e) {
         function changeBackGroundImage() {
             if (level < 150) {
                 makeIconsDefault();
-                icons[0].style.backgroundImage = "url({% static 'i11.svg'%})";
+                icons[0].style.backgroundImage = "url(assets/i11.svg)";
                 icons[0].style.border = "1px solid rgb(55 111 255)";
             }
             if (level > 150 && level < 250) {
                 makeIconsDefault();
-                icons[1].style.backgroundImage = "url({% static 'i21.svg'%})";
+                icons[1].style.backgroundImage = "url(assets/i21.svg)";
                 icons[1].style.border = "1px solid rgb(55 111 255)";
             }
             if (level > 250 && level < 350) {
                 makeIconsDefault();
-                icons[2].style.backgroundImage = "url({% static 'i31.svg'%})";
+                icons[2].style.backgroundImage = "url(assets/i31.svg)";
                 icons[2].style.border = "1px solid rgb(55 111 255)";
             }
             if (level > 350 && level < 450) {
                 makeIconsDefault();
-                icons[3].style.backgroundImage = "url({% static 'i41.svg'%})";
+                icons[3].style.backgroundImage = "url(assets/i41.svg)";
                 icons[3].style.border = "1px solid rgb(55 111 255)";
             }
 
         }
 
         function makeIconsDefault() {
-            icons[0].style.backgroundImage = "url({% static 'i1.svg'%})";
+            icons[0].style.backgroundImage = "url(assets/i1.svg)";
             icons[0].style.border = "1px solid rgb(227, 229, 234)";
 
-            icons[1].style.backgroundImage = "url({% static 'i2.svg'%})";
+            icons[1].style.backgroundImage = "url(assets/i2.svg)";
             icons[1].style.border = "1px solid rgb(227, 229, 234)";
 
-            icons[2].style.backgroundImage = "url({% static 'i3.svg'%})";
+            icons[2].style.backgroundImage = "url(assets/i3.svg)";
             icons[2].style.border = "1px solid rgb(227, 229, 234)";
 
-            icons[3].style.backgroundImage = "url({% static 'i4.svg'%})";
+            icons[3].style.backgroundImage = "url(assets/i4.svg)";
             icons[3].style.border = "1px solid rgb(227, 229, 234)";
         }
 
@@ -2718,7 +2725,7 @@ myForm.addEventListener('submit', function(e) {
     });
 </script>
 
-  <script>
+<script>
 
     $(document).ready(function () {
         $(".show-details-btn").on("click", function () {
