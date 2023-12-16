@@ -2629,10 +2629,10 @@ myForm.addEventListener('submit', function(e) {
         function indicateForward() {
             if (containerRect.top < 600 && containerRect.top > -200) {
                 if (!isTouchpadScroll && level < 500) {
-                    level += 5;
+                    level += 13;
                 }
                 if (isTouchpadScroll && level < 500) {
-                    level += 8;
+                    level += 13;
                 }
                 changeBackGroundImage();
             }
@@ -2641,10 +2641,10 @@ myForm.addEventListener('submit', function(e) {
         function indicateBack() {
             if (containerRect.top < 600 && containerRect.top > -200) {
                 if (!isTouchpadScroll && level > 0) {
-                    level -= 5;
+                    level -= 7;
                 }
                 if (isTouchpadScroll && level > 0) {
-                    level -= 8;
+                    level -= 7;
                 }
                 changeBackGroundImage();
             }
