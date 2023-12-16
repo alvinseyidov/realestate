@@ -1781,7 +1781,7 @@ function openCity(evt, cityName) {
                 <div class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; "><form action="{% url 'contactform'%}" method="post">{% csrf_token%}
                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad"> </div>
                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
-                    <div style=" position: relative; "><img style=" position: absolute; top: 5px; left: 46px; " src="{% static 'flag.png'%}"><span style=" position: absolute; left: 75px; top: 1px; font-weight: 500; ">+994</span> <input required name="phone" id="phone"  placeholder="055-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 92px " type="text"> </div>
+                    <div style=" position: relative; "><img style=" position: absolute; top: 5px; left: 46px; " src="{% static 'flag.png'%}"><span style=" position: absolute; left: 75px; top: 1px; font-weight: 500; ">+994</span> <input required name="phone" id="phone"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 92px " type="text"> </div>
                     <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">{{form_section.form_button_text}}</button></div>
                     </form>
                 </div>
@@ -2061,7 +2061,10 @@ function openCity(evt, cityName) {
                 {% for f in faq %}
               <div class="accordion-item bg-white p-3 rounded-0">
                 <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4">
+                  <div class="d-flex justify-content-between align-items-center gap-4"  data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne{{forloop.counter}}"
+                      aria-expanded="true"
+                      aria-controls="collapseOne{{forloop.counter}}" style="cursor: pointer;">
                     <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">0{{forloop.counter}}</p>
                     <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">{{f.question}}</p>
                   </div>
@@ -2617,7 +2620,7 @@ var myForm = document.forms.myForm;
 var result = document.getElementById('result');  // only for debugging purposes
 
 phoneInput.addEventListener('input', function (e) {
-  var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+  var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,4})/);
   e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
 });
 
