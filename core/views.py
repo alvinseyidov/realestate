@@ -112,16 +112,16 @@ def data(request, year, amount, mortgage):
     x10 = x9 * (1 + rental_growth_tr / 100)
     y10_val = (y10_growth - diger_xerc_tr - heyat_sigorta_tr - monthly_loan_tr * 12 + x10)
     y10_yatirim_net_deyeri =  estate_investment  + y1_val + y2_val + y3_val + y4_val + y5_val +y6_val + y7_val+y8_val+y9_val+y10_val
-    datatr= [round(y1_yatirim_net_deyeri, 2),
-                      round(y2_yatirim_net_deyeri, 2),
-                      round(y3_yatirim_net_deyeri, 2),
-                      round(y4_yatirim_net_deyeri, 2),
-                      round(y5_yatirim_net_deyeri, 2),
-                      round(y6_yatirim_net_deyeri, 2),
-                      round(y7_yatirim_net_deyeri, 2),
-                      round(y8_yatirim_net_deyeri, 2),
-                      round(y9_yatirim_net_deyeri, 2),
-                      round(y10_yatirim_net_deyeri, 2)]
+    datatr= [round(y1_yatirim_net_deyeri, 0),
+                      round(y2_yatirim_net_deyeri, 0),
+                      round(y3_yatirim_net_deyeri, 0),
+                      round(y4_yatirim_net_deyeri, 0),
+                      round(y5_yatirim_net_deyeri, 0),
+                      round(y6_yatirim_net_deyeri, 0),
+                      round(y7_yatirim_net_deyeri, 0),
+                      round(y8_yatirim_net_deyeri, 0),
+                      round(y9_yatirim_net_deyeri, 0),
+                      round(y10_yatirim_net_deyeri, 0)]
 
     data['datatr'] = datatr[:year]
 
@@ -269,16 +269,16 @@ def data(request, year, amount, mortgage):
     x10 = x9 * (1 + rental_growth_az / 100)
     y10_val_az = (y10_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x10)
     y10_yatirim_net_deyeri_az = estate_investment + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az + y10_val_az
-    dataaz = [round(y1_yatirim_net_deyeri_az, 2),
-                      round(y2_yatirim_net_deyeri_az, 2),
-                      round(y3_yatirim_net_deyeri_az, 2),
-                      round(y4_yatirim_net_deyeri_az, 2),
-                      round(y5_yatirim_net_deyeri_az, 2),
-                      round(y6_yatirim_net_deyeri_az, 2),
-                      round(y7_yatirim_net_deyeri_az, 2),
-                      round(y8_yatirim_net_deyeri_az, 2),
-                      round(y9_yatirim_net_deyeri_az, 2),
-                      round(y10_yatirim_net_deyeri_az, 2)]
+    dataaz = [round(y1_yatirim_net_deyeri_az, 0),
+                      round(y2_yatirim_net_deyeri_az, 0),
+                      round(y3_yatirim_net_deyeri_az, 0),
+                      round(y4_yatirim_net_deyeri_az, 0),
+                      round(y5_yatirim_net_deyeri_az, 0),
+                      round(y6_yatirim_net_deyeri_az, 0),
+                      round(y7_yatirim_net_deyeri_az, 0),
+                      round(y8_yatirim_net_deyeri_az, 0),
+                      round(y9_yatirim_net_deyeri_az, 0),
+                      round(y10_yatirim_net_deyeri_az, 0)]
     data['dataaz'] = dataaz[:year]
 
     # ---------------------------------------------------------------------------------------------
@@ -314,16 +314,16 @@ def data(request, year, amount, mortgage):
     yx10 = (amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7+yx8+yx9)*0.035
     y10_yatirim_net_deyeri_bank = amount+yx1+yx2+yx3+yx4+yx5+yx6+yx7+yx8+yx9+yx10
 
-    databank = [round(y1_yatirim_net_deyeri_bank, 2),
-                        round(y2_yatirim_net_deyeri_bank, 2),
-                        round(y3_yatirim_net_deyeri_bank, 2),
-                      round(y4_yatirim_net_deyeri_bank, 2),
-                        round(y5_yatirim_net_deyeri_bank, 2),
-                        round(y6_yatirim_net_deyeri_bank, 2),
-                      round(y7_yatirim_net_deyeri_bank, 2),
-                        round(y8_yatirim_net_deyeri_bank, 2),
-                        round(y9_yatirim_net_deyeri_bank, 2),
-                      round(y10_yatirim_net_deyeri_bank, 2)]
+    databank = [round(y1_yatirim_net_deyeri_bank, 0),
+                        round(y2_yatirim_net_deyeri_bank, 0),
+                        round(y3_yatirim_net_deyeri_bank, 0),
+                      round(y4_yatirim_net_deyeri_bank, 0),
+                        round(y5_yatirim_net_deyeri_bank, 0),
+                        round(y6_yatirim_net_deyeri_bank, 0),
+                      round(y7_yatirim_net_deyeri_bank, 0),
+                        round(y8_yatirim_net_deyeri_bank, 0),
+                        round(y9_yatirim_net_deyeri_bank, 0),
+                      round(y10_yatirim_net_deyeri_bank, 0)]
     data['databank'] = databank[:year]
 
 
@@ -394,16 +394,16 @@ def data(request, year, amount, mortgage):
     x10 = x9 * (1 + rental_growth_tr / 100)
     y10_val = (y10_growth - diger_xerc_tr + x10)
     y10_yatirim_net_deyeri = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val + y9_val + y10_val
-    datatr2 = [round(y1_yatirim_net_deyeri, 2),
-               round(y2_yatirim_net_deyeri, 2),
-               round(y3_yatirim_net_deyeri, 2),
-               round(y4_yatirim_net_deyeri, 2),
-                       round(y5_yatirim_net_deyeri, 2),
-               round(y6_yatirim_net_deyeri, 2) ,
-               round(y7_yatirim_net_deyeri, 2),
-               round(y8_yatirim_net_deyeri, 2),
-                       round(y9_yatirim_net_deyeri, 2),
-               round(y10_yatirim_net_deyeri, 2)]
+    datatr2 = [round(y1_yatirim_net_deyeri, 0),
+               round(y2_yatirim_net_deyeri, 0),
+               round(y3_yatirim_net_deyeri, 0),
+               round(y4_yatirim_net_deyeri, 0),
+                       round(y5_yatirim_net_deyeri, 0),
+               round(y6_yatirim_net_deyeri, 0) ,
+               round(y7_yatirim_net_deyeri, 0),
+               round(y8_yatirim_net_deyeri, 0),
+                       round(y9_yatirim_net_deyeri, 0),
+               round(y10_yatirim_net_deyeri, 0)]
 
     data['datatr2'] = datatr2[:year]
 
@@ -478,16 +478,16 @@ def data(request, year, amount, mortgage):
     x10 = x9 * (1 + rental_growth_az / 100)
     y10_val_az = (y10_growth_az - diger_xerc_az  - monthly_loan_az * 12 + x10)
     y10_yatirim_net_deyeri_az = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az + y10_val_az
-    dataaz2 = [round(y1_yatirim_net_deyeri_az, 2),
-                       round(y2_yatirim_net_deyeri_az, 2),
-                       round(y3_yatirim_net_deyeri_az, 2),
-                      round(y4_yatirim_net_deyeri_az, 2),
-                       round(y5_yatirim_net_deyeri_az, 2),
-                       round(y6_yatirim_net_deyeri_az, 2)  ,
-                      round(y7_yatirim_net_deyeri_az, 2),
-                       round(y8_yatirim_net_deyeri_az, 2),
-                       round(y9_yatirim_net_deyeri_az, 2),
-                      round(y10_yatirim_net_deyeri_az, 2)]
+    dataaz2 = [round(y1_yatirim_net_deyeri_az, 0),
+                       round(y2_yatirim_net_deyeri_az, 0),
+                       round(y3_yatirim_net_deyeri_az, 0),
+                      round(y4_yatirim_net_deyeri_az, 0),
+                       round(y5_yatirim_net_deyeri_az, 0),
+                       round(y6_yatirim_net_deyeri_az, 0)  ,
+                      round(y7_yatirim_net_deyeri_az, 0),
+                       round(y8_yatirim_net_deyeri_az, 0),
+                       round(y9_yatirim_net_deyeri_az, 0),
+                      round(y10_yatirim_net_deyeri_az, 0)]
 
     data['dataaz2'] = dataaz2[:year]
 
@@ -547,35 +547,37 @@ def data(request, year, amount, mortgage):
     data['year'] = year
 
     if year == 1:
-        data['kiraye'] = round(kiraye1,2)
-        data['deyer'] = round(deyer_toplam1,2)
+        data['kiraye'] = round(kiraye1, 0)
+        data['deyer'] = round(deyer_toplam1, 0)
     elif year == 2:
-        data['kiraye'] = round(kiraye1+kiraye2,2)
-        data['deyer'] = round(deyer_toplam2,2)
+        data['kiraye'] = round(kiraye1 + kiraye2, 0)
+        data['deyer'] = round(deyer_toplam2, 0)
     elif year == 3:
-        data['kiraye'] = round(kiraye1+kiraye2+kiraye3,2)
-        data['deyer'] = round(deyer_toplam3,2)
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3, 0)
+        data['deyer'] = round(deyer_toplam3, 0)
     elif year == 4:
-        data['kiraye'] = round(kiraye1+kiraye2+kiraye3+kiraye4,2)
-        data['deyer'] = round(deyer_toplam4,2)
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4, 0)
+        data['deyer'] = round(deyer_toplam4, 0)
     elif year == 5:
-        data['kiraye'] = round(kiraye1+kiraye2+kiraye3+kiraye4+kiraye5,2)
-        data['deyer'] = round(deyer_toplam5,2)
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5, 0)
+        data['deyer'] = round(deyer_toplam5, 0)
     elif year == 6:
-        data['kiraye'] = round(kiraye1+kiraye2+kiraye3+kiraye4+kiraye5+kiraye6,2)
-        data['deyer'] = round(deyer_toplam6,2)
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6, 0)
+        data['deyer'] = round(deyer_toplam6, 0)
     elif year == 7:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7,2)
-        data['deyer'] = round(deyer_toplam7,2)
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7, 0)
+        data['deyer'] = round(deyer_toplam7, 0)
     elif year == 8:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8,2)
-        data['deyer'] = round(deyer_toplam8,2)
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8, 0)
+        data['deyer'] = round(deyer_toplam8, 0)
     elif year == 9:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9,2)
-        data['deyer'] = round(deyer_toplam9,2)
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9,
+                               0)
+        data['deyer'] = round(deyer_toplam9, 0)
     elif year == 10:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9 + kiraye10,2)
-        data['deyer'] = round(deyer_toplam10,2)
+        data['kiraye'] = round(
+            kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9 + kiraye10, 0)
+        data['deyer'] = round(deyer_toplam10, 0)
     return JsonResponse(data)
 
 

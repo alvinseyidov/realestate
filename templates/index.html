@@ -2742,12 +2742,13 @@ myForm.addEventListener('submit', function(e) {
             enabled: false,
           },
           series: [{
-          name: 'Azərbaycanda Yatırımın Net Dəyəri',
-          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
-        }, {
           name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
-        }, {
+        },
+        {
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        },  {
           name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
         }],
@@ -2844,25 +2845,27 @@ myForm.addEventListener('submit', function(e) {
             success:function(data){
 
             if($('input[name="ipoteka"]:checked').val() == 1){
-            chart1.updateSeries([{
-          name: 'Azərbaycanda Yatırımın Net Dəyəri',
-          data: data['dataaz']
-        }, {
+            chart1.updateSeries([ {
           name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: data['datatr']
-        }, {
+        },
+         {
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
+          data: data['dataaz']
+        },{
           name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
         }])
         }else{
 
-        chart1.updateSeries([{
-          name: 'Azərbaycanda Yatırımın Net Dəyəri',
-          data: data['dataaz2']
-        }, {
+        chart1.updateSeries([
+        {
           name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: data['datatr2']
-        }, {
+        },{
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
+          data: data['dataaz2']
+        },  {
           name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
         }])
