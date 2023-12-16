@@ -1360,7 +1360,7 @@ width:100% !important;
 
 <style>
   button.tablinks.active{
-    display: inline; cursor:pointer;margin-right:10px;border: 1px solid #02b5fd; border-radius: 27px; padding: 10px 55px 0 55px; 
+    display: inline; cursor:pointer;margin-right:10px;border: 1px solid #02b5fd; border-radius: 27px; padding: 10px 55px 0 55px;
     padding: 10px 35px 10px 35px;
     background-color: #02b5fd;
     color: #fff;
@@ -2621,23 +2621,20 @@ boxes.forEach(box => {
 });
   </script>
 
+
+<script src="https://unpkg.com/imask"></script>
   <script>
-      var phoneInput = document.getElementById('phone');
-var myForm = document.forms.myForm;
-var result = document.getElementById('result');  // only for debugging purposes
 
-phoneInput.addEventListener('input', function (e) {
-  var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,4})/);
-  e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
-});
 
-myForm.addEventListener('submit', function(e) {
-  phoneInput.value = phoneInput.value.replace(/\D/g, '');
-  result.innerText = phoneInput.value;  // only for debugging purposes
-
-  e.preventDefault(); // You wouldn't prevent it
-});
+IMask(
+  document.getElementById('phone'),
+  {
+    mask: '(00) 000-00-00'
+  }
+)
   </script>
+
+
 
 <script>
 
@@ -2822,7 +2819,7 @@ myForm.addEventListener('submit', function(e) {
 
 
 
-        
+
    window.onload = function() {
     var year = 10
     var amount = 100000
@@ -2854,7 +2851,7 @@ myForm.addEventListener('submit', function(e) {
         amount = (this.value);
       });
     });
-    
+
     var mortgage = 1;
     console.log("--------");
     console.log($('input[name="ipoteka"]:checked').val());
@@ -3444,12 +3441,12 @@ chart2.updateSeries([{
 
   </script>
 <script>
-  $("#muddetsliderid").on("input change", function(e) { 
+  $("#muddetsliderid").on("input change", function(e) {
       console.log("fdfd")
     $("#muddetid").val(e.target.value)
   });
 
-  $("#ilkinsliderid").on("input change", function(e) { 
+  $("#ilkinsliderid").on("input change", function(e) {
       console.log("fdfd")
     $("#ilkinid").val(e.target.value)
   });
