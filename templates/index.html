@@ -2738,6 +2738,13 @@ myForm.addEventListener('submit', function(e) {
    <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
  <script>
       var options = {
+      yaxis: {
+  labels: {
+    formatter: function (value) {
+     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
+},
       zoom: {
             enabled: false,
           },
