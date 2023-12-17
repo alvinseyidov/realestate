@@ -1250,6 +1250,7 @@ width:100% !important;
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
+
                     <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Əmlakınızı seçirsiniz</div>
@@ -1291,16 +1292,18 @@ width:100% !important;
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
+                     <div style=" padding: 19px 10px 0 0px; font-size: 30px; font-weight: 700; ">1.</div>
                     <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
-                    <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
+                    <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Əmlakınızı seçirsiniz</div>
                 <div style=" padding-right: 47px; ">Satışa tam hazır təkliflərimizin və ya özünüzün seçimləriniz arasından sizin şərtlərə və imkanlara ən uyğun daşınmaz əmlak seçimini edirsiniz!</div>
             </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
+                     <div style=" padding: 19px 10px 0 0px; font-size: 30px; font-weight: 700; ">2.</div>
                     <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i21.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
-                    <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
+                    <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Alqı-satqını tamamlayırıq</div>
                 <div style=" padding-right: 47px; ">Tamamilə sizin seçiminizdən asılı olaraq, nağd və ya kreditlə əmlakın sizin adınıza alınmasını tamamlayırıq.</div>
@@ -1308,8 +1311,9 @@ width:100% !important;
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
+                     <div style=" padding: 19px 10px 0 0px; font-size: 30px; font-weight: 700; ">3.</div>
                     <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i31.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
-                    <div style=" width: 72%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
+                    <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 41px; "></div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">İlk kirayəçinizi tapırıq</div>
                 <div style=" padding-right: 47px; ">Əmlakınız sizin adınıza rəsmiləşdikdən və çıxarışı alındıqdan dərhal sonra, vaxt itirmədən passiv gəlir qazanmağınız üçün hərəkətə keçirik! Sizin üçün kirayəçi tapırıq!</div>
@@ -1317,6 +1321,7 @@ width:100% !important;
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
+                     <div style=" padding: 19px 10px 0 0px; font-size: 30px; font-weight: 700; ">4.</div>
                     <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i41.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
                 <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Qazanmağa başlayırsınız!</div>
@@ -1864,13 +1869,13 @@ function openCity(evt, cityName) {
         <div class="row  " style="padding-left: 142px; padding-right:142px; ">
 
 
-            <div class="col-lg-12 col-md-12 discusss" style="  background-size: cover; background-position: center;background-color:#02b5fd;">
+            <div class="col-lg-12 col-md-12 discusss" style=" background-image: url(static/coffee.png); background-size: contain; background-position: center;background-color:#02b5fd;">
                 <div class="row  ">
                     <div class="col-lg-6 col-md-12"> <div class="discusstitle" style=" color: #fff; font-size: 38px; line-height: 50px; padding: 108px 59px 55px 59px; font-weight: 500; ">
                         {{muzakire.title | safe}}</div>
                      <div class="discusstext " style=" color: #fff; padding:27px 59px 3px 59px; font-size: 17px; ">
                         {% for p in muzakire.punktlar.all %}
-                         <div style=" display: flex;margin-top: 15px; "> <img style=" width: 40px; " src="{% static 'home2.png'%}"> <div style=" font-size: 25px; margin-left: 25px; padding-top: 4px; ">{{p.name}}</div></div>
+                         <div style=" display: flex;margin-top: 15px; "> <img style="width: 40px;height: 40px;margin-top: 10px;" src="{% static 'home2.png'%}"> <div style=" font-size: 20px; margin-left: 25px; padding-top: 4px; ">{{p.name}}</div></div>
                          {% endfor%}
                      </div>
                     </div>
@@ -1879,6 +1884,9 @@ function openCity(evt, cityName) {
 
                         <style>
                         @media screen and (max-width: 600px){
+                        .discusss {
+                        background-image:unset !important;
+                        }
                             .calendly-inline-widget{
                                 height: 620px !important;
                                 margin-right: 10px !important;
