@@ -1875,7 +1875,7 @@ function openCity(evt, cityName) {
                         {{muzakire.title | safe}}</div>
                      <div class="discusstext " style=" color: #fff; padding:27px 59px 3px 59px; font-size: 17px; ">
                         {% for p in muzakire.punktlar.all %}
-                         <div style=" display: flex;margin-top: 15px; "> <img style="width: 40px;height: 40px;margin-top: 10px;" src="{% static 'home2.png'%}"> <div style=" font-size: 20px; margin-left: 25px; padding-top: 4px; ">{{p.name}}</div></div>
+                         <div style=" display: flex;margin-top: 15px; "> <img class="imggg" style="width: 30px;height: 30px;margin-top: 3px;" src="{% static 'home2.png'%}"> <div style=" font-size: 20px; margin-left: 25px; padding-top: 4px; ">{{p.name}}</div></div>
                          {% endfor%}
                      </div>
                     </div>
@@ -1887,6 +1887,9 @@ function openCity(evt, cityName) {
                         .discusss {
                         background-image:unset !important;
                         }
+                        .imggg{
+                            margin-top: 10px !important;
+                            }
                             .calendly-inline-widget{
                                 height: 620px !important;
                                 margin-right: 10px !important;
