@@ -93,6 +93,14 @@ class MuzakireEdek(models.Model):
 
 
 
+class Punktlar(models.Model):
+    name = models.CharField(max_length=256)
+    m = models.ForeignKey(MuzakireEdek, on_delete=models.CASCADE, related_name="punktlar")
+
+    def __str__(self):
+        return self.name
+
+
 class MainSection(models.Model):
     title = models.TextField()
     text = models.TextField()
