@@ -1,7 +1,8 @@
 import os
 
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, FAQ, Feedback, Contact, Feature, Waitlist
+from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature
+from contact.models import Contact, Waitlist
 from offer.models import Offer
 from statik.models import *
 from django.http import JsonResponse

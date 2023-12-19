@@ -16,12 +16,12 @@ class General(models.Model):
     countdown_enddate = models.DateTimeField()
 
     class Meta:
-        verbose_name = "Ümumi Məlumatlar"
-        verbose_name_plural = "Ümumi Məlumatlar"
+        verbose_name = "Ümumi Sayt Məlumatlar"
+        verbose_name_plural = "Ümumi Sayt Məlumatlar"
 
 
     def __str__(self):
-        return f'Ümumi Məlumatlar'
+        return f'Ümumi Sayt Məlumatlar'
 
 
 class Social(models.Model):
@@ -45,6 +45,10 @@ class Feedback(models.Model):
     text = models.TextField()
     background_image = models.ImageField()
 
+    class Meta:
+        verbose_name = "Müştəri Geri Bildirim"
+        verbose_name_plural = "Müştəri Geri Bildirimləri"
+
     def __str__(self):
         return self.full_name
 
@@ -55,8 +59,8 @@ class Why(models.Model):
     text = models.CharField(max_length=256)
 
     class Meta:
-        verbose_name = "Why Alanya"
-        verbose_name_plural = "Why Alanya"
+        verbose_name = "Komanda üzvü"
+        verbose_name_plural = "Komanda"
 
     def __str__(self):
         return self.title
@@ -85,8 +89,11 @@ class FAQ(models.Model):
     answer = models.CharField(max_length=256)
     sort = models.IntegerField()
 
+
     class Meta:
         ordering = ('sort',)
+        verbose_name = "FAQ Sual"
+        verbose_name_plural = "FAQ Suallar"
 
     def __str__(self):
         return self.question
@@ -101,19 +108,10 @@ class Feature(models.Model):
     description = models.TextField()
     color = models.CharField(max_length=256)
 
+    class Meta:
+        verbose_name = "Niyə? Səbəblər"
+        verbose_name_plural = "Niyə? Səbəblər"
+
     def __str__(self):
         return self.title
 
-class Waitlist(models.Model):
-    email = models.CharField(max_length=256)
-
-    def __str__(self):
-        return self.email
-
-class Contact(models.Model):
-    name = models.CharField(max_length=256)
-    email = models.CharField(max_length=256)
-    phone = models.CharField(max_length=256)
-
-    def __str__(self):
-        return f'{self.name} {self.email} - {self.phone}'

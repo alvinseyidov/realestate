@@ -31,6 +31,10 @@ class GeliriHesablaBanner(models.Model):
     button_text = models.CharField(max_length=256)
     button_link = models.CharField(max_length=256)
 
+    class Meta:
+        verbose_name = "Gəliri Hesablə Banneri"
+        verbose_name_plural = "Gəliri Hesablə Banneri"
+
     def __str__(self):
         return f'Banner'
 
@@ -39,6 +43,9 @@ class Suallar(models.Model):
     text = models.CharField(max_length=256)
     link = models.CharField(max_length=256)
 
+    class Meta:
+        verbose_name = "Banner üzərindəki sual"
+        verbose_name_plural = "Banner üzərindəki suallar"
     def __str__(self):
         return self.text
 
@@ -52,6 +59,10 @@ class SmartInvest(models.Model):
     image = models.ImageField()
     def __str__(self):
         return f'Niyə Smart Invest'
+
+    class Meta:
+        verbose_name = "Niyə Smart İnvest Bölməsi"
+        verbose_name_plural = "Niyə Smart İnvest Bölməsi"
 
 
 class NiyeSecirler(models.Model):
@@ -68,6 +79,10 @@ class NiyeSecirler(models.Model):
     def __str__(self):
         return f'Ağıllı yatırımçılar niyə bizi seçirlər?'
 
+    class Meta:
+        verbose_name = "Niyə Bizi Seçirlər Punkt"
+        verbose_name_plural = "Niyə Bizi Seçirlər Punktlar"
+
 
 class FormSection(models.Model):
     title = models.CharField(max_length=256)
@@ -80,6 +95,10 @@ class FormSection(models.Model):
     def __str__(self):
         return f'Form bölməsi'
 
+    class Meta:
+        verbose_name = "Form Bölməsi"
+        verbose_name_plural = "Form Bölməsi"
+
 
 class MuzakireEdek(models.Model):
     title = models.CharField(max_length=256)
@@ -91,6 +110,10 @@ class MuzakireEdek(models.Model):
     def __str__(self):
         return 'SUALLARINIZ VAR? '
 
+    class Meta:
+        verbose_name = "Calendly Bölməsi"
+        verbose_name_plural = "Calendly Bölməsi"
+
 
 
 class Punktlar(models.Model):
@@ -99,6 +122,8 @@ class Punktlar(models.Model):
 
     def __str__(self):
         return self.name
+
+
 
 
 class MainSection(models.Model):
@@ -112,6 +137,10 @@ class MainSection(models.Model):
     def __str__(self):
         return f'Main Section'
 
+    class Meta:
+        verbose_name = "Əsas Bölmə (1-ci bölmə)"
+        verbose_name_plural = "Əsas Bölmə (1-ci bölmə)"
+
 
 
 
@@ -121,6 +150,10 @@ class WhySection(models.Model):
 
     def __str__(self):
         return f'Why Section'
+
+    class Meta:
+        verbose_name = "Komanda Bölməsi"
+        verbose_name_plural = "Komanda Bölməsi"
 
 class AdvantageSection(models.Model):
     title = models.CharField(max_length=256)
@@ -149,6 +182,12 @@ class ProcessesSection(models.Model):
     def __str__(self):
         return f'Processes Section'
 
+    class Meta:
+        verbose_name = "Proseslər Bölməsi"
+        verbose_name_plural = "Proseslər Bölməsi"
+
+
+
 
 class GetConsultationSection(models.Model):
     title = models.TextField()
@@ -166,9 +205,17 @@ class OffersSection(models.Model):
     def __str__(self):
         return f'Offers Section'
 
+    class Meta:
+        verbose_name = "Evlər, Villalar Bölməsi"
+        verbose_name_plural = "Evlər, Villalar Bölməsi"
+
 
 class FeedbackSection(models.Model):
     title = models.CharField(max_length=256)
 
     def __str__(self):
         return f'Feedback Section'
+
+    class Meta:
+        verbose_name = "Müştəri Geribildirim Bölməsi"
+        verbose_name_plural = "Müştəri Geribildirim Bölməsi"

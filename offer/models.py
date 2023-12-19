@@ -41,6 +41,9 @@ class Offer(models.Model):
     on_il_sonraki_qiymet = models.CharField(max_length=256, null=True,blank=True)
     umumi_net_gelir = models.CharField(max_length=256, null=True,blank=True)
 
+    class Meta:
+        verbose_name = "Ev, Villa"
+        verbose_name_plural = "Evlər, Villalar"
     def __str__(self):
         return self.name
 
