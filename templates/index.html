@@ -1359,7 +1359,7 @@ width:100% !important;
             <div class="col-lg-12 col-md-12" style="  ">
                 <div class="row ">
                      <div class="col-lg-7 col-md-12">
-                         <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
+                         <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 0px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
 
 
 
@@ -1378,6 +1378,8 @@ width:100% !important;
     color: #11218D;
   }
 </style>
+                         <button style="margin-top: 9px;margin-bottom: 10px;" class="tablinks active" onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
+  <button style="margin-top: 9px;margin-bottom: 10px;" class="tablinks" onclick="openCity(event, 'two')">Əmlakın Gözlənilən Dəyəri</button>
    <br><br>
 
 <div id="one" class="tabcontent" style="display: block;">
@@ -2828,8 +2830,52 @@ IMask(
         },
         };
 
+
+
+        var options2 = {
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+          },
+        },
+      zoom: {
+            enabled: false,
+          },
+          series: [{
+          name: 'Türkiyədə Əmlakın Dəyəri',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        },
+        {
+          name: 'Azərbaycanda Əmlakın Dəyəri',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        },  {
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
+          data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+        },
+        tooltip: {
+            show: false
+        },
+        };
+
         var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
-        var chart2 = new ApexCharts(document.querySelector("#chart2"), options);
+        var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
         chart1.render();
         chart2.render();
 
@@ -2900,7 +2946,7 @@ IMask(
             url:`/data/${year}/${amount}/${mortgage}/`,
             success:function(data){
 
-            if($('input[name="ipoteka"]:checked').val() == 1){
+
             chart1.updateSeries([ {
           name: 'Türkiyədə Yatırımın Net Dəyəri',
           data: data['datatr']
@@ -2912,20 +2958,19 @@ IMask(
           name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
         }])
-        }else{
 
-        chart1.updateSeries([
-        {
-          name: 'Türkiyədə Yatırımın Net Dəyəri',
-          data: data['datatr2']
+        chart2.updateSeries([ {
+          name: 'Türkiyədə Əmlakın Dəyəri',
+          data: data['datatr']
+        },
+         {
+          name: 'Azərbaycanda Əmlakın Dəyəri',
+          data: data['dataaz']
         },{
-          name: 'Azərbaycanda Yatırımın Net Dəyəri',
-          data: data['dataaz2']
-        },  {
           name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
         }])
-        }
+
 
 
 
@@ -2956,7 +3001,7 @@ IMask(
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il"]
     },
@@ -2964,7 +3009,7 @@ IMask(
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il"]
     },
@@ -3006,7 +3051,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il"]
     },
@@ -3014,7 +3059,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il"]
     },
@@ -3053,7 +3098,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
     },
@@ -3061,7 +3106,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
     },
@@ -3100,7 +3145,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
     },
@@ -3108,7 +3153,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
     },
@@ -3147,7 +3192,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
     },
@@ -3155,7 +3200,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
     },
@@ -3194,7 +3239,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
     },
@@ -3202,7 +3247,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
     },
@@ -3241,7 +3286,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
     },
@@ -3249,7 +3294,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
     },
@@ -3288,7 +3333,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
     },
@@ -3296,7 +3341,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
     },
@@ -3335,7 +3380,7 @@ chart1.updateOptions({
 
     });
     chart2.updateOptions({
-     name: 'Azərbaycanda Yatırımın Net Dəyəri',
+     name: 'Azərbaycanda Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
     },
@@ -3343,7 +3388,7 @@ chart1.updateOptions({
     });
 
     chart2.updateOptions({
-     name: 'Türkiyədə Yatırımın Net Dəyəri',
+     name: 'Türkiyədə Əmlakın Dəyəri',
     xaxis: {
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
     },
@@ -3382,15 +3427,15 @@ chart1.updateOptions({
 
 
         chart2.updateSeries([{
-          name: 'Azərbaycanda Yatırımın Net Dəyəri',
-          data: data['dataaz2']
-        }, {
-          name: 'Türkiyədə Yatırımın Net Dəyəri',
-          data: data['datatr2']
-        }, {
-          name: 'Bank Depoziti Yatırımın Net Dəyəri',
-          data: data['databank']
-        }])
+          name: 'Türkiyədə Əmlakın Dəyəri',
+          data: data['deyertr']
+            },{
+              name: 'Azərbaycanda Əmlakın Dəyəri',
+              data: data['deyeraz']
+            },  {
+              name: 'Bank Depoziti Yatırımın Net Dəyəri',
+              data: data['databank']
+            }])
 
 
             }
@@ -3410,7 +3455,7 @@ chart1.updateOptions({
 
 
 
-    console.log("succes");
+    console.log("success");
 
      $('#hesabla').removeClass("loading");
 
@@ -3430,23 +3475,23 @@ chart1.updateOptions({
       console.log(data['databank'])
 
      chart1.updateSeries([{
-  name: 'Azərbaycanda Yatırımın Net Dəyəri',
-  data: data['dataaz']
-}, {
   name: 'Türkiyədə Yatırımın Net Dəyəri',
   data: data['datatr']
-}, {
+},{
+  name: 'Azərbaycanda Yatırımın Net Dəyəri',
+  data: data['dataaz']
+},  {
   name: 'Bank Depoziti Yatırımın Net Dəyəri',
   data: data['databank']
 }])
 
 chart2.updateSeries([{
-  name: 'Azərbaycanda Yatırımın Net Dəyəri',
-  data: data['dataaz2']
-}, {
-  name: 'Türkiyədə Yatırımın Net Dəyəri',
+  name: 'Türkiyədə Əmlakın Dəyəri',
   data: data['datatr2']
-}, {
+},{
+  name: 'Azərbaycanda Əmlakın Dəyəri',
+  data: data['dataaz2']
+},  {
   name: 'Bank Depoziti Yatırımın Net Dəyəri',
   data: data['databank']
 }])

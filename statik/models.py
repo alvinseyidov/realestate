@@ -33,7 +33,7 @@ class GeliriHesablaBanner(models.Model):
 
     class Meta:
         verbose_name = "Gəliri Hesablə Banneri"
-        verbose_name_plural = "Gəliri Hesablə Banneri"
+        verbose_name_plural = "          Gəliri Hesablə Banneri"
 
     def __str__(self):
         return f'Banner'
@@ -45,7 +45,7 @@ class Suallar(models.Model):
 
     class Meta:
         verbose_name = "Banner üzərindəki sual"
-        verbose_name_plural = "Banner üzərindəki suallar"
+        verbose_name_plural = "         Banner üzərindəki suallar"
     def __str__(self):
         return self.text
 
@@ -62,7 +62,7 @@ class SmartInvest(models.Model):
 
     class Meta:
         verbose_name = "Niyə Smart İnvest Bölməsi"
-        verbose_name_plural = "Niyə Smart İnvest Bölməsi"
+        verbose_name_plural = "        Niyə Smart İnvest Bölməsi"
 
 
 class NiyeSecirler(models.Model):
@@ -81,7 +81,7 @@ class NiyeSecirler(models.Model):
 
     class Meta:
         verbose_name = "Niyə Bizi Seçirlər Punkt"
-        verbose_name_plural = "Niyə Bizi Seçirlər Punktlar"
+        verbose_name_plural = "      Niyə Bizi Seçirlər Punktlar"
 
 
 class FormSection(models.Model):
@@ -97,7 +97,7 @@ class FormSection(models.Model):
 
     class Meta:
         verbose_name = "Form Bölməsi"
-        verbose_name_plural = "Form Bölməsi"
+        verbose_name_plural = "    Form Bölməsi"
 
 
 class MuzakireEdek(models.Model):
@@ -112,7 +112,7 @@ class MuzakireEdek(models.Model):
 
     class Meta:
         verbose_name = "Calendly Bölməsi"
-        verbose_name_plural = "Calendly Bölməsi"
+        verbose_name_plural = "  Calendly Bölməsi"
 
 
 
@@ -139,7 +139,7 @@ class MainSection(models.Model):
 
     class Meta:
         verbose_name = "Əsas Bölmə (1-ci bölmə)"
-        verbose_name_plural = "Əsas Bölmə (1-ci bölmə)"
+        verbose_name_plural = "            Əsas Bölmə (1-ci bölmə)"
 
 
 
@@ -153,7 +153,7 @@ class WhySection(models.Model):
 
     class Meta:
         verbose_name = "Komanda Bölməsi"
-        verbose_name_plural = "Komanda Bölməsi"
+        verbose_name_plural = " Komanda Bölməsi"
 
 class AdvantageSection(models.Model):
     title = models.CharField(max_length=256)
@@ -184,7 +184,7 @@ class ProcessesSection(models.Model):
 
     class Meta:
         verbose_name = "Proseslər Bölməsi"
-        verbose_name_plural = "Proseslər Bölməsi"
+        verbose_name_plural = "           Proseslər Bölməsi"
 
 
 
@@ -207,7 +207,7 @@ class OffersSection(models.Model):
 
     class Meta:
         verbose_name = "Evlər, Villalar Bölməsi"
-        verbose_name_plural = "Evlər, Villalar Bölməsi"
+        verbose_name_plural = "     Evlər, Villalar Bölməsi"
 
 
 class FeedbackSection(models.Model):
@@ -218,4 +218,4 @@ class FeedbackSection(models.Model):
 
     class Meta:
         verbose_name = "Müştəri Geribildirim Bölməsi"
-        verbose_name_plural = "Müştəri Geribildirim Bölməsi"
+        verbose_name_plural = "   Müştəri Geribildirim Bölməsi"

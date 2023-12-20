@@ -41,8 +41,8 @@ def data(request, year, amount, mortgage):
     first_amount = amount
     leverage = amount * 0.8
     estate_investment = first_amount+leverage
-    monthly_loan_tr = calculate_mortgage(60000, 10, interest_rate_percent)
-    monthly_loan_az = calculate_mortgage(60000, 10, interest_rate__percent_az)
+    monthly_loan_tr = calculate_mortgage(amount, year, interest_rate_percent)
+    monthly_loan_az = calculate_mortgage(amount, year, interest_rate__percent_az)
     diger_xerc_tr = 600
     diger_xerc_az = 600
     heyat_sigorta_tr = 120
@@ -141,12 +141,9 @@ def data(request, year, amount, mortgage):
         kiraye10 = kiraye9*(1+rental_growth_tr/100)
 
         deyer_toplam1 = estate_investment+y1_growth
-        print(deyer_toplam1)
         deyer_toplam2 = estate_investment + y1_growth+y2_growth
-        print(deyer_toplam2)
 
         deyer_toplam3 = estate_investment + y1_growth+y2_growth+y3_growth
-        print(deyer_toplam3)
         deyer_toplam4 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth
         deyer_toplam5 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth
         deyer_toplam6 = estate_investment + y1_growth+y2_growth+y3_growth+y4_growth+y5_growth+y6_growth
@@ -184,12 +181,9 @@ def data(request, year, amount, mortgage):
                                      y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net + y7_growth_net + y8_growth_net + y9_growth_net + amount) * appraisal_rate
 
         deyer_toplam1 = amount + y1_growth_net
-        print(deyer_toplam1)
         deyer_toplam2 = amount + y1_growth_net + y2_growth_net
-        print(deyer_toplam2)
 
         deyer_toplam3 = amount + y1_growth_net + y2_growth_net + y3_growth_net
-        print(deyer_toplam3)
         deyer_toplam4 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net
         deyer_toplam5 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net
         deyer_toplam6 = amount + y1_growth_net + y2_growth_net + y3_growth_net + y4_growth_net + y5_growth_net + y6_growth_net
@@ -579,6 +573,106 @@ def data(request, year, amount, mortgage):
         data['kiraye'] = round(
             kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9 + kiraye10, 0)
         data['deyer'] = round(deyer_toplam10, 0)
+
+
+
+    ###---------- Əmlakın Dəyəri Türkiyə
+    deyertr_artimi_1 = estate_investment * appraisal_rate
+    print(deyertr_artimi_1)
+    deyer_tr_1 = estate_investment + estate_investment * appraisal_rate
+
+    deyertr_artimi_2 = deyer_tr_1 * appraisal_rate
+    print(deyertr_artimi_2)
+    deyer_tr_2 = deyer_tr_1+deyertr_artimi_2
+
+    deyertr_artimi_3 = deyer_tr_2 * appraisal_rate
+    print(deyertr_artimi_3)
+    deyer_tr_3 = deyer_tr_2+deyertr_artimi_3
+
+    deyertr_artimi_4 = deyer_tr_3 * appraisal_rate
+    deyer_tr_4 = deyer_tr_3+deyertr_artimi_4
+
+    deyertr_artimi_5 = deyer_tr_4 * appraisal_rate
+    deyer_tr_5 = deyer_tr_4+deyertr_artimi_5
+
+    deyertr_artimi_6 = deyer_tr_5 * appraisal_rate
+    deyer_tr_6 = deyer_tr_5+deyertr_artimi_6
+
+    deyertr_artimi_7 = deyer_tr_6 * appraisal_rate
+    deyer_tr_7 = deyer_tr_6+deyertr_artimi_7
+
+    deyertr_artimi_8 = deyer_tr_7 * appraisal_rate
+    deyer_tr_8 = deyer_tr_7+deyertr_artimi_8
+
+    deyertr_artimi_9 = deyer_tr_8 * appraisal_rate
+    deyer_tr_9 = deyer_tr_8+deyertr_artimi_9
+
+    deyertr_artimi_10 = deyer_tr_9 * appraisal_rate
+    deyer_tr_10 = deyer_tr_9+deyertr_artimi_10
+
+
+
+    deyertr = [round(deyer_tr_1, 0),
+               round(deyer_tr_2, 0),
+               round(deyer_tr_3, 0),
+               round(deyer_tr_4, 0),
+               round(deyer_tr_5, 0),
+               round(deyer_tr_6, 0),
+               round(deyer_tr_7, 0),
+               round(deyer_tr_8, 0),
+               round(deyer_tr_9, 0),
+               round(deyer_tr_10, 0)]
+
+
+    data['deyertr'] = deyertr[:year]
+
+    ###---------- Əmlakın Dəyəri Azərbaycan
+
+    deyeraz_artimi_1 = estate_investment * appraisal_rate_az
+    print(deyeraz_artimi_1)
+    deyer_az_1 = estate_investment + estate_investment * appraisal_rate_az
+
+    deyeraz_artimi_2 = deyer_az_1 * appraisal_rate_az
+    print(deyeraz_artimi_2)
+    deyer_az_2 = deyer_az_1 + deyeraz_artimi_2
+
+    deyeraz_artimi_3 = deyer_az_2 * appraisal_rate_az
+    print(deyeraz_artimi_3)
+    deyer_az_3 = deyer_az_2 + deyeraz_artimi_3
+
+    deyeraz_artimi_4 = deyer_az_3 * appraisal_rate_az
+    deyer_az_4 = deyer_az_3 + deyeraz_artimi_4
+
+    deyeraz_artimi_5 = deyer_az_4 * appraisal_rate_az
+    deyer_az_5 = deyer_az_4 + deyeraz_artimi_5
+
+    deyeraz_artimi_6 = deyer_az_5 * appraisal_rate_az
+    deyer_az_6 = deyer_az_5 + deyeraz_artimi_6
+
+    deyeraz_artimi_7 = deyer_az_6 * appraisal_rate_az
+    deyer_az_7 = deyer_az_6 + deyeraz_artimi_7
+
+    deyeraz_artimi_8 = deyer_az_7 * appraisal_rate_az
+    deyer_az_8 = deyer_az_7 + deyeraz_artimi_8
+
+    deyeraz_artimi_9 = deyer_az_8 * appraisal_rate_az
+    deyer_az_9 = deyer_az_8 + deyeraz_artimi_9
+
+    deyeraz_artimi_10 = deyer_az_9 * appraisal_rate_az
+    deyer_az_10 = deyer_az_9 + deyeraz_artimi_10
+
+    deyeraz = [round(deyer_az_1, 0),
+               round(deyer_az_2, 0),
+               round(deyer_az_3, 0),
+               round(deyer_az_4, 0),
+               round(deyer_az_5, 0),
+               round(deyer_az_6, 0),
+               round(deyer_az_7, 0),
+               round(deyer_az_8, 0),
+               round(deyer_az_9, 0),
+               round(deyer_az_10, 0)]
+
+    data['deyeraz'] = deyeraz[:year]
     return JsonResponse(data)
 
 
