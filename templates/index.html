@@ -5,6 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{general.site_title}}</title>
+
+      <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQLQFHDJ');</script>
+<!-- End Google Tag Manager -->
+
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
@@ -705,7 +715,10 @@ width:100% !important;
       </style>
   </head>
   <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQLQFHDJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- The Modal -->
 
 
@@ -1378,8 +1391,10 @@ width:100% !important;
     color: #11218D;
   }
 </style>
-                         <button style="margin-top: 9px;margin-bottom: 10px;" class="tablinks active" onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
-  <button style="margin-top: 9px;margin-bottom: 10px;" class="tablinks" onclick="openCity(event, 'two')">Əmlakın Gözlənilən Dəyəri</button>
+                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks active" onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
+                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'two')">Əmlakın Dəyəri</button>
+                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'three')">Yatırım Net Qazancı</button>
+                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'four')">Qazanc Marjası</button>
    <br><br>
 
 <div id="one" class="tabcontent" style="display: block;">
@@ -1389,6 +1404,15 @@ width:100% !important;
 <div id="two" class="tabcontent">
   <div id="chart2"></div>
 </div>
+<div id="three" class="tabcontent">
+  <div id="chart3"></div>
+</div>
+
+ <div id="four" class="tabcontent">
+  <div id="chart4"></div>
+</div>
+
+
 
 
 
@@ -2874,10 +2898,92 @@ IMask(
         },
         };
 
+        var options3 = {
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+          },
+        },
+      zoom: {
+            enabled: false,
+          },
+          series: [{
+          name: 'Türkiyədə Yatırım Qazancı',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        },
+        {
+          name: 'Azərbaycanda Yatırım Qazancı',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+        },
+        tooltip: {
+            show: false
+        },
+        };
+
+        var options4 = {
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+          },
+        },
+      zoom: {
+            enabled: false,
+          },
+          series: [{
+          name: 'Türkiyədə Qazanc Marjası',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        },
+        {
+          name: 'Azərbaycanda Qazanc Marjası',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+        },
+        tooltip: {
+            show: false
+        },
+        };
+
         var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
         var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+        var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+        var chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
         chart1.render();
         chart2.render();
+        chart3.render();
+        chart4.render();
 
 
 
@@ -2961,11 +3067,23 @@ IMask(
 
         chart2.updateSeries([ {
           name: 'Türkiyədə Əmlakın Dəyəri',
-          data: data['datatr']
+          data: data['deyertr']
         },
          {
           name: 'Azərbaycanda Əmlakın Dəyəri',
-          data: data['dataaz']
+          data: data['deyeraz']
+        },{
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
+          data: data['databank']
+        }])
+
+        chart3.updateSeries([ {
+          name: 'Türkiyədə Əmlakın Dəyəri',
+          data: data['deyertr']
+        },
+         {
+          name: 'Azərbaycanda Əmlakın Dəyəri',
+          data: data['deyeraz']
         },{
           name: 'Bank Depoziti Yatırımın Net Dəyəri',
           data: data['databank']
@@ -3487,10 +3605,10 @@ chart1.updateOptions({
 
 chart2.updateSeries([{
   name: 'Türkiyədə Əmlakın Dəyəri',
-  data: data['datatr2']
+  data: data['deyertr']
 },{
   name: 'Azərbaycanda Əmlakın Dəyəri',
-  data: data['dataaz2']
+  data: data['deyeraz']
 },  {
   name: 'Bank Depoziti Yatırımın Net Dəyəri',
   data: data['databank']
