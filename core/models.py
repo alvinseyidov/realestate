@@ -66,6 +66,15 @@ class Why(models.Model):
         return self.title
 
 
+class Calculator(models.Model):
+    test = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Kalkulyator Parametrlər"
+        verbose_name_plural = "Kalkulyator Parametrlər"
+
+    def __str__(self):
+        return self.title
 
 
 
