@@ -853,10 +853,7 @@ def data(request, year, amount, mortgage):
         yatirim_qazanci_az_4 = y4_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
         yatirim_qazanci_az_5 = y5_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
 
-        print("++++++++++")
-        print(y5_yatirim_net_deyeri_az)
-        print(diger_xercler_az_xx)
-        print("++++++++++")
+
         yatirim_qazanci_az_6 = y6_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
         yatirim_qazanci_az_7 = y7_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
         yatirim_qazanci_az_8 = y8_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
@@ -875,17 +872,22 @@ def data(request, year, amount, mortgage):
 
         data['yatirim_qazanci_az'] = yatirim_qazanci_az[:year]
     else:
-        diger_xercler_az = (amount) * diger_xercler_precent_az
-        yatirim_qazanci_az_1 = y1_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_2 = y2_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_3 = y3_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_4 = y4_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_5 = y5_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_6 = y6_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_7 = y7_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_8 = y8_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_9 = y9_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_10 = y10_yatirim_net_deyeri_az - amount - diger_xercler_az
+        diger_xercler_az = (estate_investment) * diger_xercler_precent_az
+        yatirim_qazanci_az_1 = y1_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_2 = y2_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_3 = y3_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_4 = y4_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_5 = y5_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+
+        print("++++++++++")
+        print(y5_yatirim_net_deyeri_az_nagd)
+        print("++++++++++")
+
+        yatirim_qazanci_az_6 = y6_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_7 = y7_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_8 = y8_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_9 = y9_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
+        yatirim_qazanci_az_10 = y10_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az
         yatirim_qazanci_az = [round(yatirim_qazanci_az_1, 0),
                               round(yatirim_qazanci_az_2, 0),
                               round(yatirim_qazanci_az_3, 0),
