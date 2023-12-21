@@ -24,6 +24,7 @@ def calculate_mortgage(loanAmount,years, interestRate):
     # Prints monthly payment on next line and reformat the string to a float using 2 decimal places
     return mortgagePayment
 def data(request, year, amount, mortgage):
+
     data = {}
 
     kiraye_kof = 0.04889
@@ -41,12 +42,12 @@ def data(request, year, amount, mortgage):
     first_amount = amount
     leverage = amount * 0.8
     estate_investment = first_amount+leverage
-    monthly_loan_tr = calculate_mortgage(amount, year, interest_rate_percent)
-    monthly_loan_az = calculate_mortgage(amount, year, interest_rate__percent_az)
+    monthly_loan_tr = calculate_mortgage(leverage, year, interest_rate_percent)
+    monthly_loan_az = calculate_mortgage(leverage, year, interest_rate__percent_az)
     diger_xerc_tr = 600
     diger_xerc_az = 600
     heyat_sigorta_tr = 120
-    heyat_sigorta_az = 240
+    heyat_sigorta_az = 300
 
     diger_xercler_precent_tr = 0.05
     diger_xercler_precent_az = 0.05
@@ -129,70 +130,71 @@ def data(request, year, amount, mortgage):
                           round(y10_yatirim_net_deyeri, 0)]
 
         data['datatr'] = datatr[:year]
+
+    y1_value = estate_investment * appraisal
+    y2_value = (y1_value) * appraisal
+    y3_value = (y2_value) * appraisal
+    y4_value = (y3_value) * appraisal
+    y5_value = (y4_value) * appraisal
+    y6_value = (y5_value) * appraisal
+    y7_value = (y6_value) * appraisal
+    y8_value = (y7_value) * appraisal
+    y9_value = (y8_value) * appraisal
+    y10_value = (y9_value) * appraisal
+
+    y1_growth = amount * appraisal_rate
+    y2_growth = (y1_growth + amount) * appraisal_rate
+    y3_growth = (y1_growth + y2_growth + amount) * appraisal_rate
+    y4_growth = (y1_growth + y2_growth + y3_growth + amount) * appraisal_rate
+    y5_growth = (y1_growth + y2_growth + y3_growth + y4_growth + amount) * appraisal_rate
+    y6_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + amount) * appraisal_rate
+    y7_growth = (
+                        y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + amount) * appraisal_rate
+    y8_growth = (
+                        y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + amount) * appraisal_rate
+    y9_growth = (
+                        y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + amount) * appraisal_rate
+    y10_growth = (
+                         y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + y9_growth + amount) * appraisal_rate
+
+    y1_val = (y1_growth - diger_xerc_tr + amount * kiraye_kof)
+    y1_yatirim_net_deyeri_nagd = amount + y1_val
+
+    y2_val = (y2_growth - diger_xerc_tr + amount * kiraye_kof * (1 + rental_growth_tr / 100))
+    y2_yatirim_net_deyeri_nagd = amount + y1_val + y2_val
+
+    x3 = amount * kiraye_kof * (1 + rental_growth_tr / 100) * (1 + rental_growth_tr / 100)
+    y3_val = (y3_growth - diger_xerc_tr + x3)
+    y3_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val
+
+    x4 = x3 * (1 + rental_growth_tr / 100)
+    y4_val = (y4_growth - diger_xerc_tr + x4)
+    y4_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val
+
+    x5 = x4 * (1 + rental_growth_tr / 100)
+    y5_val = (y5_growth - diger_xerc_tr + x5)
+    y5_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val
+
+    x6 = x5 * (1 + rental_growth_tr / 100)
+    y6_val = (y6_growth - diger_xerc_tr + x6)
+    y6_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val
+
+    x7 = x6 * (1 + rental_growth_tr / 100)
+    y7_val = (y7_growth - diger_xerc_tr + x7)
+    y7_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val
+
+    x8 = x7 * (1 + rental_growth_tr / 100)
+    y8_val = (y8_growth - diger_xerc_tr + x8)
+    y8_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val
+
+    x9 = x8 * (1 + rental_growth_tr / 100)
+    y9_val = (y9_growth - diger_xerc_tr + x9)
+    y9_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val + y9_val
+
+    x10 = x9 * (1 + rental_growth_tr / 100)
+    y10_val = (y10_growth - diger_xerc_tr + x10)
+    y10_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val + y9_val + y10_val
     if mortgage != 1:
-        y1_value = estate_investment * appraisal
-        y2_value = (y1_value) * appraisal
-        y3_value = (y2_value) * appraisal
-        y4_value = (y3_value) * appraisal
-        y5_value = (y4_value) * appraisal
-        y6_value = (y5_value) * appraisal
-        y7_value = (y6_value) * appraisal
-        y8_value = (y7_value) * appraisal
-        y9_value = (y8_value) * appraisal
-        y10_value = (y9_value) * appraisal
-
-        y1_growth = amount * appraisal_rate
-        y2_growth = (y1_growth + amount) * appraisal_rate
-        y3_growth = (y1_growth + y2_growth + amount) * appraisal_rate
-        y4_growth = (y1_growth + y2_growth + y3_growth + amount) * appraisal_rate
-        y5_growth = (y1_growth + y2_growth + y3_growth + y4_growth + amount) * appraisal_rate
-        y6_growth = (y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + amount) * appraisal_rate
-        y7_growth = (
-                            y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + amount) * appraisal_rate
-        y8_growth = (
-                            y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + amount) * appraisal_rate
-        y9_growth = (
-                            y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + amount) * appraisal_rate
-        y10_growth = (
-                             y1_growth + y2_growth + y3_growth + y4_growth + y5_growth + y6_growth + y7_growth + y8_growth + y9_growth + amount) * appraisal_rate
-
-        y1_val = (y1_growth - diger_xerc_tr + amount * kiraye_kof)
-        y1_yatirim_net_deyeri_nagd = amount + y1_val
-
-        y2_val = (y2_growth - diger_xerc_tr + amount * kiraye_kof * (1 + rental_growth_tr / 100))
-        y2_yatirim_net_deyeri_nagd = amount + y1_val + y2_val
-
-        x3 = amount * kiraye_kof * (1 + rental_growth_tr / 100) * (1 + rental_growth_tr / 100)
-        y3_val = (y3_growth - diger_xerc_tr + x3)
-        y3_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val
-
-        x4 = x3 * (1 + rental_growth_tr / 100)
-        y4_val = (y4_growth - diger_xerc_tr + x4)
-        y4_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val
-
-        x5 = x4 * (1 + rental_growth_tr / 100)
-        y5_val = (y5_growth - diger_xerc_tr + x5)
-        y5_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val
-
-        x6 = x5 * (1 + rental_growth_tr / 100)
-        y6_val = (y6_growth - diger_xerc_tr + x6)
-        y6_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val
-
-        x7 = x6 * (1 + rental_growth_tr / 100)
-        y7_val = (y7_growth - diger_xerc_tr + x7)
-        y7_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val
-
-        x8 = x7 * (1 + rental_growth_tr / 100)
-        y8_val = (y8_growth - diger_xerc_tr + x8)
-        y8_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val
-
-        x9 = x8 * (1 + rental_growth_tr / 100)
-        y9_val = (y9_growth - diger_xerc_tr + x9)
-        y9_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val + y9_val
-
-        x10 = x9 * (1 + rental_growth_tr / 100)
-        y10_val = (y10_growth - diger_xerc_tr + x10)
-        y10_yatirim_net_deyeri_nagd = amount + y1_val + y2_val + y3_val + y4_val + y5_val + y6_val + y7_val + y8_val + y9_val + y10_val
         datatr = [round(y1_yatirim_net_deyeri_nagd, 0),
                   round(y2_yatirim_net_deyeri_nagd, 0),
                   round(y3_yatirim_net_deyeri_nagd, 0),
@@ -304,9 +306,17 @@ def data(request, year, amount, mortgage):
     y10_growth_az = (
                                 y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + y9_growth_az + estate_investment) * appraisal_rate_az
 
-    y1_val_az = (
-                y1_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + estate_investment * kiraye_kof_az)
-    y1_yatirim_net_deyeri_az = estate_investment - 9 * monthly_loan_az * 12 + y1_val_az
+    y1_val_az = (y1_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + estate_investment * kiraye_kof_az)
+    y1_yatirim_net_deyeri_az = \
+        estate_investment - \
+        9 * monthly_loan_az * 12 + \
+        y1_val_az
+
+
+
+
+
+
 
     y2_val_az = (
                 y2_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + estate_investment * kiraye_kof_az * (
@@ -345,6 +355,10 @@ def data(request, year, amount, mortgage):
     y10_val_az = (y10_growth_az - diger_xerc_az - heyat_sigorta_az - monthly_loan_az * 12 + x10)
     y10_yatirim_net_deyeri_az = estate_investment + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az + y10_val_az
 
+
+
+
+
     if mortgage == 1:
         dataaz = [round(y1_yatirim_net_deyeri_az, 0),
                           round(y2_yatirim_net_deyeri_az, 0),
@@ -357,72 +371,84 @@ def data(request, year, amount, mortgage):
                           round(y9_yatirim_net_deyeri_az, 0),
                           round(y10_yatirim_net_deyeri_az, 0)]
         data['dataaz'] = dataaz[:year]
-    else:
-        y1_value_az = amount * appraisal_az
-        y2_value_az = (y1_value_az) * appraisal_az
-        y3_value_az = (y2_value_az) * appraisal_az
-        y4_value_az = (y3_value_az) * appraisal_az
-        y5_value_az = (y4_value_az) * appraisal_az
-        y6_value_az = (y5_value_az) * appraisal_az
-        y7_value_az = (y6_value_az) * appraisal_az
-        y8_value_az = (y7_value_az) * appraisal_az
-        y9_value_az = (y8_value_az) * appraisal_az
-        y10_value_az = (y9_value_az) * appraisal_az
 
-        y1_growth_az = amount * appraisal_rate_az
-        y2_growth_az = (y1_growth_az + amount) * appraisal_rate_az
-        y3_growth_az = (y1_growth_az + y2_growth_az + amount) * appraisal_rate_az
-        y4_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + amount) * appraisal_rate_az
-        y5_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + amount) * appraisal_rate_az
-        y6_growth_az = (
-                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + amount) * appraisal_rate_az
-        y7_growth_az = (
-                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + amount) * appraisal_rate_az
-        y8_growth_az = (
-                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + amount) * appraisal_rate_az
-        y9_growth_az = (
-                               y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + amount) * appraisal_rate_az
-        y10_growth_az = (
-                                y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + y9_growth_az + amount) * appraisal_rate_az
+    y1_value_az = amount * appraisal_az
+    y2_value_az = (y1_value_az) * appraisal_az
+    y3_value_az = (y2_value_az) * appraisal_az
+    y4_value_az = (y3_value_az) * appraisal_az
+    y5_value_az = (y4_value_az) * appraisal_az
+    y6_value_az = (y5_value_az) * appraisal_az
+    y7_value_az = (y6_value_az) * appraisal_az
+    y8_value_az = (y7_value_az) * appraisal_az
+    y9_value_az = (y8_value_az) * appraisal_az
+    y10_value_az = (y9_value_az) * appraisal_az
 
-        y1_val_az = (
-                y1_growth_az - diger_xerc_az + amount * kiraye_kof_az)
-        y1_yatirim_net_deyeri_az_nagd = amount + y1_val_az
+    y1_growth_az = amount * appraisal_rate_az
+    y2_growth_az = (y1_growth_az + amount) * appraisal_rate_az
+    y3_growth_az = (y1_growth_az + y2_growth_az + amount) * appraisal_rate_az
+    y4_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + amount) * appraisal_rate_az
+    y5_growth_az = (y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + amount) * appraisal_rate_az
+    y6_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + amount) * appraisal_rate_az
+    y7_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + amount) * appraisal_rate_az
+    y8_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + amount) * appraisal_rate_az
+    y9_growth_az = (
+                           y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + amount) * appraisal_rate_az
+    y10_growth_az = (
+                            y1_growth_az + y2_growth_az + y3_growth_az + y4_growth_az + y5_growth_az + y6_growth_az + y7_growth_az + y8_growth_az + y9_growth_az + amount) * appraisal_rate_az
 
-        y2_val_az = (y2_growth_az - diger_xerc_az + amount * kiraye_kof_az * (1 + rental_growth_az / 100))
-        y2_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az
+    y1_val_az = ( y1_growth_az - diger_xerc_az + amount * kiraye_kof_az)
+    y1_yatirim_net_deyeri_az_nagd = amount + y1_val_az
 
-        x3 = amount * kiraye_kof_az * (1 + rental_growth_az / 100) * (1 + rental_growth_az / 100)
-        y3_val_az = (y3_growth_az - diger_xerc_az + x3)
-        y3_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az
 
-        x4 = x3 * (1 + rental_growth_az / 100)
-        y4_val_az = (y4_growth_az - diger_xerc_az + x4)
-        y4_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az
 
-        x5 = x4 * (1 + rental_growth_az / 100)
-        y5_val_az = (y5_growth_az - diger_xerc_az + x5)
-        y5_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az
 
-        x6 = x5 * (1 + rental_growth_az / 100)
-        y6_val_az = (y6_growth_az - diger_xerc_az + x6)
-        y6_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az
 
-        x7 = x6 * (1 + rental_growth_az / 100)
-        y7_val_az = (y7_growth_az - diger_xerc_az + x7)
-        y7_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az
 
-        x8 = x7 * (1 + rental_growth_az / 100)
-        y8_val_az = (y8_growth_az - diger_xerc_az + x8)
-        y8_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az
 
-        x9 = x8 * (1 + rental_growth_az / 100)
-        y9_val_az = (y9_growth_az - diger_xerc_az + x9)
-        y9_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az
+    y2_val_az = (y2_growth_az - diger_xerc_az + amount * kiraye_kof_az * (1 + rental_growth_az / 100))
+    y2_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az
 
-        x10 = x9 * (1 + rental_growth_az / 100)
-        y10_val_az = (y10_growth_az - diger_xerc_az - monthly_loan_az * 12 + x10)
-        y10_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az + y10_val_az
+
+
+
+
+
+    x3 = amount * kiraye_kof_az * (1 + rental_growth_az / 100) * (1 + rental_growth_az / 100)
+    y3_val_az = (y3_growth_az - diger_xerc_az + x3)
+    y3_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az
+
+    x4 = x3 * (1 + rental_growth_az / 100)
+    y4_val_az = (y4_growth_az - diger_xerc_az + x4)
+    y4_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az
+
+    x5 = x4 * (1 + rental_growth_az / 100)
+    y5_val_az = (y5_growth_az - diger_xerc_az + x5)
+    y5_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az
+
+    x6 = x5 * (1 + rental_growth_az / 100)
+    y6_val_az = (y6_growth_az - diger_xerc_az + x6)
+    y6_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az
+
+    x7 = x6 * (1 + rental_growth_az / 100)
+    y7_val_az = (y7_growth_az - diger_xerc_az + x7)
+    y7_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az
+
+    x8 = x7 * (1 + rental_growth_az / 100)
+    y8_val_az = (y8_growth_az - diger_xerc_az + x8)
+    y8_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az
+
+    x9 = x8 * (1 + rental_growth_az / 100)
+    y9_val_az = (y9_growth_az - diger_xerc_az + x9)
+    y9_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az
+
+    x10 = x9 * (1 + rental_growth_az / 100)
+    y10_val_az = (y10_growth_az - diger_xerc_az + x10)
+    y10_yatirim_net_deyeri_az_nagd = amount + y1_val_az + y2_val_az + y3_val_az + y4_val_az + y5_val_az + y6_val_az + y7_val_az + y8_val_az + y9_val_az + y10_val_az
+
+    if mortgage != 1:
         dataaz = [round(y1_yatirim_net_deyeri_az_nagd, 0),
                    round(y2_yatirim_net_deyeri_az_nagd, 0),
                    round(y3_yatirim_net_deyeri_az_nagd, 0),
@@ -776,6 +802,9 @@ def data(request, year, amount, mortgage):
         yatirim_qazanci_tr_8 = y8_yatirim_net_deyeri-amount-diger_xercler
         yatirim_qazanci_tr_9 = y9_yatirim_net_deyeri-amount-diger_xercler
         yatirim_qazanci_tr_10 = y10_yatirim_net_deyeri-amount-diger_xercler
+
+
+
         yatirim_qazanci_tr = [round(yatirim_qazanci_tr_1, 0),
                    round(yatirim_qazanci_tr_2, 0),
                    round(yatirim_qazanci_tr_3, 0),
@@ -790,16 +819,18 @@ def data(request, year, amount, mortgage):
         data['yatirim_qazanci_tr'] = yatirim_qazanci_tr[:year]
     else:
         diger_xercler = (amount) * diger_xercler_precent_tr
-        yatirim_qazanci_tr_1 = y1_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_2 = y2_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_3 = y3_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_4 = y4_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_5 = y5_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_6 = y6_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_7 = y7_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_8 = y8_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_9 = y9_yatirim_net_deyeri - amount - diger_xercler
-        yatirim_qazanci_tr_10 = y10_yatirim_net_deyeri - amount - diger_xercler
+        yatirim_qazanci_tr_1 = y1_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_2 = y2_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_3 = y3_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_4 = y4_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_5 = y5_yatirim_net_deyeri_nagd - amount - diger_xercler
+
+
+        yatirim_qazanci_tr_6 = y6_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_7 = y7_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_8 = y8_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_9 = y9_yatirim_net_deyeri_nagd - amount - diger_xercler
+        yatirim_qazanci_tr_10 = y10_yatirim_net_deyeri_nagd - amount - diger_xercler
         yatirim_qazanci_tr = [round(yatirim_qazanci_tr_1, 0),
                               round(yatirim_qazanci_tr_2, 0),
                               round(yatirim_qazanci_tr_3, 0),
@@ -815,18 +846,22 @@ def data(request, year, amount, mortgage):
     ###---------- Yatırım qazancı Azərbaycan
     if mortgage == 1:
 
-        diger_xercler_az = (estate_investment) * diger_xercler_precent_az
-        yatirim_qazanci_az_1 = y1_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_2 = y2_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_3 = y3_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_4 = y4_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_5 = y5_yatirim_net_deyeri_az - amount - diger_xercler_az
+        diger_xercler_az_xx = (amount) * diger_xercler_precent_az
+        yatirim_qazanci_az_1 = y1_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_2 = y2_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_3 = y3_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_4 = y4_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_5 = y5_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+
+        print("++++++++++")
         print(y5_yatirim_net_deyeri_az)
-        yatirim_qazanci_az_6 = y6_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_7 = y7_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_8 = y8_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_9 = y9_yatirim_net_deyeri_az - amount - diger_xercler_az
-        yatirim_qazanci_az_10 = y10_yatirim_net_deyeri_az - amount - diger_xercler_az
+        print(diger_xercler_az_xx)
+        print("++++++++++")
+        yatirim_qazanci_az_6 = y6_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_7 = y7_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_8 = y8_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_9 = y9_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
+        yatirim_qazanci_az_10 = y10_yatirim_net_deyeri_az - amount - diger_xercler_az_xx
         yatirim_qazanci_az = [round(yatirim_qazanci_az_1, 0),
                               round(yatirim_qazanci_az_2, 0),
                               round(yatirim_qazanci_az_3, 0),
@@ -865,54 +900,125 @@ def data(request, year, amount, mortgage):
         data['yatirim_qazanci_az'] = yatirim_qazanci_az[:year]
 
     ###---------- Qazanc marjası Türkiyə
+    if mortgage == 1:
+        diger_xercler_tr_marja_ipoteka = (estate_investment) * diger_xercler_precent_tr
+        yatirim_qazanci_marja_tr_1 = (y1_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_2 = (y2_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_3 = (y3_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_4 = (y4_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_5 = (y5_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
 
-    yatirim_qazanci_marja_tr_1 = (y1_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_2 = (y2_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_3 = (y3_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_4 = (y4_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_5 = (y5_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
+        yatirim_qazanci_marja_tr_6 = (y6_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_7 = (y7_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_8 = (y8_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_9 = (y9_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr_10 = (y10_yatirim_net_deyeri-amount-diger_xercler_tr_marja_ipoteka)/(amount+diger_xercler_tr_marja_ipoteka)*100
+        yatirim_qazanci_marja_tr = [round(yatirim_qazanci_marja_tr_1, 0),
+                                    round(yatirim_qazanci_marja_tr_2, 0),
+                                    round(yatirim_qazanci_marja_tr_3, 0),
+                                    round(yatirim_qazanci_marja_tr_4, 0),
+                                    round(yatirim_qazanci_marja_tr_5, 0),
+                                    round(yatirim_qazanci_marja_tr_6, 0),
+                                    round(yatirim_qazanci_marja_tr_7, 0),
+                                    round(yatirim_qazanci_marja_tr_8, 0),
+                                    round(yatirim_qazanci_marja_tr_9, 0),
+                                    round(yatirim_qazanci_marja_tr_10, 0)]
 
-    yatirim_qazanci_marja_tr_6 = (y6_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_7 = (y7_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_8 = (y8_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_9 = (y9_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr_10 = (y10_yatirim_net_deyeri-amount-diger_xercler)/(amount+diger_xercler)*100
-    yatirim_qazanci_marja_tr = [round(yatirim_qazanci_marja_tr_1, 0),
-                                round(yatirim_qazanci_marja_tr_2, 0),
-                                round(yatirim_qazanci_marja_tr_3, 0),
-                                round(yatirim_qazanci_marja_tr_4, 0),
-                                round(yatirim_qazanci_marja_tr_5, 0),
-                                round(yatirim_qazanci_marja_tr_6, 0),
-                                round(yatirim_qazanci_marja_tr_7, 0),
-                                round(yatirim_qazanci_marja_tr_8, 0),
-                                round(yatirim_qazanci_marja_tr_9, 0),
-                                round(yatirim_qazanci_marja_tr_10, 0)]
+        data['yatirim_qazanci_marja_tr'] = yatirim_qazanci_marja_tr[:year]
+    else:
+        diger_xercler_tr_marja = (estate_investment) * diger_xercler_precent_tr
+        yatirim_qazanci_marja_tr_1 = (y1_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_2 = (y2_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_3 = (y3_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_4 = (y4_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_5 = (y5_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
 
-    data['yatirim_qazanci_marja_tr'] = yatirim_qazanci_marja_tr[:year]
+        yatirim_qazanci_marja_tr_6 = (y6_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_7 = (y7_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_8 = (y8_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_9 = (y9_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr_10 = (y10_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (
+                    amount + diger_xercler_tr_marja) * 100
+        yatirim_qazanci_marja_tr = [round(yatirim_qazanci_marja_tr_1, 0),
+                                    round(yatirim_qazanci_marja_tr_2, 0),
+                                    round(yatirim_qazanci_marja_tr_3, 0),
+                                    round(yatirim_qazanci_marja_tr_4, 0),
+                                    round(yatirim_qazanci_marja_tr_5, 0),
+                                    round(yatirim_qazanci_marja_tr_6, 0),
+                                    round(yatirim_qazanci_marja_tr_7, 0),
+                                    round(yatirim_qazanci_marja_tr_8, 0),
+                                    round(yatirim_qazanci_marja_tr_9, 0),
+                                    round(yatirim_qazanci_marja_tr_10, 0)]
+
+        data['yatirim_qazanci_marja_tr'] = yatirim_qazanci_marja_tr[:year]
     ###---------- Qazanc marjası Azərbaycan
+    if mortgage == 1:
+        diger_xercler_az_marja_ip = (amount) * diger_xercler_precent_tr
+        yatirim_qazanci_marja_az_1 = (y1_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_2 = (y2_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_3 = (y3_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_4 = (y4_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_5 = (y5_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_6 = (y6_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_7 = (y7_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_8 = (y8_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_9 = (y9_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az_10 = (y10_yatirim_net_deyeri_az - amount - diger_xercler_az_marja_ip) / (amount + diger_xercler_az_marja_ip)*100
+        yatirim_qazanci_marja_az = [round(yatirim_qazanci_marja_az_1, 0),
+                                    round(yatirim_qazanci_marja_az_2, 0),
+                                    round(yatirim_qazanci_marja_az_3, 0),
+                                    round(yatirim_qazanci_marja_az_4, 0),
+                                    round(yatirim_qazanci_marja_az_5, 0),
+                                    round(yatirim_qazanci_marja_az_6, 0),
+                                    round(yatirim_qazanci_marja_az_7, 0),
+                                    round(yatirim_qazanci_marja_az_8, 0),
+                                    round(yatirim_qazanci_marja_az_9, 0),
+                                    round(yatirim_qazanci_marja_az_10, 0)]
 
-    yatirim_qazanci_marja_az_1 = (y1_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_2 = (y2_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_3 = (y3_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_4 = (y4_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_5 = (y5_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_6 = (y6_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_7 = (y7_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_8 = (y8_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_9 = (y9_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az_10 = (y10_yatirim_net_deyeri_az - amount - diger_xercler_az) / (amount + diger_xercler_az)*100
-    yatirim_qazanci_marja_az = [round(yatirim_qazanci_marja_az_1, 0),
-                                round(yatirim_qazanci_marja_az_2, 0),
-                                round(yatirim_qazanci_marja_az_3, 0),
-                                round(yatirim_qazanci_marja_az_4, 0),
-                                round(yatirim_qazanci_marja_az_5, 0),
-                                round(yatirim_qazanci_marja_az_6, 0),
-                                round(yatirim_qazanci_marja_az_7, 0),
-                                round(yatirim_qazanci_marja_az_8, 0),
-                                round(yatirim_qazanci_marja_az_9, 0),
-                                round(yatirim_qazanci_marja_az_10, 0)]
+        data['yatirim_qazanci_marja_az'] = yatirim_qazanci_marja_az[:year]
+    else:
+        diger_xercler_az_marja_nagd = (estate_investment) * diger_xercler_precent_tr
+        yatirim_qazanci_marja_az_1 = (y1_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_2 = (y2_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_3 = (y3_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_4 = (y4_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_5 = (y5_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_6 = (y6_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_7 = (y7_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_8 = (y8_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_9 = (y9_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az_10 = (y10_yatirim_net_deyeri_az_nagd - amount - diger_xercler_az_marja_nagd) / (
+                    amount + diger_xercler_az_marja_nagd) * 100
+        yatirim_qazanci_marja_az = [round(yatirim_qazanci_marja_az_1, 0),
+                                    round(yatirim_qazanci_marja_az_2, 0),
+                                    round(yatirim_qazanci_marja_az_3, 0),
+                                    round(yatirim_qazanci_marja_az_4, 0),
+                                    round(yatirim_qazanci_marja_az_5, 0),
+                                    round(yatirim_qazanci_marja_az_6, 0),
+                                    round(yatirim_qazanci_marja_az_7, 0),
+                                    round(yatirim_qazanci_marja_az_8, 0),
+                                    round(yatirim_qazanci_marja_az_9, 0),
+                                    round(yatirim_qazanci_marja_az_10, 0)]
 
-    data['yatirim_qazanci_marja_az'] = yatirim_qazanci_marja_az[:year]
+        data['yatirim_qazanci_marja_az'] = yatirim_qazanci_marja_az[:year]
     return JsonResponse(data)
 
 
