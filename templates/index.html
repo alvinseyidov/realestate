@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{general.site_title}}</title>
-
+    {% for h in head %}
+      {{h.script | safe}}
+      {% endfor%}
       <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -4004,6 +4006,10 @@ setInterval('updateTimer()', 1000 );
  <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/143823551.js"></script>
 <!-- End of HubSpot Embed Code -->
+
+  {% for h in body %}
+      {{h.script | safe}}
+      {% endfor%}
   </body>
 </html>
 

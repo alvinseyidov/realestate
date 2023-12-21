@@ -1,7 +1,7 @@
 import os
 
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature
+from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature, Head, Body
 from contact.models import Contact, Waitlist
 from offer.models import Offer
 from statik.models import *
@@ -1087,6 +1087,8 @@ def contactform(request):
 
 
 def index(request):
+    head = Head.objects.all()
+    body = Body.objects.all()
     if request.user_agent.is_mobile:
         is_mobile = True
     else:
@@ -1117,6 +1119,8 @@ def index(request):
     suallar = Suallar.objects.all()
 
     context = {
+        'body': body,
+        'head': head,
         'is_mobile': is_mobile,
         "sorting_sections": sorting_sections,
         "features": features,

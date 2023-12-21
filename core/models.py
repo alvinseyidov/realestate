@@ -65,6 +65,27 @@ class Why(models.Model):
     def __str__(self):
         return self.title
 
+class Head(models.Model):
+    name = models.CharField(max_length=256)
+    script = models.TextField()
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "   Head'ə əlavə olunan scriptlər"
+        verbose_name_plural = "   Head'ə əlavə olunan scriptlər"
+
+
+class Body(models.Model):
+    name = models.CharField(max_length=256)
+    script = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "  Body'ə əlavə olunan scriptlər"
+        verbose_name_plural = "  Body'ə əlavə olunan scriptlər"
 
 class Calculator(models.Model):
     test = models.CharField(max_length=256)
