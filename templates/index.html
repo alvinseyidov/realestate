@@ -788,7 +788,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 {{main_section.text2}} </p>
                 <div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
 <div style=" display: flex;padding-top:20px; ">
-                 <a href=" {{main_section.button_link}} " style="     margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
+                 <a target="_blank" href=" {{main_section.button_link}} " style="     margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
 </div>
 
                 </div>
@@ -3078,15 +3078,21 @@ IMask(
         }])
 
         chart3.updateSeries([ {
-          name: 'Türkiyədə Əmlakın Dəyəri',
-          data: data['deyertr']
+          name: 'Türkiyədə Yatırım Qazancı',
+          data: data['yatirim_qazanci_tr']
         },
          {
-          name: 'Azərbaycanda Əmlakın Dəyəri',
-          data: data['deyeraz']
-        },{
-          name: 'Bank Depoziti Yatırımın Net Dəyəri',
-          data: data['databank']
+          name: 'Azərbaycanda Yatırım Qazancı',
+          data: data['yatirim_qazanci_az']
+        }])
+
+        chart4.updateSeries([ {
+          name: 'Türkiyədə Qazanc Marjası',
+          data: data['yatirim_qazanci_marja_tr']
+        },
+         {
+          name: 'Azərbaycanda Qazanc Marjası',
+          data: data['yatirim_qazanci_marja_az']
         }])
 
 
@@ -3142,6 +3148,38 @@ IMask(
 
     });
 
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
 }
 else if(data['year'] == 3){
 
@@ -3190,7 +3228,40 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il"]
     },
 
-    });}
+    });
+
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    }
 else if(data['year'] == 4){
 chart1.updateOptions({
      name: 'Azərbaycanda Yatırımın Net Dəyəri',
@@ -3237,7 +3308,39 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
     },
 
-    });}
+    });
+
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+    }
 else if(data['year'] == 5){
 chart1.updateOptions({
      name: 'Azərbaycanda Yatırımın Net Dəyəri',
@@ -3284,7 +3387,39 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
     },
 
-    });}
+    });
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    }
 else if(data['year'] == 6){
 chart1.updateOptions({
      name: 'Azərbaycanda Yatırımın Net Dəyəri',
@@ -3331,7 +3466,38 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
     },
 
-    });}
+    });
+     chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+     chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+    }
 else if(data['year'] == 7){
 chart1.updateOptions({
      name: 'Azərbaycanda Yatırımın Net Dəyəri',
@@ -3378,7 +3544,38 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
     },
 
-    });}
+    });
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+    }
 else if(data['year'] == 8){
 chart1.updateOptions({
      name: 'Azərbaycanda Yatırımın Net Dəyəri',
@@ -3425,7 +3622,38 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
     },
 
-    });}
+    });
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+    }
 else if(data['year'] == 9){
 chart1.updateOptions({
      name: 'Azərbaycanda Yatırımın Net Dəyəri',
@@ -3472,7 +3700,38 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
     },
 
-    });}
+    });
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+    }
     else if(data['year'] == 10){
 chart1.updateOptions({
      name: 'Azərbaycanda Yatırımın Net Dəyəri',
@@ -3519,7 +3778,38 @@ chart1.updateOptions({
       categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
     },
 
-    });}
+    });
+    chart3.updateOptions({
+     name: 'Türkiyədə Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azərbaycanda Yatırım Qazancı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyədə Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azərbaycanda Qazanc Marjası',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+    }
 
 
 
@@ -3558,11 +3848,35 @@ chart1.updateOptions({
 
             }
         });
+
+        chart3.updateSeries([{
+          name: 'Türkiyədə Əmlakın Dəyəri',
+          data: data['yatirim_qazanci_tr']
+            },{
+              name: 'Azərbaycanda Əmlakın Dəyəri',
+              data: data['yatirim_qazanci_az']
+            }])
+
+
+
+
+        chart4.updateSeries([{
+          name: 'Türkiyədə Əmlakın Dəyəri',
+          data: data['yatirim_qazanci_marja_tr']
+            },{
+              name: 'Azərbaycanda Əmlakın Dəyəri',
+              data: data['yatirim_qazanci_marja_az']
+            }])
+
+
+
     });
 }
 </script>
 
-  <script>
+
+
+ <script>
       $.ajax({
     type:"GET",
     url:`/data/10/50000/1/`,
@@ -3614,11 +3928,28 @@ chart2.updateSeries([{
   data: data['databank']
 }])
 
+chart3.updateSeries([{
+  name: 'Türkiyədə Yatırım Qazancı',
+  data: data['yatirim_qazanci_tr']
+},{
+  name: 'Azərbaycanda Yatırım Qazancı',
+  data: data['yatirim_qazanci_az']
+}])
+
+
+chart4.updateSeries([{
+  name: 'Türkiyədə Qazanc Marjası',
+  data: data['yatirim_qazanci_marja_tr']
+},{
+  name: 'Azərbaycanda Qazanc Marjası',
+  data: data['yatirim_qazanci_marja_az']
+}])
 
     }
 });
 
   </script>
+
 <script>
   $("#muddetsliderid").on("input change", function(e) {
       console.log("fdfd")
