@@ -571,42 +571,7 @@ def data(request, year, amount, mortgage):
     y10_value2_az = (y9_value2_az) * appraisal_az
 
 
-    data['field1'] = 120000
 
-    data['year'] = year
-
-    if year == 1:
-        data['kiraye'] = round(kiraye1, 0)
-        data['deyer'] = round(deyer_toplam1, 0)
-    elif year == 2:
-        data['kiraye'] = round(kiraye1 + kiraye2, 0)
-        data['deyer'] = round(deyer_toplam2, 0)
-    elif year == 3:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3, 0)
-        data['deyer'] = round(deyer_toplam3, 0)
-    elif year == 4:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4, 0)
-        data['deyer'] = round(deyer_toplam4, 0)
-    elif year == 5:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5, 0)
-        data['deyer'] = round(deyer_toplam5, 0)
-    elif year == 6:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6, 0)
-        data['deyer'] = round(deyer_toplam6, 0)
-    elif year == 7:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7, 0)
-        data['deyer'] = round(deyer_toplam7, 0)
-    elif year == 8:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8, 0)
-        data['deyer'] = round(deyer_toplam8, 0)
-    elif year == 9:
-        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9,
-                               0)
-        data['deyer'] = round(deyer_toplam9, 0)
-    elif year == 10:
-        data['kiraye'] = round(
-            kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9 + kiraye10, 0)
-        data['deyer'] = round(deyer_toplam10, 0)
 
 
 
@@ -701,6 +666,42 @@ def data(request, year, amount, mortgage):
 
         data['deyertr'] = deyertr[:year]
 
+    data['field1'] = 120000
+
+    data['year'] = year
+
+    if year == 1:
+        data['kiraye'] = round(kiraye1, 0)
+        data['deyer'] = round(deyer_tr_1, 0)
+    elif year == 2:
+        data['kiraye'] = round(kiraye1 + kiraye2, 0)
+        data['deyer'] = round(deyer_tr_2, 0)
+    elif year == 3:
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3, 0)
+        data['deyer'] = round(deyer_tr_3, 0)
+    elif year == 4:
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4, 0)
+        data['deyer'] = round(deyer_tr_4, 0)
+    elif year == 5:
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5, 0)
+        data['deyer'] = round(deyer_tr_5, 0)
+    elif year == 6:
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6, 0)
+        data['deyer'] = round(deyer_tr_6, 0)
+    elif year == 7:
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7, 0)
+        data['deyer'] = round(deyer_tr_7, 0)
+    elif year == 8:
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8, 0)
+        data['deyer'] = round(deyer_tr_8, 0)
+    elif year == 9:
+        data['kiraye'] = round(kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9,
+                               0)
+        data['deyer'] = round(deyer_tr_9, 0)
+    elif year == 10:
+        data['kiraye'] = round(
+            kiraye1 + kiraye2 + kiraye3 + kiraye4 + kiraye5 + kiraye6 + kiraye7 + kiraye8 + kiraye9 + kiraye10, 0)
+        data['deyer'] = round(deyer_tr_10, 0)
     ###---------- Əmlakın Dəyəri Azərbaycan
     if mortgage == 1:
         deyeraz_artimi_1 = estate_investment * appraisal_rate_az
