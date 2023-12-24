@@ -94,21 +94,21 @@ class Body(models.Model):
         verbose_name_plural = "  JS Scriptlər"
 
 class Parametr(models.Model):
-    leverage_tr = models.DecimalField(verbose_name='Leverage Percent TR',max_digits=8, decimal_places=5)
-    leverage_az = models.DecimalField(verbose_name='Leverage Percent AZ',max_digits=8, decimal_places=5)
-    loan_interest_rate_tr = models.DecimalField(verbose_name='Loan Interest Rate TR',max_digits=8, decimal_places=5)
-    loan_interest_rate_az = models.DecimalField(verbose_name='Loan Interest Rate AZ',max_digits=8, decimal_places=5)
-    interest_rate_bank = models.DecimalField(verbose_name='Bank Interest Rate AZ',max_digits=8, decimal_places=5)
-    appraisal_rate_tr = models.DecimalField(verbose_name='Appraisal Rate TR',max_digits=8, decimal_places=5)
-    appraisal_rate_az = models.DecimalField(verbose_name='Appraisal Rate AZ',max_digits=8, decimal_places=5)
-    rental_growth_tr = models.DecimalField(verbose_name='Rental Growth TR',max_digits=8, decimal_places=5)
-    rental_growth_az = models.DecimalField(verbose_name='Rental Growth AZ',max_digits=8, decimal_places=5)
-    diger_xercler_tr = models.DecimalField(verbose_name='Digər Xərclər TR',max_digits=8, decimal_places=1)
-    diger_xercler_az = models.DecimalField(verbose_name='Digər Xərclər AZ',max_digits=8, decimal_places=1)
-    heyat_sigortasi_tr = models.DecimalField(verbose_name='Həyat Siğortası TR',max_digits=8, decimal_places=1)
-    heyat_sigortasi_az = models.DecimalField(verbose_name='Həyat Siğortası AZ',max_digits=8, decimal_places=1)
-    kiraye_kofisent_tr = models.DecimalField(verbose_name='Kirayə Gəliri Kofisenti TR',max_digits=8, decimal_places=5)
-    kiraye_kofisent_az = models.DecimalField(verbose_name='Kirayə Gəliri Kofisenti AZ',max_digits=8, decimal_places=5)
+    leverage_tr = models.FloatField(verbose_name='Leverage Percent TR')
+    leverage_az = models.FloatField(verbose_name='Leverage Percent AZ')
+    loan_interest_rate_tr = models.FloatField(verbose_name='Loan Interest Rate TR')
+    loan_interest_rate_az = models.FloatField(verbose_name='Loan Interest Rate AZ')
+    interest_rate_bank = models.FloatField(verbose_name='Bank Interest Rate AZ')
+    appraisal_rate_tr = models.FloatField(verbose_name='Appraisal Rate TR')
+    appraisal_rate_az = models.FloatField(verbose_name='Appraisal Rate AZ')
+    rental_growth_tr = models.FloatField(verbose_name='Rental Growth TR')
+    rental_growth_az = models.FloatField(verbose_name='Rental Growth AZ')
+    diger_xercler_tr = models.FloatField(verbose_name='Digər Xərclər TR')
+    diger_xercler_az = models.FloatField(verbose_name='Digər Xərclər AZ')
+    heyat_sigortasi_tr = models.FloatField(verbose_name='Həyat Siğortası TR')
+    heyat_sigortasi_az = models.FloatField(verbose_name='Həyat Siğortası AZ')
+    kiraye_kofisent_tr = models.FloatField(verbose_name='Kirayə Gəliri Kofisenti TR')
+    kiraye_kofisent_az = models.FloatField(verbose_name='Kirayə Gəliri Kofisenti AZ')
 
     class Meta:
         verbose_name = "Kalkulyator Parametrləri"
