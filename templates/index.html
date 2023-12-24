@@ -711,10 +711,11 @@ width:100% !important;
       </style>
   </head>
   <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQLQFHDJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  {% for h in body %}
+{% if h.location == 'T' %}
+      {{h.script | safe}}
+{% endif%}
+      {% endfor%}
 <!-- The Modal -->
 
 
@@ -4001,7 +4002,9 @@ setInterval('updateTimer()', 1000 );
 
 
   {% for h in body %}
+{% if h.location == 'B' %}
       {{h.script | safe}}
+{% endif%}
       {% endfor%}
   </body>
 </html>
