@@ -112,11 +112,11 @@ class Parametr(models.Model):
     kiraye_kofisent_az = models.DecimalField(verbose_name='Kirayə Gəliri Kofisenti AZ',max_digits=8, decimal_places=5)
 
     class Meta:
-        verbose_name = "Kalkulyator Parametrlər"
-        verbose_name_plural = "Kalkulyator Parametrlər"
+        verbose_name = "Kalkulyator Parametrləri"
+        verbose_name_plural = "Kalkulyator Parametrləri"
 
     def __str__(self):
-        return self.title
+        return f'Kalkulyator Parametrləri'
 
 
 
