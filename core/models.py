@@ -77,8 +77,13 @@ class Head(models.Model):
 
 
 class Body(models.Model):
+    WHERE = (
+        ('T','After <body> tag opened'),
+        ('B','Before </body> tag closed'),
+    )
     name = models.CharField(max_length=256)
     script = models.TextField()
+    location = models.CharField(choices=WHERE, max_length=1, default='T')
 
     def __str__(self):
         return self.name
