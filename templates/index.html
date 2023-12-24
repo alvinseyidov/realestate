@@ -5,10 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{general.site_title}}</title>
-    {% for h in head %}
-      {{h.script | safe}}
-      {% endfor%}
 
+ {% for h in body %}
+{% if h.location == 'H' %}
+      {{h.script | safe}}
+{% endif%}
+      {% endfor%}
 
 
     <link

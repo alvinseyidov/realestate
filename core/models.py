@@ -78,6 +78,7 @@ class Head(models.Model):
 
 class Body(models.Model):
     WHERE = (
+        ('H','Script in between HEAD tags'),
         ('T','After <body> tag opened'),
         ('B','Before </body> tag closed'),
     )
@@ -89,8 +90,8 @@ class Body(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "  Body'ə əlavə olunan scriptlər"
-        verbose_name_plural = "  Body'ə əlavə olunan scriptlər"
+        verbose_name = "  JS Script"
+        verbose_name_plural = "  JS Scriptlər"
 
 class Calculator(models.Model):
     test = models.CharField(max_length=256)
