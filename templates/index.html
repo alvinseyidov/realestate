@@ -1626,7 +1626,6 @@ function openCity(evt, cityName) {
 
 
 
-{% if sorting_sections.offers_active %}
 <div id="evler" class=" mt-5 evler1" style=" padding-left: 142px; padding-right:142px;margin-top:90px !important;">
     <div class="container">
     <div class="row" style="padding-top: 25px;padding-bottom: 25px;">
@@ -1797,7 +1796,6 @@ function openCity(evt, cityName) {
 
         </div>
       </div>
-{% endif %}
 
 
 
@@ -1942,35 +1940,8 @@ function openCity(evt, cityName) {
 
 
 
-{% if sorting_sections.youtube_video_active %}
- <div class=" mt-5" >
-        <div class="row  ">
-          <div class="col-lg-12 col-md-12"style="text-align: center;">
-           {{video_section.title | safe}}
-            <p class="pb-4 mt-4" style="padding-right: 20px; padding-left: 20px;   margin-bottom: 50px !important;  margin-top: 47px !important;   margin-right: auto !important; margin-left: auto !important; color: #000 !important; text-align: center !important; font-family: Montserrat !important; font-size: 20px !important; font-style: normal !important; font-weight: 500 !important; line-height: 35px !important; /* 175% */"	>
-             {{video_section.text | safe}}
-            </p>
-
-          </div>
-
-        </div>
-      </div>
 
 
- <div class=" mt-5" style="background-image:url({{video_section.background_image.url}});    background-size: cover;    position: relative;">
-     <div style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #524C9B 100%);width: 100%; height: 400px; position: absolute; bottom: 0;"></div>
-        <div class="row  " style=" z-index: 10000; position: relative; ">
-          <div class="col-lg-12 col-md-12"style="text-align: center;">
-                            <img src="{{video_section.video_image.url}}" style="margin: 0 auto 63px auto;width: 70%;position: relative;">
-             <img class="vvvx2" onclick="lightbox_open();" src="{% static 'yticon.svg'%}" style="cursor:pointer;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-
-
-          </div>
-
-        </div>
-      </div>
-{% endif%}
-{% if sorting_sections.why_active %}
 <div class=""  id="team" style=" background:#fff;height: 650px;padding-top:69px; ">
 
         <div class="row  " style="padding-left: 142px; padding-right:142px; ">
@@ -2055,7 +2026,7 @@ function openCity(evt, cityName) {
 
 
       </div>
-{% endif%}
+
 <style>
 
 /* Style the tab */
@@ -2096,7 +2067,6 @@ function openCity(evt, cityName) {
 
 
 
-{% if sorting_sections.faq_active %}
 
   <section class="container-fluid py-5 bg_gray faqq" style="  ">
         <h2 class="fw-bold mb-4 text-center" style=" font-size: 45px; line-height: 60px; padding: 35px 0 49px 0px; ">FAQs</h2>
@@ -2154,7 +2124,7 @@ function openCity(evt, cityName) {
         </div>
       </section>
 
-{% endif%}
+
 
 
 
