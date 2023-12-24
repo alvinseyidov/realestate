@@ -9,5 +9,8 @@ admin.site.register(FAQ)
 admin.site.register(Feedback)
 admin.site.register(Calculator)
 admin.site.register(Head)
-admin.site.register(Body)
+
+class BodyAdmin(admin.ModelAdmin):
+    list_display = ['name', 'location']
+admin.site.register(Body,BodyAdmin)
 
