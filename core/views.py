@@ -30,8 +30,8 @@ def data(request, year, amount, mortgage):
 
     kiraye_kof = parametr.kiraye_kofisent_tr #0.04889
     kiraye_kof_az = parametr.kiraye_kofisent_az #0.03111
-    interest_rate_percent = parametr.interest_rate_tr #7.08
-    interest_rate__percent_az = parametr.interest_rate_az #6.5
+    interest_rate_percent = parametr.loan_interest_rate_tr #7.08
+    interest_rate__percent_az = parametr.loan_interest_rate_az #6.5
 
     rental_growth_tr = parametr.rental_growth_tr #5.9
     rental_growth_az = parametr.rental_growth_az #4
