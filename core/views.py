@@ -28,33 +28,33 @@ def data(request, year, amount, mortgage):
 
     data = {}
 
-    kiraye_kof = 0.04889
-    kiraye_kof_az = 0.03111
-    interest_rate_percent = 7.08
-    rental_growth_tr = 5.9
-    rental_growth_az = 4
-    interest_rate = 0.0708
-    interest_rate_az = 0.065
-    interest_rate__percent_az = 6.5
-    appraisal_rate = 0.073
-    appraisal_rate_az = 0.05
-    appraisal = 1.073
-    appraisal_az = 1.05
+    kiraye_kof = parametr.kiraye_kofisent_tr #0.04889
+    kiraye_kof_az = parametr.kiraye_kofisent_az #0.03111
+    interest_rate_percent = parametr.interest_rate_tr #7.08
+    interest_rate__percent_az = parametr.interest_rate_az #6.5
+
+    rental_growth_tr = parametr.rental_growth_tr #5.9
+    rental_growth_az = parametr.rental_growth_az #4
+
+    appraisal_rate = parametr.appraisal_rate_tr #0.073
+    appraisal_rate_az = parametr.appraisal_rate_az #0.05
+    appraisal = appraisal_rate + 1
+    appraisal_az = appraisal_rate_az + 1
     first_amount = amount
-    leverage = amount * 0.8
+    leverage = amount * parametr.leverage_tr #0.8
     estate_investment = first_amount+leverage
     monthly_loan_tr = calculate_mortgage(leverage, year, interest_rate_percent)
     monthly_loan_az = calculate_mortgage(leverage, year, interest_rate__percent_az)
-    diger_xerc_tr = 600
-    diger_xerc_az = 600
-    heyat_sigorta_tr = 120
-    heyat_sigorta_az = 300
+    diger_xerc_tr = parametr.diger_xercler_tr #600
+    diger_xerc_az = parametr.diger_xercler_az #600
+    heyat_sigorta_tr = parametr.heyat_sigortasi_tr #120
+    heyat_sigorta_az = parametr.heyat_sigortasi_az #300
 
     diger_xercler_precent_tr = 0.05
     diger_xercler_precent_az = 0.05
 
 
-    interest_rate_bank_az = 3
+    interest_rate_bank_az = parametr.interest_rate_bank #3
 
     # ---------------------------------------------------------------------------------------------
     #Turkey
