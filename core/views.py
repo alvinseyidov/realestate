@@ -1,7 +1,7 @@
 import os
 
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature, Head, Body
+from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature, Head, Body, Parametr
 from contact.models import Contact, Waitlist
 from offer.models import Offer
 from statik.models import *
@@ -24,6 +24,7 @@ def calculate_mortgage(loanAmount,years, interestRate):
     # Prints monthly payment on next line and reformat the string to a float using 2 decimal places
     return mortgagePayment
 def data(request, year, amount, mortgage):
+    parametr = Parametr.objects.last()
 
     data = {}
 

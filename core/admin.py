@@ -7,7 +7,7 @@ admin.site.register(Feature)
 admin.site.register(Why)
 admin.site.register(FAQ)
 admin.site.register(Feedback)
-admin.site.register(Calculator)
+admin.site.register(Parametr)
 
 class BodyAdmin(admin.ModelAdmin):
     list_display = ['name', 'location']

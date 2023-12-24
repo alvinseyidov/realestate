@@ -93,8 +93,23 @@ class Body(models.Model):
         verbose_name = "  JS Script"
         verbose_name_plural = "  JS Scriptlər"
 
-class Calculator(models.Model):
-    test = models.CharField(max_length=256)
+class Parametr(models.Model):
+    leverage_tr = models.DecimalField(verbose_name='Leverage TR',max_digits=8, decimal_places=5)
+    leverage_az = models.DecimalField(verbose_name='Leverage AZ',max_digits=8, decimal_places=5)
+    loan_interest_rate_tr = models.DecimalField(verbose_name='Loan Interest Rate TR',max_digits=8, decimal_places=5)
+    loan_interest_rate_az = models.DecimalField(verbose_name='Loan Interest Rate AZ',max_digits=8, decimal_places=5)
+    appraisal_rate_tr = models.DecimalField(verbose_name='Appraisal Rate TR',max_digits=8, decimal_places=5)
+    appraisal_rate_az = models.DecimalField(verbose_name='Appraisal Rate AZ',max_digits=8, decimal_places=5)
+    rental_growth_tr = models.DecimalField(verbose_name='Rental Growth TR',max_digits=8, decimal_places=5)
+    rental_growth_az = models.DecimalField(verbose_name='Rental Growth AZ',max_digits=8, decimal_places=5)
+    interest_rate_tr = models.DecimalField(verbose_name='Interest Rate TR',max_digits=8, decimal_places=5)
+    interest_rate_az = models.DecimalField(verbose_name='Interest Rate AZ',max_digits=8, decimal_places=5)
+    diger_xercler_tr = models.DecimalField(verbose_name='Digər Xərclər TR',max_digits=8, decimal_places=5)
+    diger_xercler_az = models.DecimalField(verbose_name='Digər Xərclər AZ',max_digits=8, decimal_places=5)
+    heyat_sigortasi_tr = models.DecimalField(verbose_name='Həyat Siğortası TR',max_digits=8, decimal_places=5)
+    heyat_sigortasi_az = models.DecimalField(verbose_name='Həyat Siğortası AZ',max_digits=8, decimal_places=5)
+    kiraye_kofisent_tr = models.DecimalField(verbose_name='Kirayə Gəliri Kofisenti TR',max_digits=8, decimal_places=5)
+    kiraye_kofisent_az = models.DecimalField(verbose_name='Kirayə Gəliri Kofisenti AZ',max_digits=8, decimal_places=5)
 
     class Meta:
         verbose_name = "Kalkulyator Parametrlər"
