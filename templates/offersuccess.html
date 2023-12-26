@@ -477,39 +477,7 @@ display: block !important;
 }
 </style>
 
-      <div class="mySwiper swiper" >
-        <div class="swiper-wrapper">
-        {% for i in offer.images.all%}
-      <div class="swiper-slide">
-          <div style="background-size:cover; width:100%; height:400px;background-image:url({{i.image.url}});"> </div>
-      </div>
-        {% endfor %}
 
-
-    </div>
-    <div class="swiper-button-prev" style="z-index:10000;background:#fff;width:50px;height:50px;position: absolute; border-radius: 50%; padding: 2px 0 0 0px; top: 40%; left: 50px;">
-                <img src="{%static 'leff.svg'%}">
-            </div>
-            <div class="swiper-button-next" style="z-index:10000;background:#fff;width:50px;height:50px;position: absolute; border-radius: 50%; padding: 2px 0 0 7px; top: 40%; right: 50px;">
-                <img src="{%static 'rightt.svg'%}">
-            </div>
-  </div>
-
-          <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1.5,
-    spaceBetween: 30,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-        watchSlidesVisibility: true,
-
-    });
-  </script>
      </div>
 
 
@@ -529,128 +497,7 @@ display: block !important;
 
 
 
-       <div class="container">
-            <div class="row  ">
 
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Project Type</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '1.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">
-                            {% if offer.type == 'V'%}
-                            Villas
-                            {% else %}
-                            Apartments
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Locations</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '2.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">
-                            {{offer.address}}
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Surface</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '3.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.square}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Project Status</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '4.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.project_status}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Year Built</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '5.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.year_built}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Distance to Beach</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '6.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_beach}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Distance to Center</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '7.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_center}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Distance to Airport</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '8.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_airport}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>State Guaranteed</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '9.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.state_guaranteed}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Sea View</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '10.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.sea_view}}</div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Installment</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '11.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.installment}}</div>
-                    </div>
-                </div>
-                </div>
-                 <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div style=" font-size: 14px; line-height: 22px;   ">Suitable for
-Citizenship</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '12.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.suitable_for_citizenship}}</div>
-                    </div>
-                </div>
-                </div>
-                </div>
-            </div>
        </div>
 
 
@@ -670,88 +517,19 @@ Citizenship</div>
     <div class="container">
         <div class="row  ">
 
-            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
-                <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;    margin-bottom: 30px;">INFORMATION<br>ABOUT PROPERTY</div>
-                <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;    margin-bottom: 30px;">PROPERTY DETAILS</div>
-                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Sanitaires</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.sanitaires}}</div>
-                </div>
-                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Balcon</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.balcon}}</div>
-                </div>
-
-                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Rooms</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.rooms}}</div>
-                </div>
-
-                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Chambres</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.chambres}}</div>
-                </div>
-
-                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Living area</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.square}}</div>
-                </div>
-
-                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Number of WC</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.wc_qty}}</div>
-                </div>
-
-                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Indoor parking</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.indoor_parking}}</div>
-                </div>
-
-                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Type of heating system</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.heating_system}}</div>
+            <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
+                <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;    margin-bottom: 30px;text-align: center; padding: 56px 0 0 0;">
+                   Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.
                 </div>
 
 
 
-            </div>
-            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
-                <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;      visibility: collapse;  margin-bottom: 30px;">INFORMATION<br>ABOUT PROPERTY</div>
 
-                 <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal; margin-bottom: 30px;">PROPERTY DETAILS</div>
-               <div style="color: #FFF; text-align: left; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">
-                   {{offer.description | safe}}</div>
-            </div>
-            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
-                <div style="background:#D9D9D9;">
-                    <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">Why you should invest Coracesium City?</div>
-                    <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Please fill out the form and we will contact you shortly.</div>
-                    <form style=" padding: 39px 40px; " method="post" >
-                        {% csrf_token%}
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="First name *" required>
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Last name *" required>
-                        <div style="    border-bottom: 1px solid #000; display: flex; "><span style=" padding: 18px 12px 0 0px; ">+994</span><input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required></div>
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="email" name="email" placeholder="Email *" required>
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Message *" required>
-                        <button type="submit" style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">Get in Touch</button>
-                    </form>
-
-                </div>
             </div>
 
 
     </div>
-<script src="https://unpkg.com/imask"></script>
-  <script>
 
-
-IMask(
-  document.getElementById('phone'),
-  {
-    mask: '(00) 000-00-00'
-  }
-)
-  </script>
 
 
 <style>
@@ -883,141 +661,6 @@ input[type=range]:focus::-ms-fill-upper {
 </style>
 
 
-<div class=" mt-5" id="calculator" style="margin-top:70px;padding-bottom: 49px;">
-        <div class="row  " style="padding-left: 142px; padding-right:142px;">
-            <div class="col-lg-12 col-md-12" style="  ">
-                <div class="row ">
-                     <div class="col-lg-7 col-md-12">
-                         <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 0px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
-
-
-
-<style>
-  button.tablinks.active{
-    display: inline; cursor:pointer;margin-right:10px;border: 1px solid #02b5fd; border-radius: 27px; padding: 10px 55px 0 55px;
-    padding: 10px 35px 10px 35px;
-    background-color: #02b5fd;
-    color: #fff;
-  }
-
-  button.tablinks{
-    display: inline; margin-right:10px;cursor:pointer;border: 1px solid #11218D; border-radius: 27px; padding: 10px 55px 0 55px;
-    padding: 10px 35px 10px 35px;
-    background-color: #fff;
-    color: #11218D;
-  }
-</style>
-                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks active" onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
-                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'two')">Əmlakın Dəyəri</button>
-                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'three')">Yatırım Net Qazancı</button>
-                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'four')">Qazanc Marjası</button>
-   <br><br>
-
-<div id="one" class="tabcontent" style="display: block;">
-  <div id="chart1"></div>
-</div>
-
-<div id="two" class="tabcontent">
-  <div id="chart2"></div>
-</div>
-<div id="three" class="tabcontent">
-  <div id="chart3"></div>
-</div>
-
- <div id="four" class="tabcontent">
-  <div id="chart4"></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-                         <script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-                     </div>
-                     <div class="col-lg-5 col-md-12 {% if is_mobile %}order-first{% endif%}">
-            <div class="calculatortitle mobilee" style="display:none;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
-
-                       <div style="border-radius: 20px; border: 1px solid #DDDCE0; background: #FFF;">
-
-                        <div class="row  " style=" padding: 5px 15px 34px 62px; ">
-                            <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
-                                <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırmaq istədiyiniz ilkin kapital</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="50000"></div>
-                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="50000" max="2000000" step="1000" value="50000" style="       margin: 10px 0 0 0; width: 88%;"></div>
-                            </div>
-                            <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
-                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Müddət</div>
-                                <div  style=" position: relative; "><span style=" font-weight: 500; font-size: 15px; position: absolute; top: 8px; left: 10px; color: #747474; ">İl</span><input min="2" max="10" id="muddetid" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="10"></div>
-                            <div> <input  id="muddetsliderid" class="slider calculatorinput" type="range" min="2" max="10" step="1" value="10" style="       margin: 10px 0 0 0; width: 88%;"></div>
-                            </div>
-                            <div class="col-lg-12 col-md-12" style=" padding-top: 12px; padding-bottom: 24px; ">
-                              <input type="radio" id="radio1" checked="" name="ipoteka" value="1">
-                              <label for="html">İpoteka</label>
-                              <input type="radio" id="radio2" name="ipoteka" value="0">
-                              <label for="html">Nağd</label>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən <span id="yearspan">10</span> illik kirayə gəliri</div>
-                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input readonly id="field1" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
-                            </div>
-                            <div class="col-lg-12 col-md-12" style=" padding-top: 24px; ">
-                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Gözlənilən <span id="yearspann">10</span> ilin sonundakı əmlakın dəyərlənməsi</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input readonly id="field2" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
-                            </div>
-
-
-                            <style>
-                                .loading{
-                                background-image: url({% static 'loading.gif'%});
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center;
-                                    color:black !important;
-                                    text-indent: -9999em;
-                                        text-transform: uppercase;
-                                }
-                            </style>
-                            <div>
-                                <button class="loading" id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
-                            </div>
-                        </div>
-                   </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-</div>
 
 
 <div class=" mt-5" style=" ">

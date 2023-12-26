@@ -54,3 +54,18 @@ class Image(models.Model):
 
     def __str__(self):
         return f'şəkil'
+
+
+class Message(models.Model):
+    first_name = models.CharField(max_length=256)
+    last_name = models.CharField(max_length=256)
+    phone = models.CharField(max_length=256)
+    email = models.CharField(max_length=256)
+    message = models.TextField()
+
+    class Meta:
+        verbose_name = "Ev, Villa Müraciət Edən"
+        verbose_name_plural = "Evlər, Villalar  Müraciət Edənlər"
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
