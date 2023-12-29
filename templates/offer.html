@@ -685,9 +685,8 @@ Citizenship</div>
     <div class="container">
         <div class="row  ">
 
-            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
+            <div class="col-lg-6 col-md-12" style=" padding: 0 15px 0 15px; ">
                 <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;    margin-bottom: 30px;">INFORMATION<br>ABOUT PROPERTY</div>
-                <div  style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal;    margin-bottom: 30px;">PROPERTY DETAILS</div>
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Sanitaires</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.sanitaires}}</div>
@@ -730,25 +729,23 @@ Citizenship</div>
 
 
             </div>
-            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
-                <div class="sdsdcsdc" style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;      visibility: collapse;  margin-bottom: 30px;">INFORMATION<br>ABOUT PROPERTY</div>
-
-                 <div style="color: #FFF; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: normal; margin-bottom: 30px;">PROPERTY DETAILS</div>
-               <div class="sdfvsdfvsdf" style="color: #FFF; text-align: left; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">
-                   {{offer.description | safe}}</div>
-            </div>
-            <div class="col-lg-4 col-md-12" style=" padding: 0 15px 0 15px; ">
+                <div class="col-lg-1"></div>
+            <div class="col-lg-5 col-md-12" style=" padding: 0 15px 0 15px; ">
                 <div style="background:#D9D9D9;">
-                    <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">Why you should invest Coracesium City?</div>
-                    <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Please fill out the form and we will contact you shortly.</div>
+                    <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">Evİ onlİne görmək İstəyİrsİz? Bİzİmlə əlaqə saxlayın.</div>
+                    <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Canlı baxış vəya əlavə suallarınız üçün bizə yazın.</div>
                     <form style=" padding: 39px 40px; " method="post" >
                         {% csrf_token%}
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="First name *" required>
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Last name *" required>
-                        <div style="    border-bottom: 1px solid #000; display: flex; "><span style=" padding: 18px 12px 0 0px; ">+994</span><input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required></div>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
+                        <div style="    border-bottom: 1px solid #000; display: flex; position:relative;">
+                            <img style=" position: absolute; top: 23px; left: 0; " src="/static/flag.png">
+
+                            <span style=" padding: 18px 12px 0 29px; ">+994</span>
+                            <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required></div>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="email" name="email" placeholder="Email *" required>
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Message *" required>
-                        <button type="submit" style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">Get in Touch</button>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Mesaj *" required>
+                        <button type="submit" style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">Göndər</button>
                     </form>
 
                 </div>
