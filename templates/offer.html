@@ -429,7 +429,7 @@ display: block !important;
                 <div class="col-lg-6 col-md-12">
                      <br>
                      <div class="mmnnv" style="color: #000; text-align: right; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 60px; /* 200% */ letter-spacing: -0.5px;">
-                         {{offer.price}}</div>
+                         €{{offer.price}}</div>
 
                 </div>
 
@@ -562,6 +562,7 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% if offer.address %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Yerləşmə yeri</div>
@@ -573,6 +574,8 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.project_status %}
 
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
@@ -583,6 +586,8 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.year_built %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>İnşaat tarixi</div>
@@ -592,6 +597,8 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.distance_to_beach %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dənizə məsafə</div>
@@ -601,15 +608,19 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.distance_to_center %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Şəhər mərkəzinə məsafə</div>
+                    <div style="font-size: 15px;margin-bottom: -21px;">Şəhər mərkəzinə məsafə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '7.svg'%}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_center}}</div>
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.distance_to_airport %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Hava limanına məsafə</div>
@@ -619,6 +630,8 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.state_guaranteed %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dövlət təminatlı</div>
@@ -628,6 +641,8 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.sea_view %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dəniz mənzərəli</div>
@@ -637,6 +652,8 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.installment %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Kreditə uyğun</div>
@@ -646,6 +663,8 @@ display: block !important;
                     </div>
                 </div>
                 </div>
+                {% endif%}
+                {% if offer.suitable_for_citizenship %}
                  <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div style=" font-size: 14px; line-height: 22px;   ">Vətəndaşlığa uyğun</div>
@@ -656,6 +675,7 @@ display: block !important;
                 </div>
                 </div>
                 </div>
+           {% endif%}
             </div>
        </div>
 
@@ -678,39 +698,45 @@ display: block !important;
 
             <div class="col-lg-6 col-md-12" style=" padding: 0 15px 0 15px; ">
                 <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;    margin-bottom: 30px;">ƏMLAK HAQQINDA MƏLUMAT</div>
-
+                {% if offer.balcon %}
                  <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Balkon</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.balcon}}</div>
                 </div>
+                {% endif%}
+                {% if offer.rooms %}
 
                  <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Otaq sayı</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.rooms}}</div>
                 </div>
 
-
+{% endif%}
+                {% if offer.square %}
 
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Yaşayış sahəsi</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.square}}</div>
                 </div>
-
+{% endif%}
+                {% if offer.wc_qty %}
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Hamam/Tualet sayı</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.wc_qty}}</div>
                 </div>
-
+{% endif%}
+                {% if offer.indoor_parking %}
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Daxili park yeri</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.indoor_parking}}</div>
                 </div>
-
+{% endif%}
+                {% if offer.heating_system %}
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">İsitmə növü</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.heating_system}}</div>
                 </div>
-
+{% endif%}
 
 
             </div>
@@ -970,8 +996,8 @@ function openCity(evt, cityName) {
                         <div class="row  " style=" padding: 5px 15px 34px 62px; ">
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırmaq istədiyiniz ilkin kapital</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="50000"></div>
-                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="50000" max="2000000" step="1000" value="50000" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="{{amount}}"></div>
+                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="50000" max="2000000" step="1000" value="{{amount}}" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Müddət</div>
@@ -1399,7 +1425,7 @@ function openCity(evt, cityName) {
 
    window.onload = function() {
     var year = 10
-    var amount = 100000
+    var amount =  {{amount}}
     $(document).ready(function(){
       $("#muddetid").keyup(function(){
         year = (this.value);
@@ -2286,9 +2312,10 @@ chart1.updateOptions({
 
 
  <script>
+ var mount = {{amount}}
       $.ajax({
     type:"GET",
-    url:`/data/10/50000/1/`,
+    url:`/data/10/${mount}/1/`,
     success:function(data){
 
 

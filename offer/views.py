@@ -16,6 +16,7 @@ def offer(request, id):
         is_mobile = False
     head = Head.objects.all()
     body = Body.objects.all()
+    amount = round(int(offer.price)*0.6,0)
 
     if request.method == 'POST':
         first_name = ''
@@ -54,6 +55,7 @@ def offer(request, id):
             phone=phone
         )
         context = {
+            'amount': amount,
             'body': body,
             'head': head,
             'is_mobile': is_mobile,
@@ -67,6 +69,7 @@ def offer(request, id):
 
         return render(request, "offersuccess.html", context)
     context = {
+        'amount': amount,
         'body': body,
         'head': head,
         'is_mobile': is_mobile,
