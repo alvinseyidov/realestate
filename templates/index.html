@@ -2081,7 +2081,10 @@ function openCity(evt, cityName) {
                       data-bs-target="#collapseOne{{forloop.counter}}"
                       aria-expanded="true"
                       aria-controls="collapseOne{{forloop.counter}}" style="cursor: pointer;">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">0{{forloop.counter}}</p>
+                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">
+
+                        {% if forloop.counter < 10%}0{% endif%}{{forloop.counter}}
+                    </p>
                     <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">{{f.question}}</p>
                   </div>
                   <h2 class="accordion-header">
