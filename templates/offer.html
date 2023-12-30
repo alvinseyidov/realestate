@@ -429,7 +429,12 @@ display: block !important;
                 <div class="col-lg-6 col-md-12">
                      <br>
                      <div class="mmnnv" style="color: #000; text-align: right; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 60px; /* 200% */ letter-spacing: -0.5px;">
-                         €{{offer.price}}</div>
+                         €<script>var camount = {{offer.price}};
+document.write(numberWithCommas(camount));
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script></div>
 
                 </div>
 
@@ -698,12 +703,6 @@ display: block !important;
 
             <div class="col-lg-6 col-md-12" style=" padding: 0 15px 0 15px; ">
                 <div style="color: #FFF; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;    margin-bottom: 30px;">ƏMLAK HAQQINDA MƏLUMAT</div>
-                {% if offer.balcon %}
-                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Balkon</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.balcon}}</div>
-                </div>
-                {% endif%}
                 {% if offer.rooms %}
 
                  <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
@@ -712,37 +711,47 @@ display: block !important;
                 </div>
 
 {% endif%}
-                {% if offer.square %}
-
-                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Yaşayış sahəsi</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.square}}</div>
-                </div>
-{% endif%}
                 {% if offer.wc_qty %}
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">Hamam/Tualet sayı</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.wc_qty}}</div>
                 </div>
 {% endif%}
-                {% if offer.indoor_parking %}
+
+
+                {% if offer.balcon %}
+                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Balkon</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.balcon}}</div>
+                </div>
+                {% endif%}
+                   {% if offer.square %}
+
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
-                    <div style="color: #fff; display: inline-block;">Daxili park yeri</div>
-                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.indoor_parking}}</div>
+                    <div style="color: #fff; display: inline-block;">Yaşayış sahəsi</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.square}}</div>
                 </div>
 {% endif%}
-                {% if offer.heating_system %}
+                 {% if offer.heating_system %}
                 <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
                     <div style="color: #fff; display: inline-block;">İsitmə növü</div>
                     <div style="color: #fff; display: inline-block;    float: right;">{{offer.heating_system}}</div>
                 </div>
 {% endif%}
 
+                {% if offer.indoor_parking %}
+                <div style=" border-bottom: 1px solid #fff; padding-bottom: 15px; margin-top: 15px; ">
+                    <div style="color: #fff; display: inline-block;">Daxili park yeri</div>
+                    <div style="color: #fff; display: inline-block;    float: right;">{{offer.indoor_parking}}</div>
+                </div>
+{% endif%}
+
+
 
             </div>
                 <div class="col-lg-1"></div>
             <div class="col-lg-5 col-md-12" style=" padding: 0 15px 0 15px; ">
-                <div style="background:#D9D9D9;">
+                <div style="background:#fff;">
                     <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">Evİ onlİne görmək İstəyİrsİz? Bİzİmlə əlaqə saxlayın.</div>
                     <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Canlı baxış vəya əlavə suallarınız üçün bizə yazın.</div>
                     <form style=" padding: 39px 40px; " method="post" >
