@@ -1101,7 +1101,8 @@ def index(request):
     tablar = Tablar.objects.all()
     villas = Offer.objects.filter(type='V')
     apartments = Offer.objects.filter(type="A")
-    faq = FAQ.objects.all()
+    faq = FAQ.objects.all()[:5]
+    total_obj = FAQ.objects.count()
     feedback = Feedback.objects.all()
 
     features = Feature.objects.all()
@@ -1122,6 +1123,7 @@ def index(request):
 
     context = {
         'body': body,
+        'total_obj': total_obj,
         'head': head,
         'is_mobile': is_mobile,
         "sorting_sections": sorting_sections,

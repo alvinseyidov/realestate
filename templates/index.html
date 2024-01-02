@@ -2075,7 +2075,11 @@ function openCity(evt, cityName) {
 </style>
 
 
-
+<style>
+    .not-visible {
+        display: none !important;
+    }
+</style>
 
 
   <section class="container-fluid py-5 bg_gray faqq" style="  ">
@@ -2085,12 +2089,12 @@ function openCity(evt, cityName) {
             <div class="accordion d-flex flex-column gap-3" id="accordionExample">
 
                 {% for f in faq %}
-              <div class="accordion-item bg-white p-3 rounded-0">
+              <div class="accordion-item bg-white p-3 rounded-0 single_content">
                 <div class="d-flex gap-5 justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center gap-4" onclick="myFunc{{forloop.counter}}()"  data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne{{forloop.counter}}"
+                  <div class="d-flex justify-content-between align-items-center gap-4" onclick="myFunc{{f.id}}()"  data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne{{f.id}}"
                       aria-expanded="true"
-                      aria-controls="collapseOne{{forloop.counter}}" style="cursor: pointer;">
+                      aria-controls="collapseOne{{f.id}}" style="cursor: pointer;">
                     <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">
 
                         {% if forloop.counter < 10%}0{% endif%}{{forloop.counter}}
@@ -2102,22 +2106,22 @@ function openCity(evt, cityName) {
                       class="accordionButton border-0 bg-transparent"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne{{forloop.counter}}"
+                      data-bs-target="#collapseOne{{f.id}}"
                       aria-expanded="true"
-                      aria-controls="collapseOne{{forloop.counter}}">
-                      <img id="arrow{{forloop.counter}}" class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
+                      aria-controls="collapseOne{{f.id}}">
+                      <img id="arrow{{f.id}}" class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
                     </button>
 
                       <script>
-                        function myFunc{{forloop.counter}}() {
-                            let para{{forloop.counter}} = document.getElementById("arrow{{forloop.counter}}");
-                            para{{forloop.counter}}.classList.toggle("fa-rotate-180");
+                        function myFunc{{f.id}}() {
+                            let para{{f.id}} = document.getElementById("arrow{{f.id}}");
+                            para{{f.id}}.classList.toggle("fa-rotate-180");
                         }
                     </script>
                   </h2>
                 </div>
                 <div
-                  id="collapseOne{{forloop.counter}}"
+                  id="collapseOne{{f.id}}"
                   class="accordion-collapse collapse "
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body ccc5"style=" padding-left: 108px; ">
@@ -2132,15 +2136,110 @@ function openCity(evt, cityName) {
               </div>
 
                 {% endfor%}
+
+
             </div>
+               <div id="loadmore">
+                    <div style=" text-align: center; cursor: pointer; padding-top: 30px; ">Daha Çox</div>
+                </div>
           </div>
         </div>
       </section>
 
 
+ {{total_obj|json_script:"json-total"}}
+
+ <script>
+        // var _current_item = $('.single_content').length
+        // console.log(_current_item);
+        const loadBtn = document.getElementById('loadmore');
+        const total = JSON.parse(document.getElementById('json-total').textContent);
+        const alert = document.getElementById('alert');
+
+        function loadmorePost() {
+            var _current_item = $('.single_content').length
+            const content_container = document.getElementById("accordionExample");
+            $.ajax({
+                url: '{% url "loadfaq" %}',
+                type: 'GET',
+                data: {
+                    'loaded_item': _current_item
+                },
+                beforeSend: function () {
+                    loadBtn.classList.add('not-visible');
+                },
+                success: function (response) {
+                    const data = response.faq
+                    console.log("=====")
+                    console.log(_current_item)
+                    console.log(total)
+                    if(response.offset == 5 ){
+                    var zero = '0';
+                    }else{
+                        var zero = '';
+                    }
+                    data.map((f, i) => {
+                        content_container.innerHTML += `    <div class="accordion-item bg-white p-3 rounded-0 single_content">
+                <div class="d-flex gap-5 justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center gap-4"   data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne${f.id}"
+                      aria-expanded="true"
+                      aria-controls="collapseOne${f.id}" style="cursor: pointer;">
+                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">
+
+                    ${parseInt(response.offset)+i+1>9 ? '' : 0}${parseInt(response.offset)+i+1}
+                    </p>
+                    <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">${f.question}</p>
+                  </div>
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordionButton border-0 bg-transparent"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne${f.id}"
+                      aria-expanded="true"
+                      aria-controls="collapseOne${f.id}">
+                      <img id="arrow${f.id}" class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
+                    </button>
 
 
+                  </h2>
+                </div>
+                <div
+                  id="collapseOne${f.id}"
+                  class="accordion-collapse collapse "
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
 
+                    <p class="mx-3 fw-normal font_normal">
+                     ${f.answer}
+                      </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+  `
+                    })
+                    var _current_item = $('.single_content').length
+                    console.log(_current_item);
+                    if (_current_item == total) {
+                        loadBtn.classList.add('not-visible');
+                    } else {
+                        loadBtn.classList.remove('not-visible');
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+            });
+        }
+        loadBtn.addEventListener('click', () => {
+            loadmorePost()
+        });
+    </script>
 
 
 

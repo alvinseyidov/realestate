@@ -12,7 +12,8 @@ urlpatterns = [
     path('contactform/', core_views.contactform, name="contactform"),
     path('data/<int:year>/<int:amount>/<int:mortgage>/', core_views.data, name="data"),
     path('waitlist/', core_views.contactform2, name="waitlist"),
-    path('offer/<int:id>/', offer_views.offer, name="offer")
+    path('offer/<int:id>/', offer_views.offer, name="offer"),
+    path('loadfaq/', offer_views.loadfaq, name="loadfaq")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

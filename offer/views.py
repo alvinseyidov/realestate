@@ -1,7 +1,20 @@
+from django.http import JsonResponse
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, Head, Body
+from core.models import General, Social, Why, Tablar, Head, Body, FAQ
 from offer.models import Offer, Message
 
+def loadfaq(request):
+
+    offset = request.GET.get('loaded_item')
+    offset_int = int(offset)
+    limit = 5
+    # post_obj = Post.objects.all()[offset_int:offset_int+limit]
+    post_obj = list(FAQ.objects.values()[offset_int:offset_int + limit])
+    data = {
+        'faq': post_obj,
+        'offset':offset
+            }
+    return JsonResponse(data=data)
 
 def offer(request, id):
     general = General.objects.last()
