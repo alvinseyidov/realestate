@@ -283,9 +283,13 @@ display:none !important;
 	    top: 6px !important;
   }
 
-  .ccc4{
-	    padding: 20px 11px 20px 19px !important;
-  }
+.ccc4 {
+    padding: 18px 5px 20px 5px !important;
+    font-size: 20px !important;
+}
+.gap-5 {
+    gap: 0.5rem!important;
+}
   .ccc5{
 	    padding-left: 69px !important;
   }
@@ -2095,10 +2099,10 @@ function openCity(evt, cityName) {
                       data-bs-target="#collapseOne{{f.id}}"
                       aria-expanded="true"
                       aria-controls="collapseOne{{f.id}}" style="cursor: pointer;">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">
+                    <div class="mb-0 ccc4" style=" font-weight: 700;padding: 23px 46px 23px 19px; font-size: 26px; ">
 
                         {% if forloop.counter < 10%}0{% endif%}{{forloop.counter}}
-                    </p>
+                    </div>
                     <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">{{f.question}}</p>
                   </div>
                   <h2 class="accordion-header">
@@ -2185,10 +2189,10 @@ function openCity(evt, cityName) {
                       data-bs-target="#collapseOne${f.id}"
                       aria-expanded="true"
                       aria-controls="collapseOne${f.id}" style="cursor: pointer;">
-                    <p class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px !important; ">
+                    <div class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px;font-weight: 700; ">
 
                     ${parseInt(response.offset)+i+1>9 ? '' : 0}${parseInt(response.offset)+i+1}
-                    </p>
+                    </div>
                     <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">${f.question}</p>
                   </div>
                   <h2 class="accordion-header">
