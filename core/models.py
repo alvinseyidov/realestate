@@ -57,6 +57,7 @@ class Why(models.Model):
     icon = models.FileField()
     title = models.CharField(max_length=256)
     text = models.CharField(max_length=256)
+    position = models.CharField(max_length=256)
 
     class Meta:
         verbose_name = "Komanda üzvü"
