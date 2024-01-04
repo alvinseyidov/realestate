@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from core.models import General, Social, Why, Tablar, Head, Body, FAQ
 from offer.models import Offer, Message
+from statik.models import OffersSection
+
 
 def loadfaq(request):
 
@@ -22,7 +24,8 @@ def offer(request, id):
     why = Why.objects.all()
     tablar = Tablar.objects.all()
     offer = Offer.objects.get(pk=id)
-    offers = Offer.objects.all()
+    offers = Offer.objects.all()[:3]
+    offers_section = OffersSection.objects.last()
     if request.user_agent.is_mobile:
         is_mobile = True
     else:
@@ -77,6 +80,7 @@ def offer(request, id):
             "tablar": tablar,
             "general": general,
             "why": why,
+            "offers_section": offers_section,
             "socials": socials
         }
 
@@ -91,6 +95,7 @@ def offer(request, id):
         "tablar": tablar,
         "general": general,
         "why": why,
+        "offers_section": offers_section,
         "socials": socials
     }
 
