@@ -12,6 +12,7 @@
 {% endif%}
       {% endfor%}
 
+<link rel="stylesheet" href="{% static 'input/build/css/intlTelInput.css'%}">
 
     <link
       rel="stylesheet"
@@ -1684,40 +1685,37 @@ function openCity(evt, cityName) {
                         </a>
 
                     <div style="display: flex;">
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; ">{{o.bed}} beds</div>
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;">{{o.square}}</div>
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'square.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
                     </div>
                     <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
 
                     <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">İlkin min. ödəniş məbləği</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_mebleg}}</div>
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Maks. aylıq kirayə məbləği</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.maks_ayliq_kiraye}}</div>
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Real bazar qiyməti</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.real_bazar_qiymeti}}</div>
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Ödəyəcəyiniz ümumi məbləğ</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.umumi_mebleg}}</div>
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
                     </div>
 
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">10 il Sonrakı bazar qiyməti</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.on_il_sonraki_qiymet}}</div>
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
                     </div>
 
-                     <div style="display:flex;      margin-top: 30px;margin-bottom: 30px;  padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">İnvestisiyanın ümumi net gəliri</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.umumi_net_gelir}}</div>
-                    </div>
+
 
                 </div>
           </div>
@@ -1725,11 +1723,11 @@ function openCity(evt, cityName) {
 
              <div class="swiper-slide">
 
-                <div class="evleritem" style="    height: 587px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
+                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
                     <div style=" width: 100%; text-align: center; ">
                         <img src="{% static 'plus.png'%}" style="width:180px;">
                     </div>
-                    <div style=" text-align: center;    margin-top: 132px; ">
+                    <div style=" text-align: center;    margin-top: 72px; ">
                        {{offers_section.form_text}}
                     </div>
                     <a href="{{offers_section.form_button_url}}" style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
@@ -1760,40 +1758,35 @@ function openCity(evt, cityName) {
                     </div>
                         </a>
 
-                    <div style="display: flex;">
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; ">{{o.bed}} beds</div>
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;">{{o.square}}</div>
+                     <div style="display: flex;">
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'square.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
                     </div>
                     <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
 
-                    <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">İlkin min. ödəniş məbləği</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_mebleg}}</div>
+                  <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Maks. aylıq kirayə məbləği</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.maks_ayliq_kiraye}}</div>
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Real bazar qiyməti</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.real_bazar_qiymeti}}</div>
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Ödəyəcəyiniz ümumi məbləğ</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.umumi_mebleg}}</div>
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
                     </div>
 
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">10 il Sonrakı bazar qiyməti</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.on_il_sonraki_qiymet}}</div>
-                    </div>
-
-                     <div style="display:flex;      margin-top: 30px;margin-bottom: 30px;  padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">İnvestisiyanın ümumi net gəliri</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.umumi_net_gelir}}</div>
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
                     </div>
 
                 </div>
@@ -1801,11 +1794,11 @@ function openCity(evt, cityName) {
           {% endfor%}
              <div class="swiper-slide">
 
-                <div class="evleritem" style="    height: 587px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
+                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
                     <div style=" width: 100%; text-align: center; ">
                         <img src="{% static 'plus.png'%}" style="width:180px;">
                     </div>
-                    <div style=" text-align: center;    margin-top: 132px; ">
+                    <div style=" text-align: center;    margin-top: 72px; ">
                        {{offers_section.form_text}}
                     </div>
                     <a href="{{offers_section.form_button_url}}" style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
@@ -1849,13 +1842,13 @@ function openCity(evt, cityName) {
                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad"> </div>
                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
                     <div style=" position: relative; ">
-                        <img id="flagaz"  style=" position: absolute; top: 8px; left: 46px; " src="{% static 'flag.png'%}">
-                        <img  id="flagtr" style=" display:none;position: absolute; top: 8px; left: 46px; " src="{% static 'flagtr.png'%}">
-                        <img  id="flagru" style=" display:none;position: absolute; top: 8px; left: 46px; " src="{% static 'flagru.png'%}">
-                        <img  id="flagus" style=" display:none;position: absolute; top: 8px; left: 46px; " src="{% static 'flagus.png'%}">
-                        <span style=" position: absolute; left: 75px; top: 1px; font-weight: 500; "><span>+</span><input style=" border: none; width: 50px; " type="text" id="prefix" placeholder="994" value="994"> </span>
-                        <input required name="phone" id="phone"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 92px " type="text">
-                        <input required name="phone" id="phonee"  placeholder="(55)-888-88-88" style="display:none; width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 92px " type="text">
+
+                        <span style=" position: absolute; left: 45px; top: 1px; font-weight: 500; ">
+                        <input type="tel"  style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone">
+                        </span>
+                        <input required name="phone" id="phone"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 62px " type="text">
+                        <input required name="phone" id=""  placeholder="(55)-888-88-88" style="display:none; width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 92px " type="text">
+
                     </div>
                     <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">{{form_section.form_button_text}}</button></div>
                     </form>
@@ -2734,12 +2727,6 @@ boxes.forEach(box => {
   <script>
 
 
-IMask(
-  document.getElementById('phone'),
-  {
-    mask: '(00) 000-00-00'
-  }
-)
   </script>
 
 
@@ -4115,6 +4102,31 @@ setInterval('updateTimer()', 1000 );
       {{h.script | safe}}
 {% endif%}
       {% endfor%}
+
+
+
+  <!-- Use as a Vanilla JS plugin -->
+
+<script src="{% static 'input/build/js/intlTelInput.min.js'%}"></script>
+
+<!-- Use as a jQuery plugin -->
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<script src="{% static 'input/build/js/intlTelInput-jquery.min.js'%}"></script>
+<script>
+    // Vanilla Javascript
+var input = document.querySelector("#telephone");
+window.intlTelInput(input,({
+  // options here
+}));
+
+// jQuery
+$("#telephone").intlTelInput({
+  	initialCountry:"az",
+
+});
+</script>
   </body>
 </html>
 

@@ -1080,40 +1080,35 @@ function openCity(evt, cityName) {
                     </div>
                         </a>
 
-                    <div style="display: flex;">
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; ">{{o.bed}} beds</div>
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;">{{o.square}}</div>
+                      <div style="display: flex;">
+                        <div style="display: flex; color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;   height: auto !important; object-fit: contain; margin-right: 12px;"><span>{{o.bed}}</span> </div>
+                        <div style=" display: flex;color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'square.png'%}" style="width:20px;    height: auto !important; object-fit: contain;margin-right: 12px;"><span>{{o.square}} </span></div>
                     </div>
                     <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
 
-                    <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">İlkin min. ödəniş məbləği</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_mebleg}}</div>
+                   <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Maks. aylıq kirayə məbləği</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.maks_ayliq_kiraye}}</div>
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Real bazar qiyməti</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.real_bazar_qiymeti}}</div>
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
                     </div>
 
                      <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Ödəyəcəyiniz ümumi məbləğ</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.umumi_mebleg}}</div>
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
                     </div>
 
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">10 il Sonrakı bazar qiyməti</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.on_il_sonraki_qiymet}}</div>
-                    </div>
-
-                     <div style="display:flex;      margin-top: 30px;margin-bottom: 30px;  padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">İnvestisiyanın ümumi net gəliri</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.umumi_net_gelir}}</div>
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
                     </div>
 
                 </div>
@@ -1122,7 +1117,7 @@ function openCity(evt, cityName) {
           {% endfor%}
              <div class="swiper-slide">
 
-                <div class="evleritem" style="    height: 587px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
+                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
                     <div style=" width: 100%; text-align: center; ">
                         <img src="{% static 'plus.png'%}" style="width:180px;    margin: auto;">
                     </div>
