@@ -201,6 +201,9 @@ class GetConsultationSection(models.Model):
 class OffersSection(models.Model):
     title = models.CharField(max_length=256)
     text = models.TextField()
+    form_text = models.CharField(max_length=256)
+    form_button_text = models.CharField(max_length=256)
+    form_button_url = models.CharField(max_length=256)
 
     def __str__(self):
         return f'Offers Section'
