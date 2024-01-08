@@ -18,6 +18,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" />
       <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
@@ -822,6 +823,33 @@ width:100% !important;
 
 
 
+<style>
+    /* external css: flickity.css */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 500px;
+  margin-right: 10px;
+  background: #8C8;
+  background: linear-gradient(180deg, #3D473E 0%, rgba(190, 208, 193, 0.30) 100%);
+
+  counter-increment: gallery-cell;
+}
+
+
+
+</style>
 
 
 
@@ -853,207 +881,68 @@ width:100% !important;
           </div>
  <div class="col-lg-12 col-md-12">
 
-<section class="strips" style="position:relative;">
-
-  <article class="strips__strip">
-    <div class="strip__content">
 
 
-
-
-
-
-
-        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
-                  <div class="displaynone" style="background-image:url({% static '1.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
-                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#1a3b70;text-align: center;">
-                    <img src="/media/icon1.png" style=" width: 40px; margin: 21px 0 14px 0; ">
-                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
-                        İnvestisiyanız gündəlik dəyər qazanacaq!</div>
-
-                </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-      <div class="strip__inner-text">
-        <div class="row" style=" position: absolute; ">
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
-                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                      <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
-                          {% csrf_token %}
-                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
-                      </form>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
-                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
-                  </div>
-        </div>
+     <div class="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <div class="gallery-cell" style="background-image:url({% static 'money.png'%});">
+      <div style="background: linear-gradient(180deg, #3D473E 0%, rgba(190, 208, 193, 0.30) 100%);width: 100%; height: 500px;"></div>
+      <div style=" position: absolute; z-index: 10000; top: 80px;left:40px;     width: 60%;">
+            <div style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                İnvestisiyanız gündəlik dəyər qazanacaq!
+            </div>
+            <div style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+                Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.  (Qrafik indeks nümunələr) Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?
+            </div>
+          <a style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; ">
+              Bizimlə Əlaqə
+          </a>
       </div>
-
-    </div>
-  </article>
-
-  <article class="strips__strip">
-    <div class="strip__content">
-
-
-
-
-
-
-
-        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
-                  <div class="displaynone" style="background-image:url({% static '2.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
-                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#2c599d;text-align: center;">
-                    <img src="media/icon2.png" style=" width: 40px; margin: 21px 0 14px 0; ">
-                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
-                        Zəlzələ riski sizi qətiyyən narahat etməyəcək!</div>
-
-                </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-      <div class="strip__inner-text">
-        <div class="row" style=" position: absolute; ">
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
-                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
-                          {% csrf_token %}
-                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
-                      </form>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
-                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
-                  </div>
-        </div>
+  </div>
+  <div class="gallery-cell" style="background-image:url({% static 'money.png'%});">
+      <div style="background: linear-gradient(180deg, #3D473E 0%, rgba(190, 208, 193, 0.30) 100%);width: 100%; height: 500px;"></div>
+      <div style=" position: absolute; z-index: 10000; top: 80px;left:40px;     width: 60%;">
+            <div style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                İnvestisiyanız gündəlik dəyər qazanacaq!
+            </div>
+            <div style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+                Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.  (Qrafik indeks nümunələr) Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?
+            </div>
+          <a style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; ">
+              Bizimlə Əlaqə
+          </a>
       </div>
-
-    </div>
-  </article>
-
-  <article class="strips__strip">
-    <div class="strip__content">
-
-
-
-
-
-
-
-        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
-                  <div class="displaynone" style="background-image:url({% static '3.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
-                <div class="displaynone" style="width: 100%; height: 200px; margin: auto;background-color:#5c83c4;text-align: center;">
-                    <img src="media/icon3.png" style=" width: 40px; margin: 21px 0 14px 0; ">
-                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
-                        EURO kimi güclü və stabil valyutada gəlir əldə edirsiniz!</div>
-
-                </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-      <div class="strip__inner-text">
-        <div class="row" style=" position: absolute; ">
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
-                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
-                          {% csrf_token %}
-                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
-                      </form>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
-                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
-                  </div>
-        </div>
+  </div>
+          <div class="gallery-cell" style="background-image:url({% static 'money.png'%});">
+      <div style="background: linear-gradient(180deg, #3D473E 0%, rgba(190, 208, 193, 0.30) 100%);width: 100%; height: 500px;"></div>
+      <div style=" position: absolute; z-index: 10000; top: 80px;left:40px;     width: 60%;">
+            <div style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                İnvestisiyanız gündəlik dəyər qazanacaq!
+            </div>
+            <div style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+                Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.  (Qrafik indeks nümunələr) Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?
+            </div>
+          <a style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; ">
+              Bizimlə Əlaqə
+          </a>
       </div>
-
-    </div>
-  </article>
-
-  <article class="strips__strip">
-    <div class="strip__content">
-
-
-
-
-
-
-
-        <div class="col-lg-3 col-md-6" style="width:100%;    height: 76vh !important;">
-                  <div class="displaynone" style="background-image:url({% static '4.png'%});background-size:cover;width: 100%; height: 290px; margin: auto;"></div>
-                <div class="displaynone" style="   width: 100%; height: 200px; margin: auto;background-color:#f88125;text-align: center;">
-                    <img src="media/icon4.png" style=" width: 40px; margin: 21px 0 14px 0; ">
-                    <div style="color:#fff;margin-bottom: 20px;font-family: system-ui !important;padding: 0 12px;font-size: 16px;">
-                        Ən əsası: Dərhal gəlir əldə etməyə başlayırsınız!</div>
-
-                </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-      <div class="strip__inner-text">
-        <div class="row" style=" position: absolute; ">
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; ">Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.</div>
-                    <div style=" text-align: left; margin-top: 28px; margin-bottom: 22px; ">Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?</div>
-                       <form action="waitlist/" style=" text-align: left;position:relative; " method="post">
-                          {% csrf_token %}
-                          <input required name="email" type="email" placeholder="E-mail" style="     width: 278px;border: none; border-radius: 23px; padding: 10px 20px; ">
-                          <button type="submit" style=" background-color: #10b981; border: none; border-radius: 24px; padding: 9px 12px; color: #fff; font-size: 14px; position: absolute; left: 199px; top: 3px; ">Göndər</button>
-                      </form>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <div style=" text-align: left; margin-left: 25px; ">Satış qiymətlərinin statistikası</div>
-                      <img style=" width: 500px; margin-top: 13px; margin-left: 25px; " src="{% static 'chart.png'%}">
-                  </div>
-        </div>
+  </div>
+          <div class="gallery-cell" style="background-image:url({% static 'money.png'%});">
+      <div style="background: linear-gradient(180deg, #3D473E 0%, rgba(190, 208, 193, 0.30) 100%);width: 100%; height: 500px;"></div>
+      <div style=" position: absolute; z-index: 10000; top: 80px;left:40px;     width: 60%;">
+            <div style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                İnvestisiyanız gündəlik dəyər qazanacaq!
+            </div>
+            <div style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+                Son 25 ilin statistikasına nəzər salsaq, Antalya bögəsində daşınmaz əmlak illik 8-10% arası stabil dəyər qazanır. Bu, dünyanın ən yaxşı yatırımçılarının əsas diqqət etdikləri göstəricilərdən biridir.  (Qrafik indeks nümunələr) Bu barədə geniş araşdırmamızla tanış olmaq istəyirsiniz?
+            </div>
+          <a style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; ">
+              Bizimlə Əlaqə
+          </a>
       </div>
+  </div>
+</div>
 
-    </div>
-  </article>
-
-
-  <div class="strip__close strip__close_desktop">x</div>
-</section>
 
 </div>
 </div>
@@ -4128,6 +4017,7 @@ setInterval('updateTimer()', 1000 );
 <!-- Use as a jQuery plugin -->
 
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 
 <script src="{% static 'input/build/js/intlTelInput-jquery.min.js'%}"></script>
 <script>
@@ -4143,6 +4033,8 @@ $("#telephone").intlTelInput({
 
 });
 </script>
+
+
   </body>
 </html>
 
