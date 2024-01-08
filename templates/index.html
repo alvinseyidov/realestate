@@ -727,7 +727,7 @@ width:100% !important;
 
 
 
-    <header class="header bg-white container" id="headerr" style="     padding-bottom: 26px;background-color: #e3e5ea !important; width: 100% !important; max-width: 100%; padding-right: 140px; padding-left: 140px; ">
+    <!--<header class="header bg-white container" id="headerr" style="     padding-bottom: 26px;background-color: #e3e5ea !important; width: 100% !important; max-width: 100%; padding-right: 140px; padding-left: 140px; ">
         <div class="container">
         <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
             <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
@@ -744,10 +744,11 @@ width:100% !important;
 
 
 
-    </header>
+    </header>-->
 
 
   <div class="mobilee" style=" display:none;background-image:url({% static 'mainbg.jpg'%});    background-size: cover;background-size: cover;  background-position: right;">
+
         <div class="row  ">
           <div class="col-lg-6 col-md-12" style="">
             <div class="cccx7" style="padding-top: 54px !important;padding-right: 18px;">
@@ -778,6 +779,19 @@ width:100% !important;
       </div>
 
   <div class="desktopp" style="background-image:url({{main_section.background_image.url}});    background-size: cover;background-size: cover; height: 600px; background-position: center;">
+      <div class="container">
+        <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
+                <div style="display: inline-block;float: right;">
+                  <div class="cccx3" style=" width: 50px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block; " class="cccx2"> <p style=" display: inline-block; ">{{general.phone}}</p>  </div>
+                </div>
+            </div>
+        </div>
+</div>
+
         <div class="row  ">
           <div class="col-lg-6 col-md-12" style="">
             <div class="cccx7" style="padding-left: 142px; padding-top: 55px;    padding-right: 18px;">
