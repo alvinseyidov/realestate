@@ -1,5 +1,14 @@
 from django.db import models
 
+class Slider(models.Model):
+    background_image = models.ImageField()
+    title = models.CharField(max_length=256)
+    text = models.TextField()
+    button_text = models.CharField(max_length=256)
+    button_url = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.title
 
 
 class General(models.Model):
