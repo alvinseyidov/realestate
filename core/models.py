@@ -12,6 +12,7 @@ class General(models.Model):
     telegram_link = models.CharField(max_length=256)
     copyright = models.CharField(max_length=256)
     logo = models.FileField()
+    logo_white = models.FileField(null=True, blank=True)
     home_popup_video = models.FileField()
     countdown_enddate = models.DateTimeField()
 
