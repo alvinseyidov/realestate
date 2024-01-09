@@ -45,7 +45,7 @@
     min-width: 90px;
 
     .spann {
-      color: #B1CDF1;
+      color: #fff;
       display: block;
       font-size: .35em;
       font-weight: 400;
@@ -53,6 +53,7 @@
   }
 }
           .spann1 {
+          color:#fff !important;
     font-size: 19px;
     font-weight: 400;
     width: 36px !important;
@@ -83,7 +84,7 @@
     min-width: 90px;
 
     .spann {
-      color: #B1CDF1;
+      color: #fff !important;
       display: block;
       font-size: .35em;
       font-weight: 400;
@@ -320,7 +321,7 @@ display:none !important;
     min-width: 90px;
 
     .spann {
-      color: #B1CDF1;
+      color: #fff;
       display: block;
       font-size: .35em;
       font-weight: 400;
@@ -340,7 +341,7 @@ display:none !important;
     min-width: 90px;
 
     .spann {
-      color: #B1CDF1;
+      color: #fff;
       display: block;
       font-size: .35em;
       font-weight: 400;
@@ -687,7 +688,7 @@ width:100% !important;
         min-width: 70px !important;
     text-align: center;
     padding-right: 10px;
-    color:#000 !important;
+    color:#fff !important;
     }
 
     @media only screen and (max-width: 600px) {
@@ -748,8 +749,9 @@ width:100% !important;
     </header>-->
 
 
-  <div class="mobilee" style=" display:none;background-image:url({{main_section.background_image.url}});   background-size: cover;background-size: cover;  background-position: right;height: 700px; padding-top: 0px;">
- <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+  <div class="mobilee" style="position:relative; display:none;background-image:url({{main_section.background_image.url}});   background-size: cover;background-size: cover;  background-position: right;height: 700px; padding-top: 0px;">
+      <div style=" width: 100%; height: 100%; background-color: #0000009c; position: absolute; z-index: 0; "></div>
+ <div class="row" style="     position: relative;padding-top: 40px; margin-bottom: -11px; ">
             <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo_white.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
             <div class="col-lg-6 col-8">
                 <div style="display: inline-block;float: right;">
@@ -759,17 +761,17 @@ width:100% !important;
                 </div>
             </div>
         </div>
-        <div class="row  " style=" padding-top: 43px; ">
+        <div class="row  " style="     position: relative;padding-top: 43px; ">
           <div class="col-lg-6 col-md-12" style="">
             <div class="cccx7" style="padding-top: 54px !important;padding-right: 18px;">
-              <h1 class="cccx8 pb-2 display-2   redffg" style="color: #000;font-family: Montserrat;font-size: 23px !important;font-style: normal;font-weight: 700;line-height: 34px;">
+              <h1 class="cccx8 pb-2 display-2   redffg" style="color: #fff;font-family: Montserrat;font-size: 33px !important;font-style: normal;font-weight: 700;line-height: 41px;">
                   {{main_section.title}}
                  </h1>
-            <p class="pb-4 mt-4" style="       text-align: justify; margin-bottom: 0; margin-top: 0 !important;color: #000;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
+            <p class="pb-4 mt-4" style="       text-align: justify; margin-bottom: 0; margin-top: 0 !important;color: #fff;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
             {{main_section.text}}
             </p>
 
-                <p class="pb-4 mt-4" style=" margin: 0 0 !important; padding-bottom: 0 !important;color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
+                <p class="pb-4 mt-4" style=" margin: 0 0 !important; padding-bottom: 0 !important;color: #fff;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
                 {{main_section.text2}} </p>
                   <p class="pb-2 mt-2" style="color: #FFF;font-family: Montserrat !important;font-size: 35px !important;font-style: normal !important;font-weight: 500 !important;line-height: 30px; /* 85.714% */letter-spacing: -0.5px;padding-top: 14px;"	>
                 {{main_section.text3|safe}} </p>
@@ -1745,9 +1747,7 @@ function openCity(evt, cityName) {
                             <div class="swiper-slide">
                                 <div style="     height: 460px;background: #fff; border-radius: 10px; margin-right: 5px; padding: 21px 10px 26px 10px;     ">
                             <img src="{{w.icon.url}}" class="img-responsive" style=" width: 100%; ">
-                             <div style="color:#3A453B;width: 108px;border: 1px solid #3A453B;padding: 4px 11px;text-align: center;border-radius: 18px;margin: 18px 0 0 0;">
-                                 {{w.position}}
-                             </div>
+                             
                                     <div class="vvvx4" style="    margin: 15px 0 15px 0;color: #000; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
                              <div class="vvvx3" style="width: 100%;bottom: 42px;color: #000; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: 20px;  padding-right: 0; font-size: 13px;">{{w.text}}</div>
                             </div>
