@@ -1143,39 +1143,46 @@ function openCity(evt, cityName) {
 <div class=" mobilee mt-5" style="display:none;margin-top:70px !important;">
         <div class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
-                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">Əslində bu, düşündüyünüzdən qat-qat asandır!</div>
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">{{processes_section.title}}</div>
 
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
 
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process1_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Əmlakınızı seçirsiniz</div>
-                <div style=" padding-right: 47px; ">Satışa tam hazır təkliflərimizin və ya özünüzün seçimləriniz arasından sizin şərtlərə və imkanlara ən uyğun daşınmaz əmlak seçimini edirsiniz!</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
+                <div style=" padding-right: 47px; ">
+                   {{processes_section.process1_text}} </div>
             </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i21.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process2_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Alqı-satqını tamamlayırıq</div>
-                <div style=" padding-right: 47px; ">Tamamilə sizin seçiminizdən asılı olaraq, nağd və ya kreditlə əmlakın sizin adınıza alınmasını tamamlayırıq.</div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 stepler" style="">
-                <div style=" display: flex; ">
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i31.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process2_text}}
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">İlk kirayəçinizi tapırıq</div>
-                <div style=" padding-right: 47px; ">Əmlakınız sizin adınıza rəsmiləşdikdən və çıxarışı alındıqdan dərhal sonra, vaxt itirmədən passiv gəlir qazanmağınız üçün hərəkətə keçirik! Sizin üçün kirayəçi tapırıq!</div>
             </div>
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
-                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i41.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process3_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Qazanmağa başlayırsınız!</div>
-                <div style=" padding-right: 47px; ">Ağıllı bir investisiya sahibi olaraq hələ heç ödənişini tamamlamadığınız əmlakınızdan real gəlir qazanmağa başlayırsınız!</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
+                <div style=" padding-right: 47px; ">
+                     {{processes_section_process3.text}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process4_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
+                <div style=" padding-right: 47px; ">
+                     {{processes_section.process4_text}}
+                </div>
             </div>
         </div>
 </div>
@@ -1185,50 +1192,58 @@ function openCity(evt, cityName) {
 <div id="prosesler" class=" desktopp mt-5" style="margin-bottom:130px;margin-top:70px !important;">
         <div  class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
-                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">Əslində bu, düşündüyünüzdən qat-qat asandır!</div>
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">{{processes_section.title}}</div>
 
           </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
                     <div>
                      <div style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">1.</div>
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i11.svg'%});background-repeat: no-repeat; background-position: center;"> </div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process1_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
                     </div>
                     <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 90px; "></div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Əmlakınızı seçirsiniz</div>
-                <div style=" padding-right: 47px; ">Satışa tam hazır təkliflərimizin və ya özünüzün seçimləriniz arasından sizin şərtlərə və imkanlara ən uyğun daşınmaz əmlak seçimini edirsiniz!</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process1_text}}
+                </div>
             </div>
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
                      <div>
                      <div  style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">2.</div>
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i21.svg'%});background-repeat: no-repeat; background-position: center;"> </div></div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process2_icon.url}});background-repeat: no-repeat; background-position: center;"> </div></div>
                     <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 90px; "></div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Alqı-satqını tamamlayırıq</div>
-                <div style=" padding-right: 47px; ">Tamamilə sizin seçiminizdən asılı olaraq, nağd və ya kreditlə əmlakın sizin adınıza alınmasını tamamlayırıq.</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process2_text}}
+                </div>
             </div>
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
                      <div>
                      <div style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">3.</div>
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i31.svg'%});background-repeat: no-repeat; background-position: center;"> </div></div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process3_icon.url}});background-repeat: no-repeat; background-position: center;"> </div></div>
                     <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 90px; "></div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">İlk kirayəçinizi tapırıq</div>
-                <div style=" padding-right: 47px; ">Əmlakınız sizin adınıza rəsmiləşdikdən və çıxarışı alındıqdan dərhal sonra, vaxt itirmədən passiv gəlir qazanmağınız üçün hərəkətə keçirik! Sizin üçün kirayəçi tapırıq!</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
+                <div style=" padding-right: 47px; ">
+                     {{processes_section.process3_text}}
+                </div>
             </div>
 
             <div class="col-lg-3 col-md-6 stepler" style="">
                 <div style=" display: flex; ">
                      <div>
                      <div  style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">4.</div>
-                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({% static 'i41.svg'%});background-repeat: no-repeat; background-position: center;"> </div></div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process4_icon.url}});background-repeat: no-repeat; background-position: center;"> </div></div>
                 </div>
-                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">Qazanmağa başlayırsınız!</div>
-                <div style=" padding-right: 47px; ">Ağıllı bir investisiya sahibi olaraq hələ heç ödənişini tamamlamadığınız əmlakınızdan real gəlir qazanmağa başlayırsınız!</div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process4_text}}
+                </div>
             </div>
         </div>
 </div>
