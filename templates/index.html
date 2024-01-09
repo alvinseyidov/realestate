@@ -728,7 +728,7 @@ width:100% !important;
 
 
 
-    <!--<header class="header bg-white container" id="headerr" style="     padding-bottom: 26px;background-color: #e3e5ea !important; width: 100% !important; max-width: 100%; padding-right: 140px; padding-left: 140px; ">
+    <!--<header class="mobilee header bg-white container" id="headerr" style="     padding-bottom: 26px;background-color: #e3e5ea !important; width: 100% !important; max-width: 100%; padding-right: 140px; padding-left: 140px; ">
         <div class="container">
         <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
             <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
@@ -748,9 +748,18 @@ width:100% !important;
     </header>-->
 
 
-  <div class="mobilee" style=" display:none;background-image:url({% static 'mainbg.jpg'%});    background-size: cover;background-size: cover;  background-position: right;">
-
-        <div class="row  ">
+  <div class="mobilee" style=" display:none;background-image:url({{main_section.background_image.url}});   background-size: cover;background-size: cover;  background-position: right;height: 700px; padding-top: 0px;">
+ <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo_white.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
+                <div style="display: inline-block;float: right;">
+                  <div class="cccx3" style=" width: 50px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block; " class="cccx2"> <p style=" display: inline-block; ">{{general.phone}}</p>  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row  " style=" padding-top: 43px; ">
           <div class="col-lg-6 col-md-12" style="">
             <div class="cccx7" style="padding-top: 54px !important;padding-right: 18px;">
               <h1 class="cccx8 pb-2 display-2   redffg" style="color: #000;font-family: Montserrat;font-size: 23px !important;font-style: normal;font-weight: 700;line-height: 34px;">
@@ -762,11 +771,13 @@ width:100% !important;
 
                 <p class="pb-4 mt-4" style=" margin: 0 0 !important; padding-bottom: 0 !important;color: #000;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
                 {{main_section.text2}} </p>
+                  <p class="pb-2 mt-2" style="color: #FFF;font-family: Montserrat !important;font-size: 35px !important;font-style: normal !important;font-weight: 500 !important;line-height: 30px; /* 85.714% */letter-spacing: -0.5px;padding-top: 14px;"	>
+                {{main_section.text3|safe}} </p>
                 <div style=" position: relative;text-align: center; ">
-                <img src="{% static 'man.png'%}" style=" width: 100%; ">
+                
                   <div id="timerr" style=" display: flex;padding-top:15px; width: 100px; gap: 13px; "></div>
                     <div style=" margin-top: 26px; margin-bottom: 34px; ">
-                     <a href=" {{main_section.button_link}} " style="     bottom: 67px; left: 50%; width: 214px; transform: translate(-50%, -50%); text-decoration: none;border: 1px solid #fff; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
+                     <a href=" {{main_section.button_link}} " style="     bottom: 67px; left: 50%; width: 214px; transform: translate(-50%, -50%); text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </a>
                     </div>
                      <div style=" margin-top: 26px; margin-bottom: 34px; ">
                     </div>
@@ -909,7 +920,7 @@ font-size: 19px !important;
 
 </style>
 
-  <div style="display: block;" class="desktopp mt-5">
+  <div style="display: block;" class=" mt-5">
         <div class="row  " style="padding-left: 140px; padding-right:140px;">
             <div class="col-lg-6 col-md-12" style=" margin-bottom: 49px; ">
                  <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;">Antalyada Daşınmaz Əmlak bugünün ən ağıllı yatırım imkanlarından biridir!</div>
