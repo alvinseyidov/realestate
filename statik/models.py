@@ -140,9 +140,20 @@ class MainSection(models.Model):
 
     class Meta:
         verbose_name = "Əsas Bölmə (1-ci bölmə)"
-        verbose_name_plural = "            Əsas Bölmə (1-ci bölmə)"
+        verbose_name_plural = "             Əsas Bölmə (1-ci bölmə)"
 
 
+
+class SliderSection(models.Model):
+    title = models.TextField()
+    text = models.TextField()
+
+    def __str__(self):
+        return f'Slider Section'
+
+    class Meta:
+        verbose_name = "Slider Bölmə"
+        verbose_name_plural = "            Slider Bölmə"
 
 
 class WhySection(models.Model):

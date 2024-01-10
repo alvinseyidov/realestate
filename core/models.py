@@ -6,6 +6,10 @@ class Slider(models.Model):
     text = models.TextField()
     button_text = models.CharField(max_length=256)
     button_url = models.CharField(max_length=256)
+    sorting = models.IntegerField(default=1)
+
+    class Meta:
+        ordering = ('sorting',)
 
     def __str__(self):
         return self.title
@@ -105,6 +109,7 @@ class Body(models.Model):
         verbose_name_plural = "  JS Scriptlər"
 
 class Parametr(models.Model):
+    title = models.CharField(verbose_name='Bölmənin başlığı',max_length=256)
     leverage_tr = models.FloatField(verbose_name='Leverage Percent TR')
     leverage_az = models.FloatField(verbose_name='Leverage Percent AZ')
     loan_interest_rate_tr = models.FloatField(verbose_name='Loan Interest Rate TR')

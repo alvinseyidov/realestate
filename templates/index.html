@@ -925,8 +925,10 @@ font-size: 19px !important;
   <div style="display: block;" class=" mt-5">
         <div class="row  " style="padding-left: 140px; padding-right:140px;">
             <div class="col-lg-6 col-md-12" style=" margin-bottom: 49px; ">
-                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;">Antalyada Daşınmaz Əmlak bugünün ən ağıllı yatırım imkanlarından biridir!</div>
-            <div style="font-size:20px;font-weight: 200; width: 95%; margin: auto;    margin-top: 12px;">“Niyə? Səbəblərini bir-bir araşdırdıq!”</div>
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;">
+                     {{slider_section.title | safe}}</div>
+            <div style="font-size:20px;font-weight: 200; width: 95%; margin: auto;    margin-top: 12px;">
+                {{slider_section.text | safe}}</div>
 
           </div>
         </div>
@@ -1003,7 +1005,10 @@ font-size: 19px !important;
             <div class="col-lg-12 col-md-12" style="  ">
                 <div class="row ">
                      <div class="col-lg-7 col-md-12">
-                         <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 0px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
+                         <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 0px;">
+                            
+                             {{calculator.title |safe}}
+                         </div>
 
 
 

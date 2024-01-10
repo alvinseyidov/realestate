@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(MainSection)
+admin.site.register(SliderSection)
 admin.site.register(WhySection)
 admin.site.register(GeliriHesablaBanner)
 admin.site.register(Suallar)

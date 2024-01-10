@@ -1108,6 +1108,7 @@ def index(request):
 
     features = Feature.objects.all()
     main_section = MainSection.objects.last()
+    slider_section = SliderSection.objects.last()
     why_section = WhySection.objects.last()
     advantage_section = AdvantageSection.objects.last()
     processes_section = ProcessesSection.objects.last()
@@ -1120,15 +1121,18 @@ def index(request):
     banner1 = GeliriHesablaBanner.objects.last()
     smart = SmartInvest.objects.last()
     niye = NiyeSecirler.objects.last()
+    calculator = Parametr.objects.last()
     suallar = Suallar.objects.all()
 
     context = {
+        'calculator': calculator,
         'slider': slider,
         'body': body,
         'total_obj': total_obj,
         'head': head,
         'is_mobile': is_mobile,
         "sorting_sections": sorting_sections,
+        "slider_section": slider_section,
         "features": features,
         "faq": faq,
         "feedback": feedback,
