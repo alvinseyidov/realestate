@@ -1671,7 +1671,7 @@ function openCity(evt, cityName) {
                     <div style=" padding: 5px 0 0 14px; ">
                         <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">
                             {{f.full_name}}</div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">{{f.position}}</div>
+                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">{{f.position|safe}}</div>
                     </div>
                 </div>
 
