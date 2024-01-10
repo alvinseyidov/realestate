@@ -13,6 +13,7 @@
       {% endfor%}
 
 <link rel="stylesheet" href="{% static 'input/build/css/intlTelInput.css'%}">
+<link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
 
     <link
       rel="stylesheet"
@@ -1608,7 +1609,7 @@ function openCity(evt, cityName) {
        <img class="desktopp" src="{{form_section.image.url}}">
         </div>
 </div>
-   <img class="mobilee" style="display:block;    width: 100%;" src="{{form_section.image.url}}">
+   <img class="mobilee" style="display:none;    width: 100%;" src="{{form_section.image.url}}">
 
 
 
@@ -1623,14 +1624,37 @@ function openCity(evt, cityName) {
                 {{feedback_section.title}}</div>
 
 
+<style>
 
-      <div class="swiperr swiper-container" style=" padding: 0 0 59px 0; ">
-        <div class="swiper-wrapper">
+.carousel-cell {
+  width: 28%;
+  height: 500px;
+  margin-right: 10px;
 
-        {% for f in feedback %}
-          <div class="swiper-slide" style="padding-right: 9px; padding-left: 9px;">
-                         <div style="background-image:url({{f.background_image.url}});border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -76px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100; position: inherit; ">
+  border-radius: 5px;
+
+}
+
+
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+</style>
+
+<!-- Flickity HTML init -->
+<div class="carousel" data-flickity='{ "groupCells": true }'>
+     {% for f in feedback %}
+  <div class="carousel-cell">
+       <div style="background-image:url({{f.background_image.url}});border-radius:10px;height: 350px; background-size: cover;"></div>
+            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -76px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
                 <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“{{f.text | safe}}”</div>
                 <div style=" display: flex;margin-top:20px; ">
                     <div style="background-size:cover;background-image:url({{f.user_image.url}}); height:50px; width:50px;border-radius:50%;">
@@ -1644,20 +1668,16 @@ function openCity(evt, cityName) {
 
 
             </div>
-          </div>
 
-            {% endfor%}
+  </div>
+      {% endfor%}
 
-
-
-
+</div>
 
 
 
-        </div>
- <div class="swiper-pagination"></div>
 
-      </div>
+
 
        <!-- Add Arrows -->
 
@@ -3858,6 +3878,7 @@ setInterval('updateTimer()', 1000 );
 
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+<script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
 
 <script src="{% static 'input/build/js/intlTelInput-jquery.min.js'%}"></script>
 <script>
