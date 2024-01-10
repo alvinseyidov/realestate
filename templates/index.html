@@ -218,12 +218,12 @@ font-size: 16px !important;
     width: 66px !important;
     }
     .vvvx3{
-        width: 151px !important;
-    font-size: 12px !important;
+        width: 100% !important;
+    font-size: 16px !important;
         bottom: 26px !important;
     }
     .vvvx4{
-    font-size: 18px !important;
+    font-size: 30px !important;
     }
  .cccx2{
  display:none !important;
@@ -639,6 +639,12 @@ width:100% !important;
 
         .mobilee{
              display: block !important;
+        }
+        .inwhy{
+        height: 500px !important;
+        }
+        .inwhyy{
+        height: 650px !important;
         }
 
      .strips__strip:nth-child(2) {
@@ -1720,7 +1726,7 @@ function openCity(evt, cityName) {
 
 
 
-<div class=""  id="team" style=" background:#fff;height: 550px;padding-top:69px; ">
+<div class="inwhyy"  id="team" style=" background:#fff;height: 550px;padding-top:69px; ">
 
         <div class="row  " style="padding-left: 142px; padding-right:142px; ">
           <div class="col-lg-4 col-md-12"style="text-align: center;">
@@ -1767,7 +1773,7 @@ function openCity(evt, cityName) {
                         <div class="swiper-wrapper">
                           {% for w in why%}
                             <div class="swiper-slide">
-                                <div style="     height: 330px;background: #fff; border-radius: 10px; margin-right: 5px; padding: 21px 10px 26px 10px;     ">
+                                <div class="inwhy" style="     height: 330px;background: #fff; border-radius: 10px; margin-right: 5px; padding: 21px 10px 26px 10px;     ">
                             <img src="{{w.icon.url}}" class="img-responsive" style=" width: 100%; ">
                              
                                     <div class="vvvx4" style="    margin: 15px 0 15px 0;color: #000; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
