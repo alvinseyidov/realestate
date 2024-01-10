@@ -224,7 +224,7 @@ font-size: 16px !important;
         bottom: 26px !important;
     }
     .vvvx4{
-    font-size: 30px !important;
+    font-size: 26px !important;
     }
  .cccx2{
  display:none !important;
@@ -1704,7 +1704,7 @@ function openCity(evt, cityName) {
                 <div class="row  " style="position:relative;">
                     <div class="col-lg-6 col-md-12"> <div class="discusstitle" style=" color: #fff; font-size: 38px; line-height: 50px; padding: 108px 59px 55px 59px; font-weight: 500; ">
                         {{muzakire.title | safe}}</div>
-                     <div class="discusstext " style=" color: #fff; padding:27px 59px 3px 59px; font-size: 17px; ">
+                     <div class="discusstext " style=" color: #fff; padding:27px 59px 43px 59px; font-size: 17px; ">
                         {% for p in muzakire.punktlar.all %}
                          <div style=" display: flex;margin-top: 15px; "> <img class="imggg" style="width: 30px;height: 30px;margin-top: 3px;" src="{% static 'home2.png'%}"> <div style=" font-size: 20px; margin-left: 25px; padding-top: 4px; ">{{p.name}}</div></div>
                          {% endfor%}
@@ -1796,7 +1796,7 @@ function openCity(evt, cityName) {
                                 <div class="inwhy" style="     height: 330px;background: #fff; border-radius: 10px; margin-right: 5px; padding: 21px 10px 26px 10px;     ">
                             <img src="{{w.icon.url}}" class="img-responsive" style=" width: 100%; ">
                              
-                                    <div class="vvvx4" style="    margin: 15px 0 15px 0;color: #000; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
+                                    <div class="vvvx4" style="    margin: 15px 0 7px 0;color: #000; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
                              <div class="vvvx3" style="width: 100%;bottom: 42px;color: #000; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: 20px;  padding-right: 0; font-size: 13px;">{{w.text}}</div>
                             </div>
                           </div>
