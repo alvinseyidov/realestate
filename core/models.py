@@ -17,6 +17,7 @@ class Slider(models.Model):
 
 class General(models.Model):
     site_title = models.CharField(max_length=256)
+    favicon = models.FileField()
     meta_description = models.CharField(max_length=256)
     address = models.CharField(max_length=256)
     email = models.CharField(max_length=256)
@@ -26,8 +27,8 @@ class General(models.Model):
     copyright = models.CharField(max_length=256)
     logo = models.FileField()
     logo_white = models.FileField(null=True, blank=True)
-    home_popup_video = models.FileField()
-    countdown_enddate = models.DateTimeField()
+    home_popup_video = models.FileField(null=True, blank=True)
+    countdown_enddate = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         verbose_name = "Ümumi Sayt Məlumatlar"
