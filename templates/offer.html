@@ -1169,12 +1169,12 @@ function openCity(evt, cityName) {
             <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
                 {{general.address}}
             </p>
-              <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+             <a href="tel:{{general.phone}}" class="text-black font_normal" style="    margin: 0 0 16px;text-decoration: none; display: block;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
                 <img style=" margin-right: 8px; " src="{% static 'phone.svg'%}"> {{general.phone}}
-            </p>
-              <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+            </a>
+              <a  href="mailto:{{general.email}}" class="text-black font_normal" style="    margin: 0 0 16px;text-decoration: none; display: block;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
                 <img style=" margin-right: 8px; " src="{% static 'email.svg'%}">{{general.email}}
-            </p>
+            </a>
           </div>
             <div class=" bnmg col-md-6    justify-content-center align-items-center" style="text-align: center;">
             <a    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">Bizi İzləyin:</a>
