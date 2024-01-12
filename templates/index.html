@@ -961,8 +961,10 @@ font-size: 19px !important;
             <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
                 {{slide.title}}
             </div>
+          {% if slide.text%}
             <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
-               {{slide.text|safe}}  </div>
+               {{slide.text|safe}}  </div>{% endif%}
+
           <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; ">
               {{slide.button_text}}
           </a>
