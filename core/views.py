@@ -1,7 +1,8 @@
 import os
 
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature, Head, Body, Parametr, Slider
+from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature, Head, Body, Parametr, Slider, \
+    CalendlyScript
 from contact.models import Contact, Waitlist
 from offer.models import Offer
 from statik.models import *
@@ -1091,6 +1092,7 @@ def contactform(request):
 def index(request):
     head = Head.objects.all()
     body = Body.objects.all()
+    calendly = CalendlyScript.objects.last()
     slider = Slider.objects.all()
     if request.user_agent.is_mobile:
         is_mobile = True
@@ -1125,6 +1127,7 @@ def index(request):
     suallar = Suallar.objects.all()
 
     context = {
+        'calendly': calendly,
         'calculator': calculator,
         'slider': slider,
         'body': body,

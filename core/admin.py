@@ -8,6 +8,7 @@ admin.site.register(Why)
 admin.site.register(FAQ)
 admin.site.register(Feedback)
 admin.site.register(Parametr)
+admin.site.register(CalendlyScript)
 admin.site.register(Slider)
 
 class BodyAdmin(admin.ModelAdmin):
