@@ -133,7 +133,7 @@ class MainSection(models.Model):
     text3 = models.TextField()
     button_text = models.CharField(max_length=256)
     button_link = models.CharField(max_length=256)
-    background_image = models.ImageField()
+    background_image = models.FileField()
 
     def __str__(self):
         return f'Main Section'
