@@ -3,7 +3,7 @@ from django.db import models
 class Slider(models.Model):
     background_image = models.ImageField()
     title = models.CharField(max_length=256)
-    text = models.TextField()
+    text = models.TextField(null=True, blank=True)
     button_text = models.CharField(max_length=256)
     button_url = models.CharField(max_length=256)
     sorting = models.IntegerField(default=1)
