@@ -15,6 +15,7 @@ class Contact(models.Model):
     name = models.CharField(max_length=256)
     email = models.CharField(max_length=256)
     phone = models.CharField(max_length=256)
+    prefix = models.CharField(max_length=256)
 
     class Meta:
         verbose_name = "Əlaqə Formu Müraciət"

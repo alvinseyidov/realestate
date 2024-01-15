@@ -1063,6 +1063,7 @@ def contactform(request):
         name = ''
         email = ''
         phone = ''
+        prefix = ''
         try:
             name = request.POST.get('name')
         except:
@@ -1075,9 +1076,14 @@ def contactform(request):
             phone = request.POST.get('phone')
         except:
             phone = ''
+        try:
+            prefix = request.POST.get('prefix')
+        except:
+            prefix = ''
         Contact.objects.create(
             name=name,
             email=email,
+            prefix=prefix,
             phone=phone
         )
 
