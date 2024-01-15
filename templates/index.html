@@ -1106,7 +1106,7 @@ function openCity(evt, cityName) {
                         <div class="row  " style=" padding: 5px 15px 34px 62px; ">
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırmaq istədiyiniz ilkin kapital</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="50000"></div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="50,000"></div>
                                 <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="50000" max="2000000" step="1000" value="50000" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
@@ -2850,7 +2850,8 @@ boxes.forEach(box => {
 
     $(document).ready(function(){
       $("#ilkinid").keyup(function(){
-        amount = (this.value);
+        vallstr = toString(this.value).replace(',','');
+        amount = (parseInt(vallstr));
       });
     });
 
@@ -2866,6 +2867,12 @@ boxes.forEach(box => {
 
 
     $("#hesabla").on("click",function(){
+    amountxam = $("#ilkinid").val()
+    console.log(amountxam);
+     vallstr = amountxam.replace(',','');
+      console.log(vallstr);
+        amount = (parseInt(vallstr));
+         console.log(amount);
     $(this).addClass("loading");
     console.log("1");
 
@@ -3792,7 +3799,10 @@ chart4.updateSeries([{
 
   $("#ilkinsliderid").on("input change", function(e) {
       console.log("fdfd")
-    $("#ilkinid").val(e.target.value)
+    vall = (e.target.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    console.log(vall)
+
+    $("#ilkinid").val(vall)
   });
 </script>
 
