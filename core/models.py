@@ -4,9 +4,11 @@ class Slider(models.Model):
     background_image = models.ImageField()
     title = models.CharField(max_length=256)
     text = models.TextField(null=True, blank=True)
-    button_text = models.CharField(max_length=256)
-    button_url = models.CharField(max_length=256)
+    button_text = models.CharField(max_length=256,null=True, blank=True)
+    button_url = models.CharField(max_length=256,null=True, blank=True)
+    image_link = models.CharField(max_length=256,null=True, blank=True)
     sorting = models.IntegerField(default=1)
+
 
     class Meta:
         ordering = ('sorting',)
