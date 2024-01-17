@@ -14,7 +14,8 @@ class Slider(models.Model):
     button_text_color = models.CharField(max_length=1,default='B',choices=color)
     image_link = models.CharField(max_length=256,null=True, blank=True)
     sorting = models.IntegerField(default=1)
-    black_layer_css = models.CharField(max_length=256,default="background: linear-gradient(90deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%);",null=True, blank=True)
+    black_layer_css = models.CharField(max_length=256,default="background: linear-gradient(90deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%)",null=True, blank=True)
+    black_layer_css_mobile = models.CharField(max_length=256,default="background: linear-gradient(180deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%)",null=True, blank=True)
 
 
 
