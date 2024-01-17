@@ -14,7 +14,7 @@ class Slider(models.Model):
     button_text_color = models.CharField(max_length=1,default='B',choices=color)
     image_link = models.CharField(max_length=256,null=True, blank=True)
     sorting = models.IntegerField(default=1)
-    black_layer = models.BooleanField(default=True)
+    black_layer_css = models.CharField(max_length=256,null=True, blank=True)
 
 
 
