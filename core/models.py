@@ -1,13 +1,21 @@
 from django.db import models
 
 class Slider(models.Model):
+    color = (
+        ('B','black'),
+        ('W','white'),
+    )
     background_image = models.ImageField()
     title = models.CharField(max_length=256)
     text = models.TextField(null=True, blank=True)
     button_text = models.CharField(max_length=256,null=True, blank=True)
     button_url = models.CharField(max_length=256,null=True, blank=True)
+    button_color = models.CharField(max_length=1,default='W',choices=color)
+    button_text_color = models.CharField(max_length=1,default='B',choices=color)
     image_link = models.CharField(max_length=256,null=True, blank=True)
     sorting = models.IntegerField(default=1)
+    black_layer = models.BooleanField(default=True)
+
 
 
     class Meta:
