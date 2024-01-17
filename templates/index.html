@@ -13,6 +13,11 @@
       {{h.script | safe}}
 {% endif%}
       {% endfor%}
+       <style>
+           .swiper-container {
+    
+    padding-left: 9px !important;}
+       </style>
 
 <link rel="stylesheet" href="{% static 'input/build/css/intlTelInput.css'%}">
 <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
@@ -2452,7 +2457,7 @@ p {
 <script>
        var swiper = new Swiper('.swiper-container', {
       slidesPerView: 3.5,
-      spaceBetween: 10,
+      spaceBetween: 5,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
