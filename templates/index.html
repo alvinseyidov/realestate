@@ -1459,9 +1459,14 @@ function openCity(evt, cityName) {
              </div>
           </div>
          <div class="col-lg-4 col-md-12"style="text-align: center;">
-              <div style=" display: flex; justify-content: center; ">
-                                <div  class="swiper-button-prev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 24px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
-                                <div  class="swiper-button-next" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+              <div id="evbuttons" style=" display: flex; justify-content: center; ">
+                                <div  class="swiper-button-prevev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-nextev" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+
+             <div id="villabuttons" style=" display: none; justify-content: center; ">
+                                <div  class="swiper-button-prevvilla" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-nextvilla" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
                         </div>
           </div>
     </div>
@@ -1473,7 +1478,7 @@ function openCity(evt, cityName) {
 
                 <div id="c1" class="tabcontent container" style="display:block;">
   <div class="swiper_wrap">
-      <div class="swiper-container">
+      <div class="swiper-containervilla swiper-container">
         <div class="swiper-wrapper">
 
             {% for o in villas %}
@@ -1547,7 +1552,7 @@ function openCity(evt, cityName) {
 
                 <div id="c2" class="tabcontent container" style="display:block;">
   <div class="swiper_wrap">
-      <div class="swiper-container">
+      <div class="swiper-container swiper-containerev">
         <div class="swiper-wrapper">
 
             {% for o in apartments %}
@@ -1847,6 +1852,12 @@ function openCity(evt, cityName) {
 .swiper-button-prev, .swiper-button-next {
      position: relative;
 }
+.swiper-button-prevev, .swiper-button-nextev {
+     position: relative;
+}
+.swiper-button-prevvilla, .swiper-button-nextvilla {
+     position: relative;
+}
 </style>
 
 
@@ -2109,6 +2120,8 @@ function openCity(evt, cityName) {
 function openCityy(evt, cityName) {
     console.log(cityName);
     if(cityName == "c2"){
+    document.getElementById("villabuttons").style.display = "none";
+    document.getElementById("evbuttons").style.display = "flex";
     document.getElementById("villablack").style.display = "inline-block";
     document.getElementById("villawhite").style.display = "none";
     document.getElementById("menzilwhite").style.display = "inline-block";
@@ -2121,6 +2134,8 @@ function openCityy(evt, cityName) {
 
     }
     else{
+    document.getElementById("villabuttons").style.display = "flex";
+    document.getElementById("evbuttons").style.display = "none";
     document.getElementById("villablack").style.display = "none";
     document.getElementById("villawhite").style.display = "inline-block";
     document.getElementById("menzilwhite").style.display = "none";
@@ -2475,12 +2490,25 @@ p {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 <script>
-       var swiper = new Swiper('.swiper-container', {
+       var swiper = new Swiper('.swiper-containerev', {
       slidesPerView: 3.5,
       spaceBetween: 5,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-nextev',
+        prevEl: '.swiper-button-prevev',
+      },
+      breakpoints: {
+        960: {
+          slidesPerView: 1,
+        }
+      }
+    });
+    var swiper = new Swiper('.swiper-containervilla', {
+      slidesPerView: 3.5,
+      spaceBetween: 5,
+      navigation: {
+        nextEl: '.swiper-button-nextvilla',
+        prevEl: '.swiper-button-prevvilla',
       },
       breakpoints: {
         960: {
@@ -2549,6 +2577,23 @@ pagination: {
       const boxes = document.querySelectorAll('.swiper-button-next');
 
 boxes.forEach(box => {
+  // ✅ Remove class from each element
+  box.classList.remove('swiper-button-disabled');
+
+
+});
+
+  const boxess = document.querySelectorAll('.swiper-button-nextev');
+
+boxess.forEach(box => {
+  // ✅ Remove class from each element
+  box.classList.remove('swiper-button-disabled');
+
+
+});
+ const boxesss = document.querySelectorAll('.swiper-button-nextvilla');
+
+boxesss.forEach(box => {
   // ✅ Remove class from each element
   box.classList.remove('swiper-button-disabled');
 
