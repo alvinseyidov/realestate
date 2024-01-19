@@ -1635,14 +1635,14 @@ function openCity(evt, cityName) {
 
 
 <div class=" mt-5"  id="gelinn" style="margin-top: 87px !important;">
-        <div class="row  "  id="elaqe" style="padding-left: 0; padding-right:0; background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
-        <div class="row  "   style="padding-left: 140px; padding-right:140px; ">
+        <div class="row rowww "  id="elaqe" style="padding-left: 0; padding-right:0; background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
+        <div class="rowww row  "   style="padding-left: 140px; padding-right:140px; ">
 
             <div class="col-lg-4 col-md-12 desktopp" style="position:relative;">
                 <img src="{% static 'qiz.png'%}" style="width: 550px;position: absolute;bottom: 0;">
             </div>
             <div class="col-lg-4 col-md-12 mobilee" style="display:none;text-align: center;">
-                <img src="{% static 'qiz.png'%}" style="width: 350px;bottom: 0;">
+                <img src="{% static 'qiz2.jpg'%}" style="width: 100%;bottom: 0;">
             </div>
             <div class="col-lg-4 col-md-12 formdiv" style="padding: 66px 3px 108px 90px;">
                 <div style=" color: #fff; font-size: 35px; font-weight: 500; line-height: 42px; margin-bottom: 15px; ">{{form_section.title}}</div>
@@ -1713,6 +1713,10 @@ function openCity(evt, cityName) {
   color: white;
 }
  @media screen and (max-width: 600px){
+ .rowww {
+     padding-left: 0px !important;
+    padding-right: 0px !important;
+ }
  .carousel-cell {
   width: 100% !important;
   height: 620px;
