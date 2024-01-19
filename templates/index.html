@@ -2494,6 +2494,20 @@ p {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 <script>
+var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3.5,
+      spaceBetween: 5,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        960: {
+          slidesPerView: 1,
+        }
+      }
+    });
+
        var swiper = new Swiper('.swiper-containerev', {
       slidesPerView: 3.5,
       spaceBetween: 5,
