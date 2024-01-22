@@ -4053,6 +4053,25 @@ console.log("======");
 });
   </script>
 
+ 
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || []; // makes sure the data layer variable is set
+    window.addEventListener("message", function(event) { // listens to messages from iframes
+        if(event.data.meetingBookSucceeded) {
+         console.log("ehehehehehehe");
+         // checks if the received event is a new booked meeting
+        dataLayer.push({ // sends an event to the data layer
+            event: "hubspot_meeting",
+            contact: event.data.meetingsPayload.bookingResponse.postResponse.contact
+        });
+        }
+    });
+ /*
+  * v0.1.0
+  * Created by Data Marketing School at http://www.data-marketing-school.com
+  * Written by https://www.linkedin.com/in/lucasrollin/
+  */
+</script>
 
   </body>
 </html>
