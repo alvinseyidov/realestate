@@ -1,6 +1,14 @@
 from django.contrib import admin
 from .models import *
 
+from django_summernote.admin import SummernoteModelAdmin
+
+# Apply summernote to all TextField in model.
+class PagesAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
+    summernote_fields = '__all__'
+
+admin.site.register(Pages, PagesAdmin)
+
 admin.site.register(MainSection)
 admin.site.register(SliderSection)
 admin.site.register(WhySection)

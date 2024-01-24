@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from core.models import General, Social, Why, Tablar, Head, Body, FAQ
 from offer.models import Offer, Message
-from statik.models import OffersSection
+from statik.models import OffersSection, Pages
 
 
 def loadfaq(request):
@@ -70,7 +70,9 @@ def offer(request, id):
             message=message,
             phone=phone
         )
+        pages = Pages.objects.all()
         context = {
+            'pages': pages,
             'amount': amount,
             'body': body,
             'head': head,
@@ -85,7 +87,9 @@ def offer(request, id):
         }
 
         return render(request, "offersuccess.html", context)
+    pages = Pages.objects.all()
     context = {
+        'pages': pages,
         'amount': amount,
         'body': body,
         'head': head,

@@ -1045,13 +1045,27 @@ def contactform2(request):
             email=email,
         )
 
+        pages = Pages.objects.all()
         context = {
+            'pages': pages,
             "general": general,
             "socials": socials,
             "main_section": main_section,
         }
         return render(request, "success2.html", context)
 
+def page(request, link):
+    pages = Pages.objects.all()
+    page = Pages.objects.get(link=link)
+    general = General.objects.last()
+    socials = Social.objects.all()
+    context = {
+        'page': page,
+        'pages': pages,
+        "general": general,
+        "socials": socials,
+    }
+    return render(request, 'page.html', context)
 
 def contactform(request):
     general = General.objects.last()
@@ -1087,7 +1101,9 @@ def contactform(request):
             phone=phone
         )
 
+        pages = Pages.objects.all()
         context = {
+            'pages': pages,
             "general": general,
             "socials": socials,
             "main_section": main_section,
@@ -1096,6 +1112,7 @@ def contactform(request):
 
 
 def index(request):
+
     head = Head.objects.all()
     body = Body.objects.all()
     calendly = CalendlyScript.objects.last()
@@ -1131,8 +1148,9 @@ def index(request):
     niye = NiyeSecirler.objects.last()
     calculator = Parametr.objects.last()
     suallar = Suallar.objects.all()
-
+    pages = Pages.objects.all()
     context = {
+        'pages': pages,
         'calendly': calendly,
         'calculator': calculator,
         'slider': slider,

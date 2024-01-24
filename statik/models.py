@@ -1,5 +1,16 @@
 from django.db import models
 
+class Pages(models.Model):
+    title = models.CharField(max_length=256)
+    link = models.CharField(max_length=256)
+    body = models.TextField()
+
+    class Meta:
+        verbose_name = "Statik səhifələr"
+        verbose_name_plural = "Statik səhifələr"
+    def __str__(self):
+        return self.title
+
 
 class SortingSections(models.Model):
     main_section_active = models.BooleanField(default=True)

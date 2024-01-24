@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('', core_views.index, name="index"),
+    path('page/<str:link>/', core_views.page, name="page"),
     path('contactform/', core_views.contactform, name="contactform"),
     path('data/<int:year>/<int:amount>/<int:mortgage>/', core_views.data, name="data"),
     path('waitlist/', core_views.contactform2, name="waitlist"),
