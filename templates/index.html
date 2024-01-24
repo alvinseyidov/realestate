@@ -732,8 +732,56 @@ width:100% !important;
     font-size: 40px !important;
 }
       </style>
+      <style>
+.loader {
+margin:auto;
+margin-top:300px;
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #000;
+  width: 70px;
+  height: 70px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #fff;
+    z-index: 100000000;
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+</style>
   </head>
   <body>
+  <div id="loader-wrapper">
+    <div class="loader" id="loader" style=" z-index: 111111111; position: relative; "></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
   {% for h in body %}
 {% if h.location == 'T' %}
       {{h.script | safe}}
@@ -4058,7 +4106,7 @@ console.log("======");
   </script>
 
 
-    <script type="text/javascript">
+        <script type="text/javascript">
     window.dataLayer = window.dataLayer || []; // makes sure the data layer variable is set
     window.addEventListener("message", function(event) { // listens to messages from iframes
         if(event.data.meetingBookSucceeded) {
@@ -4076,6 +4124,12 @@ console.log("======");
   * Written by https://www.linkedin.com/in/lucasrollin/
   */
 </script>
+<script type="text/javascript">
+  window.addEventListener("load", function(){
+    document.getElementById("loader-wrapper").style.display="none";
+});
+  </script>
+
 
   </body>
 </html>
