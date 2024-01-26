@@ -228,6 +228,9 @@ class OffersSection(models.Model):
     form_button_text = models.CharField(max_length=256)
     form_button_url = models.CharField(max_length=256)
 
+    title2 = models.CharField(verbose_name="Offer səhifəsində başlıq",max_length=256)
+    title3 = models.CharField(verbose_name="Offer səhifəsində alt başlıq",max_length=256)
+
     def __str__(self):
         return f'Offers Section'
 

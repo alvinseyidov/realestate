@@ -453,7 +453,7 @@ display: block !important;
             <div class="row  " style=" padding-top: 46px;    padding-bottom: 40px; ">
                 <div class="col-lg-6 col-md-12">
                     <div style="color: #808080; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">
-                        {{offer.address}}</div>
+                       <img src="{% static '2.svg'%}"> {{offer.address}}</div>
                     <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">{{offer.name}}</div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -586,19 +586,7 @@ function numberWithCommas(x) {
                     </div>
                 </div>
                 </div>
-                {% if offer.address %}
-                <div class="col-lg-2 col-md-12 col-6">
-                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
-                    <div>Yerləşmə yeri</div>
-                    <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '2.svg'%}"> </div>
-                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">
-                            {{offer.address}}
-                        </div>
-                    </div>
-                </div>
-                </div>
-                {% endif%}
+
                 {% if offer.project_status %}
 
                 <div class="col-lg-2 col-md-12 col-6">
@@ -1073,8 +1061,9 @@ function openCity(evt, cityName) {
 
 <div class=" mt-5" style=" ">
     <div class="container" >
-        <div style="margin-top:40px;color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">Digər təklilərə bax</div>
-        <div style="margin-bottom:40px;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">İstədiyin evl tap</div>
+        <div style="margin-top:40px;color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">
+            {{offers_section.title2}}</div>
+        <div style="margin-bottom:40px;color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */"> {{offers_section.title3}}</div>
     <div class="row  ">
 
     </div>
@@ -1251,7 +1240,6 @@ function openCity(evt, cityName) {
 <script>
        var swiper = new Swiper('.sdsfsdfdsf', {
       slidesPerView: 4,
-      slidesPerGroup: 3,
       spaceBetween: 10,
       navigation: {
         nextEl: '.swiper-button-next',

@@ -8,7 +8,7 @@ class Offer(models.Model):
         ('E', 'Ev'),
         ('T', 'Torpaq'),
         ('Q', 'Qeyri-yaşayış'),
-        ('B', 'Bina'),
+        ('N', 'Bina'),
     )
     price = models.IntegerField(verbose_name="Əmlakın Indiki Dəyəri",default=0)
     ilkin_kapital = models.IntegerField(verbose_name="İlkin kapital",null=True, blank=True)

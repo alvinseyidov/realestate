@@ -1777,7 +1777,7 @@ function openCity(evt, cityName) {
 </style>
 
 <!-- Flickity HTML init -->
-<div class="carousel" data-flickity='{ "groupCells": true, "draggable": false }'>
+<div class="carousel" data-flickity='{ "groupCells": true, "draggable": true }'>
      {% for f in feedback %}
   <div class="carousel-cell">
        <div style="background-image:url({{f.background_image.url}});border-radius:10px;height: 350px; background-size: cover;"></div>
