@@ -580,11 +580,8 @@ function numberWithCommas(x) {
                     <div style=" display: flex;    margin-top: 21px; ">
                         <div><img src="{% static '1.svg'%}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">
-                            {% if offer.type == 'V'%}
-                            Villas
-                            {% else %}
-                            Apartments
-                            {% endif %}
+                            {{offer.get_type_display}}
+
                         </div>
                     </div>
                 </div>

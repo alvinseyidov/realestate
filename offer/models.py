@@ -4,7 +4,11 @@ from django.db import models
 class Offer(models.Model):
     TYPE = (
         ('V', 'Villa'),
-        ('A', 'Apartment'),
+        ('M', 'Mənzil'),
+        ('E', 'Ev'),
+        ('T', 'Torpaq'),
+        ('Q', 'Qeyri-yaşayış'),
+        ('B', 'Bina'),
     )
     price = models.IntegerField(verbose_name="Əmlakın Indiki Dəyəri",default=0)
     ilkin_kapital = models.IntegerField(verbose_name="İlkin kapital",null=True, blank=True)
