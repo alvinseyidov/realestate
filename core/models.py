@@ -7,6 +7,7 @@ class Slider(models.Model):
     )
     background_image = models.ImageField()
     title = models.CharField(max_length=256)
+    mobile_title = models.CharField(max_length=256,null=True, blank=True)
     text = models.TextField(null=True, blank=True)
     button_text = models.CharField(max_length=256,null=True, blank=True)
     button_url = models.CharField(max_length=256,null=True, blank=True)
