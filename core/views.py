@@ -671,6 +671,8 @@ def data(request, year, amount, mortgage):
     data['field1'] = 120000
 
     data['year'] = year
+    data['deyer2'] = estate_investment
+    data['ilkin'] = first_amount
 
     if year == 1:
         data['kiraye'] = round(kiraye1, 0)
