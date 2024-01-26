@@ -4,7 +4,7 @@ from django.db import models
 class Offer(models.Model):
     TYPE = (
         ('V', 'Villa'),
-        ('M', 'Mənzil'),
+        ('A', 'Mənzil'),
         ('E', 'Ev'),
         ('T', 'Torpaq'),
         ('Q', 'Qeyri-yaşayış'),
