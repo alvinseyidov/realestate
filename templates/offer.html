@@ -764,7 +764,7 @@ function numberWithCommas(x) {
                 <div style="background:#fff;">
                     <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">Evİ onlİne görmək İstəyİrsİz? Bİzİmlə əlaqə saxlayın.</div>
                     <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">Canlı baxış vəya əlavə suallarınız üçün bizə yazın.</div>
-                    <form style=" padding: 39px 40px; " method="post" >
+                    <form id="formm" style=" padding: 39px 40px; " method="post" >
                         {% csrf_token%}
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
@@ -2493,6 +2493,29 @@ console.log("======");
    }
 });
   </script>
+
+
+   <script type="text/javascript">
+    var frm = $('#formm');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+            console.log("df");
+                $("#formm").html(
+                `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
+                <div style="    text-align: center; padding: 20px 44px; font-size: 20px; font-weight: 500; "> Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.</div>
+                `);
+            },
+            error: function(data) {
+                $("#MESSAGE-DIV").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
+</script>
   </body>
 </html>
 
