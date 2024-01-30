@@ -1827,7 +1827,8 @@ function openCity(evt, cityName) {
                     {{form_section.text | safe}}  </div>
             </div>
             <div class="col-lg-4 col-md-12" style="">
-                <div class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; "><form id="form" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                <div id="formm" class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; ">
+                    <form id="form" action="{% url 'contactform'%}" method="post">{% csrf_token%}
                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
                     <div style=" position: relative; ">
@@ -1853,6 +1854,8 @@ function openCity(evt, cityName) {
 
         </div>
 </div>
+
+
 
 
 
@@ -4322,6 +4325,28 @@ owl.owlCarousel({
 	});
 	 });
 
+</script>
+
+    <script type="text/javascript">
+    var frm = $('#form');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+            console.log("df");
+                $("#formm").html(
+                `<div><img src="/static/check.png" style="width:60px;"></div>
+                <div style=" padding: 20px 44px; font-size: 20px; font-weight: 500; "> Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.</div>
+                `);
+            },
+            error: function(data) {
+                $("#MESSAGE-DIV").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
 </script>
 
   </body>
