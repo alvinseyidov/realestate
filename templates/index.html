@@ -112,6 +112,28 @@
     }
   }
 }
+
+
+
+#timer2 {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #fff !important;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
       </style>
  	<style>
  	.apexcharts-toolbar{
@@ -370,6 +392,9 @@ display:none !important;
   }
 }
 
+.spann1x {
+    padding: 7px 0 0 1px !important;
+    }
 .spann1 {
     font-size: 19px;
     font-weight: 400;
@@ -2058,7 +2083,7 @@ function openCity(evt, cityName) {
 
 
 
-<div class=" " id="calendly" style="padding-top: 87px !important;    background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
+<div class=" " id="calendly" style="padding-top: 0px !important;    background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
         <div class="row  " style="padding-left: 0; padding-right:0; ">
         <div class="row  " style="padding-left: 140px; padding-right:140px; ">
 
@@ -2095,8 +2120,51 @@ function openCity(evt, cityName) {
                                 }
                         </style>
 
- {{calendly.script | safe}}
+
+
+
+
+
+
+
+
+
+
+<div style="margin-left: 120px;border: 1px solid white;border-radius: 13px;padding: 30px 30px;    margin-bottom: 57px;">
+    <div style="font-family: Montserrat;font-size: 20px;font-weight: 700;line-height: 30px;letter-spacing: 0em;text-align: center;color: #fff;margin-top: 20px;margin-bottom: 20px;">Ağıllı Yatırım İmkanları</div>
+    <div style=" display: flex; text-align: center; width: 200px; margin: auto; ">
+        <img src="/static/date.svg" style="width:20px;">
+        <div style="font-family: Montserrat; font-size: 17px; font-weight: 500; line-height: 21px; letter-spacing: 0em; text-align: left;color:#fff;">10 Fevral, 2024, 15:00</div>
+    </div>
+    <div class="row" style=" margin-top: 22px; ">
+        <div class="col-6">
+            <div style=" display: inline-block;    position: relative; ">
+                <div style="display: inline-block;background-image:url({% static 'fuad.jpg'%});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
+                <div style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Fuad Məmmədov</div>
+                <div style=" font-size: 10px; color: #fff; ">DƏ Investisiyaları Üzrə Stratejist</div></div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div style=" display: inline-block;    position: relative; ">
+                <div style="display: inline-block;background-image:url({% static 'leman.jpg'%});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
+                <div style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Ləman Namazova</div>
+                <div style=" font-size: 10px; color: #fff; ">Sənədləşmə və İpoteka Mütəxəssisi</div></div>
+            </div>
+        </div>
+    </div>
+    <div style=" text-align: center; padding-top: 27px; ">
+        <div id="timer2" style=" display: contents; width: 100px; gap: 13px; "></div>
+
+    </div>
+    <div style=" text-align: center; padding-top: 35px; ">
+        <button style="background:#206562;border: none;border-radius: 30px;padding: 14px 39px;color: #fff;margin: auto;">Vebinara yazıl</button>
+    </div>
+</div>
+
+
   </div>
+
+
 <style>
     #parallax {
   position: relative;
@@ -2108,6 +2176,10 @@ function openCity(evt, cityName) {
   background-position: 50% 50%;
 }
 </style>
+
+
+
+
                     <div id="parallax" class="desktopp" style=" width: 600px; position: absolute; top: 50%; left: 46%; transform: translate(-50%, -50%);"></div>
 
 <script>
@@ -4287,6 +4359,13 @@ chart4.updateSeries([{
       '<div class="spann2 cc2"><div class="spann1 cc1">' + h + '</div><div class="spann">saat</div></div>' +
       '<div class="spann2 cc2"><div class="spann1 cc1">' + m + '</div><div class="spann">dəq.</div></div>' +
       '<div class="spann2 cc2"><div class="spann1 cc1">' + s + '</div><div class="spann">san.</div></div>' ;
+
+      document.getElementById("timer2")
+    .innerHTML =
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + d + '</div><div class="spann">gün</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + h + '</div><div class="spann">saat</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + m + '</div><div class="spann">dəq.</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + s + '</div><div class="spann">san.</div></div>' ;
 }
 
 setInterval('updateTimer()', 1000 );
