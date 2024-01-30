@@ -454,12 +454,13 @@ display: block !important;
      <div class="container">
             <div class="row  " style=" padding-top: 46px;    padding-bottom: 40px; ">
                 <div class="col-lg-6 col-md-12">
-                    <div style="color: #808080; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">
-                       <img src="{% static '2.svg'%}"> {{offer.address}}</div>
+
                     <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">{{offer.name}}</div>
+                     <div style="color: #808080; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">
+                       <img style=" margin-left: -9px; " src="{% static '2.svg'%}"> {{offer.address}}</div>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                     <br>
+
                      <div class="mmnnv" style="color: #000; text-align: right; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 60px; /* 200% */ letter-spacing: -0.5px;">
                          €<script>var camount = {{offer.price}};
 document.write(numberWithCommas(camount));
