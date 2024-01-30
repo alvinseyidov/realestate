@@ -7,6 +7,10 @@
     <title>{{general.site_title}}</title>
       <link rel="icon" type="image/x-icon" href="{{general.favicon.url}}">
       <meta name="description" content="{{general.meta_description}}">
+        <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+     <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
 
  {% for h in body %}
 {% if h.location == 'H' %}
@@ -1000,7 +1004,9 @@ font-size: 14px !important;
           </div>
         </div>
   </div>
-<div style="display: block;" class=" ">
+
+
+  <div style="display: block;" class="desktopp ">
         <div class="row  " style="padding-left: 140px; padding-right:140px;">
 
             <div class="col-lg-6 col-md-12" style="">
@@ -1097,6 +1103,101 @@ font-size: 14px !important;
 </div>
 
 
+ <div style="display: none;" class=" mobilee">
+        <div class="row  " style="padding-left: 140px; padding-right:140px;">
+
+            <div class="col-lg-6 col-md-12" style="">
+
+          </div>
+ <div class="col-lg-12 col-md-12" style="position:relative;">
+
+
+
+     <div class=" owl-carousel second-slide owl-theme"
+  data-flickity-options='{ "freeScroll": true,"contain": true ,"draggable": true }'>
+         {% for slide in slider%}
+          {% if slide.image_link%}
+
+              <a href="{{slide.image_link}}" class="item" style="text-decoration: none; background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
+
+                  <style>
+                  @media screen and (max-width: 600px){
+                      .sll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
+                      }
+                      }
+                  </style>
+
+                  <div class="sliderx00 sll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
+      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
+
+
+          {% if slide.mobile_title %}
+            <div class="desktopp sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+
+             <div class="mobilee sliderx1" style="display:none;color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.mobile_title|safe}}
+            </div>
+          {% else %}
+           <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+          {% endif %}
+
+
+
+
+
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+
+
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}};margin-top: 33px; ">
+              {{slide.button_text}}
+          </a>{% endif%}
+      </div>
+              </a>
+             {% else%}
+
+              <div class="item" style=" background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
+
+ <style>
+ @media screen and (max-width: 600px){
+                      .sll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
+                      }
+                      }
+                  </style>
+                  <div class="sliderx00 sll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
+      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
+            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}}; margin-top: 33px;">
+              {{slide.button_text}}
+          </a>{% endif%}
+      </div>
+  </div>
+
+             {% endif%}
+
+{% endfor%}
+</div>
+
+
+
+
+</div>
+</div>
+</div>
 
 
 
@@ -4166,6 +4267,57 @@ console.log("======");
 });
   </script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+  $(document).ready(function() {
+var owl = $('.second-slide')
+owl.owlCarousel({
+    dots:false,
+    items:1,
+    margin:10,
+    lazyLoad: true,
+    responsiveClass: true,
+    responsive : {
+    0 : {
+        items:1
+    },
+    480:{
+          items: 1
+        },
+       900:{
+          items: 3
+        },
+     1200:{
+          items: 4
+        },
+    }
+    })
+
+
+
+	$(".next-btn").click(function () {
+		owl.trigger("next.owl.carousel");
+	});
+	$(".prev-btn").click(function () {
+		owl.trigger("prev.owl.carousel");
+	});
+	$(".prev-btn").addClass("disabled");
+		$(owl).on("translated.owl.carousel", function (event) {
+		if ($(".owl-prev").hasClass("disabled")) {
+			$(".prev-btn").addClass("disabled");
+		} else {
+			$(".prev-btn").removeClass("disabled");
+		}
+		if ($(".owl-next").hasClass("disabled")) {
+			$(".next-btn").addClass("disabled");
+		} else {
+			$(".next-btn").removeClass("disabled");
+		}
+	});
+	 });
+
+</script>
 
   </body>
 </html>
