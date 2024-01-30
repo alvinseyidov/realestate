@@ -775,13 +775,7 @@ margin-top:300px;
 </style>
   </head>
   <body style=" overflow: visible; ">
-  <div id="loader-wrapper" style="dispay:none;">
-    <div class="loader" id="loader" style=" z-index: 111111111; position: relative; "></div>
-
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-
-</div>
+  
   {% for h in body %}
 {% if h.location == 'T' %}
       {{h.script | safe}}
