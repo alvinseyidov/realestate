@@ -1804,6 +1804,18 @@ function openCity(evt, cityName) {
  }
 </style>
 
+
+              <script type="text/javascript">
+
+ setTimeout(
+    function() {
+      document.getElementById("loader-wrapper").style.display="none";
+    document.body.style.overflow = "visible";
+    }, 1500);
+
+
+  </script>
+
 <!-- Flickity HTML init -->
 <div class="carousel" data-flickity='{ "groupCells": true, "draggable": true }'>
      {% for f in feedback %}
@@ -4161,12 +4173,7 @@ console.log("======");
   * Written by https://www.linkedin.com/in/lucasrollin/
   */
 </script>
-<script type="text/javascript">
-  window.addEventListener("load", function(){
-    document.getElementById("loader-wrapper").style.display="none";
-    document.body.style.overflow = "visible";
-});
-  </script>
+
 
 
   </body>
