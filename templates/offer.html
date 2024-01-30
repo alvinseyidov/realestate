@@ -8,6 +8,8 @@
        <link rel="icon" type="image/x-icon" href="{{general.favicon.url}}">
        <meta name="description" content="{{general.meta_description}}">
       <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+
+<link rel="stylesheet" href="{% static 'input/build/css/intlTelInput.css'%}">
       <style>
           .carousel {
   background: #FAFAFA;
@@ -766,10 +768,11 @@ function numberWithCommas(x) {
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
                         <div style="    border-bottom: 1px solid #000; display: flex; position:relative;">
-                            <img style=" position: absolute; top: 23px; left: 0; " src="/static/flag.png">
-
-                            <span style=" padding: 18px 12px 0 29px; ">+994</span>
-                            <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required></div>
+                            <span style=" position: absolute; left: 0px; top: 18px; font-weight: 500; ">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone">
+                        </span>
+                            <input style="    margin-left: 50px; width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required>
+                        </div>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="email" name="email" placeholder="Email *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Mesaj *" required>
                         <button type="submit" style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">Göndər</button>
@@ -2453,7 +2456,38 @@ chart4.updateSeries([{
 {% endif%}
       {% endfor%}
 
+    <script src="{% static 'input/build/js/intlTelInput.min.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+  <script src="{% static 'input/build/js/intlTelInput-jquery.min.js'%}"></script>
+<script>
+    // Vanilla Javascript
+var input = document.querySelector("#telephone");
+window.intlTelInput(input,({
+  // options here
+}));
+
+// jQuery
+$("#telephone").intlTelInput({
+  	initialCountry:"az",
+
+});
+
+
+console.log("======");
+    console.log( $("#telephone").intlTelInput('getSelectedCountryData').dialCode);
+     console.log("======");
+</script>
+   <script>
+      $("#form").submit(function(){
+   // Let's find the input to check
+   var $input = $(this).find("input[name=prefix]");
+   if (!$input.val()) {
+     // Value is falsey (i.e. null), lets set a new one
+     $input.val($("#telephone").intlTelInput('getSelectedCountryData').dialCode);
+   }
+});
+  </script>
   </body>
 </html>
 
