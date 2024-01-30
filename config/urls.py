@@ -11,6 +11,7 @@ urlpatterns = [
     path('', core_views.index, name="index"),
     path('page/<str:link>/', core_views.page, name="page"),
     path('contactform/', core_views.contactform, name="contactform"),
+    path('vebinarform/', core_views.vebinarform, name="vebinarform"),
     path('data/<int:year>/<int:amount>/<int:mortgage>/', core_views.data, name="data"),
     path('waitlist/', core_views.contactform2, name="waitlist"),
     path('offer/<int:id>/', offer_views.offer, name="offer"),

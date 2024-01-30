@@ -3,7 +3,7 @@ import os
 from django.shortcuts import render
 from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature, Head, Body, Parametr, Slider, \
     CalendlyScript
-from contact.models import Contact, Waitlist
+from contact.models import Contact, Waitlist, Vebinar
 from offer.models import Offer
 from statik.models import *
 from django.http import JsonResponse
@@ -1068,6 +1068,67 @@ def page(request, link):
         "socials": socials,
     }
     return render(request, 'page.html', context)
+
+
+def vebinarform(request):
+    print("======")
+    print("form called")
+    print("======")
+    general = General.objects.last()
+    socials = Social.objects.all()
+
+    main_section = MainSection.objects.last()
+
+    if request.method == 'POST':
+        print("======")
+        print("post called")
+        print("======")
+        first_name = ''
+        last_name = ''
+        email = ''
+        phone = ''
+        prefix = ''
+        try:
+            first_name = request.POST.get('first_name')
+        except:
+            first_name = ''
+        try:
+            last_name = request.POST.get('last_name')
+        except:
+            last_name = ''
+        try:
+            email = request.POST.get('email')
+        except:
+            email = ''
+        try:
+            phone = request.POST.get('phone')
+        except:
+            phone = ''
+        try:
+            prefix = request.POST.get('prefix')
+        except:
+            prefix = ''
+
+        print("======")
+        print(prefix)
+        print("======")
+        Vebinar.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            prefix=prefix,
+            phone=phone
+        )
+
+        pages = Pages.objects.all()
+        context = {
+            'pages': pages,
+            "general": general,
+            "socials": socials,
+            "main_section": main_section,
+        }
+        return render(request, "success.html", context)
+
 
 def contactform(request):
     general = General.objects.last()
