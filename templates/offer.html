@@ -775,7 +775,7 @@ function numberWithCommas(x) {
                             <input style="    margin-left: 50px; width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required>
                         </div>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="email" name="email" placeholder="Email *" required>
-                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Mesaj *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Mesajınız">
                         <button type="submit" style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">Göndər</button>
                     </form>
 
@@ -2304,10 +2304,12 @@ chart1.updateOptions({
               if($('input[name="ipoteka"]:checked').val() == 1){
               $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               }
               else{
                 $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               }
 
 
@@ -2383,10 +2385,12 @@ chart1.updateOptions({
       if($('input[name="ipoteka"]:checked').val() == 1){
       $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
       else{
         $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
 
 
