@@ -2195,8 +2195,22 @@ function openCity(evt, cityName) {
 
 
 
-
-<div style="margin-left: 120px;border: 1px solid white;border-radius: 13px;padding: 30px 30px;    margin-bottom: 57px;">
+<style>
+    @media only screen and (max-width: 600px) {
+    .cvx1{
+    margin-left: 0 !important;
+    padding: 30px 7px !important;
+    margin-bottom: 57px;
+    }
+    .cvx2{
+    position:unset !important;
+    }
+    .cvx3{
+    text-align: center;
+    }
+    }
+</style>
+<div class="cvx1" style="margin-left: 120px;border: 1px solid white;border-radius: 13px;padding: 30px 30px;    margin-bottom: 57px;">
     <div style="font-family: Montserrat;font-size: 20px;font-weight: 700;line-height: 30px;letter-spacing: 0em;text-align: center;color: #fff;margin-top: 20px;margin-bottom: 20px;">Ağıllı Yatırım İmkanları</div>
     <div style=" display: flex; text-align: center; width: 200px; margin: auto; ">
         <img src="/static/date.svg" style="width:20px;">
@@ -2204,16 +2218,16 @@ function openCity(evt, cityName) {
     </div>
     <div class="row" style=" margin-top: 22px; ">
         <div class="col-6">
-            <div style=" display: inline-block;    position: relative; ">
+            <div class="cvx3" style=" display: inline-block;    position: relative; ">
                 <div style="display: inline-block;background-image:url({% static 'fuad.jpg'%});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
-                <div style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Fuad Məmmədov</div>
+                <div class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Fuad Məmmədov</div>
                 <div style=" font-size: 10px; color: #fff; ">DƏ Investisiyaları Üzrə Stratejist</div></div>
             </div>
         </div>
         <div class="col-6">
-            <div style=" display: inline-block;    position: relative; ">
+            <div class="cvx3" style=" display: inline-block;    position: relative; ">
                 <div style="display: inline-block;background-image:url({% static 'leman.jpg'%});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
-                <div style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Ləman Namazova</div>
+                <div  class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Ləman Namazova</div>
                 <div style=" font-size: 10px; color: #fff; ">Sənədləşmə və İpoteka Mütəxəssisi</div></div>
             </div>
         </div>
