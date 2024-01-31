@@ -15,7 +15,9 @@
 
  <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 
-
+<script>
+    var which_form = 0;
+</script>
  {% for h in body %}
 {% if h.location == 'H' %}
       {{h.script | safe}}
@@ -4675,12 +4677,21 @@ owl.owlCarousel({
             url: frmm.attr('action'),
             data: frmm.serialize(),
             success: function (data) {
+            console.log("successss");
             $('#subtitle').css('display', 'none');
-
+            if(which_form == 1){
             window.dataLayer = window.dataLayer || [];
              window.dataLayer.push({
-              'event': 'vebinar-submit'
+              'event': 'vebinar-submit-header'
              });
+             }
+             else if(which_form == 2){
+             window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'vebinar-submit-body'
+             });
+             console.log("2 happened");
+             }
 
 
             console.log("df");
@@ -4789,18 +4800,21 @@ btn.onclick = function() {
   modal.style.display = "block";
   document.body.style.overflowY = "hidden";
   console.log('adasds');
+  which_form = 1;
 }
 
 btn2.onclick = function() {
   modal.style.display = "block";
   document.body.style.overflowY = "hidden";
   console.log('adasds');
+  which_form = 1;
 }
 
 btn3.onclick = function() {
   modal.style.display = "block";
   document.body.style.overflowY = "hidden";
   console.log('adasds');
+  which_form = 2;
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
