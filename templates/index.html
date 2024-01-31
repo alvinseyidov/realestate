@@ -4744,6 +4744,14 @@ owl.owlCarousel({
             url: frm.attr('action'),
             data: frm.serialize(),
             success: function (data) {
+
+            if(which_form == 3){
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-listing-main'
+             });
+             }
+
             console.log("df");
                 $("#formm").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
@@ -4848,12 +4856,14 @@ btn4.onclick = function() {
   modal2.style.display = "block";
   document.body.style.overflowY = "hidden";
   console.log('adasds');
+  which_form = 3
 }
 
 btn5.onclick = function() {
   modal2.style.display = "block";
   document.body.style.overflowY = "hidden";
   console.log('adasds');
+  which_form = 3
 }
 
 
