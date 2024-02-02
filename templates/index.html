@@ -4745,14 +4745,14 @@ owl.owlCarousel({
             data: frm.serialize(),
             success: function (data) {
 
-            if(which_form == 3){
+
             window.dataLayer = window.dataLayer || [];
              window.dataLayer.push({
-              'event': 'form-submit-listing-main'
+              'event': 'form-submit-ozun-tapmisan'
              });
-             }
 
-            console.log("df");
+
+            console.log("form-submit-ozun-tapmisan");
                 $("#formm").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; "> Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.</div>
@@ -4856,14 +4856,14 @@ btn4.onclick = function() {
   modal2.style.display = "block";
   document.body.style.overflowY = "hidden";
   console.log('adasds');
-  which_form = 3
+  which_form = 4
 }
 
 btn5.onclick = function() {
   modal2.style.display = "block";
   document.body.style.overflowY = "hidden";
   console.log('adasds');
-  which_form = 3
+  which_form = 5
 }
 
 
