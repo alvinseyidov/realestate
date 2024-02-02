@@ -2572,7 +2572,7 @@ $("#telephone").intlTelInput({
 
 
  // Vanilla Javascript
-var input3 = document.querySelector("#telephone3");
+var input = document.querySelector("#telephone3");
 window.intlTelInput(input,({
   // options here
 }));
@@ -2608,7 +2608,11 @@ console.log("======");
             url: frmx.attr('action'),
             data: frmx.serialize(),
             success: function (data) {
-            console.log("df");
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-listing-offer'
+             });
+            console.log("form-submit-listing-offer");
                 $("#form2").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; "> Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.</div>
@@ -2644,7 +2648,11 @@ console.log("======");
             url: frm.attr('action'),
             data: frm.serialize(),
             success: function (data) {
-            console.log("df");
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-property-viewing'
+             });
+            console.log("form-submit-property-viewing");
                 $("#formm").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="    text-align: center; padding: 20px 44px; font-size: 20px; font-weight: 500; "> Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.</div>
