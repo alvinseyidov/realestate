@@ -4775,7 +4775,24 @@ owl.owlCarousel({
             url: frmx.attr('action'),
             data: frmx.serialize(),
             success: function (data) {
-            console.log("df");
+            if(which_form == 4){
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-listing-main-ev'
+             });
+
+            console.log("form-submit-listing-main-ev");
+            }
+            else if(which_form == 5){
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-listing-main-villa'
+             });
+            console.log("form-submit-listing-main-villa");
+            }
+
+
+
                 $("#form2").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; "> Sorğunuz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.</div>
