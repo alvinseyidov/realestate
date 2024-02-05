@@ -1,5 +1,23 @@
 from django.db import models
 
+class CoffeeSection(models.Model):
+    title = models.CharField(max_length=256)
+    button_text = models.CharField(max_length=256)
+    dateime = models.CharField(max_length=256)
+    user1_image = models.ImageField()
+    user1_name = models.CharField(max_length=256)
+    user1_profession = models.CharField(max_length=256)
+    user2_image = models.ImageField()
+    user2_name = models.CharField(max_length=256)
+    user2_profession = models.CharField(max_length=256)
+
+
+
+    class Meta:
+        verbose_name = "Coffee Section"
+        verbose_name_plural = "Coffee Section"
+    def __str__(self):
+        return f'Coffee Section'
 
 class Form1(models.Model):
     title = models.CharField(max_length=256)

@@ -13,6 +13,7 @@ admin.site.register(Form1)
 admin.site.register(Form2)
 admin.site.register(Form3)
 admin.site.register(Form4)
+admin.site.register(CoffeeSection)
 
 admin.site.register(MainSection)
 admin.site.register(SliderSection)

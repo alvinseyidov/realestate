@@ -2215,24 +2215,26 @@ function openCity(evt, cityName) {
     }
 </style>
 <div class="cvx1" style="margin-left: 120px;border: 1px solid white;border-radius: 13px;padding: 30px 30px;    margin-bottom: 57px;">
-    <div style="font-family: Montserrat;font-size: 20px;font-weight: 700;line-height: 30px;letter-spacing: 0em;text-align: center;color: #fff;margin-top: 20px;margin-bottom: 20px;">Ağıllı Yatırım İmkanları</div>
+    <div style="font-family: Montserrat;font-size: 20px;font-weight: 700;line-height: 30px;letter-spacing: 0em;text-align: center;color: #fff;margin-top: 20px;margin-bottom: 20px;">{{coffee.title}}</div>
     <div style=" display: flex; text-align: center; width: 200px; margin: auto; ">
         <img src="/static/date.svg" style="width:20px;">
-        <div style="font-family: Montserrat; font-size: 17px; font-weight: 500; line-height: 21px; letter-spacing: 0em; text-align: left;color:#fff;">10 Fevral, 2024, 15:00</div>
+        <div style="font-family: Montserrat; font-size: 17px; font-weight: 500; line-height: 21px; letter-spacing: 0em; text-align: left;color:#fff;">
+            {{coffee.datetime}}</div>
     </div>
     <div class="row" style=" margin-top: 22px; ">
         <div class="col-6">
             <div class="cvx3" style=" display: inline-block;    position: relative; ">
-                <div style="display: inline-block;background-image:url({% static 'fuad.jpg'%});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
-                <div class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Fuad Məmmədov</div>
-                <div style=" font-size: 10px; color: #fff; ">DƏ Investisiyaları Üzrə Stratejist</div></div>
+                <div style="display: inline-block;background-image:url({{coffee.user1_image.url}});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
+                <div class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">
+                    {{coffee.user1_name}}</div>
+                <div style=" font-size: 10px; color: #fff; ">{{coffee.user1_profession | safe}}</div></div>
             </div>
         </div>
         <div class="col-6">
             <div class="cvx3" style=" display: inline-block;    position: relative; ">
-                <div style="display: inline-block;background-image:url({% static 'leman.jpg'%});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
-                <div  class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">Ləman Namazova</div>
-                <div style=" font-size: 10px; color: #fff; ">Sənədləşmə və İpoteka Mütəxəssisi</div></div>
+                <div style="display: inline-block;background-image:url({{coffee.user2_image.url}});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
+                <div  class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; "> {{coffee.user2_name}}</div>
+                <div style=" font-size: 10px; color: #fff; ">{{coffee.user2_profession | safe}}</div></div>
             </div>
         </div>
     </div>
@@ -2241,7 +2243,7 @@ function openCity(evt, cityName) {
 
     </div>
     <div style=" text-align: center; padding-top: 35px; ">
-        <button id="myBtn3" style="background:#206562;border: none;border-radius: 30px;padding: 14px 39px;color: #fff;margin: auto;">Vebinara yazıl</button>
+        <button id="myBtn3" style="background:#206562;border: none;border-radius: 30px;padding: 14px 39px;color: #fff;margin: auto;">{{coffee.button_text}}</button>
     </div>
 </div>
 

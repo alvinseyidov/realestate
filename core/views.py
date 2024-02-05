@@ -1179,6 +1179,7 @@ def index(request):
     form2 = Form2.objects.last()
     form3 = Form3.objects.last()
     form4 = Form4.objects.last()
+    coffee = CoffeeSection.objects.last()
     head = Head.objects.all()
     body = Body.objects.all()
     calendly = CalendlyScript.objects.last()
@@ -1220,6 +1221,7 @@ def index(request):
         'form2': form2,
         'form3': form3,
         'form4': form4,
+        'coffee': coffee,
         'pages': pages,
         'calendly': calendly,
         'calculator': calculator,
