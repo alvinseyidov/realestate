@@ -6,6 +6,8 @@ class Form1(models.Model):
     sub_title = models.CharField(max_length=256)
     success_text = models.CharField(max_length=256)
     button_text = models.CharField(max_length=256)
+    text1 = models.CharField(max_length=256)
+    text2 = models.CharField(max_length=256)
 
     class Meta:
         verbose_name = "Form Vebinara Yazıl"
