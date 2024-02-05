@@ -3,7 +3,7 @@ from django.db import models
 class CoffeeSection(models.Model):
     title = models.CharField(max_length=256)
     button_text = models.CharField(max_length=256)
-    dateime = models.CharField(max_length=256)
+    datetime = models.CharField(max_length=256)
     user1_image = models.ImageField()
     user1_name = models.CharField(max_length=256)
     user1_profession = models.CharField(max_length=256)
