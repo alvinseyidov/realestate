@@ -9,6 +9,11 @@ class PagesAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
 
 admin.site.register(Pages, PagesAdmin)
 
+admin.site.register(Form1)
+admin.site.register(Form2)
+admin.site.register(Form3)
+admin.site.register(Form4)
+
 admin.site.register(MainSection)
 admin.site.register(SliderSection)
 admin.site.register(WhySection)

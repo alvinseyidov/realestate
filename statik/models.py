@@ -1,13 +1,62 @@
 from django.db import models
 
+
+class Form1(models.Model):
+    title = models.CharField(max_length=256)
+    sub_title = models.CharField(max_length=256)
+    success_text = models.CharField(max_length=256)
+    button_text = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Form Vebinara Yazıl"
+        verbose_name_plural = "Form - Vebinara Yazıl"
+    def __str__(self):
+        return f'Vebinara yazıl formu'
+
+
+
+class Form2(models.Model):
+    success_text = models.CharField(max_length=256)
+    button_text = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Form Listing"
+        verbose_name_plural = "Form - Listing"
+    def __str__(self):
+        return f'Form listing'
+
+
+
+class Form3(models.Model):
+    success_text = models.CharField(max_length=256)
+    button_text = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Form Özün tapmısan"
+        verbose_name_plural = "Form - Özün tapmısan"
+    def __str__(self):
+        return f'Form Özün tapmısan'
+
+class Form4(models.Model):
+    title = models.CharField(max_length=256)
+    sub_title = models.CharField(max_length=256)
+    success_text = models.CharField(max_length=256)
+    button_text = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Form Property Viewing"
+        verbose_name_plural = "Form - Property Viewing"
+    def __str__(self):
+        return f'Form Property Viewing'
+
 class Pages(models.Model):
     title = models.CharField(max_length=256)
     link = models.CharField(max_length=256)
     body = models.TextField()
 
     class Meta:
-        verbose_name = "Statik səhifələr"
-        verbose_name_plural = "Statik səhifələr"
+        verbose_name = " Statik səhifələr"
+        verbose_name_plural = " Statik səhifələr"
     def __str__(self):
         return self.title
 

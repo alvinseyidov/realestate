@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from core.models import General, Social, Why, Tablar, Head, Body, FAQ
 from offer.models import Offer, Message
-from statik.models import OffersSection, Pages
+from statik.models import OffersSection, Pages, Form1, Form2, Form3, Form4
 
 
 def loadfaq(request):
@@ -19,6 +19,10 @@ def loadfaq(request):
     return JsonResponse(data=data)
 
 def offer(request, id):
+    form1 = Form1.objects.last()
+    form2 = Form2.objects.last()
+    form3 = Form3.objects.last()
+    form4 = Form4.objects.last()
     general = General.objects.last()
     socials = Social.objects.all()
     why = Why.objects.all()
@@ -72,6 +76,10 @@ def offer(request, id):
         )
         pages = Pages.objects.all()
         context = {
+            'form1': form1,
+            'form2': form2,
+            'form3': form3,
+            'form4': form4,
             'pages': pages,
             'amount': amount,
             'body': body,
@@ -89,6 +97,10 @@ def offer(request, id):
         return render(request, "offersuccess.html", context)
     pages = Pages.objects.all()
     context = {
+        'form1': form1,
+        'form2': form2,
+        'form3': form3,
+        'form4': form4,
         'pages': pages,
         'amount': amount,
         'body': body,

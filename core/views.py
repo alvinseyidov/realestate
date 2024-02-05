@@ -1175,7 +1175,10 @@ def contactform(request):
 
 
 def index(request):
-
+    form1 = Form1.objects.last()
+    form2 = Form2.objects.last()
+    form3 = Form3.objects.last()
+    form4 = Form4.objects.last()
     head = Head.objects.all()
     body = Body.objects.all()
     calendly = CalendlyScript.objects.last()
@@ -1213,6 +1216,10 @@ def index(request):
     suallar = Suallar.objects.all()
     pages = Pages.objects.all()
     context = {
+        'form1': form1,
+        'form2': form2,
+        'form3': form3,
+        'form4': form4,
         'pages': pages,
         'calendly': calendly,
         'calculator': calculator,
