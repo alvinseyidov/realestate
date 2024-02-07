@@ -116,3 +116,8 @@ def offer(request, id):
     }
 
     return render(request, "offer.html", context)
+
+def tr(request):
+    context = {}
+
+    return render(request,"tr.html", context)
