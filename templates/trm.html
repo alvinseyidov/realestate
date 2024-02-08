@@ -3354,144 +3354,29 @@ function openCity(evt, cityName) {
 </style>
 
 <!-- Flickity HTML init -->
-<div class="carousel flickity-enabled is-draggable" data-flickity="{ &quot;groupCells&quot;: true, &quot;draggable&quot;: true }" tabindex="0">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flickity-viewport" style="height: 620px; touch-action: pan-y;"><div class="flickity-slider" style="left: 0px; transform: translateX(0%);"><div class="flickity-viewport is-selected" style="height: 620px; touch-action: pan-y; position: absolute; left: 0px;"><div class="flickity-slider" style="left: 0px; transform: translateX(0%);"><div class="carousel-cell is-selected" style="position: absolute; left: 0px; transform: translateX(0%);">
-       <div style="background-image:url(/media/for_web_smartinvest_3.png);border-radius:10px;height: 350px; background-size: cover;"></div>
+<div class="carousel" data-flickity='{ "groupCells": true, "draggable": true }'>
+     {% for f in feedback %}
+  <div class="carousel-cell">
+       <div style="background-image:url({{f.background_image.url}});border-radius:10px;height: 350px; background-size: cover;"></div>
             <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">"Geldim, bütçemi söyledim, bana konut portföyünden uygun bir ev sundular. Zaten benim için fiyat pazarlığını yaptılar. El sıkıştık, gerisini çocuklar kendileri halletti. Bay Vugar'ın ofise gelip evin evraklarını alması yönünde bir telefon geldi. Çok rahat. Türkiye'ye gitmeme bile gerek yoktu. Çocuklar işlerini iyi biliyorlar!"</font></font></div>
+                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“{{f.text | safe}}”</div>
                 <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url(/media/VK.jpg); height:50px; width:50px;border-radius:50%;">
+                    <div style="background-size:cover;background-image:url({{f.user_image.url}}); height:50px; width:50px;border-radius:50%;">
                     </div>
                     <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Vugar Guliyev</font></font></div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pazarlama şirketi, kurucusu</font></font></div>
+                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">
+                            {{f.full_name}}</div>
+                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">{{f.position|safe}}</div>
                     </div>
                 </div>
 
 
             </div>
 
-  </div><div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(102.77%);">
-       <div style="background-image:url(/media/for_web_smartinvest_4.png);border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">"Doğru, biraz param vardı ve en iyi yatırımı arıyordum. Ben esas olarak paranın değer kaybetmesinden korkuyordum çünkü günümüzde parayı para olarak tutmak en büyük risk. "Akıllı Yatırım" önerileriyle tanıştım, detaylar ilgimi çekti. Teşekkür ederim, gerçekten çok yardımcı oldular, sabırla tüm sorularımı detaylı bir şekilde anlattılar. Bunun sonucunda Alanya'da bir evin sahibi oldum. Bunun şimdiye kadar yaptığım en akıllı yatırım olduğunu söyleyebilirim."</font></font></div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url(/media/Vagif_Abbasov_94SaolQ.jpg); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Vagif Abbasov</font></font></div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">Iş adamı</div>
-                    </div>
-                </div>
+  </div>
+      {% endfor%}
 
-
-            </div>
-
-  </div><div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(205.55%);">
-       <div style="background-image:url(/media/for_web_smartinvest_6.png);border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">"Çocuklarımın 18 yaşına gelene kadar biriktirip faiz kazanabilmeleri için adına banka hesabı açmak istedim. Bu teklifi gördüm, hesaplandı, hiçbir banka bu karı veremez! Artık her iki oğlumun da bundan 10 yıl sonra en az bir geliri olacak! Yatırdığım para da evlerdeydi."</font></font></div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url(/media/for_web_smartinvest_5.png); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Emin Memmedov</font></font></div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Havalandırma mühendisi, eğitmen</font></font></div>
-                    </div>
-                </div>
-
-
-            </div>
-
-  </div><div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(308.32%);">
-       <div style="background-image:url(/media/for_web_smartinvest_8.png);border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">"Üç yıl önce Guba'da meyve ağaçlı bir arazi satın aldım. 5-10 yıl içinde değer kazanacağını düşünüyordum. Ama karlı bir yatırım olmadığını gördüm. Meyve ağaçlarının bakımı düzenli masraflar gerektiriyordu. Ama bu teklifi görünce kendi kendime hesaplamalar yaptım ve Guba'daki yeri satıp Antalya'da ev almanın çok daha karlı olduğunu gördüm. Hiç acele etmeden arsayı satıp Antalya'da iki mülk aldım. Benim için başarılı bir yatırımdı."</font></font></div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url(/media/for_web_smartinvest_7.png); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Samad Muradov</font></font></div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Baş Muhasebeci</font></font></div>
-                    </div>
-                </div>
-
-
-            </div>
-
-  </div><div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(411.1%);">
-       <div style="background-image:url(/media/apt_1.png);border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">"Param olur olmaz oğluma Bakü'de 2-3 odalı ek bir ev almak için para biriktiriyordum. Doğru, tasarruf bile edemedik, enflasyon çok hızlı, kredi koşulları aynı. Hiçbir zaman bankada para tutmadım. Peşinat ödeyerek buradan ev aldım. Evin tamamının en geç 4 yıl içinde ödenmesi gerektiğini hesapladım."</font></font></div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url(/media/G%C3%BClnara_%C6%8Fliyeva.png); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Gülnara Efendiyeva</font></font></div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Doktor, Cerrah</font></font></div>
-                    </div>
-                </div>
-
-
-            </div>
-
-  </div><div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(513.87%);">
-       <div style="background-image:url(/media/for_web_smartinvest_1.png);border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">"Servis - harika! Personel - daha da iyi! Bütün sorularıma cevap verdiler. Beni Alanya'da karşıladılar ve bana her yeri, şehri ve en önemlisi yeni evimi gezdirip yeni kiracımla tanıştırdılar 😎
- </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Smartinvest ekibine çok teşekkür ederim!"</font></font></div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url(/media/Rustem.png); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Rüstem Gasimov</font></font></div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İK danışmanı</font></font></div>
-                    </div>
-                </div>
-
-
-            </div>
-
-  </div><div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(616.65%);">
-       <div style="background-image:url(/media/for_web_smartinvest.png);border-radius:10px;height: 350px; background-size: cover;"></div>
-            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
-                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">"Yine de SmartInvest bana reddedemeyeceğim bir teklifle geldi! En önemlisi alacağım evin yarısını ödemek, yarısını da kira geliriyle ödemek istiyordum. Kira gelirim Bakü'de aynı fiyattaki bir evin gelirinden en az %50 daha fazla! Ben de Bakü'deki evlerimden birini sattım, onun yerine Antalya'da ipotekli 2 ev aldım, şimdi eskisinin iki katı kazanıyorum!"</font></font></div>
-                <div style=" display: flex;margin-top:20px; ">
-                    <div style="background-size:cover;background-image:url(/media/Leyla_Quliyeva_xY1IiK7.png); height:50px; width:50px;border-radius:50%;">
-                    </div>
-                    <div style=" padding: 5px 0 0 14px; ">
-                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Leyla Guliyeva</font></font></div>
-                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Turizm şirketi başkanı</font></font></div>
-                    </div>
-                </div>
-
-
-            </div>
-
-  </div></div></div><button class="flickity-button flickity-prev-next-button previous is-selected" type="button" disabled="" aria-label="Öncesi" style="position: absolute; left: 0px; transform: translateX(0%);"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button><button class="flickity-button flickity-prev-next-button next is-selected" type="button" aria-label="Sonraki" style="position: absolute; left: 0px; transform: translateX(100%);"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button><ol class="flickity-page-dots" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(24.42%);"><li class="dot is-selected" aria-label="Sayfa noktası 1" aria-current="step"></li><li class="dot" aria-label="Sayfa noktası 2"></li><li class="dot" aria-label="Sayfa noktası 3"></li><li class="dot" aria-label="Sayfa noktası 4"></li><li class="dot" aria-label="Sayfa noktası 5"></li><li class="dot" aria-label="Sayfa noktası 6"></li><li class="dot" aria-label="Sayfa noktası 7"></li></ol></div></div><button class="flickity-button flickity-prev-next-button previous" type="button" disabled="" aria-label="Öncesi"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button><button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Sonraki"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button><ol class="flickity-page-dots"><li class="dot is-selected" aria-label="Sayfa noktası 1" aria-current="step"></li><li class="dot" aria-label="Sayfa noktası 2"></li></ol></div>
+</div>
 
 
 
