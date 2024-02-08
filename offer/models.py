@@ -10,6 +10,7 @@ class Offer(models.Model):
         ('Q', 'Qeyri-yaşayış'),
         ('N', 'Bina'),
     )
+    is_sold_out = models.BooleanField(default=False)
     price = models.IntegerField(verbose_name="Əmlakın Indiki Dəyəri",default=0)
     ilkin_kapital = models.IntegerField(verbose_name="İlkin kapital",null=True, blank=True)
     kiraye_geliri = models.IntegerField(verbose_name="Ortalama Kirayə Gəliri",null=True, blank=True)
