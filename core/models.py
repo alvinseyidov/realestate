@@ -49,6 +49,8 @@ class SliderTR(models.Model):
 
     class Meta:
         ordering = ('sorting',)
+        verbose_name = "Türkçə Slider"
+        verbose_name_plural = "Türkçə Slider"
 
     def __str__(self):
         return self.title
@@ -114,8 +116,8 @@ class FeedbackTR(models.Model):
     background_image = models.ImageField()
 
     class Meta:
-        verbose_name = "Müştəri Geri Bildirim"
-        verbose_name_plural = "Müştəri Geri Bildirimləri"
+        verbose_name = "Türkçə Müştəri Geri Bildirim"
+        verbose_name_plural = "Türkçə Müştəri Geri Bildirimləri"
 
     def __str__(self):
         return self.full_name
