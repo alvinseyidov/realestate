@@ -27,6 +27,32 @@ class Slider(models.Model):
         return self.title
 
 
+class SliderTR(models.Model):
+    color = (
+        ('B','black'),
+        ('W','white'),
+    )
+    background_image = models.ImageField()
+    title = models.CharField(max_length=256)
+    mobile_title = models.CharField(max_length=256,null=True, blank=True)
+    text = models.TextField(null=True, blank=True)
+    button_text = models.CharField(max_length=256,null=True, blank=True)
+    button_url = models.CharField(max_length=256,null=True, blank=True)
+    button_color = models.CharField(max_length=1,default='W',choices=color)
+    button_text_color = models.CharField(max_length=1,default='B',choices=color)
+    image_link = models.CharField(max_length=256,null=True, blank=True)
+    sorting = models.IntegerField(default=1)
+    black_layer_css = models.CharField(max_length=256,default="background: linear-gradient(90deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%)",null=True, blank=True)
+    black_layer_css_mobile = models.CharField(max_length=256,default="background: linear-gradient(180deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%)",null=True, blank=True)
+
+
+
+    class Meta:
+        ordering = ('sorting',)
+
+    def __str__(self):
+        return self.title
+
 class General(models.Model):
     site_title = models.CharField(max_length=256)
     favicon = models.FileField()
@@ -79,6 +105,20 @@ class Feedback(models.Model):
     def __str__(self):
         return self.full_name
 
+
+class FeedbackTR(models.Model):
+    user_image = models.ImageField()
+    full_name = models.CharField(max_length=256)
+    position = models.CharField(max_length=256)
+    text = models.TextField()
+    background_image = models.ImageField()
+
+    class Meta:
+        verbose_name = "Müştəri Geri Bildirim"
+        verbose_name_plural = "Müştəri Geri Bildirimləri"
+
+    def __str__(self):
+        return self.full_name
 
 class Why(models.Model):
     icon = models.FileField()

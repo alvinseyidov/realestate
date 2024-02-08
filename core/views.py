@@ -8,6 +8,7 @@ from offer.models import Offer
 from statik.models import *
 from django.http import JsonResponse
 
+
 def calculate_mortgage(loanAmount,years, interestRate):
     loanAmount = float(loanAmount)
 

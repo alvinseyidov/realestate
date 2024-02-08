@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, Head, Body, FAQ
+from core.models import General, Social, Why, Tablar, Head, Body, FAQ, Slider, Feedback, SliderTR, FeedbackTR
 from offer.models import Offer, Message
 from statik.models import OffersSection, Pages, Form1, Form2, Form3, Form4
 
@@ -118,6 +118,17 @@ def offer(request, id):
     return render(request, "offer.html", context)
 
 def tr(request):
-    context = {}
+    from django_user_agents.utils import get_user_agent
+    user_agent = get_user_agent(request)
 
-    return render(request,"tr.html", context)
+    slider = SliderTR.objects.all()
+    feedback = FeedbackTR.objects.all()
+    context = {
+        "slider": slider,
+        "feedback": feedback
+
+    }
+    if user_agent.is_mobile:
+        return render(request, "trm.html", context)
+    else:
+        return render(request, "tr.html", context)
