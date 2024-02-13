@@ -1826,214 +1826,84 @@ font-size: 14px !important;
  <div class="col-lg-12 col-md-12" style="position:relative;">
 
 
+<div class=" gallery js-flickity"
+  data-flickity-options='{ "freeScroll": true,"contain": true ,"draggable": true }'>
+         {% for slide in slider%}
+          {% if slide.image_link%}
 
-     <div class="gallery js-flickity flickity-enabled is-draggable" data-flickity-options="{ &quot;freeScroll&quot;: true,&quot;contain&quot;: true ,&quot;draggable&quot;: true }" tabindex="0">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flickity-viewport" style="height: 200px;"><div class="flickity-slider" style="left: 0px; transform: translateX(0%);"><div class="flickity-viewport is-selected" style="height: 200px; position: absolute; left: 0%;"><div class="flickity-slider" style="left: 0px;"><a href="https://smartinvest.az/offer/6/" class="gallery-cell is-selected" style="text-decoration: none; background-image: url(&quot;/media/11_ELCKRqz.jpg&quot;); background-size: cover; background-position: center center; position: absolute;">
+              <a href="{{slide.image_link}}" class="gallery-cell" style="text-decoration: none; background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
 
                   <style>
                   @media screen and (max-width: 600px){
-                      .sll3{
-                      background: linear-gradient(180deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%) !important;
+                      .sll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
                       }
                       }
                   </style>
 
-                  <div class="sliderx00 sll3" style="background: linear-gradient(90deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
+                  <div class="sliderx00 sll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
       <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
 
 
-
-           <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Evin maliyetinin yarısı </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">siz, </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">yarısı da kiracı tarafından ödenir </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.
-            </font></font></div>
-
-
-
-
-
-
-
-
-
-
-      </div>
-              </a><div class="gallery-cell" style="background-image: url(&quot;/media/evro.png&quot;); background-size: cover; background-position: center center; position: absolute;">
-
- <style>
- @media screen and (max-width: 600px){
-                      .sll4{
-                      background: linear-gradient(180deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%) !important;
-                      }
-                      }
-                  </style>
-                  <div class="sliderx00 sll4" style="background: linear-gradient(90deg, #000 1.11%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
-      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
-            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                EURO gibi güçlü </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ve istikrarlı para biriminde </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">kazanırsınız
-             !</font></font></div>
-
-
-      </div>
-  </div><div class="gallery-cell" style="background-image: url(&quot;/media/%C4%B0nvestisiyan%C4%B1z_siz%C9%99_g%C3%BCnd%C9%99lik_d%C9%99y%C9%99r_qazand%C4%B1racaq.jpg&quot;); background-size: cover; background-position: center center; position: absolute;">
-
- <style>
- @media screen and (max-width: 600px){
-                      .sll6{
-                      background: linear-gradient(180deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%) !important;
-                      }
-                      }
-                  </style>
-                  <div class="sliderx00 sll6" style="background: linear-gradient(90deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
-      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
-            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;"><font style="vertical-align: inherit;"></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Yatırımınız size günlük değer </font><font style="vertical-align: inherit;">
-                katacak </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">!
-            </font></font></div>
-
-
-      </div>
-  </div><div class="gallery-cell" style="background-image: url(&quot;/media/websayt_ucun_sekiller_2.jpg&quot;); background-size: cover; background-position: center center; position: absolute;">
-
- <style>
- @media screen and (max-width: 600px){
-                      .sll8{
-                      background: linear-gradient(180deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%) !important;
-                      }
-                      }
-                  </style>
-                  <div class="sliderx00 sll8" style="background: linear-gradient(90deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
-      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
-            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Antalya'da </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">emlak fiyatları son iki yılda üç kattan fazla arttı </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2024 yılında istikrarlı bir büyüme bekleniyor </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.
-            </font></font></div>
-
-
-      </div>
-  </div><div class="gallery-cell" style="background-image: url(&quot;/media/iqlim.png&quot;); background-size: cover; background-position: center center; position: absolute;">
-
- <style>
- @media screen and (max-width: 600px){
-                      .sll1{
-                      background: linear-gradient(180deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%) !important;
-                      }
-                      }
-                  </style>
-                  <div class="sliderx00 sll1" style="background: linear-gradient(90deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
-      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
-            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Antalya yılda </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15 milyonun üzerinde turist </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ağırlıyor . </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dört bölümün dördünde!
-            </font></font></div>
-
-
-      </div>
-  </div><div class="gallery-cell" style="background-image: url(&quot;/media/derhal_gelir.png&quot;); background-size: cover; background-position: center center; position: absolute;">
-
- <style>
- @media screen and (max-width: 600px){
-                      .sll5{
-                      background: linear-gradient(180deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%) !important;
-                      }
-                      }
-                  </style>
-                  <div class="sliderx00 sll5" style="background: linear-gradient(90deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
-      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
-            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
-                Ən əsası: <br>Dərhal gəlir <br> əldə etməyə <br> başlayırsınız!
+          {% if slide.mobile_title %}
+            <div class="desktopp sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
             </div>
 
+             <div class="mobilee sliderx1" style="display:none;color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.mobile_title|safe}}
+            </div>
+          {% else %}
+           <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+          {% endif %}
 
+
+
+
+
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+
+
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}};margin-top: 33px; ">
+              {{slide.button_text}}
+          </a>{% endif%}
       </div>
-  </div><div class="gallery-cell" style="background-image: url(&quot;/media/zerzele.png&quot;); background-size: cover; background-position: center center; position: absolute;">
+              </a>
+             {% else%}
+
+              <div class="gallery-cell" style=" background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
 
  <style>
  @media screen and (max-width: 600px){
-                      .sll2{
-                      background: linear-gradient(180deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%) !important;
+                      .sll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
                       }
                       }
                   </style>
-                  <div class="sliderx00 sll2" style="background: linear-gradient(90deg, #000 7.33%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
+                  <div class="sliderx00 sll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
       <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
             <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
-                Antalya dünyada <br>zəlzələ riski ən aşağı <br>olan&nbsp;regionlardan biridir.
+                {{slide.title|safe}}
             </div>
-
-
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}}; margin-top: 33px;">
+              {{slide.button_text}}
+          </a>{% endif%}
       </div>
-  </div><div class="gallery-cell" style="background-image: url(&quot;/media/Ilin_300_g%C3%BCn%C3%BC_g%C3%BCn%C9%99%C5%9Fli_hava.png&quot;); background-size: cover; background-position: center center; position: absolute;">
+  </div>
 
- <style>
- @media screen and (max-width: 600px){
-                      .sll7{
-                      background: linear-gradient(180deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%) !important;
-                      }
-                      }
-                  </style>
-                  <div class="sliderx00 sll7" style="background: linear-gradient(90deg, #000 10.33%, rgba(0, 0, 0, 0.00) 45.89%);width: 100%; height: 500px;"></div>
-      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
-            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
-                İlin 300 günü <br> günəşli hava! <br> Yaşamaq üçün <br> ideal iqlim şəraiti.
-            </div>
+             {% endif%}
 
-
-      </div>
-  </div></div></div><ol class="flickity-page-dots" style="position: absolute; left: 0%;"><li class="dot is-selected"></li><li class="dot"></li><li class="dot"></li><li class="dot"></li><li class="dot"></li><li class="dot"></li><li class="dot"></li><li class="dot"></li></ol><button class="flickity-prev-next-button previous" type="button" disabled="" style="position: absolute; left: 100%;"><svg viewBox="0 0 100 100"><path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" transform="translate(15,0)"></path></svg></button><button class="flickity-prev-next-button next" type="button" style="position: absolute; left: 103.13%;"><svg viewBox="0 0 100 100"><path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" transform="translate(85,100) rotate(180)"></path></svg></button></div></div><ol class="flickity-page-dots"><li class="dot is-selected"></li><li class="dot"></li><li class="dot"></li><li class="dot"></li></ol><button class="flickity-prev-next-button previous" type="button" disabled=""><svg viewBox="0 0 100 100"><path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" transform="translate(15,0)"></path></svg></button><button class="flickity-prev-next-button next" type="button"><svg viewBox="0 0 100 100"><path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" transform="translate(85,100) rotate(180)"></path></svg></button></div>
-
+{% endfor%}
+</div>
 
 
 
