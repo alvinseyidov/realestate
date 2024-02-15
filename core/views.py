@@ -1,10 +1,9 @@
 import os
 
 from django.shortcuts import render
-from core.models import General, Social, Why, Tablar, FAQ, Feedback, Feature, Head, Body, Parametr, Slider, \
-    CalendlyScript
-from contact.models import Contact, Waitlist, Vebinar
-from offer.models import Offer
+from core.models import *
+from contact.models import *
+from offer.models import *
 from statik.models import *
 from django.http import JsonResponse
 
@@ -1257,3 +1256,85 @@ def index(request):
         "feedback_section": feedback_section
     }
     return render(request, "index.html", context)
+
+
+def ru(request):
+    form1 = Form1RU.objects.last()
+    form2 = Form2RU.objects.last()
+    form3 = Form3RU.objects.last()
+    form4 = Form4RU.objects.last()
+    coffee = CoffeeSectionRU.objects.last()
+    head = Head.objects.all()
+    body = Body.objects.all()
+    calendly = CalendlyScript.objects.last()
+    slider = SliderRU.objects.all()
+    if request.user_agent.is_mobile:
+        is_mobile = True
+    else:
+        is_mobile = False
+    general = GeneralRU.objects.last()
+    socials = Social.objects.all()
+    why = WhyRU.objects.all()
+    villas = OfferRU.objects.filter(type='V')
+    apartments = OfferRU.objects.filter(type="A")
+    faq = FAQRU.objects.all()[:5]
+    total_obj = FAQRU.objects.count()
+    feedback = FeedbackRU.objects.all()
+
+    features = FeatureRU.objects.all()
+    main_section = MainSectionRU.objects.last()
+    slider_section = SliderSectionRU.objects.last()
+    why_section = WhySectionRU.objects.last()
+    advantage_section = AdvantageSectionRU.objects.last()
+    processes_section = ProcessesSectionRU.objects.last()
+    getconsultation_section = GetConsultationSectionRU.objects.last()
+    offers_section = OffersSectionRU.objects.last()
+    form_section = FormSectionRU.objects.last()
+    feedback_section = FeedbackSectionRU.objects.last()
+    muzakire = MuzakireEdekRU.objects.last()
+    sorting_sections = SortingSectionsRU.objects.last()
+    banner1 = GeliriHesablaBannerRU.objects.last()
+    smart = SmartInvestRU.objects.last()
+    niye = NiyeSecirlerRU.objects.last()
+    calculator = Parametr.objects.last()
+    suallar = SuallarRU.objects.all()
+    pages = PagesRU.objects.all()
+    context = {
+        'form1': form1,
+        'form2': form2,
+        'form3': form3,
+        'form4': form4,
+        'coffee': coffee,
+        'pages': pages,
+        'calendly': calendly,
+        'calculator': calculator,
+        'slider': slider,
+        'body': body,
+        'total_obj': total_obj,
+        'head': head,
+        'is_mobile': is_mobile,
+        "sorting_sections": sorting_sections,
+        "slider_section": slider_section,
+        "features": features,
+        "faq": faq,
+        "feedback": feedback,
+        "villas": villas,
+        "apartments": apartments,
+        "general": general,
+        "why": why,
+        "socials": socials,
+        "main_section": main_section,
+        "why_section": why_section,
+        "banner1": banner1,
+        "muzakire": muzakire,
+        "form_section": form_section,
+        "niye": niye,
+        "smart": smart,
+        "suallar": suallar,
+        "advantage_section": advantage_section,
+        "processes_section": processes_section,
+        "getconsultation_section": getconsultation_section,
+        "offers_section": offers_section,
+        "feedback_section": feedback_section
+    }
+    return render(request, "indexru.html", context)

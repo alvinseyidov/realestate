@@ -16,7 +16,8 @@ urlpatterns = [
     path('waitlist/', core_views.contactform2, name="waitlist"),
     path('offer/<int:id>/', offer_views.offer, name="offer"),
     path('loadfaq/', offer_views.loadfaq, name="loadfaq"),
-    path('tr/', offer_views.tr, name="tr")
+    path('tr/', offer_views.tr, name="tr"),
+    path('ru/', core_views.ru, name="ru")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

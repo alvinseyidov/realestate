@@ -243,3 +243,115 @@ class Feature(models.Model):
     def __str__(self):
         return self.title
 
+
+class SliderRU(models.Model):
+    color = (
+        ('B', 'black'),
+        ('W', 'white'),
+    )
+    background_image = models.ImageField()
+    title = models.CharField(max_length=256)
+    mobile_title = models.CharField(max_length=256, null=True, blank=True)
+    text = models.TextField(null=True, blank=True)
+    button_text = models.CharField(max_length=256, null=True, blank=True)
+    button_url = models.CharField(max_length=256, null=True, blank=True)
+    button_color = models.CharField(max_length=1, default='W', choices=color)
+    button_text_color = models.CharField(max_length=1, default='B', choices=color)
+    image_link = models.CharField(max_length=256, null=True, blank=True)
+    sorting = models.IntegerField(default=1)
+    black_layer_css = models.CharField(max_length=256,
+                                       default="background: linear-gradient(90deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%)",
+                                       null=True, blank=True)
+    black_layer_css_mobile = models.CharField(max_length=256,
+                                              default="background: linear-gradient(180deg, #000 33.33%, rgba(0, 0, 0, 0.00) 99.89%)",
+                                              null=True, blank=True)
+
+    class Meta:
+        ordering = ('sorting',)
+        verbose_name = "Ru Slider"
+        verbose_name_plural = "Ru Slider"
+
+    def __str__(self):
+        return self.title
+
+
+class GeneralRU(models.Model):
+    site_title = models.CharField(max_length=256)
+    favicon = models.FileField()
+    meta_description = models.CharField(max_length=256)
+    address = models.CharField(max_length=256)
+    email = models.CharField(max_length=256)
+    phone = models.CharField(max_length=256)
+    whatsapp_link = models.CharField(max_length=256)
+    telegram_link = models.CharField(max_length=256)
+    copyright = models.CharField(max_length=256)
+    logo = models.FileField()
+    logo_white = models.FileField(null=True, blank=True)
+    home_popup_video = models.FileField(null=True, blank=True)
+    countdown_enddate = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Ümumi Sayt Məlumatlar"
+        verbose_name_plural = "Ru Ümumi Sayt Məlumatlar"
+
+    def __str__(self):
+        return f'Ümumi Sayt Məlumatlar'
+
+
+class FeedbackRU(models.Model):
+    user_image = models.ImageField()
+    full_name = models.CharField(max_length=256)
+    position = models.CharField(max_length=256)
+    text = models.TextField()
+    background_image = models.ImageField()
+
+    class Meta:
+        verbose_name = "Ru Müştəri Geri Bildirim"
+        verbose_name_plural = "Ru Müştəri Geri Bildirimləri"
+
+    def __str__(self):
+        return self.full_name
+
+
+class WhyRU(models.Model):
+    icon = models.FileField()
+    title = models.CharField(max_length=256)
+    text = models.CharField(max_length=256)
+    position = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Komanda üzvü"
+        verbose_name_plural = "Ru Komanda"
+
+    def __str__(self):
+        return self.title
+
+
+class FAQRU(models.Model):
+    question = models.CharField(max_length=256)
+    answer = models.CharField(max_length=256)
+    sort = models.IntegerField()
+
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "FAQ Sual"
+        verbose_name_plural = "RU FAQ Suallar"
+
+    def __str__(self):
+        return self.question
+
+
+class FeatureRU(models.Model):
+    image = models.ImageField()
+    title = models.CharField(max_length=256)
+    icon = models.FileField()
+    description = models.TextField()
+    color = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Niyə? Səbəblər"
+        verbose_name_plural = "RU Niyə? Səbəblər"
+
+    def __str__(self):
+        return self.title
+

@@ -28,6 +28,25 @@ admin.site.register(OffersSection)
 admin.site.register(FeedbackSection)
 
 
+admin.site.register(Form1RU)
+admin.site.register(Form2RU)
+admin.site.register(Form3RU)
+admin.site.register(Form4RU)
+admin.site.register(CoffeeSectionRU)
+
+admin.site.register(MainSectionRU)
+admin.site.register(SliderSectionRU)
+admin.site.register(WhySectionRU)
+admin.site.register(GeliriHesablaBannerRU)
+admin.site.register(SuallarRU)
+admin.site.register(SmartInvestRU)
+admin.site.register(NiyeSecirlerRU)
+admin.site.register(FormSectionRU)
+admin.site.register(ProcessesSectionRU)
+admin.site.register(OffersSectionRU)
+admin.site.register(FeedbackSectionRU)
+
+
 
 
 class PunkAdmin(admin.TabularInline):

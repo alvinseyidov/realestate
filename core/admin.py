@@ -13,6 +13,14 @@ admin.site.register(CalendlyScript)
 admin.site.register(Slider)
 admin.site.register(SliderTR)
 
+
+admin.site.register(GeneralRU)
+admin.site.register(FeatureRU)
+admin.site.register(WhyRU)
+admin.site.register(FAQRU)
+admin.site.register(FeedbackRU)
+admin.site.register(SliderRU)
+
 class BodyAdmin(admin.ModelAdmin):
     list_display = ['name', 'location']
 admin.site.register(Body,BodyAdmin)
