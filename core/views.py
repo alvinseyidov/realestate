@@ -1174,7 +1174,12 @@ def contactform(request):
         return render(request, "success.html", context)
 
 
+ 
 def index(request):
+    message = request.GET.get('form')
+    vebinar = False
+    if message == 'vebinar':
+        vebinar = True
     form1 = Form1.objects.last()
     form2 = Form2.objects.last()
     form3 = Form3.objects.last()
@@ -1217,6 +1222,7 @@ def index(request):
     suallar = Suallar.objects.all()
     pages = Pages.objects.all()
     context = {
+        'vebinar': vebinar,
         'form1': form1,
         'form2': form2,
         'form3': form3,
