@@ -1095,7 +1095,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
 
 
-                <div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
+                <div id="timer" style=" display: flex; width: 100px; gap: 13px; "></div>
 <div style=" display: flex;padding-top:20px; ">
                  <button id="myBtn2"  style="     margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </button>
 
@@ -4432,7 +4432,7 @@ chart4.updateSeries([{
 
   <script>
     function updateTimer() {
-  future  = Date.parse("{{general.countdown_enddate|date:'M d, Y s:m:h'}}");
+  future  = Date.parse("{{general.countdown_enddate|date:'M d, Y H:i:s'}}");
   now     = new Date();
   diff    = future - now;
 
