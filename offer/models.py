@@ -147,7 +147,7 @@ class OfferRU(models.Model):
             self.net_qazanc = response.json()['yatirim_qazanci_tr'][9]
 
         # call the save() method of the parent
-        super(Offer, self).save(*args, **kwargs)
+        super(OfferRU, self).save(*args, **kwargs)
 
 class ImageRU(models.Model):
     offer = models.ForeignKey(OfferRU, on_delete=models.CASCADE, related_name="images")
