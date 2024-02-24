@@ -1,0 +1,4931 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{general.site_title}}</title>
+      <link rel="icon" type="image/x-icon" href="{{general.favicon.url}}">
+      <meta name="description" content="{{general.meta_description}}">
+        <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+     <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+
+
+ <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+
+<script>
+    var which_form = 0;
+</script>
+ {% for h in body %}
+{% if h.location == 'H' %}
+      {{h.script | safe}}
+{% endif%}
+      {% endfor%}
+       <style>
+           .swiper-container {
+
+    padding-left: 9px !important;}
+       </style>
+
+<link rel="stylesheet" href="{% static 'input/build/css/intlTelInput.css'%}">
+<link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" />
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+      <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/vkuliev/3-addimda-agilli-yatirim', text: 'Webinara yazıl', color: '#00abff', textColor: '#ffffff', branding: undefined }); }</script>
+<!-- Calendly badge widget end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+      <style>
+
+      @media (min-width: 992px){
+.col-lg-6x {
+    flex: 0 0 auto;
+    width: 50%;
+    padding-right: 165px;
+    }}
+
+
+      button.owl-dot {
+    border: none;
+    background: none;
+    padding: 0;
+}
+      #timerr {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #fff;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+          .spann1 {
+          color:#fff !important;
+    font-size: 19px;
+    font-weight: 400;
+    width: 36px !important;
+    height: 35px !important;
+    border-radius: 5px;
+    padding-top:5px;
+    box-shadow: inset 0px 2px 7px 1px #065245ad !important;
+}
+.spann2 {
+    margin-top: 3px;
+}
+.spann {
+    font-size: 10px;
+}
+.spann2 {
+    display: block;
+    width: 41px !important;
+}
+#timer {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #fff !important;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+
+
+
+#timer2 {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #fff !important;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+      </style>
+ 	<style>
+ 	.apexcharts-toolbar{
+ 	display: none !important;
+ 	}
+.cc1 {
+    text-align: center;
+}
+
+	/* -- CTA bar top -- */
+.cta-bar {
+ position: relative;
+ z-index: 99;
+ font-weight: 700;
+ padding: 13px;
+ color: #fff;
+ background: #83BF4F;
+ text-align: center;
+ padding-bottom: 3px;
+}
+
+.cta-bar p {
+ margin-bottom: 0 !important;
+}
+/* -- cta button -- */
+
+
+/* -- close button -- */
+.xit {
+ position: absolute;
+    top: 15px;
+    right: 19px;
+ cursor: pointer;
+ font-size: 20px;
+ color: #fff;
+}
+
+
+
+
+
+	.button-4 {
+	    min-width: 150px !important;
+	font-size: 1rem !important;
+	 padding: 13px 30px 13px 30px !important;
+	border: 1px solid #ff6600;
+
+  transition: .3s;
+}
+.button-4:hover {
+  background-color: #ffffff !important;
+  color: #ff6600 !important;
+      border: 1px solid #ff6600;
+}
+
+.linkk {
+
+  transition: .3s;
+}
+.linkk:hover {
+  color: #ff6600 !important;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(.9);
+  }
+    100% {
+    transform: scale(.9);
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+.xx1{
+    display: none !important;
+}
+.xxx0 {
+
+    z-index: 0 !important;
+
+}
+.xx2{
+    font-size: 28px !important;
+}
+.xx3 {
+    font-size: 15px !important;
+    margin-top: 15px !important;
+    margin-bottom: 21px !important;
+    line-height: 21px !important;
+}
+.xx4{
+
+font-size: 16px !important;
+}
+.xx5{
+
+font-size: 16px !important;
+    margin-bottom: 21px !important;
+}
+.xx0 {
+
+    height: 461px !important;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+ .vvvx1{
+     margin-top: 53px !important;
+    width: 390px;
+    border-radius: 10px;
+    width: 80% !important;
+    margin-bottom: 50px !important;
+    }
+    .vvvx2{
+        top: 37% !important;
+    transform: translate(-50%,-50%);
+    width: 66px !important;
+    }
+    .vvvx3{
+        width: 100% !important;
+    font-size: 16px !important;
+        bottom: 26px !important;
+    }
+    .vvvx4{
+    font-size: 26px !important;
+    }
+ .cccx2{
+ display:none !important;
+ }
+ .cccx3 {
+ width: unset !important;
+ padding: 0 5px 0 5px !important;
+ }
+   .cccx4 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
+   .cccx5 {
+ width: unset !important;
+  padding: 0 5px 0 5px !important;
+ }
+.redffg{
+    margin-top: -22px !important;
+}
+.dfdfv{
+margin-top: -27px !important;
+}
+}
+
+
+
+
+	* {
+     font-family: 'Montserrat' !important;
+}
+@media only screen and (min-width: 700px) {
+
+.modal {
+  display: none !important;
+  }
+  }
+@media only screen and (max-width: 600px) {
+
+
+.ggg {
+float:left;
+}
+.cta-bar{
+display:none !important;
+}
+  .cccc{
+  padding: 14px 19px 14px 19px !important;
+  }
+
+  .ccc1{
+      font-size: 14px !important;
+  }
+  .ccc2{
+  margin-top: 31px !important;
+    width: 247px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .ccc3{
+	    top: 6px !important;
+  }
+
+.ccc4 {
+    padding: 18px 5px 20px 5px !important;
+    font-size: 20px !important;
+}
+.gap-5 {
+    gap: 0.5rem!important;
+}
+  .ccc5{
+	    padding-left: 69px !important;
+  }
+
+  .ccc6{
+	display: none !important;
+  }
+  .cccx7{
+  padding-left: 24px !important;
+  }
+  .cccx8 {
+
+  font-size: 30px !important;
+  }
+}
+
+#timerr {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #fff;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+
+#timer {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    .spann {
+      color: #fff;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+    }
+  }
+}
+
+.spann1x {
+    padding: 7px 0 0 1px !important;
+    }
+.spann1 {
+    font-size: 19px;
+    font-weight: 400;
+    width: 36px !important;
+    height: 35px !important;
+    border-radius: 5px;
+    padding-top:5px;
+    box-shadow: inset 0px 2px 7px 1px #065245ad !important;
+}
+.spann2 {
+    margin-top: 3px;
+}
+.spann {
+    font-size: 10px;
+}
+.spann2 {
+    display: block;
+    width: 41px !important;
+}
+	</style>
+
+
+    <style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+            <style>
+
+
+
+
+
+        @media screen and (max-width: 450px){
+        .left-side{
+            display:none !important;
+        }
+        .main-content .right-side {
+            width: 100%;
+            position: relative;
+        }
+        .sdfgsdf {
+            display: unset !important;
+        }
+        .sghsdfd {
+            width: auto !important;
+        }
+
+
+        #VisaChipCardVideo{
+            width: 450px !important;
+        }
+        #light{
+            width: 450px !important;
+            margin-left: -225px !important;
+            top: 55% !important;
+        }
+        }
+
+
+        #fade {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+          }
+
+          #light {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            max-width: 903px;
+            max-height: 480px;
+            margin-left: -450px;
+            margin-top: -180px;
+            z-index: 1002;
+            overflow: visible;
+          }
+
+          #boxclose {
+            float: right;
+            text-decoration: none;
+            cursor: pointer;
+            color: #fff;
+            border: 1px solid #AEAEAE;
+            border-radius: 12px;
+            background: #222222;
+            font-size: 26px;
+            display: inline-block;
+            line-height: 0px;
+            padding: 9px 5px 13px 5px;
+            position: absolute;
+            right: 2px;
+            top: 4px;
+            z-index: 1002;
+            opacity: 0.9;
+          }
+
+          .boxclose:before {
+            content: "×";
+          }
+
+          #fade:hover ~ #boxclose {
+            display:none;
+          }
+
+          .test:hover ~ .test2 {
+            display: none;
+          }
+
+          .row {
+    --bs-gutter-x: unset !important;
+    }
+    </style>
+<style>
+ @media screen and (max-width: 600px){
+
+ .modal-content {
+  width: 95% !important;
+}
+
+.modall {
+
+    padding-top: 100px !important;
+    }
+
+    .header {
+        padding-left: 15px !important;
+    padding-right: 15px !important;
+    }
+
+    .row  {
+     padding-left: 15px !important;
+    padding-right: 15px !important;
+    }
+
+    .banner1{
+            font-size: 20px !important;
+            font-weight: 500 !important;
+            padding: 16px 10px 11px 10px !important;
+    }
+    .bannerbutton {
+    margin-top: 16px !important;
+    background-color: #000;
+    padding: 12px 33px !important;
+    margin-bottom: 25px !important;
+    }
+
+    .calculatortitle{
+    padding: 0px 70px 59px 15px !important;
+    }
+
+    .calculatorinput{
+        width: 100% !important;
+    }
+
+
+    .sualbanner{
+        width: 100% !important;
+    }
+
+    .sualbannerlink{
+        width: 100% !important;
+            font-size: 14px !important;
+        }
+
+        .sualbannercol{
+        padding-right: 0 !important;
+        }
+        .calculatorimage{
+        display:none !important;
+        }
+        .calculatorback{
+        background-image: url({% static 'banner2.png'%}); height: 450px;
+        }
+        .stepler{
+            padding: 50px 15px 0 25px !important;
+            }
+
+
+       .smartinvest{
+           font-size: 28px !important;
+            font-weight: 500;
+            line-height: 33px !important;
+            margin: 37px 0 23px 0 !important;
+}
+
+.whyy1 {
+    height: 330px !important;
+    border: none !important;
+}
+
+.whyy2 {
+    height: 230px !important;
+     border: none !important;
+}
+
+.whyy3{
+    width: 192px !important;
+}
+
+.evler1{
+ padding: 0 15px 0 15px !important;
+}
+
+.evleritem{
+width:100% !important;
+}
+
+.formdiv{
+    padding: 49px 30px 108px 30px !important;
+}
+.formm{
+    margin-top: 0px !important;
+    margin-bottom: 33px !important;
+    width: 327px !important;
+    }
+    .formimage{
+        height: 181px !important;
+        }
+
+        .discusss{
+        height: unset !important;
+        }
+        .discusstitle{
+
+            color: #fff !important;
+    font-size: 28px !important;
+    line-height: 36px !important;
+    padding: 38px 20px !important;
+    font-weight: 500 !important;
+    }
+
+    .discusstext{
+        padding: 7px 20px !important;
+        }
+
+        .discussbutton{
+    margin: 0 0 26px 13px !important;
+        }
+
+        .faqq{
+        margin-top: 90px !important;
+        }
+
+        .cccx7{
+            padding-top: 100px !important;
+        }
+
+        .desktopp{
+            display: none !important;
+        }
+
+        .mobilee{
+             display: block !important;
+        }
+        .inwhy{
+        height: 448px !important;
+        }
+        .inwhyy{
+        height: 630px !important;
+        }
+
+     .strips__strip:nth-child(2) {
+    /*top: 520px!important;*/
+    }
+
+    .strips__strip:nth-child(3) {
+    /*top: 1040px!important;*/
+    }
+
+    .strips__strip:nth-child(4) {
+    /*top: 1560px!important;*/
+    }
+
+     .strips__strip_mob {
+         top: 25px!important;
+     }
+    .strips {
+    min-height: 2085px !important;
+    }
+
+    }
+
+    .calendly-badge-widget{
+    display:none !important;
+    }
+</style>
+
+      <style>
+          .spann2{
+
+          margin-right: 12px !important;
+              min-width: 70px !important;
+          }
+
+          .spann1{
+
+              padding: 11px 0 0 20px;
+    height: 52px !important;
+    width: 40px !important;
+    min-width: 62px !important;
+    font-size: 22px;
+        background-color: #000;
+    }
+
+    .spann{
+        min-width: 70px !important;
+    text-align: center;
+    padding-right: 10px;
+    color:#fff !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .cc2{
+
+            width: 25% !important;
+    margin: 0 !important;
+    }
+    .cc1{
+
+        padding: 11px 0 0 1px !important;
+        }
+
+        #timerr{
+            margin-bottom:20px !important;
+        }
+
+    }
+
+
+    .strip__close_desktop.strip__close--show {
+    font-size: 40px !important;
+    top: 3vh !important;
+}
+
+.strip__close.strip__close--show {
+    font-size: 40px !important;
+}
+      </style>
+      <style>
+.loader {
+margin:auto;
+margin-top:300px;
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #000;
+  width: 70px;
+  height: 70px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #fff;
+    z-index: 10000;
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+</style>
+
+
+      <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modall {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100000; /* Sit on top */
+  padding-top: 30px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 35%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+  </head>
+  <body>
+
+
+  <div id="myModal" class="modall" {% if vebinar%}style="display:block;"{%endif%} >
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" style=" text-align: right; margin-right: 6px; ">&times;</span>
+
+
+
+
+
+       <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
+                <div style="background:#fff;">
+                    <div style="padding-top: 10px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">
+                        {{form1.title}} </div>
+                    <div id="subtitle" style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
+                        {{form1.sub_title}}</div>
+                    <form id="formmm" style=" padding: 39px 40px; " method="post" action="{% url 'vebinarform'%}">
+                        {% csrf_token%}
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
+                        <div style="    border-bottom: 1px solid #000; display: flex; position:relative;">
+                            <span style=" position: absolute; left: 0px; top: 18px; font-weight: 500; ">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone2">
+                        </span>
+                            <input style="    margin-left: 50px; width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone2"  placeholder="(55)-888-88-88" required>
+                        </div>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="email" name="email" placeholder="Email *" required>
+                        <button type="submit" style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">
+                            {{form1.button_text}}</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+  <div id="myModal2" class="modall">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close2" style=" text-align: right; margin-right: 6px; ">&times;</span>
+
+
+
+
+
+       <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
+
+            <div id="formm2" class="formm" style="border-radius: 10px;text-align: center;padding: 0 0 39px 0;width: 347px;margin: auto;background-color: #fff;margin-top: 48px;">
+                    <form id="form2" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                    <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
+                    <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
+                    <div style=" position: relative; ">
+
+                        <span style=" position: absolute; left: 45px; top: 1px; font-weight: 500; ">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone3">
+                        </span>
+                        <input required name="phone" id="phone3"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 62px " type="text">
+
+                    </div>
+                    <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">{{form2.button_text}}</button></div>
+                    </form>
+                </div>
+
+            </div>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+  {% for h in body %}
+{% if h.location == 'T' %}
+      {{h.script | safe}}
+{% endif%}
+      {% endfor%}
+<!-- The Modal -->
+
+
+
+    <!--<header class="mobilee header bg-white container" id="headerr" style="     padding-bottom: 26px;background-color: #e3e5ea !important; width: 100% !important; max-width: 100%; padding-right: 140px; padding-left: 140px; ">
+        <div class="container">
+        <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
+                <div style="display: inline-block;float: right;">
+                  <div class="cccx3" style=" width: 50px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block; " class="cccx2"> <p style=" display: inline-block; ">{{general.phone}}</p>  </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+    </header>-->
+
+
+  <div class="mobilee" style="position:relative; display:none;background-image:url({{main_section.background_image.url}});   background-size: cover;background-size: cover;  background-position: right;height: 700px; padding-top: 0px;">
+      <div style=" width: 100%; height: 100%; background-color: #0000009c; position: absolute; z-index: 0; "></div>
+ <div class="row" style="     position: relative;padding-top: 40px; margin-bottom: -11px; ">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo_white.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
+                <div style="display: inline-block;float: right;">
+ <div style=" display: inline-block; margin-right: 10px; ">
+                        <a style=" text-decoration: none; margin-right: 5px; " href="/"><img src="{% static 'azz.png'%}" style="width:20px;"> </a>
+                        <a style=" text-decoration: none; margin-right: 5px; " href="/ru"><img src="{% static 'ruu.png'%}" style="width:20px;"> </a>
+                        <a style=" text-decoration: none; margin-right: 5px; " href="/tr"><img src="{% static 'trr.png'%}"  style="width:20px;"> </a>
+                    </div>
+                  <div class="cccx3" style=" width: 50px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block; " class="cccx2"> <p style=" display: inline-block; ">{{general.phone}}</p>  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row  " style="     position: relative;padding-top: 43px; ">
+          <div class="col-lg-6 col-md-12" style="">
+            <div class="cccx7" style="padding-top: 54px !important;padding-right: 18px;">
+              <h1 class="cccx8 pb-2 display-2   redffg" style="color: #fff;font-family: Montserrat;font-size: 33px !important;font-style: normal;font-weight: 700;line-height: 41px;">
+                  {{main_section.title|safe}}
+                 </h1>
+            <p class="pb-4 mt-4" style="       text-align: justify; margin-bottom: 0; margin-top: 0 !important;color: #fff;  font-family: Montserrat !important; font-size: 17px !important; font-style: normal !important; font-weight: 400 !important; line-height: 27px !important;"	>
+            {{main_section.text|safe}}
+            </p>
+
+                <p class="pb-4 mt-4" style=" margin: 0 0 !important; padding-bottom: 0 !important;color: #fff;  font-family: Montserrat !important; font-size: 18px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
+                {{main_section.text2|safe}} </p>
+                  <p class="pb-2 mt-2" style="color: #FFF;font-family: Montserrat !important;font-size: 35px !important;font-style: normal !important;font-weight: 500 !important;line-height: 30px; /* 85.714% */letter-spacing: -0.5px;padding-top: 14px;"	>
+                {{main_section.text3|safe}} </p>
+                <div style=" position: relative;text-align: center; ">
+
+                  <div id="timerr" style=" display: flex;padding-top:15px; width: 100px; gap: 13px; "></div>
+                    <div style=" margin-top: 26px; margin-bottom: 34px; ">
+                     <button  id="myBtn"   style="     bottom: 67px; left: 50%; width: 214px;  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </button>
+                    </div>
+                     <div style=" margin-top: 26px; margin-bottom: 34px; ">
+                    </div>
+                </div>
+
+                </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            </div>
+        </div>
+      </div>
+
+  <div class="desktopp" style="     background-size: cover;background-size: cover; height: 800px; background-position: center;">
+
+    <img src="{{main_section.background_image.url}}" style="width:100%;position:relative;">
+      <img src="{% static 'smokes.gif'%}" style="width:100%; position: absolute; left: 0; top: 0; ">
+     <div style="position:absolute;top: 0; width: 100%;">
+         <div class="container">
+        <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+            <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo_white.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+            <div class="col-lg-6 col-8">
+                <div style="display: inline-block;float: right;">
+                     <div style=" display: inline-block; margin-right: 40px; ">
+                        <a style=" text-decoration: none; margin-right: 5px; " href="/"><img src="{% static 'azz.png'%}" style="width:20px;"> </a>
+                        <a style=" text-decoration: none; margin-right: 5px; " href="/ru"><img src="{% static 'ruu.png'%}" style="width:20px;"> </a>
+                        <a style=" text-decoration: none; margin-right: 5px; " href="/tr"><img src="{% static 'trr.png'%}"  style="width:20px;"> </a>
+                    </div>
+                  <div class="cccx3" style=" width: 50px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                  <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                  <div style=" width: 190px;    display: inline-block;color:#fff; " class="cccx2"> <a href="tel:{{general.phone}}" style="text-decoration: none; font-weight: 600;color:#fff; display: inline-block; ">{{general.phone}}</a>  </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+ <div class="container">
+        <div class="row  ">
+          <div class="col-lg-6 col-md-12" style="">
+            <div class="cccx7" style="padding-left: 0; padding-top: 155px;    padding-right: 18px;">
+              <h1 class="cccx8 pb-2 display-2   redffg" style="color: #fff; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 700; line-height: 40px;">
+                  {{main_section.title}}
+                 </h1>
+            <p class="pb-2 mt-2" style=" color: #040404; font-family: Montserrat; font-size: 23px !important; font-style: normal; font-weight: 600; line-height: 33px !important; /* 133.333% */  padding-top: 16px !important; ">
+            {{main_section.text|safe}}
+            </p>
+
+                <p class="pb-2 mt-2" style=" color: #fff;  font-family: Montserrat !important; font-size: 16px !important; font-style: normal !important; font-weight: 600 !important; line-height: 27px !important;"	>
+                {{main_section.text2|safe}} </p>
+                 <p class="pb-2 mt-2" style="color: #FFF;font-family: Montserrat !important;font-size: 35px !important;font-style: normal !important;font-weight: 500 !important;line-height: 30px; /* 85.714% */letter-spacing: -0.5px;padding-top: 14px;"	>
+                {{main_section.text3|safe}} </p>
+                <div style=" display: flex; text-align: center; margin-bottom:6px; ">
+        <img src="/static/date.svg" style="width:20px;">
+        <div style="font-family: Montserrat; font-size: 17px; font-weight: 500; line-height: 21px; letter-spacing: 0em; text-align: left;color:#fff;">
+            {{general.countdown_enddate|date:'M d, Y - H:i'}}
+        </div>
+    </div>
+
+
+                <div id="timer" style=" display: flex; width: 100px; gap: 13px; "></div>
+<div style=" display: flex;padding-top:20px; ">
+                 <button id="myBtn2"  style="     margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 14px 48px; background: #000; "> {{main_section.button_text}} </button>
+
+
+
+</div>
+
+                </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            </div>
+        </div>
+
+         </div>
+         </div>
+
+      </div>
+
+
+
+
+
+<style>
+    /* external css: flickity.css */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery-cell {
+  width: 85%;
+  height: 500px;
+  margin-right: 10px;
+  background: #8C8;
+  background: linear-gradient(180deg, #3D473E 0%, rgba(190, 208, 193, 0.30) 100%);
+
+  counter-increment: gallery-cell;
+}
+
+
+
+@media screen and (max-width: 600px){
+.gallery-cell {
+  height: 200px !important;}
+ }
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .strips__strip--expanded .displaynone {
+    display: none !important;
+}
+
+
+@media screen and (max-width: 600px){
+.sliderx1{
+font-size: 14px !important;
+}
+.sliderx2{
+    padding-top: 16px !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+
+}
+
+.sliderx3{
+    font-size: 10px !important;
+    margin-right: 13px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 25px text-decoration: none;
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 27px;
+    padding: 14px 12px !important;
+    width:unset !important;
+}
+.sliderx0{
+    top: 30px !important;
+    left: 30px !important;
+}
+.sliderx00{
+ height: 200px !important;
+}
+}
+
+</style>
+
+  <div style="z-index: 1000;display: block;background-color: #fff;position: relative;" class=" mt-5">
+        <div class="row  " style="padding-top:30px;padding-left: 140px; padding-right:140px;">
+            <div class="col-lg-6 col-md-12" style=" margin-bottom: 49px; ">
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;">
+                     {{slider_section.title | safe}}</div>
+            <div style="font-size:20px;font-weight: 200; width: 95%; margin: auto;    margin-top: 12px;">
+                {{slider_section.text | safe}}</div>
+
+          </div>
+        </div>
+  </div>
+
+
+  <div style="display: block;" class="desktopp ">
+        <div class="row  " style="padding-left: 140px; padding-right:140px;">
+
+            <div class="col-lg-6 col-md-12" style="">
+
+          </div>
+ <div class="col-lg-12 col-md-12" style="position:relative;">
+
+
+
+     <div class=" gallery js-flickity"
+  data-flickity-options='{ "freeScroll": true,"contain": true ,"draggable": true }'>
+         {% for slide in slider%}
+          {% if slide.image_link%}
+
+              <a href="{{slide.image_link}}" class="gallery-cell" style="text-decoration: none; background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
+
+                  <style>
+                  @media screen and (max-width: 600px){
+                      .sll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
+                      }
+                      }
+                  </style>
+
+                  <div class="sliderx00 sll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
+      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
+
+
+          {% if slide.mobile_title %}
+            <div class="desktopp sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+
+             <div class="mobilee sliderx1" style="display:none;color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.mobile_title|safe}}
+            </div>
+          {% else %}
+           <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+          {% endif %}
+
+
+
+
+
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+
+
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}};margin-top: 33px; ">
+              {{slide.button_text}}
+          </a>{% endif%}
+      </div>
+              </a>
+             {% else%}
+
+              <div class="gallery-cell" style=" background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
+
+ <style>
+ @media screen and (max-width: 600px){
+                      .sll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
+                      }
+                      }
+                  </style>
+                  <div class="sliderx00 sll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
+      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
+            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}}; margin-top: 33px;">
+              {{slide.button_text}}
+          </a>{% endif%}
+      </div>
+  </div>
+
+             {% endif%}
+
+{% endfor%}
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+ <div style="display: none;" class=" mobilee">
+        <div class="row  " style="padding-left: 140px; padding-right:140px;">
+
+            <div class="col-lg-6 col-md-12" style="">
+
+          </div>
+ <div class="col-lg-12 col-md-12" style="position:relative;">
+
+
+
+     <div class=" owl-carousel second-slide owl-theme"
+  data-flickity-options='{ "freeScroll": true,"contain": true ,"draggable": true }'>
+         {% for slide in slider%}
+          {% if slide.image_link%}
+
+              <div href="{{slide.image_link}}" class="item" style="text-decoration: none; background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
+
+                  <style>
+                  @media screen and (max-width: 600px){
+                      .slll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
+                      }
+                      }
+                  </style>
+
+                  <div class="sliderx00 slll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
+      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
+
+
+          {% if slide.mobile_title %}
+            <div class="desktopp sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+
+             <div class="mobilee sliderx1" style="display:none;color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.mobile_title|safe}}
+            </div>
+          {% else %}
+           <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+          {% endif %}
+
+
+
+
+
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+
+
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}};margin-top: 33px; ">
+              {{slide.button_text}}
+          </a>{% endif%}
+      </div>
+              </div>
+             {% else%}
+
+              <div class="item" style=" background-image:url({{slide.background_image.url}});background-size: cover;    background-position: center;">
+
+ <style>
+ @media screen and (max-width: 600px){
+                      .slll{{slide.id}}{
+                      {{slide.black_layer_css_mobile}} !important;
+                      }
+                      }
+                  </style>
+                  <div class="sliderx00 slll{{slide.id}}" style="{{slide.black_layer_css}};width: 100%; height: 500px;"></div>
+      <div class="sliderx0" style=" position: absolute; z-index: 10000; top: 80px;left:70px;     width: 60%;">
+            <div class="sliderx1" style="color: #FFF; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 700; line-height: normal;">
+                {{slide.title|safe}}
+            </div>
+          {% if slide.text%}
+            <div class="sliderx2" style="padding-top: 38px; padding-bottom: 33px;color: #FFF; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 400; line-height: 25px; /* 147.059% */">
+               {{slide.text|safe}}  </div>{% endif%}
+            {% if slide.button_text%}
+          <a href="{{slide.button_url}}" class="sliderx3" style="         width: 250px;margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px  text-decoration: none;border: 1px solid {{slide.get_button_color_display}}; color: {{slide.get_button_text_color_display}}; border-radius: 27px; padding: 14px 48px; background: {{slide.get_button_color_display}}; margin-top: 33px;">
+              {{slide.button_text}}
+          </a>{% endif%}
+      </div>
+  </div>
+
+             {% endif%}
+
+{% endfor%}
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class=" mt-5"  style="margin-top:100px !important;">
+        <div class="row  " style="padding-left: 142px; padding-right:142px;">
+            <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px;background-image:url({{banner1.background_image.url}});         border: 2px solid #d8d8d8b8;background-size: cover;">
+                <div class="row">
+                     <div class="col-lg-8 col-md-12"><div class="banner1" style=" font-size: 30px; font-weight: 500; padding: 89px 70px 100px 60px; ">
+                         {{banner1.text}}</div></div>
+                     <div class="col-lg-4 col-md-12"><a href="#calculator" class="bannerbutton" style=" display: block; margin-top: 130px; width: 239px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{banner1.button_text}}</a> </div>
+                </div>
+            </div>
+        </div>
+</div>-->
+
+
+
+
+
+
+
+
+
+<div class=" mt-5" id="calculator" style="margin-top:130px !important;padding-bottom: 49px;">
+        <div class="row  " style="padding-left: 142px; padding-right:142px;">
+            <div class="col-lg-12 col-md-12" style="  ">
+                <div class="row ">
+                     <div class="col-lg-7 col-md-12">
+                         <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 0px;">
+
+                             Yatırım getirilerini hesaplayın!
+                         </div>
+
+
+
+<style>
+  button.tablinks.active{
+    display: inline; cursor:pointer;margin-right:10px;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 55px 0 55px;
+    padding: 10px 35px 10px 35px;
+    background-color: #3A453B;
+    color: #fff;
+  }
+
+  button.tablinks{
+    display: inline; margin-right:10px;cursor:pointer;border: 1px solid #11218D; border-radius: 27px; padding: 10px 55px 0 55px;
+    padding: 10px 35px 10px 35px;
+    background-color: #fff;
+    color: #11218D;
+  }
+</style>
+                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks active" onclick="openCity(event, 'one')">Yatırım Net Değeri</button>
+                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'two')">Mülk Değeri</button>
+                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'three')">Yatırım Net Karı</button>
+                        <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'four')">Kar Marjası</button>
+   <br><br>
+
+<div id="one" class="tabcontent" style="display: block;">
+  <div id="chart1"></div>
+</div>
+
+<div id="two" class="tabcontent">
+  <div id="chart2"></div>
+</div>
+<div id="three" class="tabcontent">
+  <div id="chart3"></div>
+</div>
+
+ <div id="four" class="tabcontent">
+  <div id="chart4"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                         <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+                     </div>
+                     <div class="col-lg-5 col-md-12 {% if is_mobile %}order-first{% endif%}">
+            <div class="calculatortitle mobilee" style="display:none;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Yatırım getirilerini hesaplayın!</div>
+
+                       <div style="border-radius: 20px; border: 1px solid #DDDCE0; background: #FFF;">
+
+                        <div class="row  " style=" padding: 5px 15px 34px 62px; ">
+                            <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
+                                <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırım yapmak istediğiniz başlangıç ​​sermayesi</div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="50,000"></div>
+                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="50000" max="2000000" step="1000" value="50000" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12" style=" padding-top: 12px; padding-bottom: 24px; ">
+                              <input type="radio" id="radio1" checked="" name="ipoteka" value="1">
+                              <label for="html">İpotek</label>
+                              <input type="radio" id="radio2" name="ipoteka" value="0">
+                              <label for="html">Peşin</label>
+                            </div>
+                            <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Süre</div>
+                                <div  style=" position: relative; "><span style=" font-weight: 500; font-size: 15px; position: absolute; top: 8px; left: 10px; color: #747474; ">İl</span><input min="2" max="10" id="muddetid" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="10"></div>
+                            <div> <input  id="muddetsliderid" class="slider calculatorinput" type="range" min="2" max="10" step="1" value="10" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Mülk değeri</div>
+                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input readonly id="field3" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12" style="padding-top: 24px; ">
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Beklenen <span id="yearspan">10</span> yıllık kira geliri</div>
+                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input readonly id="field1" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12" style=" padding-top: 24px; ">
+                                <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */"><span id="yearspann">10</span> yıl sonunda beklenen gayrimenkul değerlemesi  </div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input readonly id="field2" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
+                            </div>
+
+
+                            <style>
+                                .loading{
+                                background-image: url({% static 'loading.gif'%});
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    color:black !important;
+                                    text-indent: -9999em;
+                                        text-transform: uppercase;
+                                }
+                            </style>
+                            <div>
+                                <button class="loading" id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesapla</button>
+                            </div>
+                        </div>
+                   </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+<div class=" mobilee mt-5" style="display:none;margin-top:70px !important;">
+        <div class="row  " style="padding-left: 142px; padding-right:142px;">
+            <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">{{processes_section.title}}</div>
+
+          </div>
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process1_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
+                <div style=" padding-right: 47px; ">
+                   {{processes_section.process1_text}} </div>
+            </div>
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process2_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process2_text}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process3_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
+                <div style=" padding-right: 47px; ">
+                     {{processes_section.process3_text}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                    <div style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process4_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
+                <div style=" padding-right: 47px; ">
+                     {{processes_section.process4_text}}
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+<div id="prosesler" class=" desktopp mt-5" style="margin-bottom:130px;margin-top:70px !important;">
+        <div  class="row  " style="padding-left: 142px; padding-right:142px;">
+            <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
+                 <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;    text-align: center;">{{processes_section.title}}</div>
+
+          </div>
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                    <div>
+                     <div style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">1.</div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process1_icon.url}});background-repeat: no-repeat; background-position: center;"> </div>
+                    </div>
+                    <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 90px; "></div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process1_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process1_text}}
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                     <div>
+                     <div  style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">2.</div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process2_icon.url}});background-repeat: no-repeat; background-position: center;"> </div></div>
+                    <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 90px; "></div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process2_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process2_text}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                     <div>
+                     <div style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">3.</div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process3_icon.url}});background-repeat: no-repeat; background-position: center;"> </div></div>
+                    <div style=" width: 60%; border-top: 2px dotted #e3e5ea; margin-top: 90px; "></div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process3_title}}</div>
+                <div style=" padding-right: 47px; ">
+                     {{processes_section.process3_text}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 stepler" style="">
+                <div style=" display: flex; ">
+                     <div>
+                     <div  style="padding: 19px 0px 0 0px;font-size: 21px;font-weight: 500;text-align: center;">4.</div>
+                    <div class="icon" style="width: 80px; height: 80px; border: 1px solid #e3e5ea; border-radius: 50%; background-image: url({{processes_section.process4_icon.url}});background-repeat: no-repeat; background-position: center;"> </div></div>
+                </div>
+                <div style=" font-size: 18px; font-weight: 600; margin: 25px 0 20px 0px; ">{{processes_section.process4_title}}</div>
+                <div style=" padding-right: 47px; ">
+                    {{processes_section.process4_text}}
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+<!--
+<div class=" mt-5 desktopp "  style="margin-top:70px;">
+        <div class="row  " style="padding-left: 142px; padding-right:142px;">
+            <div class="col-lg-12 col-md-12 calculatorback" style=" margin-bottom: 49px;   padding-top: 22px;    background-size: cover;    position: relative;">
+                <img class="calculatorimage" src="{% static 'banner2.png'%}" style=" width: 100%; ">
+                <div class="row sualbanner" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 791px; ">
+                     <div class="col-lg-6 col-md-12 sualbannercol" style=" padding-right: 20px; ">
+                         {% for s in suallar %}
+                         {% if forloop.counter < 4 %}
+                         <a class="sualbannerlink" href="#evler" style="     margin: auto;    margin: 23px 0 23px auto;display: block;  width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
+
+                         {% endif%}
+                         {% endfor%}
+                     </div>
+                     <div class="col-lg-6 col-md-12 sualbannercol" style=" padding-right: 20px; ">
+                         {% for s in suallar %}
+                         {% if forloop.counter > 3 %}
+                         <a class="sualbannerlink " href="#evler" style=" display: block;      margin: 23px 0 23px 0;width: 369px;background-color: #000; color: #fff; text-decoration: none; padding: 12px 33px; border-radius: 28px; ">{{s.text}}</a>
+
+                         {% endif%}
+                         {% endfor%}
+                     </div>
+                </div>
+            </div>
+        </div>
+</div>
+-->
+
+
+
+
+<div class=" mt-5"  style="margin-top:70px;">
+        <div class="row  " style="padding-left: 142px; padding-right:142px; ">
+            <div class="col-lg-12 col-md-12" style=" background-image:url({{smart.image.url}});background-size: cover; height: 450px; background-position: center;">
+                <div class="row">
+                     <div class="col-lg-6 col-md-12">
+                         <div class="smartinvest" style=" font-size: 35px; font-weight: 500; line-height: 45px; margin: 93px 0 23px 0; ">
+                             {{smart.title}}</div>
+                         <div>{{smart.text}}</div>
+                         <a href="#smart"  style=" display: block; margin: 26px 0 0 0; background-color: #000; width: 206px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px; ">{{smart.button_text}}</a>
+                     </div>
+                     <div class="col-lg-6 col-md-12"></div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+
+
+
+<div class=" mt-5"  id="smart" style="margin-top: 87px !important;">
+        <div class="row  " style="padding-left: 142px; padding-right:142px; ">
+            <div class="col-lg-12 col-md-12" style=" margin-bottom: 49px; ">
+                 <div style="    padding-left: 20px;font-size:35px;font-weight: 500;width: 95%; ">{{niye.title}}</div>
+
+          </div>
+
+            <div class="col-lg-12 col-md-12" style="">
+                <div class="row">
+                     <div class="col-lg-6 col-md-12" style="    padding-right: 18px; ">
+                         <div class="whyy1"  style="display: flex;border-bottom: 1px solid #666666;padding-bottom: 37px;    height: 191px;">
+                             <div style=" width: 265px;color: #3A453B; font-weight: 600; ">01.</div>
+                             <div>
+                                 <div style=" font-size: 19px; font-weight: 500; margin-bottom: 22px; ">{{niye.title1}}</div>
+                                 <div>{{niye.text1 | safe}}</div>
+                             </div>
+                         </div>
+                     </div>
+
+                    <div class="col-lg-6 col-md-12" style="   ">
+                         <div class="whyy2" style="display: flex;border-bottom: 1px solid #666666;padding-bottom: 37px;    height: 191px;">
+                             <div class="whyy3" style=" width: 265px;color: #3A453B; font-weight: 600; ">02.</div>
+                             <div>
+                                 <div style=" font-size: 19px; font-weight: 500; margin-bottom: 22px; ">{{niye.title2}}</div>
+                                 <div>{{niye.text2}}</div>
+                             </div>
+                         </div>
+                     </div>
+
+                    <div class="col-lg-6 col-md-12" style=" margin-top: 72px; ">
+                         <div style=" display: flex; ">
+                             <div style=" width: 265px;color: #3A453B; font-weight: 600; ">03.</div>
+                             <div>
+                                 <div style=" font-size: 19px; font-weight: 500; margin-bottom: 22px; ">{{niye.title3}}</div>
+                                 {{niye.text3 | safe}}
+
+                             </div>
+                         </div>
+                     </div>
+
+                    <div class="col-lg-6 col-md-12" style=" margin-top: 72px; ">
+                         <div style=" display: flex; ">
+                             <div style=" width: 265px;color: #3A453B; font-weight: 600; ">04.</div>
+                             <div>
+                                 <div style=" font-size: 19px; font-weight: 500; margin-bottom: 22px; ">{{niye.title4}}</div>
+                                 <div>{{niye.text4}}</div>
+                             </div>
+                         </div>
+                     </div>
+
+
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+<div id="evler" class=" mt-5 evler1" style=" padding-left: 142px; padding-right:142px;margin-top:90px !important;">
+    <div class="container">
+    <div class="row" style="padding-top: 25px;padding-bottom: 25px;">
+          <div class="col-lg-4 col-md-12"style="text-align: left;">
+                <div style="color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">
+                    {{offers_section.title}}</div>
+              <div style="color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">
+                  {{offers_section.text}}</div>
+
+
+          </div>
+         <div class="col-lg-4 col-md-12 bbbx8"style="text-align: center;">
+             <div class="" style=" display: flex; ">
+                 <style>
+                     .tablinkk.active {
+                            background:#3A453B;
+                     }
+                     .active p {
+                        color: #fff;
+                    }
+                 </style>
+                 <div id="menzilborder" onclick="openCityy(event, 'c2')" class="bbbx10 tablinkk active" style="     display: flex; cursor:pointer;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 55px 0 55px; margin-right:10px;"><img id="menzilwhite" style="    margin: -12px 5px 0 -8px; display: inline-block;width: 19px; margin: 2px 7px 0 1px; height: 21px; " src="{% static 'apartment.svg'%}"><img id="menzilblack" style="    margin: -12px 5px 0 -8px; display: none;width: 19px; margin: 2px 7px 0 1px; height: 21px; " src="{% static 'apartmentgreen.svg'%}"><p id="menzilp" style="  color:#fff;   margin: 2px 0 13px 0;display: inline-block; ">Apartman</p> </div>
+
+                 <div id="villaborder" onclick="openCityy(event, 'c1')" class="bbbx9 tablinkk " style="    display: flex; cursor:pointer;margin-right:10px;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 55px 0 55px; "><img id="villablack" style=" display: inline-block;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villagreen.svg'%}"><img id="villawhite" style=" display: none;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villa.svg'%}"><p id="villap" style="  color:#3A453B;  margin: 2px 0 13px 0; display: inline-block; ">Villa</p> </div>
+             </div>
+          </div>
+         <div class="col-lg-4 col-md-12"style="text-align: center;">
+              <div id="evbuttons" style=" display: flex; justify-content: center; ">
+                                <div  class="swiper-button-prevev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-nextev" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+
+             <div id="villabuttons" style=" display: none; justify-content: center; ">
+                                <div  class="swiper-button-prevvilla" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-nextvilla" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+          </div>
+    </div>
+
+
+        <div class="row  ">
+          <div class="col-lg-12 col-md-12"style="text-align: left;margin-top:20px;">
+
+
+                <div id="c1" class="tabcontent container" style="display:block;">
+  <div class="swiper_wrap">
+      <div class="swiper-containervilla swiper-container">
+        <div class="swiper-wrapper">
+
+            {% for o in villas %}
+            <div class="swiper-slide">
+
+                <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.3;{% endif%}position:relative;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">
+                    <a {%if not o.is_sold_out%}href="{% url 'offer' o.id %}"{% endif%} >
+                        <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                        </a>
+
+                    <div style="display: flex;">
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'sq.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
+                    </div>
+                    <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
+
+                    <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
+                    </div>
+
+
+
+                </div>
+                {% if o.is_sold_out %}
+                <img src="{% static 'soldout.png'%}" style="position: absolute; width: 200px; top: 360px; z-index: 1000000; left: 50px;">
+                {% endif %}
+          </div>
+          {% endfor%}
+
+             <div class="swiper-slide">
+
+                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
+                    <div style=" width: 100%; text-align: center; ">
+                        <img src="{% static 'plus.png'%}" style="width:180px;">
+                    </div>
+                    <div style=" text-align: center;    margin-top: 72px; ">
+                       {{offers_section.form_text}}
+                    </div>
+                    <button id="myBtn5"  style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
+                       {{offers_section.form_button_text}}</button>
+
+                </div>
+          </div>
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
+
+                <div id="c2" class="tabcontent container" style="display:block;">
+  <div class="swiper_wrap">
+      <div class="swiper-container swiper-containerev">
+        <div class="swiper-wrapper">
+
+            {% for o in apartments %}
+         <div class="swiper-slide">
+
+                <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.3;{% endif%}position:relative;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">
+                      <a {%if not o.is_sold_out%}href="{% url 'offer' o.id %}"{% endif%} >
+                        <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                        </a>
+
+                     <div style="display: flex;">
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'sq.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
+                    </div>
+                    <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
+
+                  <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
+                    </div>
+
+                </div>
+             {% if o.is_sold_out %}
+                <img src="{% static 'soldout.png'%}" style="position: absolute; width: 200px; top: 360px; z-index: 1000000; left: 50px;">
+                {% endif %}
+          </div>
+          {% endfor%}
+             <div class="swiper-slide">
+
+                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
+                    <div style=" width: 100%; text-align: center; ">
+                        <img src="{% static 'plus.png'%}" style="width:180px;">
+                    </div>
+                    <div style=" text-align: center;    margin-top: 72px; ">
+                       {{offers_section.form_text}}
+                    </div>
+                    <button id="myBtn4"  style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
+                       {{offers_section.form_button_text}}</button>
+
+                </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
+
+          </div>
+
+
+
+        </div>
+
+        </div>
+      </div>
+
+
+
+
+<div class=" mt-5"  id="gelinn" style="margin-top: 87px !important;">
+        <div class="row rowww "  id="elaqe" style="padding-left: 0; padding-right:0; background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
+        <div class="rowww row  "   style="padding-left: 140px; padding-right:140px; ">
+
+            <div class="col-lg-4 col-md-12 desktopp" style="position:relative;">
+                <img src="{% static 'qiz.png'%}" style="width: 550px;position: absolute;bottom: 0;">
+            </div>
+            <div class="col-lg-4 col-md-12 mobilee" style="display:none;text-align: center;">
+                <img src="{% static 'qiz2.jpg'%}" style="width: 100%;bottom: 0;">
+            </div>
+            <div class="col-lg-4 col-md-12 formdiv" style="padding: 66px 3px 108px 90px;">
+                <div style=" color: #fff; font-size: 35px; font-weight: 500; line-height: 42px; margin-bottom: 15px; ">{{form_section.title}}</div>
+                <div style=" color: #fff;    margin: 0 0 25px 0;">{{form_section.sub_title}}</div>
+                <div>
+                    {{form_section.text | safe}}  </div>
+            </div>
+            <div class="col-lg-4 col-md-12" style="">
+                <div id="formm" class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; ">
+                    <form id="form" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                    <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
+                    <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
+                    <div style=" position: relative; ">
+
+                        <span style=" position: absolute; left: 45px; top: 1px; font-weight: 500; ">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone">
+                        </span>
+                        <input required name="phone" id="phone"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 62px " type="text">
+
+                    </div>
+                    <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">{{form3.button_text}}</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+     <div class="row  " style="padding-left: 0; padding-right:0; ">
+
+
+
+
+        </div>
+</div>
+
+
+
+
+
+
+
+<div class=" " id="testimonials" style=" background:#F6F8FA;    padding: 100px 0 60px 0;">
+
+        <div class="row  ">
+          <div class="col-lg-12 col-md-12" style="text-align: center;">
+            <div style="    margin: 3px 0 29px 0;color: #2B2B2B; text-align: center; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 45px; /* 128.571% */ letter-spacing: -0.5px;">
+                {{feedback_section.title|safe}}</div>
+
+
+<style>
+
+.carousel-cell {
+  width: 28%;
+  height: 580px;
+  margin-right: 10px;
+
+  border-radius: 5px;
+
+}
+
+
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+ @media screen and (max-width: 600px){
+ .rowww {
+     padding-left: 0px !important;
+    padding-right: 0px !important;
+ }
+ .carousel-cell {
+  width: 100% !important;
+  height: 620px;
+  margin-right: 10px;
+
+  border-radius: 5px;
+
+}
+ }
+</style>
+
+<!-- Flickity HTML init -->
+<div class="carousel" data-flickity='{ "groupCells": true, "draggable": true }'>
+     {% for f in feedback %}
+  <div class="carousel-cell">
+       <div style="background-image:url({{f.background_image.url}});border-radius:10px;height: 350px; background-size: cover;"></div>
+            <div style=" background: #fff; border-radius: 10px; width: 90%; margin: -150px auto 0 auto; padding: 20px 16px 25px 19px; z-index: 100;">
+                <div style="color: var(--mrt-app-neutral-01, #626687); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 400; line-height: 25px; /* 178.571% */">“{{f.text | safe}}”</div>
+                <div style=" display: flex;margin-top:20px; ">
+                    <div style="background-size:cover;background-image:url({{f.user_image.url}}); height:50px; width:50px;border-radius:50%;">
+                    </div>
+                    <div style=" padding: 5px 0 0 14px; ">
+                        <div style="color: var(--neutral-900, #0E1735); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">
+                            {{f.full_name}}</div>
+                        <div style="color: var(--neutral-500, #888B97); font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 500; line-height: 22px; /* 157.143% */">{{f.position|safe}}</div>
+                    </div>
+                </div>
+
+
+            </div>
+
+  </div>
+      {% endfor%}
+
+</div>
+
+
+
+
+
+
+       <!-- Add Arrows -->
+
+
+
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
+
+<div class=" " id="calendly" style="padding-top: 0px !important;    background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
+        <div class="row  " style="padding-left: 0; padding-right:0; ">
+        <div class="row  " style="padding-left: 140px; padding-right:140px; ">
+
+
+            <div class="col-lg-12 col-md-12 discusss" style="  background-size: contain; background-position: center;">
+                <div class="row  " style="position:relative;">
+                    <div class="col-lg-6 col-lg-6x col-md-12"> <div class="discusstitle" style=" color: #fff;font-size: 32px;line-height: 50px;padding: 108px 0 3px 59px;font-weight: 500; ">
+                        Ücretsiz webinara davetlisiniz</div>
+                        <div style=" padding: 0 0 3px 59px; color: #fff; font-size: 20px; ">Tüm sorularınızı cevaplayalım!</div>
+                     <div class="discusstext " style=" color: #fff; padding:27px 59px 43px 59px; font-size: 17px; ">
+                        {% for p in muzakire.punktlar.all %}
+                         <div style=" display: flex;margin-top: 15px; "> <img class="imggg" style="width: 30px;height: 30px;margin-top: 3px;" src="{% static 'home2.png'%}"> <div style=" font-size: 20px; margin-left: 25px; padding-top: 4px; ">{{p.name}}</div></div>
+                         {% endfor%}
+                     </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12" style=" padding-top: 100px; ">
+
+
+                        <style>
+                        @media screen and (max-width: 600px){
+                        .discusss {
+                        background-image:unset !important;
+                        }
+                        .imggg{
+                            margin-top: 10px !important;
+                            }
+                            .calendly-inline-widget{
+                                height: 620px !important;
+                                margin-right: 10px !important;
+                                }
+                                }
+                                     .calendly-inline-widget{
+                                    overflow-y: hidden !important;
+                                    margin-right: 14px;
+                                }
+                        </style>
+
+
+
+
+
+
+
+
+
+
+<style>
+    @media only screen and (max-width: 600px) {
+    .cvx1{
+    margin-left: 0 !important;
+    padding: 30px 7px !important;
+    margin-bottom: 57px;
+    }
+    .cvx2{
+    position:unset !important;
+    }
+    .cvx3{
+    text-align: center;
+    }
+    }
+</style>
+<div class="cvx1" style="margin-left: 120px;border: 1px solid white;border-radius: 13px;padding: 30px 30px;    margin-bottom: 57px;">
+    <div style="font-family: Montserrat;font-size: 20px;font-weight: 700;line-height: 30px;letter-spacing: 0em;text-align: center;color: #fff;margin-top: 20px;margin-bottom: 20px;">{{coffee.title}}</div>
+    <div style=" display: flex; text-align: center; width: 200px; margin: auto; ">
+        <img src="/static/date.svg" style="width:20px;">
+        <div style="font-family: Montserrat; font-size: 17px; font-weight: 500; line-height: 21px; letter-spacing: 0em; text-align: left;color:#fff;">
+             {{general.countdown_enddate|date:'M d, Y - H:i'}}</div>
+    </div>
+    <div class="row" style=" margin-top: 22px; ">
+        <div class="col-6">
+            <div class="cvx3" style=" display: inline-block;    position: relative; ">
+                <div style="display: inline-block;background-image:url({{coffee.user1_image.url}});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
+                <div class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; ">
+                    {{coffee.user1_name}}</div>
+                <div style=" font-size: 10px; color: #fff; ">{{coffee.user1_profession | safe}}</div></div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="cvx3" style=" display: inline-block;    position: relative; ">
+                <div style="display: inline-block;background-image:url({{coffee.user2_image.url}});width: 60px; height: 60px; background-size: contain; border-radius: 50%;"></div>
+                <div  class="cvx2" style="display: inline-block;position: absolute; top: 10px; width: 133px; left: 70px;"><div style=" color: #fff; font-size: 13px;font-weight: 600; "> {{coffee.user2_name}}</div>
+                <div style=" font-size: 10px; color: #fff; ">{{coffee.user2_profession | safe}}</div></div>
+            </div>
+        </div>
+    </div>
+    <div style=" text-align: center; padding-top: 27px; ">
+        <div id="timer2" style=" display: contents; width: 100px; gap: 13px; "></div>
+
+    </div>
+    <div style=" text-align: center; padding-top: 35px; ">
+        <button id="myBtn3" style="background:#206562;border: none;border-radius: 30px;padding: 14px 39px;color: #fff;margin: auto;">{{coffee.button_text}}</button>
+    </div>
+</div>
+
+
+  </div>
+
+
+<style>
+    #parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url({% static 'cof2.png'%});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+}
+</style>
+
+
+
+
+                    <div id="parallax" class="desktopp" style=" width: 600px; position: absolute; top: 70%; left: 46%; transform: translate(-50%, -50%);"></div>
+
+<script>
+    (function() {
+    // Add event listener
+    document.addEventListener("mousemove", parallax);
+    const elem = document.querySelector("#parallax");
+    // Magic happens here
+    function parallax(e) {
+        let _w = window.innerWidth/2;
+        let _h = window.innerHeight/2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        let _depth1 = `${10 - (_mouseX - _w) * 0.001}% ${10 - (_mouseY - _h) * 0.001}%`;
+        let _depth2 = `${10 - (_mouseX - _w) * 0.002}% ${10 - (_mouseY - _h) * 0.002}%`;
+        let _depth3 = `${10 - (_mouseX - _w) * 0.006}% ${10 - (_mouseY - _h) * 0.006}%`;
+        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+        elem.style.backgroundPosition = x;
+    }
+
+})();
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="inwhyy"  id="team" style=" background:#fff;height: 550px;padding-top:69px; ">
+
+        <div class="row  " style="padding-left: 142px; padding-right:142px; ">
+          <div class="col-lg-4 col-md-12"style="text-align: center;">
+            <h1 class="display-2  redffg" style="    text-align: left;    font-size: 55px;    margin-top: 65px; color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">
+                {{why_section.title}}
+               </h1>
+            <p class="" style="    text-align: left; color: #808080 !important; font-family: Montserrat !important; font-size: 16px !important; font-style: normal !important; font-weight: 400 !important; line-height: 25px !important; /* 156.25% */"	>
+                {{why_section.text}}
+            </p>
+
+          </div>
+            <div class="col-lg-8 col-md-12"style="text-align: center;">
+<style>
+    .img-responsive {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.swiper_wrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  text-align: left;
+}
+
+
+.swiper-button-prev, .swiper-button-next {
+     position: relative;
+}
+.swiper-button-prevev, .swiper-button-nextev {
+     position: relative;
+}
+.swiper-button-prevvilla, .swiper-button-nextvilla {
+     position: relative;
+}
+</style>
+
+
+
+
+
+
+
+
+                <div class="container" style=" padding-right: 0; ">
+                  <div class="swiper_wrap">
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          {% for w in why%}
+                            <div class="swiper-slide">
+                                <div class="inwhy" style="     height: 330px;background: #fff; border-radius: 10px; margin-right: 5px; padding: 21px 10px 26px 10px;     ">
+                            <img src="{{w.icon.url}}" class="img-responsive" style=" width: 100%; ">
+
+                                    <div class="vvvx4" style="    margin: 15px 0 7px 0;color: #000; font-family: Montserrat; font-size: 17px; font-style: normal; font-weight: 500; line-height: 25px; /* 175% */">{{w.title}}</div>
+                             <div class="vvvx3" style="width: 100%;bottom: 42px;color: #000; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 400; line-height: 20px;  padding-right: 0; font-size: 13px;">{{w.text}}</div>
+                            </div>
+                          </div>
+                            {% endfor%}
+
+                        </div>
+
+                      </div>
+                       <!-- Add Arrows -->
+
+                    </div>
+                </div>
+
+
+
+                        <div style=" display: flex; justify-content: center; ">
+                                <div  class="swiper-button-prev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:24px 24px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-next" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:24px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+<style>
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+</style>
+
+
+<style>
+    .not-visible {
+        display: none !important;
+    }
+</style>
+
+
+  <section class="container-fluid py-5 bg_gray faqq" style="  ">
+        <h2 class="fw-bold mb-4 text-center" style=" font-size: 45px; line-height: 60px; padding: 35px 0 49px 0px; ">Sıkça Sorulan Sorular</h2>
+        <div class="row d-flex gap-5 justify-content-center align-items-center">
+          <div class="col-md-6 d-flex justify-content-between flex-column">
+            <div class="accordion d-flex flex-column gap-3" id="accordionExample">
+
+                {% for f in faq %}
+              <div class="accordion-item bg-white p-3 rounded-0 single_content">
+                <div class="d-flex gap-5 justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center gap-4" onclick="myFunc{{f.id}}()"  data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne{{f.id}}"
+                      aria-expanded="true"
+                      aria-controls="collapseOne{{f.id}}" style="cursor: pointer;">
+                    <div class="mb-0 ccc4" style=" font-weight: 700;padding: 23px 46px 23px 19px; font-size: 26px; ">
+
+                        {% if forloop.counter < 10%}0{% endif%}{{forloop.counter}}
+                    </div>
+                    <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">{{f.question}}</p>
+                  </div>
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordionButton border-0 bg-transparent"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne{{f.id}}"
+                      aria-expanded="true"
+                      aria-controls="collapseOne{{f.id}}">
+                      <img id="arrow{{f.id}}" class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
+                    </button>
+
+                      <script>
+                        function myFunc{{f.id}}() {
+                            let para{{f.id}} = document.getElementById("arrow{{f.id}}");
+                            para{{f.id}}.classList.toggle("fa-rotate-180");
+                        }
+                    </script>
+                  </h2>
+                </div>
+                <div
+                  id="collapseOne{{f.id}}"
+                  class="accordion-collapse collapse "
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
+
+                    <p class="mx-3 fw-normal font_normal">
+                     {{f.answer}}
+                      </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+                {% endfor%}
+
+
+            </div>
+               <div id="loadmore">
+                    <div style=" text-align: center; cursor: pointer; padding-top: 30px; ">Daha Çok</div>
+                </div>
+          </div>
+        </div>
+      </section>
+
+
+ {{total_obj|json_script:"json-total"}}
+
+ <script>
+        // var _current_item = $('.single_content').length
+        // console.log(_current_item);
+        const loadBtn = document.getElementById('loadmore');
+        const total = JSON.parse(document.getElementById('json-total').textContent);
+        const alert = document.getElementById('alert');
+
+        function loadmorePost() {
+            var _current_item = $('.single_content').length
+            const content_container = document.getElementById("accordionExample");
+            $.ajax({
+                url: '{% url "loadfaq" %}',
+                type: 'GET',
+                data: {
+                    'loaded_item': _current_item
+                },
+                beforeSend: function () {
+                    loadBtn.classList.add('not-visible');
+                },
+                success: function (response) {
+                    const data = response.faq
+                    console.log("=====")
+                    console.log(_current_item)
+                    console.log(total)
+                    if(response.offset == 5 ){
+                    var zero = '0';
+                    }else{
+                        var zero = '';
+                    }
+                    data.map((f, i) => {
+                        content_container.innerHTML += `    <div class="accordion-item bg-white p-3 rounded-0 single_content">
+                <div class="d-flex gap-5 justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center gap-4"   data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne${f.id}"
+                      aria-expanded="true"
+                      aria-controls="collapseOne${f.id}" style="cursor: pointer;">
+                    <div class="mb-0 ccc4" style=" padding: 23px 46px 23px 19px; font-size: 26px;font-weight: 700; ">
+
+                    ${parseInt(response.offset)+i+1>9 ? '' : 0}${parseInt(response.offset)+i+1}
+                    </div>
+                    <p class="mb-0 fw-normal custom_text" style="font:400 1em/2 Montserrat !important;">${f.question}</p>
+                  </div>
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordionButton border-0 bg-transparent"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne${f.id}"
+                      aria-expanded="true"
+                      aria-controls="collapseOne${f.id}">
+                      <img id="arrow${f.id}" class="arrow-down " src="{% static 'arrow.png'%}" style=" width: 23px; margin: auto; " alt="" />
+                    </button>
+
+
+                  </h2>
+                </div>
+                <div
+                  id="collapseOne${f.id}"
+                  class="accordion-collapse collapse "
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body ccc5"style=" padding-left: 108px; ">
+
+                    <p class="mx-3 fw-normal font_normal">
+                     ${f.answer}
+                      </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+  `
+                    })
+                    var _current_item = $('.single_content').length
+                    console.log(_current_item);
+                    if (_current_item == total) {
+                        loadBtn.classList.add('not-visible');
+                    } else {
+                        loadBtn.classList.remove('not-visible');
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+            });
+        }
+        loadBtn.addEventListener('click', () => {
+            loadmorePost()
+        });
+    </script>
+
+
+
+
+<script>
+function openCityy(evt, cityName) {
+    console.log(cityName);
+    if(cityName == "c2"){
+    document.getElementById("villabuttons").style.display = "none";
+    document.getElementById("evbuttons").style.display = "flex";
+    document.getElementById("villablack").style.display = "inline-block";
+    document.getElementById("villawhite").style.display = "none";
+    document.getElementById("menzilwhite").style.display = "inline-block";
+    document.getElementById("menzilblack").style.display = "none";
+    document.getElementById("villap").style.color = "#3a453b";
+    document.getElementById("menzilp").style.color = "#fff";
+
+    document.getElementById("villaborder").style.borderColor = "#3a453b";
+    document.getElementById("menzilborder").style.borderColor = "#3A453B";
+
+    }
+    else{
+    document.getElementById("villabuttons").style.display = "flex";
+    document.getElementById("evbuttons").style.display = "none";
+    document.getElementById("villablack").style.display = "none";
+    document.getElementById("villawhite").style.display = "inline-block";
+    document.getElementById("menzilwhite").style.display = "none";
+    document.getElementById("menzilblack").style.display = "inline-block";
+    document.getElementById("villap").style.color = "#fff";
+    document.getElementById("menzilp").style.color = "#3a453b";
+    document.getElementById("villaborder").style.borderColor = "#3A453B";
+    document.getElementById("menzilborder").style.borderColor = "#3a453b";
+    }
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinkk = document.getElementsByClassName("tablinkk");
+  for (i = 0; i < tablinkk.length; i++) {
+    tablinkk[i].className = tablinkk[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+
+
+
+
+    <footer class="pt-5" style="background-color: #f9f9f9;">
+      <section class="container-fluid bg-white d-flex justify-content-center align-items-center" style=" background-color: #E3E5EA !important; ">
+        <div class="bcvx row container p-5">
+          <hr class="w-100" style=" margin-bottom: 49px; " />
+
+          <div class="col-md-6 xt-center   justify-content-center align-items-center">
+            <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                {{general.address}}
+            </p>
+              <a href="tel:{{general.phone}}" class="text-black font_normal" style="    width: 250px;    margin: 0 0 16px;text-decoration: none; display: block;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                <img style=" margin-right: 8px; " src="{% static 'phone.svg'%}"> {{general.phone}}
+            </a>
+              <a  href="mailto:{{general.email}}" class="text-black font_normal" style="    width: 250px;    margin: 0 0 16px;text-decoration: none; display: block;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                <img style=" margin-right: 8px; " src="{% static 'email.svg'%}">{{general.email}}
+            </a>
+          </div>
+            <div class=" bnmg col-md-6    justify-content-center align-items-center" style="text-align: center;">
+            <a href="{% url 'index'%}"    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">Bizi takip edin:</a>
+            <div style="    margin-bottom: 5px;    margin-top: 14px;">
+                {% for s in socials %}
+                <a style=" text-decoration: none; " target="_blank" href="{{s.link}}"><img style=" width: 30px; " src="{{s.icon.url}}"> </a>
+                {% endfor%}
+            </div>
+
+                {% for p in pages %}
+                 <div style=" padding-top: 8px; "><a href="{% url 'page' p.link%}"    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">{{p.title}}</a></div>
+                {% endfor%}
+
+
+          </div>
+        </div>
+      </section>
+
+        <section style=" height: 60px; background-color: #000; ">
+            <div class="container" style=" text-align: center; color: #fff !important; ">
+            <div style="    padding-top: 16px;color: var(--Text-Colour-4, #AAA); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400;color:#fff; line-height: 26px; /* 162.5% */">{{general.copyright}}</div>
+
+            </div>
+        </section>
+    </footer>
+
+
+  <div id="light">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+      <video id="VisaChipCardVideo"  style="width:900px;" controls>
+          <source src="{{video_section.video_file.url}}" type="video/mp4">
+          <!--Browser does not support <video> tag -->
+        </video>
+    </div>
+ <div id="fade" onClick="lightbox_close();"></div>
+
+
+
+
+
+
+
+<style>
+    * {
+  box-sizing: border-box;
+}
+.strips {
+  min-height: 76vh;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+.strips__strip {
+  will-change: width, left, z-index, height;
+  position: absolute;
+  width: 23%;
+  min-height: 76vh;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+    .strips__strip_mob {
+        position: relative!important;
+    }
+.strips__strip:nth-child(1) {
+
+}
+.strips__strip:nth-child(2) {
+  left: 20vw;
+}
+.strips__strip:nth-child(3) {
+  left: 40vw;
+}
+.strips__strip:nth-child(4) {
+  left: 60vw;
+}
+.strips__strip:nth-child(5) {
+  left: 80vw;
+}
+.strips__strip:nth-child(1) .strip__content {
+  background: #1a3b70;
+  transform: translate3d(-100%, 0, 0);
+  animation-name: strip1;
+  animation-delay: 0.1s;
+}
+.strips__strip:nth-child(2) .strip__content {
+  background: #2c599d;
+  transform: translate3d(0, 100%, 0);
+  animation-name: strip2;
+  animation-delay: 0.2s;
+}
+.strips__strip:nth-child(3) .strip__content {
+  background: #5C83C4;
+  transform: translate3d(0, -100%, 0);
+  animation-name: strip3;
+  animation-delay: 0.3s;
+}
+.strips__strip:nth-child(4) .strip__content {
+  background: #F88125;
+  transform: translate3d(0, 100%, 0);
+  animation-name: strip4;
+  animation-delay: 0.4s;
+}
+.strips__strip:nth-child(5) .strip__content {
+  background: #F24B4B;
+  transform: translate3d(100%, 0, 0);
+  animation-name: strip5;
+  animation-delay: 0.5s;
+}
+@media screen and (max-width: 760px) {
+  .strips__strip {
+    min-height: 20vh;
+  }
+  .strips__strip:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .strips__strip:nth-child(2) {
+    top: 20vh;
+    left: 0;
+    width: 100%;
+  }
+  .strips__strip:nth-child(3) {
+    top: 40vh;
+    left: 0;
+    width: 100%;
+  }
+  .strips__strip:nth-child(4) {
+    top: 60vh;
+    left: 0;
+    width: 100%;
+  }
+  .strips__strip:nth-child(5) {
+    top: 80vh;
+    left: 0;
+    width: 100%;
+  }
+}
+.strips .strip__content {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  animation-fill-mode: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.strips .strip__content:hover:before {
+  transform: skew(-30deg) scale(3) translate(0, 0);
+  opacity: 0.1;
+}
+
+.strips .strip__inner-text {
+  will-change: transform, opacity;
+  position: absolute;
+  z-index: 5;
+  top: 20%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.strips__strip--expanded {
+  width: 100%;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 3;
+  cursor: default;
+}
+@media screen and (max-width: 760px) {
+  .strips__strip--expanded {
+    min-height: 100vh;
+  }
+}
+.strips__strip--expanded .strip__content:hover:before {
+  transform: skew(-30deg) scale(1) translate(0, 0);
+  opacity: 0.05;
+}
+.strips__strip--expanded .strip__title {
+  opacity: 0;
+}
+.strips__strip--expanded .strip__inner-text {
+  opacity: 1;
+  transform: translate(-60%, -50%) scale(1);
+}
+.strip__title {
+  display: block;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  font-size: 3.5vw;
+  color: white;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media screen and (max-width: 760px) {
+  .strip__title {
+    font-size: 28px;
+  }
+}
+.strip__close {
+  position: absolute;
+  right: 3vw;
+  top: 3vw;
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  transition-delay: 0.5s;
+}
+.strip__close--show {
+  opacity: 1;
+}
+@keyframes strip1 {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip2 {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip3 {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip4 {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip5 {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* Demo purposes */
+body {
+  font-family: 'Lato';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  line-height: 1.5;
+}
+h1, h2 {
+  font-weight: 300;
+}
+.fa {
+  font-size: 30px;
+  color: white;
+}
+h2 {
+  font-size: 36px;
+  margin: 0 0 16px;
+}
+p {
+  margin: 0 0 16px;
+}
+
+</style>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d5c98c56f9.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+
+
+
+
+  <script type="text/javascript">
+        window.omnisend = window.omnisend || [];
+        omnisend.push(["accountID", "6526f28b8530cf73f8d2e6d3"]);
+        omnisend.push(["track", "$pageViewed"]);
+        !function(){var e=document.createElement("script");
+        e.type="text/javascript",e.async=!0,
+        e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
+        var t=document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e,t)}();
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3.5,
+      spaceBetween: 5,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        960: {
+          slidesPerView: 1,
+        }
+      }
+    });
+
+       var swiper = new Swiper('.swiper-containerev', {
+      slidesPerView: 3.5,
+      spaceBetween: 5,
+      navigation: {
+        nextEl: '.swiper-button-nextev',
+        prevEl: '.swiper-button-prevev',
+      },
+      breakpoints: {
+        960: {
+          slidesPerView: 1,
+        }
+      }
+    });
+    var swiper = new Swiper('.swiper-containervilla', {
+      slidesPerView: 3.5,
+      spaceBetween: 5,
+      navigation: {
+        nextEl: '.swiper-button-nextvilla',
+        prevEl: '.swiper-button-prevvilla',
+      },
+      breakpoints: {
+        960: {
+          slidesPerView: 1,
+        }
+      }
+    });
+</script>
+
+  <script>
+       var swiperr = new Swiper('.swiperr', {
+      slidesPerView: 3,
+    spaceBetween: 30,
+        watchSlidesVisibility: true,
+pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      breakpoints: {
+        960: {
+          slidesPerView: 1,
+        }
+      }
+    });
+</script>
+
+
+  <script>
+      setTimeout(function(){
+    tabcontent2 = document.getElementById("c1");
+    tabcontent2.style.display = "none";
+}, 1000);
+  </script>
+
+
+<script>
+    window.document.onkeydown = function(e) {
+        if (!e) {
+          e = event;
+        }
+        if (e.keyCode == 27) {
+          lightbox_close();
+        }
+      }
+
+      function lightbox_open() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        window.scrollTo(0, 0);
+        document.body.style.overflow = 'hidden';
+        document.getElementById('light').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+        lightBoxVideo.play();
+      }
+
+      function lightbox_close() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+        lightBoxVideo.pause();
+        document.body.style.overflow = 'scroll';
+      }
+    </script>
+
+  <script>
+      const boxes = document.querySelectorAll('.swiper-button-next');
+
+boxes.forEach(box => {
+  // ✅ Remove class from each element
+  box.classList.remove('swiper-button-disabled');
+
+
+});
+
+  const boxess = document.querySelectorAll('.swiper-button-nextev');
+
+boxess.forEach(box => {
+  // ✅ Remove class from each element
+  box.classList.remove('swiper-button-disabled');
+
+
+});
+ const boxesss = document.querySelectorAll('.swiper-button-nextvilla');
+
+boxesss.forEach(box => {
+  // ✅ Remove class from each element
+  box.classList.remove('swiper-button-disabled');
+
+
+});
+  </script>
+
+
+<script src="https://unpkg.com/imask"></script>
+  <script>
+
+
+  </script>
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        var level = 0;
+        const icons = document.querySelectorAll('.icon');
+        var container = document.getElementById('row1');
+        var containerRect = container.getBoundingClientRect();
+        var scrollStopped = false;
+        var isTouchpadScroll = false;
+
+
+        function shouldStopScroll() {
+            return containerRect.top < 450 && containerRect.top > 50;
+        }
+
+        function indicateForward() {
+            if (containerRect.top < 600 && containerRect.top > -200) {
+                if (!isTouchpadScroll && level < 500) {
+                    level += 13;
+                }
+                if (isTouchpadScroll && level < 500) {
+                    level += 13;
+                }
+                changeBackGroundImage();
+            }
+        }
+
+        function indicateBack() {
+            if (containerRect.top < 600 && containerRect.top > -200) {
+                if (!isTouchpadScroll && level > 0) {
+                    level -= 7;
+                }
+                if (isTouchpadScroll && level > 0) {
+                    level -= 7;
+                }
+                changeBackGroundImage();
+            }
+        }
+
+        function changeBackGroundImage() {
+            if (level < 150) {
+                makeIconsDefault();
+                icons[0].style.backgroundImage = "url(static/i11.svg)";
+                icons[0].style.border = "1px solid rgb(55 111 255)";
+            }
+            if (level > 150 && level < 250) {
+                makeIconsDefault();
+                icons[1].style.backgroundImage = "url(static/i21.svg)";
+                icons[1].style.border = "1px solid rgb(55 111 255)";
+            }
+            if (level > 250 && level < 350) {
+                makeIconsDefault();
+                icons[2].style.backgroundImage = "url(static/i31.svg)";
+                icons[2].style.border = "1px solid rgb(55 111 255)";
+            }
+            if (level > 350 && level < 450) {
+                makeIconsDefault();
+                icons[3].style.backgroundImage = "url(static/i41.svg)";
+                icons[3].style.border = "1px solid rgb(55 111 255)";
+            }
+
+        }
+
+        function makeIconsDefault() {
+            icons[0].style.backgroundImage = "url(static/i1.svg)";
+            icons[0].style.border = "1px solid rgb(227, 229, 234)";
+
+            icons[1].style.backgroundImage = "url(static/i2.svg)";
+            icons[1].style.border = "1px solid rgb(227, 229, 234)";
+
+            icons[2].style.backgroundImage = "url(static/i3.svg)";
+            icons[2].style.border = "1px solid rgb(227, 229, 234)";
+
+            icons[3].style.backgroundImage = "url(static/i4.svg)";
+            icons[3].style.border = "1px solid rgb(227, 229, 234)";
+        }
+
+        $(document).on("wheel", function (event) {
+
+            if( Math.abs(event.originalEvent.wheelDeltaY) !== 120 ) {
+                isTouchpadScroll = true;
+            } else {
+                isTouchpadScroll = false;
+            }
+
+            console.log(event.originalEvent.wheelDeltaY);
+            containerRect = container.getBoundingClientRect();
+
+            if (shouldStopScroll() && scrollStopped === false) {
+                $("body").css("overflow", "hidden");
+                scrollStopped = true;
+
+            }
+
+            if (scrollStopped) {
+                if (event.originalEvent.deltaY > 0) {
+                    indicateForward();
+                    if (level > 450) {
+                        $("body").css("overflow", "auto");
+                        scrollStopped = false;
+                    }
+
+                } else {
+                    indicateBack();
+                    if (level < 50) {
+                        $("body").css("overflow", "auto");
+                        scrollStopped = false;
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+        $(".show-details-btn").on("click", function () {
+            $(".strip__close_mob").trigger('click');
+            var buttonIndex = $('.show-details-btn').index(this);
+            var calculatedTop = (buttonIndex * 520 + 20);
+            $(".strip__close_mob").css("top", calculatedTop + "px");
+                 $(this).closest(".strips__strip_mob").attr("style", "min-height: 830px;");
+
+        });
+    });
+
+</script>
+
+  <div id="omnisend-dynamic-container" style="overflow: hidden; height: 0px;"><div id="omnisend-pixel-container"></div><div id="omnisend-jsonp-container"><script src="https://forms.soundestlink.com/REST/inShop/v1/getSettings?callback=_omnisend.setSettings&amp;responseType=jsonp&amp;shopHostname=127.0.0.1&amp;shopType=api&amp;brandID=6526f28b8530cf73f8d2e6d3"></script></div></div>
+
+
+   <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
+ <script>
+      var options = {
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+          },
+        },
+      zoom: {
+            enabled: false,
+          },
+          series: [{
+          name: 'Türkiyede Yatırımın Net Değeri',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        },
+        {
+          name: 'Azerbaycanda Yatırımın Net Değeri',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        },  {
+          name: 'Banka Mevduat Yatırımının Net Değeri',
+          data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+        },
+        tooltip: {
+            show: false
+        },
+        };
+
+
+
+        var options2 = {
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+          },
+        },
+      zoom: {
+            enabled: false,
+          },
+          series: [{
+          name: 'Türkiyede Gayrimenkul Değeri',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        },
+        {
+          name: 'Azerbaycanda Emlak Değeri',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        },  {
+          name: 'Banka Mevduat Yatırımının Net Değeri',
+          data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+        },
+        tooltip: {
+            show: false
+        },
+        };
+
+        var options3 = {
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+          },
+        },
+      zoom: {
+            enabled: false,
+          },
+          series: [{
+          name: 'Türkiyede Yatırım Karı',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        },
+        {
+          name: 'Azerbaycanda Yatırım Karı',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+        },
+        tooltip: {
+            show: false
+        },
+        };
+
+        var options4 = {
+              yaxis: {
+          labels: {
+            formatter: function (value) {
+             return value + "%";
+            }
+          },
+        },
+      zoom: {
+            enabled: false,
+          },
+          series: [{
+          name: 'Türkiyede Kâr Marjı',
+          data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+        },
+        {
+          name: 'Azerbaycanda Kâr Marjı',
+          data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'String',
+          categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+        },
+        tooltip: {
+            show: false
+        },
+        };
+
+        var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+        var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+        var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+        var chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
+        chart1.render();
+        chart2.render();
+        chart3.render();
+        chart4.render();
+
+
+
+
+   window.onload = function() {
+    var year = 10
+    var amount = 100000
+    $(document).ready(function(){
+      $("#muddetid").keyup(function(){
+        year = (this.value);
+      });
+    });
+
+    $(document).ready(function(){
+      $("#muddetsliderid").change(function(){
+        year = (this.value);
+
+      });
+    });
+
+    $(document).ready(function(){
+      $("#ilkinsliderid").change(function(){
+        amount = (this.value);
+
+      });
+    });
+
+
+
+
+    $(document).ready(function(){
+      $("#ilkinid").keyup(function(){
+        vallstr = toString(this.value).replace(',','');
+        amount = (parseInt(vallstr));
+      });
+    });
+
+    var mortgage = 1;
+    console.log("--------");
+    console.log($('input[name="ipoteka"]:checked').val());
+    console.log("--------");
+
+
+
+
+
+
+
+    $("#hesabla").on("click",function(){
+
+    amountxam = $("#ilkinid").val()
+    console.log(amountxam);
+     vallstr = amountxam.replace(',','');
+      console.log(vallstr);
+        amount = (parseInt(vallstr));
+         console.log(amount);
+    $(this).addClass("loading");
+    console.log("1");
+
+    if($('input[name="ipoteka"]:checked').val() == 1){
+    mortgage = 1;
+    }
+    else{
+    mortgage = 0;
+    $("#field3").val($("#ilkinid").val());
+
+    }
+
+    $('#yearspan').text(year);
+    $('#yearspann').text(year);
+
+
+
+
+        $.ajax({
+            type:"GET",
+            url:`/data/${year}/${amount}/${mortgage}/`,
+            success:function(data){
+            if($('input[name="ipoteka"]:checked').val() == 1){
+            $("#field3").val(data['deyer2']);
+            }
+
+
+            chart1.updateSeries([ {
+          name: 'Türkiyede Yatırımın Net Değeri',
+          data: data['datatr']
+        },
+         {
+          name: 'Azerbaycanda Yatırımın Net Değeri',
+          data: data['dataaz']
+        },{
+          name: 'Banka Mevduat Yatırımının Net Değeri',
+          data: data['databank']
+        }])
+
+        chart2.updateSeries([ {
+          name: 'Türkiyede Gayrimenkul Değeri',
+          data: data['deyertr']
+        },
+         {
+          name: 'Azerbaycanda Emlak Değeri',
+          data: data['deyeraz']
+        },{
+          name: 'Banka Mevduat Yatırımının Net Değeri',
+          data: data['databank']
+        }])
+
+        chart3.updateSeries([ {
+          name: 'Türkiyede Yatırım Karı',
+          data: data['yatirim_qazanci_tr']
+        },
+         {
+          name: 'Azerbaycanda Yatırım Karı',
+          data: data['yatirim_qazanci_az']
+        }])
+
+        chart4.updateSeries([ {
+          name: 'Türkiyede Kâr Marjı',
+          data: data['yatirim_qazanci_marja_tr']
+        },
+         {
+          name: 'Azerbaycanda Kâr Marjı',
+          data: data['yatirim_qazanci_marja_az']
+        }])
+
+
+
+
+
+
+            if(data['year'] == 2){
+    chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il"]
+    },
+
+    });
+
+}
+else if(data['year'] == 3){
+
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il"]
+    },
+
+    });
+
+    }
+else if(data['year'] == 4){
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+    },
+
+    });
+    }
+else if(data['year'] == 5){
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+    },
+
+    });
+
+    }
+else if(data['year'] == 6){
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+     chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+     chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+    },
+
+    });
+    }
+else if(data['year'] == 7){
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+    },
+
+    });
+    }
+else if(data['year'] == 8){
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+    },
+
+    });
+    }
+else if(data['year'] == 9){
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+    },
+
+    });
+    }
+    else if(data['year'] == 10){
+chart1.updateOptions({
+     name: 'Azerbaycanda Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Türkiyede Yatırımın Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart1.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+    chart2.updateOptions({
+     name: 'Azerbaycanda Emlak Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Türkiyede Gayrimenkul Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart2.updateOptions({
+     name: 'Banka Mevduat Yatırımının Net Değeri',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+    chart3.updateOptions({
+     name: 'Türkiyede Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart3.updateOptions({
+     name: 'Azerbaycanda Yatırım Karı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+    chart4.updateOptions({
+     name: 'Türkiyede Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+
+    chart4.updateOptions({
+     name: 'Azerbaycanda Kâr Marjı',
+    xaxis: {
+      categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+    },
+
+    });
+    }
+
+
+
+            console.log("succes");
+
+             $('#hesabla').removeClass("loading");
+
+              if($('input[name="ipoteka"]:checked').val() == 1){
+              $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              }
+              else{
+                $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              }
+
+
+              console.log("dataaaa");
+              console.log(data)
+              console.log(data['datatr'])
+              console.log(data['databank'])
+
+
+
+        chart2.updateSeries([{
+          name: 'Türkiyede Gayrimenkul Değeri',
+          data: data['deyertr']
+            },{
+              name: 'Azerbaycanda Emlak Değeri',
+              data: data['deyeraz']
+            },  {
+              name: 'Banka Mevduat Yatırımının Net Değeri',
+              data: data['databank']
+            }])
+
+
+            }
+        });
+
+        chart3.updateSeries([{
+          name: 'Türkiyede Gayrimenkul Değeri',
+          data: data['yatirim_qazanci_tr']
+            },{
+              name: 'Azerbaycanda Emlak Değeri',
+              data: data['yatirim_qazanci_az']
+            }])
+
+
+
+
+        chart4.updateSeries([{
+          name: 'Türkiyede Gayrimenkul Değeri',
+          data: data['yatirim_qazanci_marja_tr']
+            },{
+              name: 'Azerbaycanda Emlak Değeri',
+              data: data['yatirim_qazanci_marja_az']
+            }])
+
+
+
+    });
+}
+</script>
+
+
+
+ <script>
+      $.ajax({
+    type:"GET",
+    url:`/data/10/50000/1/`,
+    success:function(data){
+    if($('input[name="ipoteka"]:checked').val() == 1){
+            $("#field3").val(data['deyer2']);
+            }
+
+
+
+
+
+
+    console.log("success");
+
+     $('#hesabla').removeClass("loading");
+
+      if($('input[name="ipoteka"]:checked').val() == 1){
+      $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      }
+      else{
+        $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      }
+
+
+      console.log("dataaaa");
+      console.log(data)
+      console.log(data['datatr'])
+      console.log(data['databank'])
+
+     chart1.updateSeries([{
+  name: 'Türkiyede Yatırımın Net Değeri',
+  data: data['datatr']
+},{
+  name: 'Azerbaycanda Yatırımın Net Değeri',
+  data: data['dataaz']
+},  {
+  name: 'Banka Mevduat Yatırımının Net Değeri',
+  data: data['databank']
+}])
+
+chart2.updateSeries([{
+  name: 'Türkiyede Gayrimenkul Değeri',
+  data: data['deyertr']
+},{
+  name: 'Azerbaycanda Emlak Değeri',
+  data: data['deyeraz']
+},  {
+  name: 'Banka Mevduat Yatırımının Net Değeri',
+  data: data['databank']
+}])
+
+chart3.updateSeries([{
+  name: 'Türkiyede Yatırım Karı',
+  data: data['yatirim_qazanci_tr']
+},{
+  name: 'Azerbaycanda Yatırım Karı',
+  data: data['yatirim_qazanci_az']
+}])
+
+
+chart4.updateSeries([{
+  name: 'Türkiyede Kâr Marjı',
+  data: data['yatirim_qazanci_marja_tr']
+},{
+  name: 'Azerbaycanda Kâr Marjı',
+  data: data['yatirim_qazanci_marja_az']
+}])
+
+    }
+});
+
+  </script>
+
+<script>
+  $("#muddetsliderid").on("input change", function(e) {
+      console.log("fdfd")
+    $("#muddetid").val(e.target.value)
+  });
+
+  $("#ilkinsliderid").on("input change", function(e) {
+      console.log("fdfd")
+    vall = (e.target.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    console.log(vall)
+
+    $("#ilkinid").val(vall)
+  });
+</script>
+
+  <script>
+    function updateTimer() {
+  future  = Date.parse("{{general.countdown_enddate|date:'M d, Y H:i:s'}}");
+  now     = new Date();
+  diff    = future - now;
+
+  days  = Math.floor( diff / (1000*60*60*24) );
+  hours = Math.floor( diff / (1000*60*60) );
+  mins  = Math.floor( diff / (1000*60) );
+  secs  = Math.floor( diff / 1000 );
+
+  d = days;
+  if (d < 0){d = 0}
+  h = hours - days  * 24;
+  m = mins  - hours * 60;
+  s = secs  - mins  * 60;
+
+  document.getElementById("timer")
+    .innerHTML =
+      '<div class="spann2"><div class="spann1">' + d + '</div><div class="spann">gün</div></div>' +
+      '<div class="spann2"><div class="spann1">' + h + '</div><div class="spann">saat</div></div>' +
+      '<div class="spann2"><div class="spann1">' + m + '</div><div class="spann">dak.</div></div>' +
+      '<div class="spann2"><div class="spann1">' + s + '</div><div class="spann">san.</div></div>' ;
+
+      document.getElementById("timerr")
+    .innerHTML =
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + d + '</div><div class="spann">gün</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + h + '</div><div class="spann">saat</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + m + '</div><div class="spann">dak.</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 cc1">' + s + '</div><div class="spann">san.</div></div>' ;
+
+      document.getElementById("timer2")
+    .innerHTML =
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + d + '</div><div class="spann">gün</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + h + '</div><div class="spann">saat</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + m + '</div><div class="spann">dak.</div></div>' +
+      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + s + '</div><div class="spann">san.</div></div>' ;
+}
+
+setInterval('updateTimer()', 1000 );
+
+  </script>
+
+   <script>
+        $('#prefix').on('keyup', function() {
+     if (this.value.length > 0) {
+          console.log(this.value);
+          if(this.value == 994){
+          $("#phonee").css("display", "none");
+          $("#phone").css("display", "unset");
+          }else{
+          $("#phone").css("display", "none");
+          $("#phonee").css("display", "unset");
+          }
+
+          if(this.value == 994){
+              $("#flagtr").css("display", "none");
+              $("#flagru").css("display", "none");
+              $("#flagus").css("display", "none");
+              $("#flagaz").css("display", "unset");}
+          else if(this.value == 1){
+               $("#flagtr").css("display", "none");
+              $("#flagru").css("display", "none");
+              $("#flagus").css("display", "unset");
+              $("#flagaz").css("display", "none");}
+          else if(this.value == 7){
+              $("#flagtr").css("display", "none");
+              $("#flagru").css("display", "unset");
+              $("#flagus").css("display", "none");
+              $("#flagaz").css("display", "none");}
+          else if(this.value == 90){
+              $("#flagtr").css("display", "unset");
+              $("#flagru").css("display", "none");
+              $("#flagus").css("display", "none");
+              $("#flagaz").css("display", "none");}
+           else{
+           $("#flagtr").css("display", "none");
+              $("#flagru").css("display", "none");
+              $("#flagus").css("display", "none");
+              $("#flagaz").css("display", "none");
+           }
+
+
+
+     }
+});
+    </script>
+
+
+  {% for h in body %}
+{% if h.location == 'B' %}
+      {{h.script | safe}}
+{% endif%}
+      {% endfor%}
+
+
+
+  <!-- Use as a Vanilla JS plugin -->
+
+<script src="{% static 'input/build/js/intlTelInput.min.js'%}"></script>
+
+<!-- Use as a jQuery plugin -->
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+<script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+
+<script src="{% static 'input/build/js/intlTelInput-jquery.min.js'%}"></script>
+<script>
+    // Vanilla Javascript
+var input = document.querySelector("#telephone");
+window.intlTelInput(input,({
+  // options here
+}));
+
+// jQuery
+$("#telephone").intlTelInput({
+  	initialCountry:"az",
+
+});
+
+
+
+
+  // Vanilla Javascript
+var input = document.querySelector("#telephone2");
+window.intlTelInput(input,({
+  // options here
+}));
+
+// jQuery
+$("#telephone2").intlTelInput({
+  	initialCountry:"az",
+
+});
+
+
+  // Vanilla Javascript
+var input = document.querySelector("#telephone3");
+window.intlTelInput(input,({
+  // options here
+}));
+
+// jQuery
+$("#telephone3").intlTelInput({
+  	initialCountry:"az",
+
+});
+</script>
+  <script>
+      $("#form").submit(function(){
+   // Let's find the input to check
+   var $input = $(this).find("input[name=prefix]");
+   if (!$input.val()) {
+     // Value is falsey (i.e. null), lets set a new one
+     $input.val($("#telephone").intlTelInput('getSelectedCountryData').dialCode);
+   }
+});
+
+
+    $("#formmm").submit(function(){
+   // Let's find the input to check
+   var $input = $(this).find("input[name=prefix]");
+   if (!$input.val()) {
+     // Value is falsey (i.e. null), lets set a new one
+     $input.val($("#telephone2").intlTelInput('getSelectedCountryData').dialCode);
+   }
+});
+
+   $("#form2").submit(function(){
+   // Let's find the input to check
+   var $input = $(this).find("input[name=prefix]");
+   if (!$input.val()) {
+     // Value is falsey (i.e. null), lets set a new one
+     $input.val($("#telephone3").intlTelInput('getSelectedCountryData').dialCode);
+   }
+});
+
+
+  </script>
+
+
+        <script type="text/javascript">
+    window.dataLayer = window.dataLayer || []; // makes sure the data layer variable is set
+    window.addEventListener("message", function(event) { // listens to messages from iframes
+        if(event.data.meetingBookSucceeded) {
+         console.log("Successfully Booked event triggered");
+         // checks if the received event is a new booked meeting
+        dataLayer.push({ // sends an event to the data layer
+            event: "hubspot_meeting",
+            contact: event.data.meetingsPayload.bookingResponse.postResponse.contact
+        });
+        }
+    });
+ /*
+  * v0.1.0
+  * Created by Data Marketing School at http://www.data-marketing-school.com
+  * Written by https://www.linkedin.com/in/lucasrollin/
+  */
+</script>
+<script type="text/javascript">
+  window.addEventListener("load", function(){
+    document.getElementById("loader-wrapper").style.display="none";
+    document.body.style.overflow = "visible";
+});
+  </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+  $(document).ready(function() {
+var owl = $('.second-slide')
+owl.owlCarousel({
+    dots:true,
+    items:1,
+    margin:10,
+    lazyLoad: true,
+    responsiveClass: true,
+    responsive : {
+    0 : {
+        items:1
+    },
+    480:{
+          items: 1
+        },
+       900:{
+          items: 3
+        },
+     1200:{
+          items: 4
+        },
+    }
+    })
+
+
+
+	$(".next-btn").click(function () {
+		owl.trigger("next.owl.carousel");
+	});
+	$(".prev-btn").click(function () {
+		owl.trigger("prev.owl.carousel");
+	});
+	$(".prev-btn").addClass("disabled");
+		$(owl).on("translated.owl.carousel", function (event) {
+		if ($(".owl-prev").hasClass("disabled")) {
+			$(".prev-btn").addClass("disabled");
+		} else {
+			$(".prev-btn").removeClass("disabled");
+		}
+		if ($(".owl-next").hasClass("disabled")) {
+			$(".next-btn").addClass("disabled");
+		} else {
+			$(".next-btn").removeClass("disabled");
+		}
+	});
+	 });
+
+</script>
+ <script type="text/javascript">
+    var frmm = $('#formmm');
+    frmm.submit(function () {
+        $.ajax({
+            type: frmm.attr('method'),
+            url: frmm.attr('action'),
+            data: frmm.serialize(),
+            success: function (data) {
+            console.log("successss");
+            $('#subtitle').css('display', 'none');
+            if(which_form == 1){
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'vebinar-submit-header'
+             });
+             }
+             else if(which_form == 2){
+             window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'vebinar-submit-body'
+             });
+             console.log("2 happened");
+             }
+
+
+            console.log("df");
+                $("#formmm").html(
+
+
+                `
+                <div style="margin-bottom: 20px;text-align: center;">
+                <img src="/static/date.png" style="width:25px;">
+                <div style="font-size: 20px; font-weight: 500;    margin-top: 9px; ">{{general.countdown_enddate|date:'M d, Y'}}</div>
+                <div style="font-size: 20px; font-weight: 500; ">{{general.countdown_enddate|date:'H:i'}}</div>
+                </div>
+                <div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
+
+
+                <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form1.success_text}}</div>
+                <div style="   text-align: center;width: 212px;margin: auto;"><add-to-calendar-button
+        id="ee1"
+        label="Takvime ekle"
+  name="AĞILLI İNVESTISIYA İMKANLARI"
+  options="'Apple','Google','Outlook.com'"
+  location="Baku"
+  startDate="2024-02-10"
+  endDate="2024-02-10"
+  startTime="15:00"
+  endTime="15:45"
+  timeZone="Asia/Baku"
+        hideCheckmark=true
+
+></add-to-calendar-button>
+</div>
+<div style=" font-size: 18px; font-weight: 500; margin-top: 20px; text-align: center; ">{{form1.text1}}</div>
+<div style=" font-size: 15px; font-weight: 500; margin-top: 3px; text-align: center; ">{{form1.text2 |safe}}</div>
+
+`);
+            },
+            error: function(data) {
+                $("#MESSAGE-DIV").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
+</script>
+    <script type="text/javascript">
+    var frm = $('#form');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+
+
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-ozun-tapmisan'
+             });
+
+
+            console.log("form-submit-ozun-tapmisan");
+                $("#formm").html(
+                `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
+                <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form3.success_text}}</div>
+                `);
+            },
+            error: function(data) {
+                $("#MESSAGE-DIV").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
+</script>
+
+
+   <script type="text/javascript">
+    var frmx = $('#form2');
+    frmx.submit(function () {
+        $.ajax({
+            type: frmx.attr('method'),
+            url: frmx.attr('action'),
+            data: frmx.serialize(),
+            success: function (data) {
+            if(which_form == 4){
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-listing-main-ev'
+             });
+
+            console.log("form-submit-listing-main-ev");
+            }
+            else if(which_form == 5){
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-listing-main-villa'
+             });
+            console.log("form-submit-listing-main-villa");
+            }
+
+
+
+                $("#form2").html(
+                `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
+                <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form2.success_text}}</div>
+                `);
+            },
+            error: function(data) {
+                $("#MESSAGE-DIV").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
+</script>
+
+
+
+  <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+var btn2 = document.getElementById("myBtn2");
+var btn3 = document.getElementById("myBtn3");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+  document.body.style.overflowY = "hidden";
+  console.log('adasds');
+  which_form = 1;
+}
+
+btn2.onclick = function() {
+  modal.style.display = "block";
+  document.body.style.overflowY = "hidden";
+  console.log('adasds');
+  which_form = 1;
+}
+
+btn3.onclick = function() {
+  modal.style.display = "block";
+  document.body.style.overflowY = "hidden";
+  console.log('adasds');
+  which_form = 2;
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  document.body.style.overflowY = "scroll";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.style.overflowY = "scroll";
+  }
+}
+</script>
+
+    <script>
+// Get the modal
+var modal2 = document.getElementById("myModal2");
+
+// Get the button that opens the modal
+var btn4 = document.getElementById("myBtn4");
+var btn5 = document.getElementById("myBtn5");
+
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal
+btn4.onclick = function() {
+  modal2.style.display = "block";
+  document.body.style.overflowY = "hidden";
+  console.log('adasds');
+  which_form = 4
+}
+
+btn5.onclick = function() {
+  modal2.style.display = "block";
+  document.body.style.overflowY = "hidden";
+  console.log('adasds');
+  which_form = 5
+}
+
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  modal2.style.display = "none";
+  document.body.style.overflowY = "scroll";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+    document.body.style.overflowY = "scroll";
+  }
+}
+</script>
+
+  </body>
+</html>

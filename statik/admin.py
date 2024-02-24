@@ -47,6 +47,23 @@ admin.site.register(OffersSectionRU)
 admin.site.register(FeedbackSectionRU)
 
 
+admin.site.register(Form1TR)
+admin.site.register(Form2TR)
+admin.site.register(Form3TR)
+admin.site.register(Form4TR)
+admin.site.register(CoffeeSectionTR)
+
+admin.site.register(MainSectionTR)
+admin.site.register(SliderSectionTR)
+admin.site.register(WhySectionTR)
+admin.site.register(GeliriHesablaBannerTR)
+admin.site.register(SuallarTR)
+admin.site.register(SmartInvestTR)
+admin.site.register(NiyeSecirlerTR)
+admin.site.register(FormSectionTR)
+admin.site.register(ProcessesSectionTR)
+admin.site.register(OffersSectionTR)
+admin.site.register(FeedbackSectionTR)
 
 
 class PunkAdmin(admin.TabularInline):

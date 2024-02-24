@@ -21,3 +21,13 @@ class OfferRuAdmin(admin.ModelAdmin):
    inlines = [ImageRuAdmin,]
 
 admin.site.register(OfferRU,OfferRuAdmin)
+
+
+
+class ImageTrAdmin(admin.TabularInline):
+    model = ImageTR
+
+class OfferTrAdmin(admin.ModelAdmin):
+   inlines = [ImageTrAdmin,]
+
+admin.site.register(OfferTR,OfferTrAdmin)

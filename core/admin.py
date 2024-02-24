@@ -21,6 +21,12 @@ admin.site.register(FAQRU)
 admin.site.register(FeedbackRU)
 admin.site.register(SliderRU)
 
+
+admin.site.register(GeneralTR)
+admin.site.register(FeatureTR)
+admin.site.register(WhyTR)
+admin.site.register(FAQTR)
+
 class BodyAdmin(admin.ModelAdmin):
     list_display = ['name', 'location']
 admin.site.register(Body,BodyAdmin)

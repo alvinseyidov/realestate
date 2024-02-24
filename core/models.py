@@ -355,3 +355,74 @@ class FeatureRU(models.Model):
     def __str__(self):
         return self.title
 
+class FeatureTR(models.Model):
+    image = models.ImageField()
+    title = models.CharField(max_length=256)
+    icon = models.FileField()
+    description = models.TextField()
+    color = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Niyə? Səbəblər"
+        verbose_name_plural = "Tr Niyə? Səbəblər"
+
+    def __str__(self):
+        return self.title
+
+
+
+
+
+
+class GeneralTR(models.Model):
+    site_title = models.CharField(max_length=256)
+    favicon = models.FileField()
+    meta_description = models.CharField(max_length=256)
+    address = models.CharField(max_length=256)
+    email = models.CharField(max_length=256)
+    phone = models.CharField(max_length=256)
+    whatsapp_link = models.CharField(max_length=256)
+    telegram_link = models.CharField(max_length=256)
+    copyright = models.CharField(max_length=256)
+    logo = models.FileField()
+    logo_white = models.FileField(null=True, blank=True)
+    home_popup_video = models.FileField(null=True, blank=True)
+    countdown_enddate = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Ümumi Sayt Məlumatlar"
+        verbose_name_plural = "Tr Ümumi Sayt Məlumatlar"
+
+    def __str__(self):
+        return f'Ümumi Sayt Məlumatlar'
+
+
+
+
+
+class WhyTR(models.Model):
+    icon = models.FileField()
+    title = models.CharField(max_length=256)
+    text = models.CharField(max_length=256)
+    position = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Komanda üzvü"
+        verbose_name_plural = "Tr Komanda"
+
+    def __str__(self):
+        return self.title
+
+
+class FAQTR(models.Model):
+    question = models.CharField(max_length=256)
+    answer = models.CharField(max_length=256)
+    sort = models.IntegerField()
+
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "FAQ Sual"
+        verbose_name_plural = "TR FAQ Suallar"
+
+    def __str__(self):
+        return self.question
