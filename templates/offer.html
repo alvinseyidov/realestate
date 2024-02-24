@@ -438,7 +438,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
        <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
 
             <div id="formm2" class="formm" style="border-radius: 10px;text-align: center;padding: 0 0 39px 0;width: 347px;margin: auto;background-color: #fff;margin-top: 48px;">
-                    <form id="form2" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                    <form id="form_offer_diger_teklifler" action="{% url 'contactform'%}" method="post">{% csrf_token%}
                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
                     <div style=" position: relative; ">
@@ -865,7 +865,7 @@ function numberWithCommas(x) {
                         {{form4.title}}</div>
                     <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
                         {{form4.sub_title}}</div>
-                    <form id="formm" style=" padding: 39px 40px; " method="post" >
+                    <form id="form_offer_viewing" style=" padding: 39px 40px; " method="post" >
                         {% csrf_token%}
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
@@ -2602,7 +2602,7 @@ console.log("======");
      console.log("======");
 </script>
    <script type="text/javascript">
-   $("#form2").submit(function(){
+   $("#form_offer_diger_teklifler").submit(function(){
    // Let's find the input to check
    var $input = $(this).find("input[name=prefix]");
    if (!$input.val()) {
@@ -2615,7 +2615,7 @@ console.log("======");
   </script>
 
     <script type="text/javascript">
-    var frmx = $('#form2');
+    var frmx = $('#form_offer_diger_teklifler');
     frmx.submit(function () {
         $.ajax({
             type: frmx.attr('method'),
@@ -2627,7 +2627,7 @@ console.log("======");
               'event': 'form-submit-listing-offer'
              });
             console.log("form-submit-listing-offer");
-                $("#form2").html(
+                $("#form_offer_diger_teklifler").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; ">{{form2.success_text}}</div>
                 `);
@@ -2655,7 +2655,7 @@ console.log("======");
 
 
    <script type="text/javascript">
-    var frm = $('#formm');
+    var frm = $('#form_offer_viewing');
     frm.submit(function () {
         $.ajax({
             type: frm.attr('method'),
@@ -2667,7 +2667,7 @@ console.log("======");
               'event': 'form-submit-property-viewing'
              });
             console.log("form-submit-property-viewing");
-                $("#formm").html(
+                $("#form_offer_viewing").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="    text-align: center; padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form4.success_text}}</div>
                 `);

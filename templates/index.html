@@ -910,7 +910,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         {{form1.title}} </div>
                     <div id="subtitle" style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
                         {{form1.sub_title}}</div>
-                    <form id="formmm" style=" padding: 39px 40px; " method="post" action="{% url 'vebinarform'%}">
+                    <form id="webinar_form" style=" padding: 39px 40px; " method="post" action="{% url 'vebinarform'%}">
                         {% csrf_token%}
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
@@ -955,7 +955,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
        <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
 
             <div id="formm2" class="formm" style="border-radius: 10px;text-align: center;padding: 0 0 39px 0;width: 347px;margin: auto;background-color: #fff;margin-top: 48px;">
-                    <form id="form2" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                    <form id="form_menzil" action="{% url 'contactform'%}" method="post">{% csrf_token%}
                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
                     <div style=" position: relative; ">
@@ -2051,7 +2051,7 @@ function openCity(evt, cityName) {
             </div>
             <div class="col-lg-4 col-md-12" style="">
                 <div id="formm" class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; ">
-                    <form id="form" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                    <form id="form_ozun_tapmisan" action="{% url 'contactform'%}" method="post">{% csrf_token%}
                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
                     <div style=" position: relative; ">
@@ -4590,7 +4590,7 @@ $("#telephone3").intlTelInput({
 });
 </script>
   <script>
-      $("#form").submit(function(){
+      $("#form_ozun_tapmisan").submit(function(){
    // Let's find the input to check
    var $input = $(this).find("input[name=prefix]");
    if (!$input.val()) {
@@ -4600,7 +4600,7 @@ $("#telephone3").intlTelInput({
 });
 
 
-    $("#formmm").submit(function(){
+    $("#webinar_form").submit(function(){
    // Let's find the input to check
    var $input = $(this).find("input[name=prefix]");
    if (!$input.val()) {
@@ -4609,7 +4609,7 @@ $("#telephone3").intlTelInput({
    }
 });
 
-   $("#form2").submit(function(){
+   $("#form_menzil").submit(function(){
    // Let's find the input to check
    var $input = $(this).find("input[name=prefix]");
    if (!$input.val()) {
@@ -4699,7 +4699,7 @@ owl.owlCarousel({
 
 </script>
  <script type="text/javascript">
-    var frmm = $('#formmm');
+    var frmm = $('#webinar_form');
     frmm.submit(function () {
         $.ajax({
             type: frmm.attr('method'),
@@ -4724,7 +4724,7 @@ owl.owlCarousel({
 
 
             console.log("df");
-                $("#formmm").html(
+                $("#webinar_form").html(
 
 
                 `
@@ -4765,7 +4765,7 @@ owl.owlCarousel({
     });
 </script>
     <script type="text/javascript">
-    var frm = $('#form');
+    var frm = $('#form_ozun_tapmisan');
     frm.submit(function () {
         $.ajax({
             type: frm.attr('method'),
@@ -4796,7 +4796,7 @@ owl.owlCarousel({
 
 
    <script type="text/javascript">
-    var frmx = $('#form2');
+    var frmx = $('#form_menzil');
     frmx.submit(function () {
         $.ajax({
             type: frmx.attr('method'),
@@ -4821,7 +4821,7 @@ owl.owlCarousel({
 
 
 
-                $("#form2").html(
+                $("#form_menzil").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form2.success_text}}</div>
                 `);
