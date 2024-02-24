@@ -214,7 +214,7 @@ class Tablar(models.Model):
 
 class FAQ(models.Model):
     question = models.CharField(max_length=256)
-    answer = models.CharField(max_length=256)
+    answer = models.CharField(max_length=512)
     sort = models.IntegerField()
 
 
@@ -329,7 +329,7 @@ class WhyRU(models.Model):
 
 class FAQRU(models.Model):
     question = models.CharField(max_length=256)
-    answer = models.CharField(max_length=256)
+    answer = models.CharField(max_length=512)
     sort = models.IntegerField()
 
     class Meta:
@@ -416,7 +416,7 @@ class WhyTR(models.Model):
 
 class FAQTR(models.Model):
     question = models.CharField(max_length=256)
-    answer = models.CharField(max_length=256)
+    answer = models.CharField(max_length=512)
     sort = models.IntegerField()
 
     class Meta:
