@@ -232,7 +232,7 @@ class OfferTR(models.Model):
 
     class Meta:
         verbose_name = "Ev, Villa"
-        verbose_name_plural = "Ru Evlər, Villalar"
+        verbose_name_plural = "Tr Evlər, Villalar"
     def __str__(self):
         return self.name
 
