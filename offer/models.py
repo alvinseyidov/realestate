@@ -252,7 +252,7 @@ class OfferTR(models.Model):
             self.net_qazanc = response.json()['yatirim_qazanci_tr'][9]
 
         # call the save() method of the parent
-        super(OfferRU, self).save(*args, **kwargs)
+        super(OfferTR, self).save(*args, **kwargs)
 
 class ImageTR(models.Model):
     offer = models.ForeignKey(OfferTR, on_delete=models.CASCADE, related_name="images")
