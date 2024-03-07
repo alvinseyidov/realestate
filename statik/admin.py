@@ -64,8 +64,6 @@ admin.site.register(FormSectionTR)
 admin.site.register(ProcessesSectionTR)
 admin.site.register(OffersSectionTR)
 admin.site.register(FeedbackSectionTR)
-admin.site.register(MuzakireEdekTR)
-admin.site.register(MuzakireEdekRU)
 
 
 class PunkAdmin(admin.TabularInline):
@@ -77,3 +75,28 @@ class MuzakireEdekAdmin(admin.ModelAdmin):
 admin.site.register(MuzakireEdek,MuzakireEdekAdmin)
 
 
+
+
+
+
+class PunkRUAdmin(admin.TabularInline):
+    model = PunktlarRU
+
+class MuzakireEdekRUAdmin(admin.ModelAdmin):
+   inlines = [PunkRUAdmin,]
+
+admin.site.register(MuzakireEdekRU,MuzakireEdekRUAdmin)
+
+
+
+
+
+
+
+class PunkTRAdmin(admin.TabularInline):
+    model = PunktlarTR
+
+class MuzakireEdekTRAdmin(admin.ModelAdmin):
+   inlines = [PunkTRAdmin,]
+
+admin.site.register(MuzakireEdekTR,MuzakireEdekTRAdmin)
