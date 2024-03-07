@@ -64,6 +64,8 @@ admin.site.register(FormSectionTR)
 admin.site.register(ProcessesSectionTR)
 admin.site.register(OffersSectionTR)
 admin.site.register(FeedbackSectionTR)
+admin.site.register(MuzakireEdekTR)
+admin.site.register(MuzakireEdekRU)
 
 
 class PunkAdmin(admin.TabularInline):
