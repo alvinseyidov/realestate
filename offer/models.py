@@ -54,6 +54,7 @@ class Offer(models.Model):
     class Meta:
         verbose_name = "Ev, Villa"
         verbose_name_plural = "Evlər, Villalar"
+        ordering = ('is_sold_out',)
     def __str__(self):
         return self.name
 
