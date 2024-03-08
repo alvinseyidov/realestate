@@ -26,6 +26,59 @@ class MenzilForm(models.Model):
     def __str__(self):
         return self.label
 
+
+
+class VebinarFormTR(models.Model):
+    label = models.CharField(max_length=256)
+    name = models.CharField(max_length=256)
+    placeholder = models.CharField(max_length=256)
+    sort = models.IntegerField(default=0)
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "Dynamic Vebinar Form TR"
+        verbose_name_plural = "Dynamic Vebinar Form TR"
+    def __str__(self):
+        return self.label
+
+
+class MenzilFormTR(models.Model):
+    label = models.CharField(max_length=256)
+    name = models.CharField(max_length=256)
+    placeholder = models.CharField(max_length=256)
+    sort = models.IntegerField(default=0)
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "Dynamic Menzil Form TR"
+        verbose_name_plural = "Dynamic Menzil Form TR"
+    def __str__(self):
+        return self.label
+
+
+
+class VebinarFormRU(models.Model):
+    label = models.CharField(max_length=256)
+    name = models.CharField(max_length=256)
+    placeholder = models.CharField(max_length=256)
+    sort = models.IntegerField(default=0)
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "Dynamic Vebinar Form RU"
+        verbose_name_plural = "Dynamic Vebinar Form RU"
+    def __str__(self):
+        return self.label
+
+
+class MenzilFormRU(models.Model):
+    label = models.CharField(max_length=256)
+    name = models.CharField(max_length=256)
+    placeholder = models.CharField(max_length=256)
+    sort = models.IntegerField(default=0)
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "Dynamic Menzil Form RU"
+        verbose_name_plural = "Dynamic Menzil Form RU"
+    def __str__(self):
+        return self.label
 class Slider(models.Model):
     color = (
         ('B','black'),

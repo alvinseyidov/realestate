@@ -3,6 +3,13 @@ from .models import *
 
 admin.site.register(VebinarForm)
 admin.site.register(MenzilForm)
+
+admin.site.register(VebinarFormTR)
+admin.site.register(MenzilFormTR)
+
+admin.site.register(VebinarFormRU)
+admin.site.register(MenzilFormRU)
+
 admin.site.register(General)
 admin.site.register(Social)
 admin.site.register(Feature)
