@@ -910,7 +910,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         {{form1.title}} </div>
                     <div id="subtitle" style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
                         {{form1.sub_title}}</div>
-                    <form id="formmm" style=" padding: 39px 40px; " method="post" action="{% url 'vebinarform'%}">
+                    <form id="formmm" style=" padding: 39px 40px; " method="post" action="{% url 'vebinarformtr'%}">
                         {% csrf_token%}
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
@@ -958,7 +958,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
        <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
 
             <div id="formm2" class="formm" style="border-radius: 10px;text-align: center;padding: 0 0 39px 0;width: 347px;margin: auto;background-color: #fff;margin-top: 48px;">
-                    <form id="form2" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                    <form id="form2" action="{% url 'contactformtr'%}" method="post">{% csrf_token%}
                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
                     <div style=" position: relative; ">

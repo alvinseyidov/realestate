@@ -1140,6 +1140,146 @@ def vebinarform(request):
             "main_section": main_section,
         }
         return render(request, "success.html", context)
+def vebinarformru(request):
+    print("======")
+    print("form called")
+    print("======")
+    general = General.objects.last()
+    socials = Social.objects.all()
+
+    main_section = MainSection.objects.last()
+
+    if request.method == 'POST':
+        print("======")
+        print("post called")
+        print("======")
+        first_name = ''
+        last_name = ''
+        email = ''
+        phone = ''
+        prefix = ''
+        try:
+            first_name = request.POST.get('first_name')
+        except:
+            first_name = ''
+        try:
+            last_name = request.POST.get('last_name')
+        except:
+            last_name = ''
+        try:
+            email = request.POST.get('email')
+        except:
+            email = ''
+        try:
+            phone = request.POST.get('phone')
+        except:
+            phone = ''
+        try:
+            prefix = request.POST.get('prefix')
+        except:
+            prefix = ''
+
+
+
+
+
+
+        f = Vebinar.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            prefix=prefix,
+            phone=phone
+        )
+        dynamic_fields = VebinarFormRU.objects.all()
+        try:
+            text = ''
+            for d in dynamic_fields:
+                text = text+'\n'+d.label+'-'+request.POST.get(str(d.name))
+
+            f.dynamic_fields = text
+            f.save()
+        except:
+            pass
+
+        pages = Pages.objects.all()
+        context = {
+            'pages': pages,
+            "general": general,
+            "socials": socials,
+            "main_section": main_section,
+        }
+        return render(request, "success.html", context)
+def vebinarformtr(request):
+    print("======")
+    print("form called")
+    print("======")
+    general = General.objects.last()
+    socials = Social.objects.all()
+
+    main_section = MainSection.objects.last()
+
+    if request.method == 'POST':
+        print("======")
+        print("post called")
+        print("======")
+        first_name = ''
+        last_name = ''
+        email = ''
+        phone = ''
+        prefix = ''
+        try:
+            first_name = request.POST.get('first_name')
+        except:
+            first_name = ''
+        try:
+            last_name = request.POST.get('last_name')
+        except:
+            last_name = ''
+        try:
+            email = request.POST.get('email')
+        except:
+            email = ''
+        try:
+            phone = request.POST.get('phone')
+        except:
+            phone = ''
+        try:
+            prefix = request.POST.get('prefix')
+        except:
+            prefix = ''
+
+
+
+
+
+
+        f = Vebinar.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            prefix=prefix,
+            phone=phone
+        )
+        dynamic_fields = VebinarFormTR.objects.all()
+        try:
+            text = ''
+            for d in dynamic_fields:
+                text = text+'\n'+d.label+'-'+request.POST.get(str(d.name))
+
+            f.dynamic_fields = text
+            f.save()
+        except:
+            pass
+
+        pages = Pages.objects.all()
+        context = {
+            'pages': pages,
+            "general": general,
+            "socials": socials,
+            "main_section": main_section,
+        }
+        return render(request, "success.html", context)
 
 
 def contactform(request):
@@ -1195,6 +1335,110 @@ def contactform(request):
         }
         return render(request, "success.html", context)
 
+def contactformru(request):
+    general = General.objects.last()
+    socials = Social.objects.all()
+
+    main_section = MainSection.objects.last()
+
+    if request.method == 'POST':
+        name = ''
+        email = ''
+        phone = ''
+        prefix = ''
+        try:
+            name = request.POST.get('name')
+        except:
+            name = ''
+        try:
+            email = request.POST.get('email')
+        except:
+            email = ''
+        try:
+            phone = request.POST.get('phone')
+        except:
+            phone = ''
+        try:
+            prefix = request.POST.get('prefix')
+        except:
+            prefix = ''
+        f = Contact.objects.create(
+            name=name,
+            email=email,
+            prefix=prefix,
+            phone=phone
+        )
+        dynamic_fields = MenzilFormRU.objects.all()
+        try:
+            text = ''
+            for d in dynamic_fields:
+                text = text+'\n'+d.label+'-'+request.POST.get(str(d.name))
+
+            f.dynamic_fields = text
+            f.save()
+        except:
+            pass
+
+        pages = Pages.objects.all()
+        context = {
+            'pages': pages,
+            "general": general,
+            "socials": socials,
+            "main_section": main_section,
+        }
+        return render(request, "success.html", context)
+def contactformtr(request):
+    general = General.objects.last()
+    socials = Social.objects.all()
+
+    main_section = MainSection.objects.last()
+
+    if request.method == 'POST':
+        name = ''
+        email = ''
+        phone = ''
+        prefix = ''
+        try:
+            name = request.POST.get('name')
+        except:
+            name = ''
+        try:
+            email = request.POST.get('email')
+        except:
+            email = ''
+        try:
+            phone = request.POST.get('phone')
+        except:
+            phone = ''
+        try:
+            prefix = request.POST.get('prefix')
+        except:
+            prefix = ''
+        f = Contact.objects.create(
+            name=name,
+            email=email,
+            prefix=prefix,
+            phone=phone
+        )
+        dynamic_fields = MenzilFormTR.objects.all()
+        try:
+            text = ''
+            for d in dynamic_fields:
+                text = text+'\n'+d.label+'-'+request.POST.get(str(d.name))
+
+            f.dynamic_fields = text
+            f.save()
+        except:
+            pass
+
+        pages = Pages.objects.all()
+        context = {
+            'pages': pages,
+            "general": general,
+            "socials": socials,
+            "main_section": main_section,
+        }
+        return render(request, "success.html", context)
 
  
 def index(request):
