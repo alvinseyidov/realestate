@@ -1331,8 +1331,8 @@ def ru(request):
     calculator = Parametr.objects.last()
     suallar = SuallarRU.objects.all()
     pages = PagesRU.objects.all()
-    vebinar_form = VebinarForm.objects.all()
-    form_menzil_form = MenzilForm.objects.all()
+    vebinar_form = VebinarFormRU.objects.all()
+    form_menzil_form = MenzilFormRU.objects.all()
     context = {
         'vebinar_form': vebinar_form,
         'form_menzil_form': form_menzil_form,
@@ -1420,8 +1420,8 @@ def tr(request):
     calculator = Parametr.objects.last()
     suallar = SuallarTR.objects.all()
     pages = PagesTR.objects.all()
-    vebinar_form = VebinarForm.objects.all()
-    form_menzil_form = MenzilForm.objects.all()
+    vebinar_form = VebinarFormTR.objects.all()
+    form_menzil_form = MenzilFormTR.objects.all()
     context = {
         'vebinar_form': vebinar_form,
         'form_menzil_form': form_menzil_form,
