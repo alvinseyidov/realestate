@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import *
 
+admin.site.register(VebinarForm)
+admin.site.register(MenzilForm)
 admin.site.register(General)
 admin.site.register(Social)
 admin.site.register(Feature)

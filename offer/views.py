@@ -19,6 +19,7 @@ def loadfaq(request):
     return JsonResponse(data=data)
 
 def offer(request, id):
+    form_menzil_form = MenzilForm.objects.all()
     form1 = Form1.objects.last()
     form2 = Form2.objects.last()
     form3 = Form3.objects.last()
@@ -76,6 +77,7 @@ def offer(request, id):
         )
         pages = Pages.objects.all()
         context = {
+            'form_menzil_form': form_menzil_form,
             'form1': form1,
             'form2': form2,
             'form3': form3,
@@ -97,6 +99,7 @@ def offer(request, id):
         return render(request, "offersuccess.html", context)
     pages = Pages.objects.all()
     context = {
+        'form_menzil_form': form_menzil_form,
         'form1': form1,
         'form2': form2,
         'form3': form3,

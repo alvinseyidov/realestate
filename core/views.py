@@ -1109,16 +1109,28 @@ def vebinarform(request):
         except:
             prefix = ''
 
-        print("======")
-        print(prefix)
-        print("======")
-        Vebinar.objects.create(
+
+
+
+
+
+        f = Vebinar.objects.create(
             first_name=first_name,
             last_name=last_name,
             email=email,
             prefix=prefix,
             phone=phone
         )
+        dynamic_fields = VebinarForm.objects.all()
+        try:
+            text = ''
+            for d in dynamic_fields:
+                text = text+'\n'+d.label+'-'+request.POST.get(str(d.name))
+
+            f.dynamic_fields = text
+            f.save()
+        except:
+            pass
 
         pages = Pages.objects.all()
         context = {
@@ -1157,12 +1169,22 @@ def contactform(request):
             prefix = request.POST.get('prefix')
         except:
             prefix = ''
-        Contact.objects.create(
+        f = Contact.objects.create(
             name=name,
             email=email,
             prefix=prefix,
             phone=phone
         )
+        dynamic_fields = MenzilForm.objects.all()
+        try:
+            text = ''
+            for d in dynamic_fields:
+                text = text+'\n'+d.label+'-'+request.POST.get(str(d.name))
+
+            f.dynamic_fields = text
+            f.save()
+        except:
+            pass
 
         pages = Pages.objects.all()
         context = {
@@ -1176,6 +1198,8 @@ def contactform(request):
 
  
 def index(request):
+    vebinar_form = VebinarForm.objects.all()
+    form_menzil_form = MenzilForm.objects.all()
     message = request.GET.get('form')
     vebinar = False
     if message == 'vebinar':
@@ -1223,6 +1247,8 @@ def index(request):
     pages = Pages.objects.all()
     context = {
         'vebinar': vebinar,
+        'vebinar_form': vebinar_form,
+        'form_menzil_form': form_menzil_form,
         'form1': form1,
         'form2': form2,
         'form3': form3,

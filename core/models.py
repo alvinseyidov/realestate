@@ -1,5 +1,31 @@
 from django.db import models
 
+
+class VebinarForm(models.Model):
+    label = models.CharField(max_length=256)
+    name = models.CharField(max_length=256)
+    placeholder = models.CharField(max_length=256)
+    sort = models.IntegerField(default=0)
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "Dynamic Vebinar Form"
+        verbose_name_plural = "Dynamic Vebinar Form"
+    def __str__(self):
+        return self.label
+
+
+class MenzilForm(models.Model):
+    label = models.CharField(max_length=256)
+    name = models.CharField(max_length=256)
+    placeholder = models.CharField(max_length=256)
+    sort = models.IntegerField(default=0)
+    class Meta:
+        ordering = ('sort',)
+        verbose_name = "Dynamic Menzil Form  "
+        verbose_name_plural = "Dynamic Menzil Form  "
+    def __str__(self):
+        return self.label
+
 class Slider(models.Model):
     color = (
         ('B','black'),

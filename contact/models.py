@@ -16,6 +16,7 @@ class Contact(models.Model):
     email = models.CharField(max_length=256)
     phone = models.CharField(max_length=256)
     prefix = models.CharField(max_length=256)
+    dynamic_fields = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = "Əlaqə Formu Müraciət"
@@ -32,6 +33,7 @@ class Vebinar(models.Model):
     email = models.CharField(max_length=256)
     phone = models.CharField(max_length=256)
     prefix = models.CharField(max_length=256)
+    dynamic_fields = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = "Vebinar Müraciət"
