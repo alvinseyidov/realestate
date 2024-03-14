@@ -181,10 +181,7 @@ class FormSection(models.Model):
 
 class MuzakireEdek(models.Model):
     title = models.CharField(max_length=256)
-    text = models.TextField()
-    button_text = models.CharField(max_length=256)
-    button_link = models.CharField(max_length=256)
-    image = models.ImageField()
+    subtitle = models.CharField(max_length=256)
 
     def __str__(self):
         return 'SUALLARINIZ VAR? '
