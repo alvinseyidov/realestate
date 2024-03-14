@@ -471,6 +471,15 @@ display:none !important;
 </style>
 
             <style>
+            @media only screen and (max-width: 600px){
+                .timertext {
+                    font-size: 18px !important;
+                    }
+                   .timerimage{
+                       width: 32px !important;
+                        margin: -5px 12px !important;
+                        }
+            }
 
 
 
@@ -1106,8 +1115,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                  <p class="pb-2 mt-2" style="color: #FFF;font-family: Montserrat !important;font-size: 35px !important;font-style: normal !important;font-weight: 500 !important;line-height: 30px; /* 85.714% */letter-spacing: -0.5px;padding-top: 14px;"	>
                 {{main_section.text3|safe}} </p>
                 <div style=" display: flex; text-align: center; margin-bottom:25px; margin-top:25px; ">
-        <img src="/static/date.svg" style="width: 40px;margin: -9px 4px;">
-        <div style="font-family: Montserrat; font-size: 37px; font-weight: 500; line-height: 21px; letter-spacing: 0em; text-align: left;color:#fff;">
+        <img class="timerimage" src="/static/date.svg" style="width: 40px;margin: -9px 4px;">
+        <div class="timertext" style="font-family: Montserrat; font-size: 37px; font-weight: 500; line-height: 21px; letter-spacing: 0em; text-align: left;color:#fff;">
             {{general.countdown_enddate|date:'M d, Y - H:i'}}
         </div>
     </div>
