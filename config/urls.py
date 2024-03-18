@@ -11,19 +11,19 @@ urlpatterns = [
     path('', core_views.index, name="index"),
     path('page/<str:link>/', core_views.page, name="page"),
     path('contactform/', core_views.contactform, name="contactform"),
-    path('contactformru/', core_views.contactformru, name="contactformru"),
+    #path('contactformru/', core_views.contactformru, name="contactformru"),
     path('contactformtr/', core_views.contactformtr, name="contactformtr"),
     path('vebinarform/', core_views.vebinarform, name="vebinarform"),
-    path('vebinarformru/', core_views.vebinarformru, name="vebinarformru"),
+    #path('vebinarformru/', core_views.vebinarformru, name="vebinarformru"),
     path('vebinarformtr/', core_views.vebinarformtr, name="vebinarformtr"),
     path('data/<int:year>/<int:amount>/<int:mortgage>/', core_views.data, name="data"),
     path('waitlist/', core_views.contactform2, name="waitlist"),
     path('offer/<int:id>/', offer_views.offer, name="offer"),
     path('tr/offer/<int:id>/', offer_views.offertr, name="offertr"),
-    path('ru/offer/<int:id>/', offer_views.offerru, name="offerru"),
+    #path('ru/offer/<int:id>/', offer_views.offerru, name="offerru"),
     path('loadfaq/', offer_views.loadfaq, name="loadfaq"),
     path('tr/', core_views.tr, name="tr"),
-    path('ru/', core_views.ru, name="ru")
+    #path('ru/', core_views.ru, name="ru")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
