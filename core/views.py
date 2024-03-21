@@ -1624,6 +1624,10 @@ def ru(request):
 
 
 def tr(request):
+    message = request.GET.get('form')
+    vebinar = False
+    if message == 'vebinar':
+        vebinar = True
     form1 = Form1TR.objects.last()
     form2 = Form2TR.objects.last()
     form3 = Form3TR.objects.last()
@@ -1666,9 +1670,11 @@ def tr(request):
     pages = PagesTR.objects.all()
     vebinar_form = VebinarFormTR.objects.all()
     form_menzil_form = MenzilFormTR.objects.all()
+
     context = {
         'vebinar_form': vebinar_form,
         'form_menzil_form': form_menzil_form,
+        'vebinar': vebinar,
         'form1': form1,
         'form2': form2,
         'form3': form3,
