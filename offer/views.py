@@ -37,7 +37,7 @@ def offer(request, id):
         is_mobile = False
     head = Head.objects.all()
     body = Body.objects.all()
-    amount = int(int(offer.price)*60/100)
+    amount = int(int(offer.price)*50/100)
 
     if request.method == 'POST':
         first_name = ''
