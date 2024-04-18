@@ -959,7 +959,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 
-  <div id="myModal2" class="modall">
+  <div id="myModal2" class="modall" {% if ev_form%}style="display:block;"{%endif%}>
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -1240,7 +1240,7 @@ font-size: 14px !important;
 
 </style>
 
-  <div style="z-index: 1000;display: block;background-color: #fff;position: relative;" class=" mt-5">
+  <div id="ustunlukler" style="z-index: 1000;display: block;background-color: #fff;position: relative;" class=" mt-5">
         <div class="row  " style="padding-top:30px;padding-left: 140px; padding-right:140px;">
             <div class="col-lg-6 col-md-12" style=" margin-bottom: 49px; ">
                  <div style="font-size:35px;font-weight: 500;width: 95%; margin: auto;">
@@ -2482,7 +2482,7 @@ function openCity(evt, cityName) {
 </style>
 
 
-  <section class="container-fluid py-5 bg_gray faqq" style="  ">
+  <section id="faq" class="container-fluid py-5 bg_gray faqq" style="  ">
         <h2 class="fw-bold mb-4 text-center" style=" font-size: 45px; line-height: 60px; padding: 35px 0 49px 0px; ">Ən Çox Gələn Suallar</h2>
         <div class="row d-flex gap-5 justify-content-center align-items-center">
           <div class="col-md-6 d-flex justify-content-between flex-column">

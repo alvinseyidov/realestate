@@ -1446,8 +1446,11 @@ def index(request):
     form_menzil_form = MenzilForm.objects.all()
     message = request.GET.get('form')
     vebinar = False
+    ev_form = False
     if message == 'vebinar':
         vebinar = True
+    if message == 'ev_form':
+        ev_form = True
     form1 = Form1.objects.last()
     form2 = Form2.objects.last()
     form3 = Form3.objects.last()
@@ -1491,6 +1494,7 @@ def index(request):
     pages = Pages.objects.all()
     context = {
         'vebinar': vebinar,
+        'ev_form': ev_form,
         'vebinar_form': vebinar_form,
         'form_menzil_form': form_menzil_form,
         'form1': form1,
