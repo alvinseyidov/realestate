@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-cm7p=e=@4&z7o0*9r8ayl$3pofwcca6ytvt)hkbnrxk$ras*n6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['smartinvest.az','www.smartinvest.az']
 
 
 # Application definition
@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -80,13 +80,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'smartinvest',
-        'USER': 'maxcreative',
-        'PASSWORD': 'Max14748294!Max',
+        'USER': 'trivasoft',
+        'PASSWORD': 'Triva12748294!',
         'HOST': 'localhost',
         'PORT': '',
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
