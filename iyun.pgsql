@@ -4111,9 +4111,9 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
 5	pbkdf2_sha256$600000$c9QolPaEhyHFGkzTxigYZy$cVsV3pz0MyexrYinD/d/zJi8shaDQVBI4sg39YKr2gA=	2024-03-15 08:43:06.475934+00	t	Piruza	Piruza		piruza@roaswizards.com	t	t	2024-02-28 09:10:53+00
 1	pbkdf2_sha256$600000$sTxXA23RIoGk5ctRiG6hFO$osfxw2DzTgWLsvJb1Ps6ajBmOjwQNeemZ8K2as/GOO8=	2024-04-16 14:22:35.478613+00	t	maxcreative				t	t	2023-12-14 04:47:05.714043+00
-7	pbkdf2_sha256$600000$uLRcnoKTHqXvm1wUj9ROxK$VIhaVIjYmpUX2+staiSV+dBw8vYBBamnefnW/6YxqZo=	2024-05-10 06:03:14.918621+00	t	maryam@smartinvest.az	Maryam		maryam@smartinvest.az	t	t	2024-03-18 08:57:52+00
 3	pbkdf2_sha256$600000$naZZJ0Rf2xWtfwkM5mi70j$51dTIdIAGQ+lvQsf3B9Aji3H8Vc4tUDuP2JCuXYBgnQ=	2024-05-17 11:03:36.928906+00	f	Orkhan	Orkhan	Namazov	orhannamazov4@gmail.com	t	t	2024-01-16 10:45:50+00
 2	pbkdf2_sha256$600000$oTDS1bdAsqlWUk66EM5bt7$af6iq3Od2JLrFnXSkSeegQ0QMvORx4WWvDakjujhbwY=	2024-05-18 16:13:28.666352+00	t	smartinvest				t	t	2023-12-19 10:49:08.541595+00
+7	pbkdf2_sha256$600000$uLRcnoKTHqXvm1wUj9ROxK$VIhaVIjYmpUX2+staiSV+dBw8vYBBamnefnW/6YxqZo=	2024-05-31 05:17:48.22831+00	t	maryam@smartinvest.az	Maryam		maryam@smartinvest.az	t	t	2024-03-18 08:57:52+00
 \.
 
 
@@ -5676,6 +5676,10 @@ COPY public.contact_contact (id, name, email, phone, prefix, dynamic_fields) FRO
 173	Nermin 	nerminseyfiyeva@gmail.com	994 55 518 65 18 	994	
 174	Nermin  Seyfiyeva 	nerminseyfiyeva@gmail.com	994 55 518 65 18 	994 55 518 65 18 	
 175	Ayten sosanova	ayten.aliyeva@prospekt-medical.com	553568866	994	
+176	Akwin Quliyev	quliyevakwin820@gmail.com	0558232731	994	
+177	Amin Nəbiyev	amilnbiyev988@gmail.com	556670425	994	
+178	Seyfettin bulut	sbpecado@gmail.com	502324098	994	
+179	Aslan Haciyev	haciyevaslan607@gmail.com	0506528378	994	
 \.
 
 
@@ -6276,6 +6280,155 @@ COPY public.contact_vebinar (id, first_name, email, phone, prefix, last_name, dy
 592	Vüsal 	dadashov1vusal@gmail.com	553131688	994	DADAŞOV 	
 593	Vüsal 	dadashov1vusal@gmail.com	553131688	994	DADAŞOV 	
 594	ORXAN 	O@gmail.com	503908606	994	Memmedov	
+595	Farhad	farhad.arimov@mail.ru	3828383838392992	994	Arimov	
+596	Farhad	farhad.arimov@mail.ru	3828383838392992	994	Arimov	
+597	Fariz	farizb153@gmail.com	+994 50 357 68 26	994	Babayev	
+598	Fariz 	farizb153@gmail.com	+994 50 357 68 26	994	Babayev 	
+599	Fariz 	farizb153@gmail.com	+994 50 357 68 26	994	Babayev 	
+600	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+601	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+602	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+603	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+604	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+605	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+606	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+607	İntiqam 	huseynovintiqam268@gmail.com	554642849	994	Hüseynov 	
+608	Nigar	nigar.ali.fazil@gmail.com	55 635 46 60	994	Alişova	
+609	Natiq	kamalovnatiq1991@gmail.com	0507103804	994	Kamalov	
+610	ilahe	ilahem226@gmail.com	553499676	994	Musayeva	
+611	ilahe	ilahem226@gmail.com	553499676	994	Musayeva	
+612	Orxan	orxanmikayilov44@gmail.com	0554478876	994	Mikayılov	
+613	Günay	sahveledlianka@gmail.com	557205070	994	Sahveledova	
+614	Vusal	virzayev@std.beu.edu.az	559379612	994	Irzayev	
+615	Nadir	nadirisgenderov1996@gmail.com	0504656417	994	İsgenderov	
+616	Nadir	nadirisgenderov1996@gmail.com	504656417	994	İsgenderov	
+617	Rovshana	rovsane.aliyeva@gmail.com	0554861815	994	Aliyeva	
+618	Vusal	vusal.piriyev084@gmail.com	0558517616	994	Piriyev	
+619	Шахрияр	shahriyar.a@gmail.com	512067672	994	Алиев	
+620	Mərhəmət 	abbaszademerhemet663@gmail.com	508514821	994	Abbaszadə 	
+621	Aziz	eziz7848@gmail.com	+994605287848	994	Abdullayev	
+622	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+623	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+624	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+625	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+626	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+627	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+628	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+629	Murad	muradisge23@gmail.com	muradisge23@gmail.com	994	İsgenderov	
+630	Bəhram 	almaz_lak@mail.ru	55 730 12 67 	994	Şamilov 	
+631	Rza	quliyevr718@gmail.com	994 055 890 94 85	994	quliyev	
+632	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+633	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+634	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+635	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+636	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+637	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+638	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+639	Elmar	abdullrehmanovelmar@gmail.com	0515635351	994	Abdullrehmanov	
+640	Kh	plusk1473@gmail.com	927i288287	994	Plus	
+641	Шахрияр	shahriyar.a@gmail.com	512067672	512067672	Алиев	
+642	Konul 	androidsor@gmail.com	558825247	994	Abbasova 	
+643	Tural 	tural80@mail.ru	706076868	994	Peysari	
+644	Ziyad	zalov85@mail.ru	503718782	994	Zalov	
+645	Naibe	naiba@mail.ru	507626788	994	Bayramova	
+646	Rasime	rasime50@mail.ru	552844470	994	Aliyeva	
+647	Parviz 	parviz80@mail.ru	508286465	994	Debilov	
+648	Ziyad	ziyad85@mail.ru	503718782	994	Zalov	
+649	Orxan	orxanqarayev055@gmail.com	514181319	994	Qarayev	
+650	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+651	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+652	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+653	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+654	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+655	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+656	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+657	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+658	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+659	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+660	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+661	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+662	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+663	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+664	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+665	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+666	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+667	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+668	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+669	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+670	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+671	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+672	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+673	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+674	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+675	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+676	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+677	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+678	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+679	İlkin 	ilkhsn78@gmail.com	509660308	994	Həsənov 	
+680	ilkin	ilkhsn78@gmail.com	0509660308	994	hasanov	
+681	Təyyar 	eliyevteyyar457@gmail.com	0558974210	994	Ə	
+682	Təhminə	agayevathmin97@gmail.com	0519315227	994	Agayeva	
+683	Təhminə	agayevathmin97@gmail.com	0519315227	994	Agayeva	
+684	Esma	busebusenur45@gmail.com	055 888 88 88	994	Nebizade	
+685	Nəsrulla	kolya10xv843@gmail.com	558528322	+994	cavadov	
+686	Aqşin	aagshin@gmail.com	555510809	994	əlizadə	
+687	Aytan	Ayten.aliyeva@prospekt-medical.com	553568866	994	Aliyeva	
+688	İsa	memmedovisa787@gmail.com	556737404	994	Memmedov	
+689	Дцкшп	dukdcksp@gmail.com	dukdcksp@gmail.com	994	Дук	
+690	Дцкшп	dukdcksp@gmail.com	dukdcksp@gmail.com	994	Дук	
+691	Дцкшп	dukdcksp@gmail.com	dukdcksp@gmail.com	994	Дук	
+692	Дцкшп	dukdcksp@gmail.com	dukdcksp@gmail.com	994	Дук	
+693	Дцкшп	dukdcksp@gmail.com	dukdcksp@gmail.com	994	Дук	
+694	Elman	elmanrustemov062@gmail.com	775386250	994	Rustemov	
+695	сисмис	ghghfgh@firstmailler.com	558888888	994	смисмисми	
+696	Vasif 	vasifbalayev95@gmail.com	070 968 54 55 	994	Balayev 	
+697	Samid	mirzayevsamid643@gmail.com	0773364575	0773364575	Mirzayev	
+698	Samid	mirzayevsamid643@gmail.com	0773364575	0773364575	Mirzayev	
+699	İbrahim	ibrahimlkbrov488@gmail.com	0556062967	994	Ələkbərov	
+700	Malxaz	malxazgogachkori@gmail.com	555123124124	994	Gogachkori	
+701	guramishvilisgamziri	giviko.tatunashvili@gmail.com	123123123123	994	iavardidabza	
+702	Piri	piriehmedov584@gmail.com	503567474	994	Ehmedov	
+703	Piri	piriehmedov584@gmail.com	0503567471	994	Ehmedov	
+704	Piri	piriehmedov584@gmail.com	0503567471	994	Ehmedov	
+705	Piri	piriehmedov584@gmail.com	0503567471	994	Ehmedov	
+706	Piri	piriehmedov584@gmail.com	0503567471	994	Ehmedov	
+707	Piri	piriehmedov584@gmail.com	0503567471	994	Ehmedov	
+708	Aynur	aynur.qaraqurbanli@oba.az	504917887	994	Qaraqurbanli	
+709	Aynur	aynur_mammad@hotmail.com	504917887	994	Qaraqurbanli	
+710	Senan	Senanqudretli@gmail.com	+994518868612	+994518868612	GUDRATLİ 	
+711	Səkinə 	qasimlisekine18@gmail.com	513944862	994	Qasımlı 	
+712	Parvin	ismayilov_pervin@yahoo.com	+994553160120	+994553160120	Ismayil	
+713	Sənan	senanletifli9@gmail.com	516850158	994	Lətifli	
+714	Sənan	senanletifli9@gmail.com	516850158	994	Lətifli	
+715	Sənan	senanletifli9@gmail.com	516850158	994	Lətifli	
+716	Sənan	senanletifli9@gmail.com	516850158	994	Lətifli	
+717	Sənan	senanletifli9@gmail.com	516850158	994	Lətifli	
+718	Nizami	mahmudovnizami2023@gmail.com	702848456	994	Mahmudov	
+719	Nizami	mahmudovnizami2023@gmail.com	702848456	994	Mahmudov	
+720	Nizami	mahmudovnizami2023@gmail.com	702848456	994	Mahmudov	
+721	Nizami	mahmudovnizami2023@gmail.com	702848456	994	Mahmudov	
+722	Nizami	mahmudovnizami2023@gmail.com	702848456	994	Mahmudov	
+723	Nizami	mahmudovnizami2023@gmail.com	702848456	994	Mahmudov	
+724	Samir	samirvreditel@gmail.com	19647	994	Memmedov	
+725	Samir	samirvreditel@gmail.com	35257	994	Memmedov	
+726	Cavid 	cavida917@gmail.com	0558393600	994	Agayev	
+727	Elmeddin 	mehemmed6196@gemail.com	558660809	994	Hesenov 	
+728	aysela	aselizad1@gmail.com	708540254	994	alizada	
+729	Qudrat	qudratabbasov.ooo@gimail.com	7751119877	994	Abasov	
+730	Böyükkişi Cəbrayılov	eli_cebrayilov_1992@mail.ru	051	051	D	
+731	Fidan xanim 	Fidan_a@mail.ru	519008890	994	Asad	
+732	Aslan	haciyevaslan607@gmail.com	0506528378	994	Haciyev	
+733	Aslan	haciyevaslan607@gmail.com	0506528378	994	Haciyev	
+734	Aslan	haciyevaslan607@gmail.com	0506528378	994	Haciyev	
+735	Aslan	haciyevaslan607@gmail.com	506528378	+994	Haciyev	
+736	Shahriyar	shahriyar.a@gmail.com	+994512067672	+994	Aliyev	
+737	Samir	s.kerimov1987@gmail.com	557116867	994	Kerimov	
+738	Vüsalə	vusalmusayeva55@gmail.com	51-800-65-57 	994	Musayeva	
+739	fuad	jjkk@hdhsdhh.com	85545454555	994	Mammadov	
+740	Sitara	sitaraalekberova.fhn@gmail.com	504811123	994	Alekberova	
+741	Leman	leman.kazimova@yahoo.com	994 513 336 96 2	994	Kazimli	
+742	Lachin	kamilovlachin@gmail.com	555805082	994	Kamilov	
+743	Araz test	test@gmail.com	(70) 536-46-88	994	Test	
 \.
 
 
@@ -6444,7 +6597,7 @@ COPY public.core_feedbacktr (id, user_image, full_name, "position", text, backgr
 --
 
 COPY public.core_general (id, site_title, meta_description, address, email, phone, copyright, logo, telegram_link, whatsapp_link, home_popup_video, countdown_enddate, logo_white, favicon) FROM stdin;
-1	Smart Invest	Smart Invest	AZ1065, M.H.Naxcivani 15., Bakı, Azərbaycan.	hello@smartinvest.az	+99410-393-18-18	© SmartInvest Global MMC – All rights reserved	logo_VWMeQL2.svg	https://t.me/smartinvestaz	https://wa.me/994103931818	mov_bbb_Jpg345K.mp4	2024-05-30 16:00:00+00	logowhite_H4O1hFT.svg	smartinvest-logo_-_for_youtube.png
+1	Smart Invest	Smart Invest	AZ1065, M.H.Naxcivani 15., Bakı, Azərbaycan.	hello@smartinvest.az	+99410-393-18-18	© SmartInvest Global MMC – All rights reserved	logo_VWMeQL2.svg	https://t.me/smartinvestaz	https://wa.me/994103931818	mov_bbb_Jpg345K.mp4	2024-06-06 16:00:00+00	logowhite_H4O1hFT.svg	smartinvest-logo_-_for_youtube.png
 \.
 
 
@@ -6462,7 +6615,7 @@ COPY public.core_generalru (id, site_title, favicon, meta_description, address, 
 --
 
 COPY public.core_generaltr (id, site_title, favicon, meta_description, address, email, phone, whatsapp_link, telegram_link, copyright, logo, logo_white, home_popup_video, countdown_enddate) FROM stdin;
-1	Smart Invest	smartinvest-logo_-_for_youtube_1.png	Smart Invest	AZ1065, M.H.Naxcivani 15., Bakı, Azərbaycan.	hello@smartinvest.az	+99410-393-18-18	https://wa.me/994103931818	https://t.me/smartinvestaz	© SmartInvest Global MMC – All rights reserved	logo_VWMeQL2_1.svg	logowhite_H4O1hFT_1.svg		2024-05-30 16:00:00+00
+1	Smart Invest	smartinvest-logo_-_for_youtube_1.png	Smart Invest	AZ1065, M.H.Naxcivani 15., Bakı, Azərbaycan.	hello@smartinvest.az	+99410-393-18-18	https://wa.me/994103931818	https://t.me/smartinvestaz	© SmartInvest Global MMC – All rights reserved	logo_VWMeQL2_1.svg	logowhite_H4O1hFT_1.svg		2024-06-06 16:00:00+00
 \.
 
 
@@ -6604,7 +6757,7 @@ COPY public.core_why (id, icon, title, text, "position") FROM stdin;
 4	fuad_mammadov_квадрат__rU3HXPF.jpg	Fuad Məmmədov	DƏ Investisiyaları Üzrə Stratejist / BAKI	1
 3	oguzxan-1.jpg	Oğuzhan Akdoğan	Əmlak Portfeli Mütəxəssisi  / ALANYA	2
 2	leman-1.jpg	Ləman Namazova	Sənədləşmə və İpoteka Mütəxəssisi / ALANYA	3
-1	orxan-1.jpg	Orxan Namazov	Təsisçisi / ALANYA	4
+1	orxan-1.jpg	Orxan Namazov	Oturum İcazəsi və Vətəndaşlıq Üzrə Ekspert / ALANYA	4
 \.
 
 
@@ -7498,6 +7651,15 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 863	2024-05-18 16:14:02.810509+00	1	Ümumi Sayt Məlumatlar	2	[{"changed": {"fields": ["Countdown enddate"]}}]	85	2
 864	2024-05-21 07:46:30.921736+00	1	Ümumi Sayt Məlumatlar	2	[{"changed": {"fields": ["Countdown enddate"]}}]	85	2
 865	2024-05-21 07:46:47.02202+00	1	Ümumi Sayt Məlumatlar	2	[{"changed": {"fields": ["Countdown enddate"]}}]	7	2
+866	2024-05-23 07:42:31.069653+00	10	Panorama Garden Sitesi	2	[{"changed": {"fields": ["Is sold out"]}}]	16	3
+867	2024-05-23 08:05:06.563813+00	35	Hill sun 2	1	[{"added": {}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}]	16	3
+868	2024-05-28 07:41:08.476828+00	25	Panorama Garden sifesi	2	[{"changed": {"fields": ["Image"]}}, {"changed": {"name": "image", "object": "\\u015f\\u0259kil", "fields": ["Image"]}}, {"changed": {"name": "image", "object": "\\u015f\\u0259kil", "fields": ["Image"]}}, {"changed": {"name": "image", "object": "\\u015f\\u0259kil", "fields": ["Image"]}}, {"changed": {"name": "image", "object": "\\u015f\\u0259kil", "fields": ["Image"]}}, {"changed": {"name": "image", "object": "\\u015f\\u0259kil", "fields": ["Image"]}}, {"changed": {"name": "image", "object": "\\u015f\\u0259kil", "fields": ["Image"]}}]	16	3
+869	2024-05-28 07:44:28.42296+00	1	Ümumi Sayt Məlumatlar	2	[{"changed": {"fields": ["Countdown enddate"]}}]	85	2
+870	2024-05-28 07:44:55.878047+00	1	Ümumi Sayt Məlumatlar	2	[{"changed": {"fields": ["Countdown enddate"]}}]	7	2
+871	2024-05-28 09:36:22.864148+00	15	Vega Icon	2	[{"changed": {"fields": ["\\u018fmlak\\u0131n Indiki D\\u0259y\\u0259ri"]}}]	16	3
+872	2024-05-29 07:58:50.385206+00	36	Elite Marine 3	1	[{"added": {}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}, {"added": {"name": "image", "object": "\\u015f\\u0259kil"}}]	16	3
+873	2024-05-31 05:19:59.227498+00	1	Orxan Namazov	2	[{"changed": {"fields": ["Text"]}}]	9	7
+874	2024-05-31 05:22:00.495652+00	1	Orxan Namazov	2	[{"changed": {"fields": ["Text"]}}]	9	7
 \.
 
 
@@ -7827,6 +7989,7 @@ rc4ybumk0q8bqawof8fnl2hht10j1q6j	.eJxVjEEOwiAQRe_C2pAyhQFcuvcMZGBAqoYmpV0Z765Nut
 pjitl4hkq9aj1u9v40pjbqepwz2imwg0	.eJxVjEEOwiAQRe_C2pAyhQFcuvcMZGBAqoYmpV0Z765NutDtf-_9lwi0rTVsPS9hYnEWIE6_W6T0yG0HfKd2m2Wa27pMUe6KPGiX15nz83K4fweVev3W3hETqpg8QynKKmNhYLbKwohgtaYBondYikWPaLLOOJIr4JM3OpF4fwDUvDdf:1s7rru:obgioYgmwhJrwSOqqm0y9W7K68ga17E739S1lzc9OZM	2024-05-31 07:19:06.471479+00
 ti02g9ubqvbwjsk19mzd4ri4fnr5mpvi	.eJxVjDsOwjAQBe_iGln-JP5Q0nMGa9e7xgHkSHFSIe4OkVJA-2bmvUSCba1p67ykicRZWHH63RDyg9sO6A7tNss8t3WZUO6KPGiX15n4eTncv4MKvX5rVZCohMHkAHpUPlgDarCWss-xUMgu6lIIFRQbnUK2DlB5dqzBBDeK9wf6Hjhf:1s7vNA:C2FChIvjfO_BMbad-Rx7bwQaw86N7xUxZZZAJvRfgHo	2024-05-31 11:03:36.933325+00
 c6ytnxspe3a4tg4bdi7a44sdosiqopii	.eJxVjEEOwiAQRe_C2pAyhQFcuvcMZGBAqoYmpV0Z765NutDtf-_9lwi0rTVsPS9hYnEWIE6_W6T0yG0HfKd2m2Wa27pMUe6KPGiX15nz83K4fweVev3W3hETqpg8QynKKmNhYLbKwohgtaYBondYikWPaLLOOJIr4JM3OpF4fwDUvDdf:1s8Mga:a3Bnto3U0gB3fCkikDjFGKcteCtJLLq4j7y7h8qI_nk	2024-06-01 16:13:28.668252+00
+wsk2mx83rbdnmmk32vesf1vj0kmdm0dr	.eJxVjEEOgjAQRe_StWmYYWjBpXvPQDrTqaCmTSisjHdXEha6_e-9_zJj2NZp3Kou4xzN2Xhz-t04yEPzDuI95FuxUvK6zGx3xR602muJ-rwc7t_BFOr0rbtenWIaWt-SJEFNgA0yQuu99IoKA_gmIcUeuCPHBJK8k9Q4AmIy7w_V9TdE:1sCueC:sUA711jiyrJtIOBrha1VlIHMTQeM7pIbZbe3nVPgUt0	2024-06-14 05:17:48.229816+00
 \.
 
 
@@ -8219,13 +8382,7 @@ COPY public.offer_image (id, image, offer_id) FROM stdin;
 445	PHOTO-2024-03-05-17-27-00.png	24
 446	PHOTO-2024-03-05-17-27-01_3.png	24
 447	PHOTO-2024-03-05-17-27-01.png	24
-448	168_12x_iALiSxo.png	25
 449	168_22x_KSJZbuE.png	25
-450	168_32x_MGMUNxb.png	25
-451	168_82x_LQdHsiS.png	25
-452	168_112x_O0aJbaz.png	25
-453	168_122x_B6lEZCQ.png	25
-454	168_142x_EZotHkR.png	25
 455	66864f3d-e47c-440a-a5f6-d8c5bb923688_2t9BTfz.png	25
 456	a5cb48e7-1975-4655-bf11-38514e16dfeb_xzXOFrj.png	25
 457	c6b470e7-b958-4193-b923-5c2f27cd50d6_qKRUWFO.png	25
@@ -8407,6 +8564,46 @@ COPY public.offer_image (id, image, offer_id) FROM stdin;
 633	PHOTO-2024-05-14-16-24-31_3.jpg	34
 634	PHOTO-2024-05-14-16-24-31.jpg	34
 635	PHOTO-2024-05-14-16-24-32.jpg	34
+636	PHOTO-2024-05-14-16-23-54_5.jpg	35
+637	PHOTO-2024-05-14-16-23-54_6.jpg	35
+638	PHOTO-2024-05-14-16-23-54_4.jpg	35
+639	PHOTO-2024-05-14-16-23-55_6.jpg	35
+640	PHOTO-2024-05-14-16-23-55_8.jpg	35
+641	PHOTO-2024-05-14-16-23-56_3.jpg	35
+642	PHOTO-2024-05-14-16-23-57_6.jpg	35
+643	PHOTO-2024-05-14-16-23-58_2.jpg	35
+644	PHOTO-2024-05-14-16-23-59_3.jpg	35
+645	PHOTO-2024-05-14-16-23-59_4.jpg	35
+646	PHOTO-2024-05-14-16-24-00_4.jpg	35
+647	PHOTO-2024-05-14-16-24-00_3.jpg	35
+648	PHOTO-2024-05-14-16-24-01_6.jpg	35
+649	PHOTO-2024-05-14-16-23-53_4.jpg	35
+650	PHOTO-2024-05-14-16-24-01_5.jpg	35
+651	PHOTO-2024-05-14-16-24-01_4.jpg	35
+652	PHOTO-2024-05-14-16-23-57_4.jpg	35
+653	PHOTO-2024-05-14-16-23-57_5.jpg	35
+448	ab124aa5-f498-4910-b32a-edfd77070426.JPEG	25
+450	e1872747-2b3c-47bf-a8ac-1cdf7deef70f.JPEG	25
+451	9412fa06-b18e-468f-84ca-3d92646a8c79.JPEG	25
+452	730b4ee5-e8b0-4cca-85e7-0075ea76e5cc.JPEG	25
+453	e4d974cd-293e-4e31-9f4f-684fa530cf9d.JPEG	25
+454	67fe3e1b-b860-47e9-bd30-5eb95f2dcb16.JPEG	25
+654	PHOTO-2024-05-29-10-50-06_2.jpg	36
+655	PHOTO-2024-05-29-10-50-07_2.jpg	36
+656	PHOTO-2024-05-29-10-50-07.jpg	36
+657	PHOTO-2024-05-29-10-50-08_2.jpg	36
+658	PHOTO-2024-05-29-10-50-09_2.jpg	36
+659	PHOTO-2024-05-29-10-50-09.jpg	36
+660	PHOTO-2024-05-29-10-50-13.jpg	36
+661	PHOTO-2024-05-29-10-50-30_2.jpg	36
+662	PHOTO-2024-05-29-10-50-30_3.jpg	36
+663	PHOTO-2024-05-29-10-50-30.jpg	36
+664	PHOTO-2024-05-29-10-50-31_2.jpg	36
+665	PHOTO-2024-05-29-10-50-31_3.jpg	36
+666	PHOTO-2024-05-29-10-50-31_4.jpg	36
+667	PHOTO-2024-05-29-10-50-31.jpg	36
+668	PHOTO-2024-05-29-10-50-33_2.jpg	36
+669	PHOTO-2024-05-29-10-50-33.jpg	36
 \.
 
 
@@ -8642,6 +8839,11 @@ COPY public.offer_message (id, first_name, last_name, phone, email, message) FRO
 23	Rizvan	mehmeliyev	(05) 775-45-91	Rizvanmehmeliyev@gmal.kom	
 24	Eltun	Bashirov	(99) 451-22-98	eltunbashirov@gmail.com	
 25	test	test	(55) 512-31-24	test@gmail.com	test
+26	Ilhame	Qadirova	(50) 749-35-81	ilhameqadirova1@gmail.com	Bunu bana devletini verir  parasını benmi ödeyecem beni  bir açıklama verin lutfen
+27	Ilhame	Qadirova	(50) 749-35-81	ilhameqadirova1@gmail.com	Bunu bana devletini verir  parasını benmi ödeyecem beni  bir açıklama verin lutfen
+28	Ilhame	Qadirova	(50) 749-35-81	ilhameqadirova1@gmail.com	Bunu bana devletini verir  parasını benmi ödeyecem beni  bir açıklama verin lutfen
+29	Ilhame	Qadirova	(50) 749-35-81	ilhameqadirova1@gmail.com	Bunu bana devletini verir  parasını benmi ödeyecem beni  bir açıklama verin lutfen
+30	fuad 	mammadov	(45) 645-64-54	eere@ghadsg.com	efwerr
 \.
 
 
@@ -8656,14 +8858,14 @@ COPY public.offer_offer (id, name, address, bath, bed, image, price, square, typ
 13	Like Teracce Village	Kargicak mah	2	2	3_1_egGIFN6.png	196500	110	A	20 km	2 km	13 km	Var	Yeni bina	Var	Var	Var	31.12.2024	2	2	Floor	1	2	2	2	Lüks, rahat və keyfiyyətli həyat üçün lazımı olan hər bir şəraiti özündə birləşdirən Lake Terrace Villagede gözəl anlar yaşayın. Sevgi və qayğı ilə yaradılmış mühit gündəlik həyatın təlaşını götürüb, sizə rahat bir yaşam bəxş edəcək. Təbiətlə sıx təmasda yaşayıb həyatınıza rəng qatın, komfortdan həzz alın ✅	\N	\N	\N	\N	\N	\N	429322	117900	14678	3 hefte	308510	f
 3	State of Art	Mahmutlar	2	2+1	PHOTO-2024-01-11-13-34-02.jpg	146000	90	A	30	2.5 km	10 km	var	Hazır bina	var	var	bəli	2023	2	2	Floor	1	2	2	2	Mahmutlar məhəlləsində yerləşən yeni inşa edilmiş State of Art sitemizin gözəlliyi sizi heyran edəcək. Keyfiyyətli yaşayış üçün nəzərdə tutulmuş sitemizdə bütün lazımdı infrastruktura işlək vəziyyətdədir: binada hovuz (açıq və qapalı), su attraksionları, sauna, buxar otağı, türk hamamı, masaj salonu, idman zalı, tennis, basketbol və voleybol meydançaları, uşaq klubu, uşaq parkı, Avtodayanacağ, oyun meydançası, 24/7 muhafizə, generator, təmizlikçi və bağban, çox geniş manqal sahəsi, wifi və bir sıra digər üstünlükləri var. Gün ərzində səhər saat 9 dan axşam saat 9 qədər Mahmutlar mərkəzinə ve çimərliyə pulsuz transfer xidməti gösterilir.	\N	\N	\N	\N	\N	\N	318988	87600	10113	3 hefte	219448	f
 16	My hill residence	Tosmur, İsmail Özdemir Cd. No:13, 07469 Alanya/Antalya	2	4+1	IMG_0179.jpeg	260000	215	A	32 km	400 metre	8 km	Yox	Hazir bina	Var	Var	Yox	2016	2	2	Floor	1	4	2	2	My hill sitesi	\N	\N	\N	\N	\N	\N	578984	159000	19795	3 hefte	418567	f
-10	Panorama Garden Sitesi	Tosmur, Merkez Cami Cd. 39/A, 07469 Alanya/Antalya	2	2+1	8dd2062a-c205-4149-99fb-df3f0a63211d.png	130000	120	A	37 km	800 metre	7 km	Var	Hazır bina	Var	Var	Var	2012	2	2	Floor	1	2	2	2	Tosmur məhəlləsində yerləşən Panorama Garden sitesi çox baxımlı və gözəldir, sitenin bağçası dekorativ ağaclarla, çiçəklərlə əhatələnib. Binada bütün lazımdı infrastruktura işlek veziyyetdedir: hovuz (açıq və qapalı), su attraksionları, sauna, türk hamamı, Avtodayanacağ, 24/7 muhafizə, generator, təmizlikçi və bağban, wifi və bir sıra digər üstünlükləri var. Təqdim olunan geniş mənzilimiz 2 yatağ otağı, 1 studiya mətbəx və iki dağ və dəniz mənzərəli balkondan ibarətdir	\N	\N	\N	\N	\N	\N	284030	78000	9005	4 hefte	194610	f
+10	Panorama Garden Sitesi	Tosmur, Merkez Cami Cd. 39/A, 07469 Alanya/Antalya	2	2+1	8dd2062a-c205-4149-99fb-df3f0a63211d.png	130000	120	A	37 km	800 metre	7 km	Var	Hazır bina	Var	Var	Var	2012	2	2	Floor	1	2	2	2	Tosmur məhəlləsində yerləşən Panorama Garden sitesi çox baxımlı və gözəldir, sitenin bağçası dekorativ ağaclarla, çiçəklərlə əhatələnib. Binada bütün lazımdı infrastruktura işlek veziyyetdedir: hovuz (açıq və qapalı), su attraksionları, sauna, türk hamamı, Avtodayanacağ, 24/7 muhafizə, generator, təmizlikçi və bağban, wifi və bir sıra digər üstünlükləri var. Təqdim olunan geniş mənzilimiz 2 yatağ otağı, 1 studiya mətbəx və iki dağ və dəniz mənzərəli balkondan ibarətdir	\N	\N	\N	\N	\N	\N	284030	78000	9005	4 hefte	194610	t
 12	Like Teracce Village	Kargicak mah	1	1	3_1.png	125000	55	A	20 km	2 km	13 km	Var	Yeni bina	Var	Var	Var	31.12.2024	1	1	Floor	1	1	1	1	Lüks, rahat və keyfiyyətli həyat üçün lazımı olan hər bir şəraiti özündə birləşdirən Lake Terrace Villagede gözəl anlar yaşayın. Sevgi və qayğı ilə yaradılmış mühit gündəlik həyatın təlaşını götürüb, sizə rahat bir yaşam bəxş edəcək. Təbiətlə sıx təmasda yaşayıb həyatınıza rəng qatın, komfortdan həzz alın ✅	\N	\N	\N	\N	\N	\N	273106	75000	9337	3 hefte	193633	f
 19	Amazing Nature Life	Kargicak mah	2	3	14.jpg	347000	185	V	20 km	2 km	14 km	Var	Yeni bina	Yox	Var	Var	30.12.2026	2	2	Floor	1	3	2	2	Alanya'nın muhteşem Kargıcak mahallesinde, doğayla iç içe 32 dönümlük bir arazi üzerinde yer alan Amazing Nature Life projemiz, 14 blok ve 42 özel villa olmak üzere 166 bağımsız birimden oluşmaktadır. Bu muhteşem yapı, lüks ve konforu doğayla mükemmel bir şekilde harmanlıyor. Projemiz sadece bir konut kompleksi değildir; sakinlerine çeşitli özel sosyal olanaklarla keyifli bir yaşam vaat etmektedir.	\N	\N	\N	\N	\N	\N	758142	208200	25920	4 hefte	550314	f
 22	Amazing Nature Life	Kargicak mah	1	1+1	21.jpeg	63500	55	A	20 km	2 km	14 km	Var	Yeni bina	Var	Var	Var	30.12.2026	1	1	Floor	1	1	1	1	Alanyanın möhtəşəm Kargıcak bölgəsində təbiətin qucaqladığı 32 hektarlıq ərazidə yüksələn "Heyrətləndirici Təbiət Həyatı" adlı layihəmiz 166 müstəqil hissədən, həmçinin 14 blokdan və 42 şəxsi villadan ibarətdir, lüks və rahatlığı təbiətlə birləşdirir. Layihəmiz təkcə yaşayış yerləri ilə bağlı deyil, həm də bir sıra xüsusi sosial obyektlər təklif etməklə sakinlərinə xoş həyat vəd edir. Layihəmizdəki 14 blok 2 fərqli tip binadan ibarətdir.Birinci tip bina cəmi 8 blokdan ibarətdir. Bu bölmələr müxtəlif növ və genişlikləri ilə müxtəlif ehtiyaclara cavab verir.	\N	\N	\N	\N	\N	\N	138738	38100	4743	3 hefte	94823	f
-25	Panorama Garden sifesi	Tosmur, Merkez Cami Cd. 39/A, 07469 Alanya/Antalya	1	1+1	168_72x_b5T4P8g.png	105000	65	A	32 km	650 metre	6 km	Var	Hazır bina	Yox	Var	Var	2012	1	1	Floor	1	1	1	1	Ətraflı təsvir Panorama Garden Alanyada, dənizdən 600 m məsafədə, Tosmurun inkişaf etmiş sahil zonasında yerləşən, öz infrastrukturuna malik gözəl yaşayış kompleksidir. O, bağı və hovuzu olan abadlaşdırılmış ərazidə yerləşən üç 10 mərtəbəli binadan ibarətdir. Yaxşı inkişaf etmiş xidmətlər şəbəkəsi olan ərazi.	\N	\N	\N	\N	\N	\N	229409	63000	7843	3 hafta	161500	f
 24	Rising Blue	Kestel, 07450 Alanya/Antalya	2	3+1	kvartira-1-1-rising-blue-kestel-alanya-12.png	265000	150	A	28 km	150 meters	7 km	Var	Hazır bina	Yox	Var	Var	2017	2	2	Floor	1	2	2	2	Rising Blue, Alanya ətrafında, Kestel sahilində dənizdən 150 metr məsafədə yerləşən, öz infrastrukturuna malik yeni yaşayış kompleksidir. 7600 kv.m abadlaşdırılmış ərazidə yerləşən üç 6 mərtəbəli yaşayış blokundan ibarətdir. m bağçası və hovuzu var.	\N	\N	\N	\N	\N	\N	578984	159000	19795	3 hefte	418567	f
 21	Summer Valley 2	Kestel, 07450 Alanya/Antalya	1	1+1	PHOTO-2024-03-03-15-22-22.png	105000	55	A	28 km	500 metre	6 km	Var	Hazır bina	Yoz	Var	Var	2023	2	2	Floor	1	2	2	2	Bu yaşayış kompleksi çimərlikdən cəmi 500 m məsafədə, yaşıl ətrafı olan dinc ərazidə tikilir. Alanya şəhər mərkəzinə 5 km məsafədə, mağazalar, restoranlar, kafelər, barlar, apteklər, klinikalar, parklar və sahil xətti qısa bir məsafədədir. Kompleks iki blokdan ibarətdir və 1+1 mənzil 50 m², qonaq otağı, mətbəx, hamam və eyvandan ibarətdir. 2+1 dupleks mənzillər 100 m²-dir və qonaq otağı, mətbəx, iki vanna otağı və iki balkondan ibarətdir. Mənzillərin dəniz mənzərəsi və kondisioneri var.	\N	\N	\N	\N	\N	\N	229409	63000	7843	3 hefte	161500	f
 4	State of art	Mahmutlar M.230. S12/B7n	1	1+1	492669803.png	86000	55	A	24 km	2.5 km	10 km	Var	Hazır bina	Var	Var	Var	2023	1	1	Floor	1	1	1	1	Mahmutlar məhəlləsində yerləşən yeni inşa edilmiş State of Art sitemizin gözəlliyi sizi heyran edəcək. Keyfiyyətli yaşayış üçün nəzərdə tutulmuş sitemizdə bütün lazımdı infrastruktura işlək vəziyyətdədir: binada hovuz (açıq və qapalı), su attraksionları, sauna, buxar otağı, türk hamamı, masaj salonu, idman zalı, tennis, basketbol və voleybol meydançaları, uşaq klubu, uşaq parkı, Avtodayanacağ, oyun meydançası, 24/7 muhafizə, generator, təmizlikçi və bağban, çox geniş manqal sahəsi, wifi və bir sıra digər üstünlükləri var. Gün ərzində səhər saat 9 dan axşam saat 9 qədər Mahmutlar mərkəzinə ve çimərliyə pulsuz transfer xidməti gösterilir.	\N	\N	\N	\N	\N	\N	198821	54600	6303	3 hefte	134067	f
+25	Panorama Garden sifesi	Tosmur, Merkez Cami Cd. 39/A, 07469 Alanya/Antalya	1	1+1	bf072f0c-1cb4-45ef-8cb5-9ba5e4f4d6d4.JPEG	105000	65	A	32 km	650 metre	6 km	Var	Hazır bina	Yox	Var	Var	2012	1	1	Floor	1	1	1	1	Ətraflı təsvir Panorama Garden Alanyada, dənizdən 600 m məsafədə, Tosmurun inkişaf etmiş sahil zonasında yerləşən, öz infrastrukturuna malik gözəl yaşayış kompleksidir. O, bağı və hovuzu olan abadlaşdırılmış ərazidə yerləşən üç 10 mərtəbəli binadan ibarətdir. Yaxşı inkişaf etmiş xidmətlər şəbəkəsi olan ərazi.	\N	\N	\N	\N	\N	\N	229409	63000	7843	3 hafta	161500	f
 11	Kavi Dreams	Oba, Bedenliler Sk., 07460 Alanya/Antalya	2	2	PHOTO-2024-01-27-18-55-33_10.png	180000	95	A	30 km	1 km	3 km	Var	Hazır bina	Yox	Var	Var	2023	2	2	Floor	1	2	2	2	Kompleks şəhərin mərkəzindən cəmi 3 km məsafədə yerləşir. \r\n Lüks Kavi Dreams kompleksindəki mənzillərin panoramik pəncərələri bütün Alanyanın və tropik bağların, eləcə də Toros dağlarının və Alanya qalasının mənzərəsini təqdim edir.\r\n\r\n\r\nBinanın Uşaq meydançası, besedkalar və mangal zonası, tennis kortu, mini golf, qapalı qış hovuzu, Sauna və cakuzi, masaj otaqları, Türk hamamı, Duş və paltardəyişmə otaqları, Fitness zalı, Kino klubu, Pulsuz wifi, Açıq və qapalı parkinq, Generator, 7/24 mühafizə və digər üstünlükləri mövcutdur.	\N	\N	\N	\N	\N	\N	393272	108000	12468	3 hefte	272230	t
 26	Crystal Park 2	Cikcilli, 07400 Alanya/Antalya	2	2+1	PHOTO-2024-04-30-15-36-56_21.png	225000	110	A	35 km	800 metre	3 km	Var	Hazır bina	Yoz	Var	Var	2016	2	2	Floor	1	2	2	2	Öz birinci dərəcəli infrastrukturu olan yeni yaşayış kompleksi Alanyanın Cikcilli bölgəsində dənizdən 700 m, şəhər mərkəzindən 1,5 km, Qazipaşa hava limanından 40 km məsafədə yerləşir. Kompleks qapalı qapalı struktura malikdir və müstəsna rahatlıq və abadlıq təmin edir.\r\n\r\nƏrazinin özündə rahat həyat üçün lazım olan hər şey var - piyada məsafədə mağazalar, restoranlar, kafelər, ticarət mərkəzləri və "Alanium", "Köçtaş", "Metro" hipermarketləri, xəstəxanalar var. və ictimai nəqliyyat dayanacaqları, həmçinin kompleksdən transfer ilə gözəl qumlu çimərlik. Şəhərin bütün ərazilərinə əla nəqliyyat əlaqələri.\r\nKompleks infrastruktura və bağçaya malik geniş ərazini tutur. Kompleks müxtəlif tipli və ölçülü mənzillərlə birlikdə 10 mərtəbəli 4 yaşayış blokundan ibarətdir. Kompleksin infrastrukturu 5* otelin xidmətinə uyğundur və ən tələbkar tələbləri belə ödəyəcək. Arzu edə biləcəyiniz hər şey var! Siz ümumiyyətlə ərazini tərk etmək məcburiyyətində deyilsiniz, hər şey parmaklarınızın ucundadır!	\N	\N	\N	\N	\N	\N	491591	135000	16807	3 hefte	354300	f
 23	Sun Palace Garden	Tosmur, M. Cami Cd. No:6, 07469 Alanya/Antalya	2	2+1	16e46ff5-0062-4ae4-999e-8dceed213040.png	200000	110 kv metre	A	28 km	350 metre	7 km	Var	Hazir bina	Var	Var	Var	2016	2	2	Floor	1	2	2	2	Sun Palace Garden, Alanya şəhərinin Tosmur məhəlləsində, bütün lazımi şəhər infrastrukturuna və ictimai nəqliyyat dayanacaqlarına yaxın, dənizə və çimərliyə 5 dəqiqəlik piyada məsafədə yerləşən, öz infrastrukturuna malik yeni komfortlu mənzillər kompleksidir. Kompleks 4250 kv.m sahəsi olan qapalı mühafizə olunan ərazidə yerləşən 10 mərtəbəli iki yaşayış binasından ibarətdir. m bağçası və hovuzu olan, şəhərin mərkəzinə gedən yola yaxın, 3 km məsafədə. Sözün əsl mənasında 100 m aralıda Dimçaydır. Sun Palace Garden yaşayış və istirahət üçün əla seçim olmaqla yanaşı, əla investisiyadır.	\N	\N	\N	\N	\N	\N	436969	120000	14939	3 hefte	314134	t
@@ -8671,7 +8873,6 @@ COPY public.offer_offer (id, name, address, bath, bed, image, price, square, typ
 5	State of Art	Mahmutlar Mahallesi 230. Sokak 12/B   State OF Art ALANYA/ANTALYA	2	2+1	492669803_tcWI0ot.png	176000	90	A	24 km	2.5 km	10 km	Var	Hazır bina	Var	Var	Var	2023	2	2	Floor	1	2	2	2	Mahmutlar məhəlləsində yerləşən yeni inşa edilmiş State of Art sitemizin gözəlliyi sizi heyran edəcək. Keyfiyyətli yaşayış üçün nəzərdə tutulmuş sitemizdə bütün lazımdı infrastruktura işlək vəziyyətdədir: binada hovuz (açıq və qapalı), su attraksionları, sauna, buxar otağı, türk hamamı, masaj salonu, idman zalı, tennis, basketbol və voleybol meydançaları, uşaq klubu, uşaq parkı, Avtodayanacağ, oyun meydançası, 24/7 muhafizə, generator, təmizlikçi və bağban, çox geniş manqal sahəsi, wifi və bir sıra digər üstünlükləri var. Gün ərzində səhər saat 9 dan axşam saat 9 qədər Mahmutlar mərkəzinə ve çimərliyə pulsuz transfer xidməti gösterilir.	\N	\N	\N	\N	\N	\N	384533	105600	12191	3 hefte	266020	f
 20	State Of Art	Mahmutlar, 230. Sk. No:29, 07460 Alanya/Antalya	1	1+1	PHOTO-2024-02-28-11-58-54_7.png	110000	55	A	24 km	2 km	10 km	Var	Hazır bina	Var	Var	Var	2023	1	1	Floor	1	1	1	1	Mahmutlar mehellesinde yerləşən yeni inşa edilmiş State of Art sitemizin gözelliyi sizi heyran edecek. Keyfiyyetli yaşayış üçün nezerde tutulmuş sitemizde bütün lazımlı infrastruktur işlek veziyyetdedir: binada hovuz (açıq və qapalı), su attraksionları, sauna, buxar otağı, türk hamamı, masaj salonu, idman zalı, tennis, basketbol və voleybol meydançası, uşaq klubu, uşaq parkı, Avtodayanacağ, oyun meydançası, 24/7 muhafizə, generator, təmizlikçi və bağban, manqal sahəsi, wifi və bir sıra digər üstünlükləri var. Gün erzinde seher saat 9 dan axşam saat 9-a qeder Mahmutlar merkezine ve çimerliye pulsuz transfer xidmeti gösterilir.	\N	\N	\N	\N	\N	\N	240333	66000	8216	3 hefte	169533	f
 27	Sen Palace Luxury apartments	Oba, Heseoğlu Sk. No:6, 07460, 07460 Alanya/Antalya	3	3+1 bağ dupleksi	16e69a82-dc1c-4710-9579-07466fe06707.JPG	225000	170 metre	A	30 km	1.2 km	4 km	Var	Hazır bina	Var	Var	Var	3 yıl	2	2	Floor	1	2	2	2	Alanyanın mərkəzindən cəmi 4 km məsafədə, prestijli Oba bölgəsində yaşıl bağlarla əhatə olunmuş, bütün lazımi infrastruktura, şəhər xəstəxanasına və Alanium, Metro və "Köçtaş" kimi böyük ticarət mərkəzlərinə piyada məsafədə yerləşən yeni lüks yaşayış kompleksi. .\r\n\r\nKompleks ümumi qorunan ərazi və mehmanxana infrastrukturu ilə birləşən bir neçə 5 mərtəbəli yaşayış bloklarından ibarətdir. Bura uşaqlarla yaşamaq və ya dəniz kənarında rahat istirahət etmək üçün ideal yerdir.	\N	\N	\N	\N	\N	\N	491591	135000	16807	3 həftə	354300	f
-15	Vega Icon	Oba, 07460 Alanya/Antalya	1	1+1	5e257c9f-a545-4797-8a20-c59c01dc85a1.png	150000	55	A	34 km	2 km	8 km	Var	Yeni Bina	Var	Var	Var	01.05.2024	1	1	Floor	1	1	1	1	Yeni, rahat ailə layihəsi\r\nTamamlanma tarixi: Mart/Aprel 2024\r\nRayon: Oba\r\nLayihə 4.400 m2 sahədə tikilir və 80 mənzilli 2 blokdan ibarətdir; sahəsi 52 m2-dən 141 m2-ə qədər.\r\nİnfrastruktur açıq üzgüçülük hovuzu geniş bağlar\r\nManqal sahəsi və besedka, uşaqlar üçün oyun parkı, tennis və basketbol meydançaları, qapalı və açıq parkinq, elektrikli nəqliyyat vasitələri üçün də uyğundur\r\nDaxili infrastruktur\r\nLobbi qapalı hovuz sauna idman zalı kinoteatrı\r\noyun otağı və uşaq klubu kafesi.\r\nÇimərliyə 1700 m\r\nLayihə çərçivəsində çimərliyə servis də təşkil olunacaq.\r\n1+1, 3-cü mərtəbə hovuza və yandan dənizə mənzərəsi	\N	\N	\N	\N	\N	\N	294954	81000	10084	3 hefte	209700	f
 28	Aramis Terrace 2	Cikcilli, 07400 Alanya/Анталия	2	2+1	IMG_1733.jpg	185000	120 metre	A	35 km	1.3 km	3 km	Var	Hazır bina	Yox	Var	Var	5	2	2	Floor	1	2	2	2	Aramis Terrace 2, Alanya şəhərinin Cikcilli məhəlləsində, şəhər mərkəzinə yaxın, gözəl yerdə - ətrafa gözəl mənzərəsi olan təpədə, meşənin yanında və 15 dəqiqəlik məsafədə yerləşən yeni lüks yaşayış kompleksidir. çimərlikdən piyada getmək.	\N	\N	\N	\N	\N	\N	404197	111000	13819	3 həftə	290034	f
 29	Best Home Legend	Güller Pınarı, Bulut Sk., 07460 Alanya/Antalya	3	2+1 Duplex	60c47b55b5860151344384.jpg	484000	105 metre	A	35 km	100 metre	0	Var	Hazır bina	Var	Bəli	Var	25.06.2024	2	2	Floor	1	2	2	2	BestHome 36-37 The Legend dənizə yaxşı çıxışı olan qumlu çimərlikdən cəmi 3 dəqiqəlik məsafədə tikiləcək. Məhz bu yerdə, çimərlik boyunca, şəhərin ən yaxşı restoranları əla yeməklər, içkilər seçimi ilə, eləcə də məşhur orta əsrlər Alanya qalasının unudulmaz mənzərəsi ilə yerləşir.	\N	\N	\N	\N	\N	\N	1057466	290400	36154	3 həftə	770427	f
 30	Cebeci Boutique Vadi	Çıplaklı, 70113 Sk., 07400 Giplakli/Antalya	3	3+1	3-Dis-Cephe-3.jpg	463500	150	A	36 km	3 km	6 km	Var	Hazır bina	Var	Var	Var	30.07.2024	2	2	Floor	1	2	2	2	Layihə Alanya Ciplakli ərazisində 7613 m2 sahədə 4 blokdan, cəmi 72 mənzildən ibarətdir.\r\nLayihəmizdə normal mənzillər 3+1, 4+1 və duplekslər 6+1 var.\r\n• Hər bir mənzil üçün qapalı dayanacaq\r\n• Qonaq parkı\r\n• Elektrikli avtomobillər üçün doldurma stansiyası\r\n• İsti döşəmə\r\n• Ağıllı Ev sistemi\r\n• Açıq hovuz\r\n• Qapalı hovuz\r\n• Türk hamamı\r\n• Sauna\r\n• Fitnes mərkəzi\r\n• kinoteatr zalı\r\n• Uşaq meydançası\r\n• Alüminium çərçivələr\r\n• Jalüzlər\r\n• Kamera sistemi 7/24\r\n• Generator\r\n• Uşaq parkı\r\n• Tennis kortu\r\n• Piyada yolu\r\n•Qapıcı\r\n• Şəxsi təhlükəsizlik\r\n30/07/2023 Bitmə tarixi	\N	\N	\N	\N	\N	\N	1057466	290400	36154	3 həftə	770427	f
@@ -8679,6 +8880,9 @@ COPY public.offer_offer (id, name, address, bath, bed, image, price, square, typ
 32	Best home Legend	Güller Pınarı, Bulut Sk., 07460 Alanya/Antalya	2	2+1	60c47b55b5860151344384_YLsSkR1.jpg	402000	90	A	35 km	100 metre	0	Var	Hazır bina	Yox	Var	Var	25.06.2024	2	2	Floor	1	2	2	2	Kompleks əlverişli yerləşməsi, 5 ulduzlu otel infrastrukturu və unikal dizaynı ilə unikaldır. Bu Alanyada ilk belə xüsusiyyətlərə malik kompleksdir və eyni zamanda şəhərin mərkəzi hissəsində, dənizə çox yaxın ərazidə yerləşir. Mövsümi tətillər, daimi yaşayış və gəlirli investisiya üçün idealdır.	\N	\N	\N	\N	\N	\N	878308	241200	30028	3 həftə	638680	f
 33	Vesta Park	Cikcilli, 105. Sk. No:7, 07400 Alanya/Antalya	2	2+1	alanya-real-estate-3-room-apartment-for-sale-in-vesta-park-cikcilli-alanya-07.jpg	190000	110	A	35 km	1.2 km	2 km	Var	Hazır bina	Var	Var	Var	2014	2	2	Floor	1	2	2	2	Cikcilli ərazisi Alanyanın mərkəzində, Buğa massivinin təpələrində yerləşir, yaxşı inkişaf etmiş infrastruktura malikdir, rahat həyat üçün lazım olan hər bir şey var - mağazalar, restoranlar, kafelər, ticarət mərkəzi və hipermarket, market, bir xəstəxana və ictimai nəqliyyat dayanacaqları. Alanyanın mərkəzi yaxşı bir yol boyunca təxminən 2 km.	\N	\N	\N	\N	\N	\N	415121	114000	14192	3 həftə	298067	f
 34	Crystal Garden	Cikcilli, 07400 Alanya/Antalya	1	1+1	crystal-garden-cover.jpg	135000	65	A	35 km	800 metre	2 km	Var	Hazır bina	Yox	Var	Var	2017	1	1	Floor	1	1	1	1	Crystal Garden, Alanya şəhərinin Cikcilli məhəlləsində, dənizdən 800 metr məsafədə yerləşən öz infrastrukturuna malik lüks yaşayış kompleksidir. Cikcilli yaxşı inkişaf etmiş xidmətlər şəbəkəsinə malik bir ərazidir, burada rahat həyat üçün lazım olan hər şey var - mağazalar, restoranlar, kafelər, ticarət mərkəzləri və hipermarketlər, market, xəstəxana və ictimai nəqliyyat dayanacaqları piyada məsafədədir. Alanyanın mərkəzi təxminən 2 km-dir. Tikinti və bəzək işlərinin yüksək keyfiyyəti, şəhərin mərkəzinə və dənizə yaxınlığı, təklif olunan abadlıq və xidmətlər sayəsində Crystal Garden mənzillərinə hər zaman tələbat olacaqdır.	\N	\N	\N	\N	\N	\N	294954	81000	10084	3 həftə	209700	f
+35	Hill sun 2	Tosmur, İsmail Özdemir Cd. No:19, 07469 Alanya/Antalya	2	2+1	PHOTO-2024-05-14-16-23-53_3.jpg	170000	105	A	30 km	400 metre	6 km	Var	Hazır bina	Yoz	Var	Var	2017	2	2	Floor	1	2	2	2	Hill Sun 2, Alanyanın Tosmur məhəlləsində, dənizdən 400 m məsafədə yerləşən öz infrastrukturuna malik yeni eksklüziv yaşayış kompleksidir. Üzgüçülük hovuzu olan abadlaşdırılmış ərazidə yerləşən 10 mərtəbəli bir binadan ibarətdir. Yaxşı inkişaf etmiş xidmətlər şəbəkəsi olan ərazi.	\N	\N	\N	\N	\N	\N	371424	102000	12698	3 həftə	265934	f
+15	Vega Icon	Oba, 07460 Alanya/Antalya	1	1+1	5e257c9f-a545-4797-8a20-c59c01dc85a1.png	130000	55	A	34 km	2 km	8 km	Var	Yeni Bina	Var	Var	Var	01.05.2024	1	1	Floor	1	1	1	1	Yeni, rahat ailə layihəsi\r\nTamamlanma tarixi: Mart/Aprel 2024\r\nRayon: Oba\r\nLayihə 4.400 m2 sahədə tikilir və 80 mənzilli 2 blokdan ibarətdir; sahəsi 52 m2-dən 141 m2-ə qədər.\r\nİnfrastruktur açıq üzgüçülük hovuzu geniş bağlar\r\nManqal sahəsi və besedka, uşaqlar üçün oyun parkı, tennis və basketbol meydançaları, qapalı və açıq parkinq, elektrikli nəqliyyat vasitələri üçün də uyğundur\r\nDaxili infrastruktur\r\nLobbi qapalı hovuz sauna idman zalı kinoteatrı\r\noyun otağı və uşaq klubu kafesi.\r\nÇimərliyə 1700 m\r\nLayihə çərçivəsində çimərliyə servis də təşkil olunacaq.\r\n1+1, 3-cü mərtəbə hovuza və yandan dənizə mənzərəsi	\N	\N	\N	\N	\N	\N	294954	81000	10084	3 hefte	209700	f
+36	Elite Marine 3	Saray, Hancı İbrahim Sk. No:21, 07400 Alanya/Antalya	1	1+1	PHOTO-2024-05-29-10-50-06.jpg	133000	50	A	40 km	400 metre	0	Var	Hazır bina	Yok	Var	Var	2020	1	1	Floor	1	1	1	1	Alanya Mərkəzi Alanyanın ürəyidir. Küçələrdə çoxsaylı dəbdəbəli qəhvə dükanları və geyim mağazaları, dünyanın müxtəlif ölkələrindən müxtəlif mətbəxlər təqdim edən restoranlar var. Bu, şəhərin ən sıx məskunlaşdığı ərazidir və hətta əsas küçələrdən və ticarət zonalarından kənarda da səs-küy var.\r\nBurada yerləşən əsas görməli yerlər liman (gözəl yelkənli pirat gəmiləri ilə), Qırmızı Qala (köhnə qala), möhtəşəm tarixi ilə Alanya qalası və gözəl qumlu çimərliklərlə müşayiət olunan tarixi qədim tərsanədir.	\N	\N	\N	\N	\N	\N	290585	79800	9934	3 həftə	206487	f
 \.
 
 
@@ -9346,14 +9550,14 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 2272, true)
 -- Name: contact_contact_id_seq; Type: SEQUENCE SET; Schema: public; Owner: trivasoft
 --
 
-SELECT pg_catalog.setval('public.contact_contact_id_seq', 175, true);
+SELECT pg_catalog.setval('public.contact_contact_id_seq', 179, true);
 
 
 --
 -- Name: contact_vebinar_id_seq; Type: SEQUENCE SET; Schema: public; Owner: trivasoft
 --
 
-SELECT pg_catalog.setval('public.contact_vebinar_id_seq', 594, true);
+SELECT pg_catalog.setval('public.contact_vebinar_id_seq', 743, true);
 
 
 --
@@ -9577,7 +9781,7 @@ SELECT pg_catalog.setval('public.core_whytr_id_seq', 4, true);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: trivasoft
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 865, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 874, true);
 
 
 --
@@ -9605,7 +9809,7 @@ SELECT pg_catalog.setval('public.django_summernote_attachment_id_seq', 1, false)
 -- Name: offer_image_id_seq; Type: SEQUENCE SET; Schema: public; Owner: trivasoft
 --
 
-SELECT pg_catalog.setval('public.offer_image_id_seq', 635, true);
+SELECT pg_catalog.setval('public.offer_image_id_seq', 669, true);
 
 
 --
@@ -9626,14 +9830,14 @@ SELECT pg_catalog.setval('public.offer_imagetr_id_seq', 246, true);
 -- Name: offer_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: trivasoft
 --
 
-SELECT pg_catalog.setval('public.offer_message_id_seq', 25, true);
+SELECT pg_catalog.setval('public.offer_message_id_seq', 30, true);
 
 
 --
 -- Name: offer_offer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: trivasoft
 --
 
-SELECT pg_catalog.setval('public.offer_offer_id_seq', 34, true);
+SELECT pg_catalog.setval('public.offer_offer_id_seq', 36, true);
 
 
 --
