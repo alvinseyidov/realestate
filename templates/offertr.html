@@ -701,6 +701,18 @@ function numberWithCommas(x) {
                 </div>
                 </div>
                 {% endif%}
+                {% if offer.mertebe %}
+
+                <div class="col-lg-2 col-md-12 col-6">
+                    <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
+                    <div>Kaçıncı Kat</div>
+                    <div style=" display: flex;    margin-top: 21px; ">
+                        <div><img src="{% static 'stairs.png'%}"> </div>
+                        <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.mertebe}}</div>
+                    </div>
+                </div>
+                </div>
+                {% endif%}
                 {% if offer.year_built %}
                 <div class="col-lg-2 col-md-12 col-6">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
