@@ -9,13 +9,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
-SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
+SECRET_KEY = 'django-insecure-cm7p=e=@4&z7o0*9r8ayl$3pofwcca6ytvt)hkbnrxk$ras*n6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.getenv('DEBUG', 1))
+DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split()
+ALLOWED_HOSTS = ['smartinvest.az','www.smartinvest.az']
 
 
 # Application definition
@@ -79,12 +78,12 @@ DATABASES = {
 '''
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('SQL_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv('SQL_DATABASE', 'smartinvest'),
-        'USER': os.getenv('SQL_USER', 'trivasoft'),
-        'PASSWORD': os.getenv('SQL_PASSWORD', 'Triva12748294!'),
-        'HOST': os.getenv('SQL_HOST', 'localhost'),
-        'PORT': os.getenv('SQL_PORT', '5432'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'smartinvest',
+        'USER': 'trivasoft',
+        'PASSWORD': 'Triva12748294!',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
