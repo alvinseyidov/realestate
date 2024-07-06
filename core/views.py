@@ -213,7 +213,7 @@ def data(request, year, amount, mortgage):
 
     #--------------------TR----------------------------
     if mortgage == 1:
-        kiraye1 = estate_investment*kiraye_kof
+        kiraye1 = first_amount*kiraye_kof
         kiraye2 = kiraye1*(1+rental_growth_tr/100)
         kiraye3 = kiraye2*(1+rental_growth_tr/100)
         kiraye4 = kiraye3*(1+rental_growth_tr/100)
@@ -671,7 +671,7 @@ def data(request, year, amount, mortgage):
     data['field1'] = 120000
 
     data['year'] = year
-    data['deyer2'] = estate_investment
+    data['deyer2'] = first_amount
     data['ilkin'] = first_amount
 
     if year == 1:
