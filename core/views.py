@@ -44,6 +44,7 @@ def data(request, year, amount, mortgage):
     first_amount = amount
     leverage = amount * parametr.leverage_tr #0.8
     estate_investment = first_amount+leverage
+    estate_investment2 = first_amount+leverage/1.08
     monthly_loan_tr = calculate_mortgage(leverage, year, interest_rate_percent)
     monthly_loan_az = calculate_mortgage(leverage, year, interest_rate__percent_az)
     diger_xerc_tr = parametr.diger_xercler_tr #600
@@ -213,7 +214,7 @@ def data(request, year, amount, mortgage):
 
     #--------------------TR----------------------------
     if mortgage == 1:
-        kiraye1 = first_amount*kiraye_kof
+        kiraye1 = estate_investment2*kiraye_kof
         kiraye2 = kiraye1*(1+rental_growth_tr/100)
         kiraye3 = kiraye2*(1+rental_growth_tr/100)
         kiraye4 = kiraye3*(1+rental_growth_tr/100)
@@ -671,7 +672,7 @@ def data(request, year, amount, mortgage):
     data['field1'] = 120000
 
     data['year'] = year
-    data['deyer2'] = first_amount
+    data['deyer2'] = estate_investment2
     data['ilkin'] = first_amount
 
     if year == 1:
