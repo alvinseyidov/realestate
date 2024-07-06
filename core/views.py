@@ -44,7 +44,7 @@ def data(request, year, amount, mortgage):
     first_amount = amount
     leverage = amount * parametr.leverage_tr #0.8
     estate_investment = first_amount+leverage
-    estate_investment2 = first_amount+leverage/1.08
+    estate_investment2 = (first_amount+leverage)/1.08
     monthly_loan_tr = calculate_mortgage(leverage, year, interest_rate_percent)
     monthly_loan_az = calculate_mortgage(leverage, year, interest_rate__percent_az)
     diger_xerc_tr = parametr.diger_xercler_tr #600
