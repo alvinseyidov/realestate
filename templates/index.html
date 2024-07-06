@@ -3544,7 +3544,10 @@ boxesss.forEach(box => {
             success:function(data){
             if($('input[name="ipoteka"]:checked').val() == 1){
             $("#field3").val(data['deyer2']);
+            console.log("=======================================================================");
             }
+            else{
+            console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");}
 
 
             chart1.updateSeries([ {
@@ -4379,7 +4382,10 @@ chart1.updateOptions({
     success:function(data){
     if($('input[name="ipoteka"]:checked').val() == 1){
             $("#field3").val(data['deyer2']);
+            console.log("=======================================================================");
             }
+            else{
+            console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");}
 
 
 
