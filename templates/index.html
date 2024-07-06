@@ -3528,7 +3528,7 @@ boxesss.forEach(box => {
     }
     else{
     mortgage = 0;
-    $("#field3").val(100);
+    $("#field3").val($("#ilkinid").val());
 
     }
 
@@ -3543,7 +3543,7 @@ boxesss.forEach(box => {
             url:`/data/${year}/${amount}/${mortgage}/`,
             success:function(data){
             if($('input[name="ipoteka"]:checked').val() == 1){
-            $("#field3").val(200]);
+            $("#field3").val(data['deyer2']);
             console.log("=======================================================================");
             }
             else{
@@ -4381,7 +4381,7 @@ chart1.updateOptions({
     url:`/data/10/50000/1/`,
     success:function(data){
     if($('input[name="ipoteka"]:checked').val() == 1){
-            $("#field3").val(300);
+            $("#field3").val(data['deyer2']);
             console.log("=======================================================================");
             }
             else{
