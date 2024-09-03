@@ -918,7 +918,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
        <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
                 <div style="background:#fff;">
-                    <div style="padding-top: 10px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">
+                    <div id="mymodaltitle" style="padding-top: 10px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">
                         {{form1.title}} </div>
                     <div id="subtitle" style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
                         {{form1.sub_title}}</div>
@@ -4740,6 +4740,7 @@ owl.owlCarousel({
             success: function (data) {
             console.log("successss");
             $('#subtitle').css('display', 'none');
+            $('#mymodaltitle').css('display', 'none');
             if(which_form == 1){
             window.dataLayer = window.dataLayer || [];
              window.dataLayer.push({
@@ -4753,6 +4754,7 @@ owl.owlCarousel({
              });
              console.log("2 happened");
              }
+
 
 
             console.log("df");
