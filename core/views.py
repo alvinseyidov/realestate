@@ -6,9 +6,7 @@ from contact.models import *
 from offer.models import *
 from statik.models import *
 from django.http import JsonResponse
-from weasyprint import HTML
-from django.http import HttpResponse
-from django.template.loader import render_to_string
+
 
 def calculate_mortgage(loanAmount,years, interestRate):
     loanAmount = float(loanAmount)
@@ -1722,23 +1720,3 @@ def tr(request):
     return render(request, "indextr.html", context)
 
 
-def generate_pdf(request):
-    # Load data for rendering (e.g., Offer details)
-    context = {
-        'price': 1000,
-        'rooms': 3,
-        'balcon': 1,
-        # Add other context variables as needed
-    }
-
-    # Render the HTML template with context
-    html_string = render_to_string('pdf_template.html', context)
-
-    # Generate PDF from HTML string
-    html = HTML(string=html_string)
-    pdf = html.write_pdf()
-
-    # Send the PDF as a response
-    response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; filename="offer_details.pdf"'
-    return response

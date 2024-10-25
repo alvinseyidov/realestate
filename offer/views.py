@@ -3,9 +3,6 @@ from django.shortcuts import render, get_object_or_404
 from core.models import *
 from offer.models import *
 from statik.models import *
-from django.http import HttpResponse
-from weasyprint import HTML
-from django.template.loader import render_to_string
 
 def loadfaq(request):
 
@@ -121,68 +118,6 @@ def offer(request, id):
     }
 
     return render(request, "pdf_template.html", context)
-
-def offerpdf(request, id):
-    form_menzil_form = MenzilForm.objects.all()
-    form1 = Form1.objects.last()
-    form2 = Form2.objects.last()
-    form3 = Form3.objects.last()
-    form4 = Form4.objects.last()
-    general = General.objects.last()
-    socials = Social.objects.all()
-    why = Why.objects.all()
-    tablar = Tablar.objects.all()
-    offer = Offer.objects.get(pk=id)
-    offers = Offer.objects.all()[:3]
-    offers_section = OffersSection.objects.last()
-    if request.user_agent.is_mobile:
-        is_mobile = True
-    else:
-        is_mobile = False
-    head = Head.objects.all()
-    body = Body.objects.all()
-    amount = int(int(offer.price)*50/100)
-
-
-    pages = Pages.objects.all()
-    images = [
-        {"url": request.build_absolute_uri(i.image.url)}
-        for i in offer.images.all()
-    ]
-    print(images)
-    context = {
-        'images': images,
-        'form_menzil_form': form_menzil_form,
-        'form1': form1,
-        'form2': form2,
-        'form3': form3,
-        'form4': form4,
-        'pages': pages,
-        'amount': amount,
-        'body': body,
-        'head': head,
-        'is_mobile': is_mobile,
-        "offers": offers,
-        "offer": offer,
-        "tablar": tablar,
-        "general": general,
-        "why": why,
-        "offers_section": offers_section,
-        "socials": socials
-    }
-
-
-
-    html_string = render_to_string('pdf_template.html', context)
-
-    # Generate PDF from HTML string
-    html = HTML(string=html_string)
-    pdf = html.write_pdf()
-
-    # Send the PDF as a response
-    response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; filename="offer_details.pdf"'
-    return response
 
 
 def offertr(request, id):
