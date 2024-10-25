@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'smartinvest',
-        'USER': 'trivasoft',
-        'PASSWORD': 'Triva12748294!',
+        'USER': 'maxcreative',
+        'PASSWORD': 'Max14748294!Max',
         'HOST': 'localhost',
         'PORT': '',
     }
