@@ -120,7 +120,10 @@ def offer(request, id):
         "socials": socials
     }
 
-    return render(request, "pdf_template.html", context)
+    return render(request, "offer.html", context)
+
+from django.templatetags.static import static
+from django.utils.html import mark_safe
 
 def offerpdf(request, id):
     form_menzil_form = MenzilForm.objects.all()
@@ -150,7 +153,20 @@ def offerpdf(request, id):
         for i in offer.images.all()
     ]
     print(images)
+    image_url1 = request.build_absolute_uri(static('1.svg'))
+    image_urlstairs = request.build_absolute_uri(static('stairs.png'))
+    image_url4 = request.build_absolute_uri(static('4.svg'))
+    image_url5 = request.build_absolute_uri(static('5.svg'))
+    image_url6 = request.build_absolute_uri(static('6.svg'))
+    image_url7 = request.build_absolute_uri(static('7.svg'))
+    image_url8 = request.build_absolute_uri(static('8.svg'))
+    image_url9 = request.build_absolute_uri(static('9.svg'))
+    image_url10 = request.build_absolute_uri(static('10.svg'))
+    image_url11 = request.build_absolute_uri(static('11.svg'))
+    image_url12 = request.build_absolute_uri(static('12.svg'))
+    image_urls = [request.build_absolute_uri(image.image.url) for image in offer.images.all()]
     context = {
+        'image_urls': image_urls,
         'images': images,
         'form_menzil_form': form_menzil_form,
         'form1': form1,
@@ -168,7 +184,19 @@ def offerpdf(request, id):
         "general": general,
         "why": why,
         "offers_section": offers_section,
-        "socials": socials
+        "socials": socials,
+        "image_url1": image_url1,
+        "image_url4": image_url4,
+        "image_url5": image_url5,
+        "image_url6": image_url6,
+        "image_url7": image_url7,
+        "image_url8": image_url8,
+        "image_url9": image_url9,
+        "image_url10": image_url10,
+        "image_url11": image_url11,
+        "image_url12": image_url12,
+        "image_urlstairs": image_urlstairs,
+
     }
 
     html_string = render_to_string('pdf_template.html', context)

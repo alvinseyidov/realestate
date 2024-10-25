@@ -506,12 +506,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <div class="col-lg-12 col-md-12">
 
                      <div class="mmnnv" style="color: #000; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 600; line-height: 60px; /* 200% */ letter-spacing: -0.5px;">
-                         €<script>var camount = {{offer.price}};
-document.write(numberWithCommas(camount));
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-</script></div>
+                         € {{offer.price}}</div>
 
                 </div>
 
@@ -578,9 +573,9 @@ function numberWithCommas(x) {
 
 
    <div class="row">
-      {% for i in offer.images.all%}
+      {% for image_url in image_urls%}
      <div class="col-6">
-       <img src="{{ request.scheme }}://{{ request.get_host }}{{ i.image.url }}" style="width:100%;    border: 10px solid #fff;"/>
+       <img src="{{image_url}}" style="width:100%;    border: 10px solid #fff;"/>
      </div>
       {% endfor %}
 
@@ -629,7 +624,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Layihənin tipi</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '1.svg'%}"> </div>
+                        <div><img src="{{ image_url1 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">
                             {{offer.get_type_display}}
 
@@ -644,7 +639,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Layihənin vəziyyəti</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '4.svg'%}"> </div>
+                        <div><img src="{{ image_url4 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.project_status}}</div>
                     </div>
                 </div>
@@ -657,7 +652,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Mərtəbə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static 'stairs.png'%}" style=" width: 31px; margin-bottom: 15px; "> </div>
+                        <div><img src="{{ image_urlstairs }}" style=" width: 31px; margin-bottom: 15px; "> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.mertebe}}</div>
                     </div>
                 </div>
@@ -670,7 +665,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>İnşaat tarixi</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '5.svg'%}"> </div>
+                        <div><img src="{{ image_url5 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.year_built}}</div>
                     </div>
                 </div>
@@ -681,7 +676,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dənizə məsafə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '6.svg'%}"> </div>
+                        <div><img src="{{ image_url6 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_beach}}</div>
                     </div>
                 </div>
@@ -692,7 +687,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div style="font-size: 15px;margin-bottom: -21px;">Şəhər mərkəzinə məsafə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '7.svg'%}"> </div>
+                        <div><img src="{{ image_url7 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_center}}</div>
                     </div>
                 </div>
@@ -703,7 +698,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Hava limanına məsafə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '8.svg'%}"> </div>
+                        <div><img src="{{ image_url8 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.distance_to_airport}}</div>
                     </div>
                 </div>
@@ -714,7 +709,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dövlət təminatlı</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '9.svg'%}"> </div>
+                        <div><img src="{{ image_url9 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.state_guaranteed}}</div>
                     </div>
                 </div>
@@ -725,7 +720,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dəniz mənzərəli</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '10.svg'%}"> </div>
+                        <div><img src="{{ image_url10 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.sea_view}}</div>
                     </div>
                 </div>
@@ -736,7 +731,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Kreditə uyğun</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '11.svg'%}"> </div>
+                        <div><img src="{{ image_url11 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.installment}}</div>
                     </div>
                 </div>
@@ -747,7 +742,7 @@ function numberWithCommas(x) {
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div style=" font-size: 14px; line-height: 22px;   ">Vətəndaşlığa uyğun</div>
                     <div style=" display: flex;    margin-top: 21px; ">
-                        <div><img src="{% static '12.svg'%}"> </div>
+                        <div><img src="{{ image_url12 }}"> </div>
                         <div style=" padding-top: 9px; padding-right: 15px; margin-left: auto; ">{{offer.suitable_for_citizenship}}</div>
                     </div>
                 </div>
