@@ -1671,6 +1671,213 @@ font-size: 14px !important;
 
 
 
+<div id="evler" class=" mt-5 evler1" style=" padding-left: 142px; padding-right:142px;margin-top:90px !important;">
+    <div class="container">
+    <div class="row" style="padding-top: 25px;padding-bottom: 25px;">
+          <div class="col-lg-4 col-md-12"style="text-align: left;">
+                <div style="color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">
+                    {{offers_section.title}}</div>
+              <div style="color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">
+                  {{offers_section.text}}</div>
+
+
+          </div>
+         <div class="col-lg-4 col-md-12 bbbx8"style="text-align: center;">
+             <div class="" style=" display: flex; ">
+                 <style>
+                     .tablinkk.active {
+                            background:#3A453B;
+                     }
+                     .active p {
+                        color: #fff;
+                    }
+                 </style>
+                 <div id="menzilborder" onclick="openCityy(event, 'c2')" class="bbbx10 tablinkk active" style="     display: flex; cursor:pointer;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 30px 0 30px; margin-right:10px;"><img id="menzilwhite" style="    margin: -12px 5px 0 -8px; display: inline-block;width: 19px; margin: 2px 7px 0 1px; height: 21px; " src="{% static 'apartment.svg'%}"><img id="menzilblack" style="    margin: -12px 5px 0 -8px; display: none;width: 19px; margin: 2px 7px 0 1px; height: 21px; " src="{% static 'apartmentgreen.svg'%}"><p id="menzilp" style="  color:#fff;   margin: 2px 0 13px 0;display: inline-block; ">Mənzil</p> </div>
+
+                 <div id="villaborder" onclick="openCityy(event, 'c1')" class="bbbx9 tablinkk " style="    display: flex; cursor:pointer;margin-right:10px;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 55px 0 55px; "><img id="villablack" style=" display: inline-block;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villagreen.svg'%}"><img id="villawhite" style=" display: none;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villa.svg'%}"><p id="villap" style="  color:#3A453B;  margin: 2px 0 13px 0; display: inline-block; ">Villa</p> </div>
+             </div>
+          </div>
+         <div class="col-lg-4 col-md-12"style="text-align: center;display: flex;">
+              <div id="evbuttons" style=" display: flex; justify-content: center; ">
+                                <div  class="swiper-button-prevev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-nextev" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+
+             <div id="villabuttons" style=" display: none; justify-content: center; ">
+                                <div  class="swiper-button-prevvilla" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                                <div  class="swiper-button-nextvilla" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
+                        </div>
+
+             <a href="{% url 'offers'%}" style=" margin-top: 9px; font-size: 17px;text-decoration: none; color: unset; ">Bütün təkliflər <img src="{% static 'arrowright.png'%}" style="width:20px;margin: 0px 0 4px 5px;"></a>
+          </div>
+    </div>
+
+
+        <div class="row  ">
+          <div class="col-lg-12 col-md-12"style="text-align: left;margin-top:20px;">
+
+
+                <div id="c1" class="tabcontent container" style="display:block;">
+  <div class="swiper_wrap">
+      <div class="swiper-containervilla swiper-container">
+        <div class="swiper-wrapper">
+
+            {% for o in villas %}
+            <div class="swiper-slide">
+
+                <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.6;{% endif%}position:relative;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">
+                    <a {%if not o.is_sold_out%}href="{% url 'offer' o.id %}"{% endif%} >
+                        <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                        </a>
+
+                    <div style="display: flex;">
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'sq.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
+                    </div>
+                    <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
+
+                    <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
+                    </div>
+
+
+
+                </div>
+                {% if o.is_sold_out %}
+                <img src="{% static 'soldout.png'%}" style="position: absolute; width: 200px; top: 175px; z-index: 1000000; left: 50px;">
+                {% endif %}
+          </div>
+          {% endfor%}
+
+             <div class="swiper-slide">
+
+                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
+                    <div style=" width: 100%; text-align: center; ">
+                        <img src="{% static 'plus.png'%}" style="width:180px;">
+                    </div>
+                    <div style=" text-align: center;    margin-top: 72px; ">
+                       {{offers_section.form_text}}
+                    </div>
+                    <button id="myBtn5"  style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
+                       {{offers_section.form_button_text}}</button>
+
+                </div>
+          </div>
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
+
+                <div id="c2" class="tabcontent container" style="display:block;">
+  <div class="swiper_wrap">
+      <div class="swiper-container swiper-containerev">
+        <div class="swiper-wrapper">
+
+            {% for o in apartments %}
+         <div class="swiper-slide">
+
+                <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.6;{% endif%}position:relative;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">
+                      <a {%if not o.is_sold_out%}href="{% url 'offer' o.id %}"{% endif%} >
+                        <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                        </a>
+
+                     <div style="display: flex;">
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
+                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'sq.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
+                    </div>
+                    <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
+
+                  <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
+                    </div>
+
+                </div>
+             {% if o.is_sold_out %}
+                <img src="{% static 'soldout.png'%}" style="position: absolute; width: 200px; top: 175px; z-index: 1000000; left: 50px;">
+                {% endif %}
+          </div>
+          {% endfor%}
+             <div class="swiper-slide">
+
+                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
+                    <div style=" width: 100%; text-align: center; ">
+                        <img src="{% static 'plus.png'%}" style="width:180px;">
+                    </div>
+                    <div style=" text-align: center;    margin-top: 72px; ">
+                       {{offers_section.form_text}}
+                    </div>
+                    <button id="myBtn4"  style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
+                       {{offers_section.form_button_text}}</button>
+
+                </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+       <!-- Add Arrows -->
+
+    </div>
+</div>
+
+          </div>
+
+
+
+        </div>
+
+        </div>
+
+
 
 
 
@@ -1846,6 +2053,52 @@ function openCity(evt, cityName) {
 </div>
 
 
+
+
+<div class=" mt-5"  id="gelinn" style="margin-top: 87px !important;">
+        <div class="row rowww "  id="elaqe" style="padding-left: 0; padding-right:0; background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
+        <div class="rowww row  "   style="padding-left: 140px; padding-right:140px; ">
+
+            <div class="col-lg-4 col-md-12 desktopp" style="position:relative;">
+                <img src="{% static 'qiz.png'%}" style="width: 550px;position: absolute;bottom: 0;">
+            </div>
+            <div class="col-lg-4 col-md-12 mobilee" style="display:none;text-align: center;">
+                <img src="{% static 'qiz2.jpg'%}" style="width: 100%;bottom: 0;">
+            </div>
+            <div class="col-lg-4 col-md-12 formdiv" style="padding: 66px 3px 108px 90px;">
+                <div style=" color: #fff; font-size: 35px; font-weight: 500; line-height: 42px; margin-bottom: 15px; ">{{form_section.title}}</div>
+                <div style=" color: #fff;    margin: 0 0 25px 0;">{{form_section.sub_title}}</div>
+                <div>
+                    {{form_section.text | safe}}  </div>
+            </div>
+            <div class="col-lg-4 col-md-12" style="">
+                <div id="formm" class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; ">
+                    <form id="form_ozun_tapmisan" action="{% url 'contactform'%}" method="post">{% csrf_token%}
+                    <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
+                    <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
+                    <div style=" position: relative; ">
+
+                        <span style=" position: absolute; left: 45px; top: 1px; font-weight: 500; ">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone">
+                        </span>
+                        <input required name="phone" id="phone"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 62px " type="text">
+
+                    </div>
+                    <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">{{form3.button_text}}</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+     <div class="row  " style="padding-left: 0; padding-right:0; ">
+
+
+
+
+        </div>
+</div>
 
 
 
@@ -2156,260 +2409,6 @@ function openCity(evt, cityName) {
 
 
 
-<div id="evler" class=" mt-5 evler1" style=" padding-left: 142px; padding-right:142px;margin-top:90px !important;">
-    <div class="container">
-    <div class="row" style="padding-top: 25px;padding-bottom: 25px;">
-          <div class="col-lg-4 col-md-12"style="text-align: left;">
-                <div style="color: #2B2B2B; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 47px; /* 134.286% */ letter-spacing: -0.5px;">
-                    {{offers_section.title}}</div>
-              <div style="color: var(--Text-Colour-3, #808080); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 26px; /* 162.5% */">
-                  {{offers_section.text}}</div>
-
-
-          </div>
-         <div class="col-lg-4 col-md-12 bbbx8"style="text-align: center;">
-             <div class="" style=" display: flex; ">
-                 <style>
-                     .tablinkk.active {
-                            background:#3A453B;
-                     }
-                     .active p {
-                        color: #fff;
-                    }
-                 </style>
-                 <div id="menzilborder" onclick="openCityy(event, 'c2')" class="bbbx10 tablinkk active" style="     display: flex; cursor:pointer;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 30px 0 30px; margin-right:10px;"><img id="menzilwhite" style="    margin: -12px 5px 0 -8px; display: inline-block;width: 19px; margin: 2px 7px 0 1px; height: 21px; " src="{% static 'apartment.svg'%}"><img id="menzilblack" style="    margin: -12px 5px 0 -8px; display: none;width: 19px; margin: 2px 7px 0 1px; height: 21px; " src="{% static 'apartmentgreen.svg'%}"><p id="menzilp" style="  color:#fff;   margin: 2px 0 13px 0;display: inline-block; ">Mənzil</p> </div>
-
-                 <div id="villaborder" onclick="openCityy(event, 'c1')" class="bbbx9 tablinkk " style="    display: flex; cursor:pointer;margin-right:10px;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 55px 0 55px; "><img id="villablack" style=" display: inline-block;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villagreen.svg'%}"><img id="villawhite" style=" display: none;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villa.svg'%}"><p id="villap" style="  color:#3A453B;  margin: 2px 0 13px 0; display: inline-block; ">Villa</p> </div>
-             </div>
-          </div>
-         <div class="col-lg-4 col-md-12"style="text-align: center;display: flex;">
-              <div id="evbuttons" style=" display: flex; justify-content: center; ">
-                                <div  class="swiper-button-prevev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
-                                <div  class="swiper-button-nextev" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
-                        </div>
-
-             <div id="villabuttons" style=" display: none; justify-content: center; ">
-                                <div  class="swiper-button-prevvilla" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
-                                <div  class="swiper-button-nextvilla" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
-                        </div>
-
-             <a href="{% url 'offers'%}" style=" margin-top: 9px; font-size: 17px;text-decoration: none; color: unset; ">Bütün təkliflər <img src="{% static 'arrowright.png'%}" style="width:20px;margin: 0px 0 4px 5px;"></a>
-          </div>
-    </div>
-
-
-        <div class="row  ">
-          <div class="col-lg-12 col-md-12"style="text-align: left;margin-top:20px;">
-
-
-                <div id="c1" class="tabcontent container" style="display:block;">
-  <div class="swiper_wrap">
-      <div class="swiper-containervilla swiper-container">
-        <div class="swiper-wrapper">
-
-            {% for o in villas %}
-            <div class="swiper-slide">
-
-                <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.6;{% endif%}position:relative;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">
-                    <a {%if not o.is_sold_out%}href="{% url 'offer' o.id %}"{% endif%} >
-                        <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
-
-                    </div>
-                        </a>
-
-                    <div style="display: flex;">
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'sq.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
-                    </div>
-                    <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
-
-                    <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
-                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
-                    </div>
-
-
-
-                </div>
-                {% if o.is_sold_out %}
-                <img src="{% static 'soldout.png'%}" style="position: absolute; width: 200px; top: 175px; z-index: 1000000; left: 50px;">
-                {% endif %}
-          </div>
-          {% endfor%}
-
-             <div class="swiper-slide">
-
-                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
-                    <div style=" width: 100%; text-align: center; ">
-                        <img src="{% static 'plus.png'%}" style="width:180px;">
-                    </div>
-                    <div style=" text-align: center;    margin-top: 72px; ">
-                       {{offers_section.form_text}}
-                    </div>
-                    <button id="myBtn5"  style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
-                       {{offers_section.form_button_text}}</button>
-
-                </div>
-          </div>
-        </div>
-
-      </div>
-       <!-- Add Arrows -->
-
-    </div>
-</div>
-
-                <div id="c2" class="tabcontent container" style="display:block;">
-  <div class="swiper_wrap">
-      <div class="swiper-container swiper-containerev">
-        <div class="swiper-wrapper">
-
-            {% for o in apartments %}
-         <div class="swiper-slide">
-
-                <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.6;{% endif%}position:relative;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">
-                      <a {%if not o.is_sold_out%}href="{% url 'offer' o.id %}"{% endif%} >
-                        <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
-
-                    </div>
-                        </a>
-
-                     <div style="display: flex;">
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;    margin-right: 12px;">{{o.bed}} </div>
-                        <div style=" color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'sq.png'%}" style="width:20px;    margin-right: 12px;">{{o.square}} </div>
-                    </div>
-                    <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
-
-                  <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
-                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
-                    </div>
-
-                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
-                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
-                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
-                    </div>
-
-                </div>
-             {% if o.is_sold_out %}
-                <img src="{% static 'soldout.png'%}" style="position: absolute; width: 200px; top: 175px; z-index: 1000000; left: 50px;">
-                {% endif %}
-          </div>
-          {% endfor%}
-             <div class="swiper-slide">
-
-                <div class="evleritem" style="    height: 542px;width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 80px 14px 80px 14px;">
-                    <div style=" width: 100%; text-align: center; ">
-                        <img src="{% static 'plus.png'%}" style="width:180px;">
-                    </div>
-                    <div style=" text-align: center;    margin-top: 72px; ">
-                       {{offers_section.form_text}}
-                    </div>
-                    <button id="myBtn4"  style="     margin: auto;display: block;  background-color: #000; width: 256px; text-align: center; padding: 11px 20px; color: #fff; text-decoration: none; border-radius: 25px;    margin-top: 37px; ">
-                       {{offers_section.form_button_text}}</button>
-
-                </div>
-          </div>
-        </div>
-        </div>
-
-      </div>
-       <!-- Add Arrows -->
-
-    </div>
-</div>
-
-          </div>
-
-
-
-        </div>
-
-        </div>
-      </div>
-
-
-
-
-<div class=" mt-5"  id="gelinn" style="margin-top: 87px !important;">
-        <div class="row rowww "  id="elaqe" style="padding-left: 0; padding-right:0; background: linear-gradient(180deg, #3D473E 0%, #BED0C1 100%);">
-        <div class="rowww row  "   style="padding-left: 140px; padding-right:140px; ">
-
-            <div class="col-lg-4 col-md-12 desktopp" style="position:relative;">
-                <img src="{% static 'qiz.png'%}" style="width: 550px;position: absolute;bottom: 0;">
-            </div>
-            <div class="col-lg-4 col-md-12 mobilee" style="display:none;text-align: center;">
-                <img src="{% static 'qiz2.jpg'%}" style="width: 100%;bottom: 0;">
-            </div>
-            <div class="col-lg-4 col-md-12 formdiv" style="padding: 66px 3px 108px 90px;">
-                <div style=" color: #fff; font-size: 35px; font-weight: 500; line-height: 42px; margin-bottom: 15px; ">{{form_section.title}}</div>
-                <div style=" color: #fff;    margin: 0 0 25px 0;">{{form_section.sub_title}}</div>
-                <div>
-                    {{form_section.text | safe}}  </div>
-            </div>
-            <div class="col-lg-4 col-md-12" style="">
-                <div id="formm" class="formm" style="       border: 2px solid #000; border-radius: 10px; text-align: center; padding: 58px 0 54px 0; width: 350px; margin: auto; background-color: #fff; margin-top: 71px; ">
-                    <form id="form_ozun_tapmisan" action="{% url 'contactform'%}" method="post">{% csrf_token%}
-                    <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
-                    <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
-                    <div style=" position: relative; ">
-
-                        <span style=" position: absolute; left: 45px; top: 1px; font-weight: 500; ">
-                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone">
-                        </span>
-                        <input required name="phone" id="phone"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 62px " type="text">
-
-                    </div>
-                    <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">{{form3.button_text}}</button></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-</div>
-
-
-     <div class="row  " style="padding-left: 0; padding-right:0; ">
-
-
-
-
-        </div>
-</div>
 
 
 
