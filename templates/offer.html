@@ -613,10 +613,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <a href="mailto:?subject=Your PDF Document&body=Download your PDF here: https://smartinvest.az/offer/{{offer.id}}/pdf" target="_blank">
       <img src="{% static 'email.png'%}" alt="Email Icon"> Email
     </a>
+      <a href="{% url 'offerpdf' offer.id%}" target="_blank">
+      <img src="{% static 'downloads.png'%}" alt="Email Icon"> PDF Endir
+    </a>
   </div>
 </div>
 
-                        <script>
+                     <script>
   // Toggle the dropdown menu
   function toggleDropdown() {
     const dropdown = document.getElementById('shareDropdown');
@@ -624,14 +627,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
   }
 
   // Close the dropdown if clicked outside
-  window.onclick = function(event) {
-    if (!event.target.matches('.share-button')) {
-      const dropdown = document.getElementById('shareDropdown');
-      if (dropdown.style.display === 'block') {
-        dropdown.style.display = 'none';
-      }
+  document.addEventListener('click', function(event) {
+    const isClickInside = event.target.closest('.share-container');
+    const dropdown = document.getElementById('shareDropdown');
+    if (!isClickInside && dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
     }
-  }
+  });
 </script>
                     </div>
                      <div style="color: #808080; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; /* 156.25% */">
