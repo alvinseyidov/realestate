@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from core import views as core_views
 from offer import views as offer_views
+from calculator import views as calculator_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,14 +17,20 @@ urlpatterns = [
     path('vebinarform/', core_views.vebinarform, name="vebinarform"),
     #path('vebinarformru/', core_views.vebinarformru, name="vebinarformru"),
     path('vebinarformtr/', core_views.vebinarformtr, name="vebinarformtr"),
-    path('data/<int:year>/<int:amount>/<int:mortgage>/', core_views.data, name="data"),
+
     path('waitlist/', core_views.contactform2, name="waitlist"),
     path('offer/<int:id>/', offer_views.offer, name="offer"),
+    path('offers/', offer_views.offers, name="offers"),
     path('tr/offer/<int:id>/', offer_views.offertr, name="offertr"),
     #path('ru/offer/<int:id>/', offer_views.offerru, name="offerru"),
     path('loadfaq/', offer_views.loadfaq, name="loadfaq"),
     path('tr/', core_views.tr, name="tr"),
     #path('ru/', core_views.ru, name="ru")
+    path('data/<int:year>/<int:amount>/<int:mortgage>/', core_views.data, name="data"),
+    path('test_data/', calculator_views.test, name="test"),
+    path('calculate-investment/', calculator_views.calculate_investment_view, name='calculate-investment'),
+
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
