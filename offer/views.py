@@ -6,7 +6,7 @@ from statik.models import *
 from django.http import HttpResponse
 from weasyprint import HTML
 from django.template.loader import render_to_string
-
+import io
 def loadfaq(request):
 
     offset = request.GET.get('loaded_item')
