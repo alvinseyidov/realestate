@@ -1129,7 +1129,7 @@ input[type=range]:focus::-ms-fill-upper {
         <div class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style="  ">
                 <div class="row ">
-                     <div class="col-lg-7 col-md-12">
+                     <div class="col-lg-8 col-md-12">
                          <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 0px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
 
 
@@ -1149,13 +1149,313 @@ input[type=range]:focus::-ms-fill-upper {
     color: #11218D;
   }
 </style>
-                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks active" onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
+                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks active" onclick="openCity(event, 'five')">Aylıq ödənişlər</button>
+                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks " onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'two')">Əmlakın Dəyəri</button>
                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'three')">Yatırım Net Qazancı</button>
                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'four')">Qazanc Marjası</button>
    <br><br>
 
-<div id="one" class="tabcontent" style="display: block;">
+
+
+<div id="five" class="tabcontent" style="display: block;">
+ <style>
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Ensure borders are collapsed into a single line */
+            margin: 20px 0;
+            background-color: #ffffff;
+            border: 1px solid #ddd; /* Outer border for the table */
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: left;
+            border: 1px solid #ddd; /* Inner borders for cells */
+                font-size: 12px;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+    <style>
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utiliti ]*/
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #c850c0;
+  background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+  background: linear-gradient(45deg, #4158d0, #c850c0);
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1170px;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 260px;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 160px;
+}
+
+.column3 {
+  width: 245px;
+}
+
+.column4 {
+  width: 110px;
+  text-align: right;
+}
+
+.column5 {
+  width: 170px;
+  text-align: right;
+}
+
+.column6 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+
+
+
+    /* Basic styling for the modal */
+    .modaly {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-contenty {
+      position: relative;
+      background-color: white;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .closey {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+
+
+
+     <div id="" style=" overflow: auto; margin-bottom: 21px; ">
+
+        <table id="resultsTable" style="width:95%">
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Year 1</th>
+            <th>Year 2</th>
+            <th>Year 3</th>
+            <th>Year 4</th>
+            <th>Year 5</th>
+            <!-- Additional years can be added dynamically -->
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Rows will be dynamically added here -->
+    </tbody>
+</table>
+  </div>
+
+
+
+
+<script>
+    function populateTable(years, results) {
+        const tableBody = document.getElementById("tableBody");
+        const tableHead = document.querySelector("#resultsTable thead tr");
+
+        // Clear previous rows and headers
+        tableBody.innerHTML = "";
+        tableHead.innerHTML = "<th>#</th>"; // Reset the header
+
+        // Add year headers dynamically
+        for (let year = 1; year <= years; year++) {
+            const th = document.createElement("th");
+            th.innerText = year + ". il";
+            tableHead.appendChild(th);
+        }
+
+        const variableNames = [
+            "Aylıq kredit ödəməsi",
+            "Aylıq kirayə gəliri",
+            "Əmlakın gözlənilən dəyəri",
+        ];
+
+        // Iterate through each variable name to create rows
+        for (let i = 0; i < variableNames.length; i++) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${variableNames[i]}</td>
+                ${results[i].map(value => `<td>${value}</td>`).join('')}
+            `;
+            tableBody.appendChild(row);
+        }
+    }
+
+    // Example of how to call populateTable with dummy data
+    const exampleYears = 5; // Change this to test with different years
+    const exampleResults = [
+        [100, 200, 300, 400, 500], // Aylıq net geri ödəmə məbləği
+        [1000, 2000, 3000, 4000, 5000], // Yatırımın Net Dəyəri
+        [1100, 2100, 3100, 4100, 5100], // Əmlakın gözlənilən dəyəri
+    ];
+
+    populateTable(exampleYears, exampleResults);
+</script>
+
+
+
+</div>
+<div id="one" class="tabcontent" style="display: none;">
   <div id="chart1"></div>
 </div>
 
@@ -1207,7 +1507,7 @@ function openCity(evt, cityName) {
 
 
                      </div>
-                     <div class="col-lg-5 col-md-12 {% if is_mobile %}order-first{% endif%}">
+                     <div class="col-lg-4 col-md-12 {% if is_mobile %}order-first{% endif%}">
             <div class="calculatortitle mobilee" style="display:none;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
 
                        <div style="border-radius: 20px; border: 1px solid #DDDCE0; background: #FFF;">
@@ -1724,7 +2024,35 @@ function openCity(evt, cityName) {
     $('#yearspann').text(year);
 
 
+$.ajax({
+        url: '/calculate-investment/',  // URL of your Django view
+        type: 'GET',
+        data: {
+            'year': year,
+            'amount': amount
+        },
+        success: function(response) {
+        console.log("response");
+        console.log(response.monthly_return_amount);
+        populateTable(year, [
+        response.monthly_loan_payments,
+        response.rental_income_monthly,
+        response.expected_property_value,
+        ]);
 
+
+
+            // Update your HTML table with the response data
+            $("#net_return_amount").text(response.monthly_return_amount);
+            $("#net_investment_value").text(response.investment_net_value);
+            $("#property_value").text(response.expected_property_value);
+            $("#expected_investment_income").text(response.expected_investment_income);
+            $("#profit_margin").text(response.profit_margin_percent);
+        },
+        error: function(xhr, status, error) {
+            console.error("Error:", error);
+        }
+    });
 
         $.ajax({
             type:"GET",
@@ -2565,6 +2893,35 @@ chart1.updateOptions({
 
  <script>
  var mount = {{amount}}
+
+  $.ajax({
+        url: '/calculate-investment/',  // URL of your Django view
+        type: 'GET',
+        data: {
+            'year': 10,
+            'amount': mount
+        },
+        success: function(response) {
+        console.log("response");
+        console.log(response.monthly_return_amount);
+        populateTable(10, [
+        response.monthly_loan_payments,
+        response.rental_income_monthly,
+        response.expected_property_value,
+        ]);
+
+            // Update your HTML table with the response data
+            $("#net_return_amount").text(response.monthly_return_amount);
+            $("#net_investment_value").text(response.investment_net_value);
+            $("#property_value").text(response.expected_property_value);
+            $("#expected_investment_income").text(response.expected_investment_income);
+            $("#profit_margin").text(response.profit_margin_percent);
+        },
+        error: function(xhr, status, error) {
+            console.error("Error:", error);
+        }
+    });
+
       $.ajax({
     type:"GET",
     url:`/data/10/${mount}/1/`,
