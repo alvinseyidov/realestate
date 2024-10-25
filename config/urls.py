@@ -20,6 +20,7 @@ urlpatterns = [
     path('generate-pdf/', core_views.generate_pdf, name='generate_pdf'),
     path('waitlist/', core_views.contactform2, name="waitlist"),
     path('offer/<int:id>/', offer_views.offer, name="offer"),
+    path('offer/<int:id>/pdf/', offer_views.offerpdf, name="offerpdf"),
     path('offers/', offer_views.offers, name="offers"),
     path('tr/offer/<int:id>/', offer_views.offertr, name="offertr"),
     #path('ru/offer/<int:id>/', offer_views.offerru, name="offerru"),
