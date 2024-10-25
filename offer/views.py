@@ -171,17 +171,21 @@ def offerpdf(request, id):
         "socials": socials
     }
 
-
-
     html_string = render_to_string('pdf_template.html', context)
 
-    # Generate PDF from HTML string
-    html = HTML(string=html_string)
-    pdf = html.write_pdf()
+    # Create an in-memory buffer to hold the PDF
+    pdf_file = io.BytesIO()
 
-    # Send the PDF as a response
-    response = HttpResponse(pdf, content_type='application/pdf')
+    # Generate PDF from the rendered HTML
+    HTML(string=html_string).write_pdf(pdf_file)
+
+    # Seek to the beginning of the BytesIO buffer to read the PDF
+    pdf_file.seek(0)
+
+    # Send the PDF as an HTTP response
+    response = HttpResponse(pdf_file.getvalue(), content_type='application/pdf')
     response['Content-Disposition'] = 'inline; filename="offer_details.pdf"'
+
     return response
 
 
