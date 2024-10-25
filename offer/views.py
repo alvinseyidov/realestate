@@ -173,16 +173,16 @@ def offerpdf(request, id):
 
     html_string = render_to_string('pdf_template.html', context)
 
-    # Create an in-memory buffer to hold the PDF
+    # Create a BytesIO buffer to hold the PDF data
     pdf_file = io.BytesIO()
 
-    # Generate PDF from the rendered HTML
+    # Generate PDF from the HTML string, writing it into the BytesIO buffer
     HTML(string=html_string).write_pdf(pdf_file)
 
-    # Seek to the beginning of the BytesIO buffer to read the PDF
+    # Seek to the beginning of the buffer
     pdf_file.seek(0)
 
-    # Send the PDF as an HTTP response
+    # Create the HTTP response and set content type and disposition headers
     response = HttpResponse(pdf_file.getvalue(), content_type='application/pdf')
     response['Content-Disposition'] = 'inline; filename="offer_details.pdf"'
 
