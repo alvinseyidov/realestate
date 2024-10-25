@@ -432,268 +432,156 @@
          }
       </style>
 
-      <style>
-    /* Form container styling */
-    .filter-form {
-      max-width: 300px; /* Adjust width as needed */
-      background-color: #f8f9fa; /* Light background for form */
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      margin: 20px; /* Add space around the form */
-    }
 
-    /* Label styling */
-    .filter-form label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: #333;
-    }
-
-    /* Input and select styling */
-    .filter-form input[type="number"],
-    .filter-form select {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    /* Button styling */
-    .filter-form button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    /* Button hover effect */
-    .filter-form button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-
-
-      <style>
-    /* Resetting body margin and padding */
-
-    /* Burger menu styling */
-    .burger-menu {
-      font-size: 24px;
+ <style>
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
       padding: 15px;
-      cursor: pointer;
-    }
-
-    /* Sidebar container */
-    .sidebar {
-      height: 100%; /* Full height */
-      width: 0; /* Initial hidden state */
-      position: fixed;
-      top: 0;
-      left: 0;
       background-color: #f8f9fa;
-      overflow-x: hidden;
-      transition: 0.3s; /* Slide-in effect */
-      padding-top: 60px; /* Space for close button */
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
     }
 
-    /* Sidebar content */
-    .sidebar-content {
-      padding: 20px;
-      width: 100%; /* Sidebar width */
+    .filter-field {
+      flex: 1;
+      min-width: 150px;
     }
 
-    /* Close button */
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 25px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* Form elements styling (same as before) */
-    .filter-form label {
+    .filter-field label {
       display: block;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: bold;
       margin-bottom: 5px;
-      color: #333;
     }
 
-    .filter-form input[type="number"],
-    .filter-form select {
+    .filter-field select, .filter-field input {
       width: 100%;
       padding: 8px;
-      margin-bottom: 15px;
+      font-size: 14px;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
     }
 
-    .filter-form button {
-      width: 100%;
-      padding: 10px;
+    .reset-button, .filter-button {
       background-color: #007bff;
       color: white;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
       border: none;
       border-radius: 4px;
-      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s;
     }
 
-    .filter-form button:hover {
-      background-color: #0056b3;
+    .reset-button {
+      background-color: #dc3545;
+      margin-left: 10px;
     }
 
-          @media (max-width: 768px) {
-  /* Show the sidebar and burger menu on mobile screens */
-  .burger-menu {
-    display: block;
-  }
-
-  .desktopp {
-  display: none !important;
-  }
-
-  .sidebar {
-    display: block;
-  }
-}
-
-/* Hide the sidebar and burger menu on larger screens */
-@media (min-width: 769px) {
-  .burger-menu {
-    display: none;
-  }
-
-  .sidebar {
-    display: none;
-  }
-}
+    .reset-button:hover {
+      background-color: #c82333;
+    }
   </style>
-      <div class=" mt-5"  style=" background: #F6F8FA; ">
 
-          <div class="burger-menu" onclick="openSidebar()">☰</div>
+
+ <div class="container">
+            <div class="row  " style=" padding-top: 46px;    padding-bottom: 10px; ">
+      <form method="get" class="filter-container">
+  <!-- Location Filter -->
+  <div class="filter-field">
+    <label for="location">Lokasiya</label>
+    <select name="location" id="location">
+      <option value="all">Hamısı</option>
+      {% for location in locations %}
+      <option value="{{ location.id }}" {% if selected_location == location.id %}selected{% endif %}>{{ location.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- Property Type Filter -->
+  <div class="filter-field">
+    <label for="property_type">Əmlakın növü</label>
+    <select name="property_type" id="property_type">
+      <option value="all">Hamısı</option>
+      <option value="V" {% if selected_property_type == 'V' %}selected{% endif %}>Villa</option>
+      <option value="A" {% if selected_property_type == 'A' %}selected{% endif %}>Mənzil</option>
+      <option value="E" {% if selected_property_type == 'E' %}selected{% endif %}>Ev</option>
+      <option value="T" {% if selected_property_type == 'T' %}selected{% endif %}>Torpaq</option>
+      <option value="Q" {% if selected_property_type == 'Q' %}selected{% endif %}>Qeyri-yaşayış</option>
+      <option value="N" {% if selected_property_type == 'N' %}selected{% endif %}>Bina</option>
+    </select>
+  </div>
+
+  <!-- Room Quantity Filter -->
+  <div class="filter-field">
+    <label for="room_qty">Otaq sayı</label>
+    <select name="room_qty" id="room_qty">
+      <option value="all">Hamısı</option>
+      <option value="1+1" {% if selected_room_qty == '1+1' %}selected{% endif %}>1+1</option>
+      <option value="2+1" {% if selected_room_qty == '2+1' %}selected{% endif %}>2+1</option>
+      <option value="3+1" {% if selected_room_qty == '3+1' %}selected{% endif %}>3+1</option>
+      <option value="more" {% if selected_room_qty == 'more' %}selected{% endif %}>Daha çox</option>
+    </select>
+  </div>
+
+  <!-- Extra Area Filter -->
+  <div class="filter-field">
+    <label for="extra_area">Əlavə sahə</label>
+    <select name="extra_area" id="extra_area">
+      <option value="all">Hamısı</option>
+      <option value="H" {% if selected_extra_area == 'H' %}selected{% endif %}>Həyət</option>
+      <option value="T" {% if selected_extra_area == 'T' %}selected{% endif %}>Terras</option>
+      <option value="B" {% if selected_extra_area == 'B' %}selected{% endif %}>Balkon</option>
+    </select>
+  </div>
+
+  <!-- Installment Filter -->
+  <div class="filter-field">
+    <label for="installment">Kreditə uyğundur</label>
+    <select name="installment" id="installment">
+      <option value="all">Hamısı</option>
+      <option value="var" {% if selected_installment == 'var' %}selected{% endif %}>Bəli</option>
+      <option value="uyğun deyil" {% if selected_installment == 'uyğun deyil' %}selected{% endif %}>Uyğun Deyil</option>
+    </select>
+  </div>
+
+  <!-- Suitable for Citizenship Filter -->
+  <div class="filter-field">
+    <label for="suitable_for_citizenship">Oturum icazəsi</label>
+    <select name="suitable_for_citizenship" id="suitable_for_citizenship">
+      <option value="all">Hamısı</option>
+      <option value="var" {% if selected_suitable_for_citizenship == 'var' %}selected{% endif %}>Var</option>
+      <option value="uyğun deyil" {% if selected_suitable_for_citizenship == 'uyğun deyil' %}selected{% endif %}>Uyğun Deyil</option>
+    </select>
+  </div>
+
+  <!-- Filter and Reset Buttons -->
+          <div>
+  <button type="submit" class="filter-button" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 50px;">Filterlə</button>
+  <a class="reset-button" onclick="resetFilters()" style=" background: none; color: black; ">Filteri sıfırla</a>
+</div>
+      </form>
+
+            </div>
+            </div>
+
+      <div class=" mt-1"  style=" ">
+
+
          <div class="container">
             <div class="row  " style=" padding-top: 46px;    padding-bottom: 40px; ">
-               <div class="col-lg-3 col-md-12">
-
-                   <div id="sidebar" class="sidebar" style="width:90%;">
-  <div class="sidebar-content">
-    <span class="close-btn" onclick="closeSidebar()">&times;</span>
-               <div class="filter-form">
-  <form method="get">
-    <label for="type">Əmlakın növü:</label>
-    <select name="type" id="type" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 8px 10px 8px 20px;">
-      <option value="N" {% if offer_type == 'N' %}selected{% endif %}>Bina</option>
-      <option value="V" {% if offer_type == 'V' %}selected{% endif %}>Villa</option>
-      <option value="A" {% if offer_type == 'A' %}selected{% endif %}>Mənzil</option>
-      <option value="E" {% if offer_type == 'E' %}selected{% endif %}>Ev</option>
-      <option value="T" {% if offer_type == 'T' %}selected{% endif %}>Torpaq</option>
-      <option value="Q" {% if offer_type == 'Q' %}selected{% endif %}>Qeyri-yaşayış</option>
-    </select>
-
-    <label for="price_min">Min. qiymət:</label>
-    <input type="number" name="price_min" id="price_min" value="{{ price_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="price_max">Max. qiymət:</label>
-    <input type="number" name="price_max" id="price_max" value="{{ price_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="rooms">Otaq sayı:</label>
-    <input type="number" name="rooms" id="rooms" value="{{ rooms }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="beds">Yataq otağı sayı:</label>
-    <input type="number" name="beds" id="beds" value="{{ beds }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="balcon">Balkon sayı:</label>
-    <input type="number" name="balcon" id="balcon" value="{{ balcon }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="wc_qty">WC sayı:</label>
-    <input type="number" name="wc_qty" id="wc_qty" value="{{ wc_qty }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="square_min">Min. sahə (m2):</label>
-    <input type="number" name="square_min" id="square_min" value="{{ square_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="square_max">Max.sahə (m2):</label>
-    <input type="number" name="square_max" id="square_max" value="{{ square_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <button type="submit" style="    font-size: 16px; margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px;  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 11px 48px; background: #000; ">Filterlə</button>
-  </form>
-</div>
 
 
-               </div>
-               </div>
 
-                    <div class="desktopp filter-form">
-  <form method="get">
-    <label for="type">Əmlakın növü:</label>
-    <select name="type" id="type" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 8px 10px 8px 20px;">
-      <option value="N" {% if offer_type == 'N' %}selected{% endif %}>Bina</option>
-      <option value="V" {% if offer_type == 'V' %}selected{% endif %}>Villa</option>
-      <option value="A" {% if offer_type == 'A' %}selected{% endif %}>Mənzil</option>
-      <option value="E" {% if offer_type == 'E' %}selected{% endif %}>Ev</option>
-      <option value="T" {% if offer_type == 'T' %}selected{% endif %}>Torpaq</option>
-      <option value="Q" {% if offer_type == 'Q' %}selected{% endif %}>Qeyri-yaşayış</option>
-    </select>
-
-    <label for="price_min">Min. qiymət:</label>
-    <input type="number" name="price_min" id="price_min" value="{{ price_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="price_max">Max. qiymət:</label>
-    <input type="number" name="price_max" id="price_max" value="{{ price_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="rooms">Otaq sayı:</label>
-    <input type="number" name="rooms" id="rooms" value="{{ rooms }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="beds">Yataq otağı sayı:</label>
-    <input type="number" name="beds" id="beds" value="{{ beds }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="balcon">Balkon sayı:</label>
-    <input type="number" name="balcon" id="balcon" value="{{ balcon }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="wc_qty">WC sayı:</label>
-    <input type="number" name="wc_qty" id="wc_qty" value="{{ wc_qty }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="square_min">Min. sahə (m2):</label>
-    <input type="number" name="square_min" id="square_min" value="{{ square_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <label for="square_max">Max.sahə (m2):</label>
-    <input type="number" name="square_max" id="square_max" value="{{ square_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
-
-    <button type="submit" style="    font-size: 16px; margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px;  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 11px 48px; background: #000; ">Filterlə</button>
-  </form>
-</div>
-               </div>
-
-                <script>
-  // Function to open the sidebar
-  function openSidebar() {
-    document.getElementById("sidebar").style.width = "85%";
-    document.body.style.overflow = "hidden"; // Disable scroll on body
-  }
-
-  // Function to close the sidebar
-  function closeSidebar() {
-    document.getElementById("sidebar").style.width = "0";
-    document.body.style.overflow = "auto"; // Enable scroll on body
-  }
-</script>
-               <div class="col-lg-9 col-md-12">
+               <div class="col-lg-12 col-md-12">
                   <div class="row">
                       {% for o in offers %}
-                     <div class="col-12 col-lg-4 col-md-12">
+                     <div class="col-12 col-lg-3 col-md-12">
 
 
                     <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.6;{% endif%}width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">

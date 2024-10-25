@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class Location(models.Model):
+    name = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
+
+
 class Offer(models.Model):
     TYPE = (
         ('V', 'Villa'),
@@ -10,6 +17,13 @@ class Offer(models.Model):
         ('Q', 'Qeyri-yaşayış'),
         ('N', 'Bina'),
     )
+    EXTRA = (
+        ('H', 'Həyət'),
+        ('T', 'Terras'),
+        ('B', 'Balkon'),
+    )
+    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True, blank=True)
+    elave_sahe = models.CharField(max_length=2, choices=EXTRA, default='H')
     is_sold_out = models.BooleanField(default=False)
     price = models.IntegerField(verbose_name="Əmlakın Indiki Dəyəri",default=0)
     ilkin_kapital = models.IntegerField(verbose_name="İlkin kapital",null=True, blank=True)
@@ -29,7 +43,7 @@ class Offer(models.Model):
     sea_view = models.CharField(max_length=256)
     installment = models.CharField(max_length=256)
     suitable_for_citizenship = models.CharField(max_length=256)
-    bed = models.CharField(max_length=256)
+    bed = models.CharField(max_length=256, verbose_name="Otaq sayı")
     bath = models.CharField(max_length=256)
     square = models.CharField(max_length=256)
     type = models.CharField(max_length=1, choices=TYPE, default='V')

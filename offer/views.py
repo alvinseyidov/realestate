@@ -436,48 +436,51 @@ def tr(request):
 
 
 def offers(request):
-    TYPE = (
-        ('V', 'Villa'),
-        ('A', 'Mənzil'),
-        ('E', 'Ev'),
-        ('T', 'Torpaq'),
-        ('Q', 'Qeyri-yaşayış'),
-        ('N', 'Bina'),
-    )
-    # Get the filtered offers based on query parameters or default to "Bina" type
+    # Retrieve filter values from the request or set defaults
+    location_id = request.GET.get('location', 'all')
+    property_type = request.GET.get('property_type', 'all')
+    room_qty = request.GET.get('room_qty', 'all')
+    extra_area = request.GET.get('extra_area', 'all')
+    installment = request.GET.get('installment', 'all')
+    suitable_for_citizenship = request.GET.get('suitable_for_citizenship', 'all')
+
+    # Start with all offers
     offers = Offer.objects.all()
 
-    # Default filter for 'Bina'
-    offer_type = request.GET.get('type', 'A')  # Default is 'N' for Bina
-    if offer_type:
-        offers = offers.filter(type=offer_type)
+    # Apply filters if they’re not set to "all"
+    if location_id != 'all':
+        offers = offers.filter(location_id=location_id)
 
-    # Apply additional filters if provided
-    price_min = request.GET.get('price_min')
-    price_max = request.GET.get('price_max')
-    rooms = request.GET.get('rooms')
-    beds = request.GET.get('beds')
-    balcon = request.GET.get('balcon')
-    wc_qty = request.GET.get('wc_qty')
-    square_min = request.GET.get('square_min')
-    square_max = request.GET.get('square_max')
+    if property_type != 'all':
+        offers = offers.filter(type=property_type)
 
-    if price_min:
-        offers = offers.filter(price__gte=price_min)
-    if price_max:
-        offers = offers.filter(price__lte=price_max)
-    if rooms:
-        offers = offers.filter(rooms=rooms)
-    if balcon:
-        offers = offers.filter(balcon=balcon)
-    if beds:
-        offers = offers.filter(bed=beds)
-    if wc_qty:
-        offers = offers.filter(wc_qty=wc_qty)
-    if square_min:
-        offers = offers.filter(square__gte=square_min)
-    if square_max:
-        offers = offers.filter(square__lte=square_max)
+    if room_qty != 'all':
+        if room_qty == 'more':
+            offers = offers.exclude(bed__in=['1+1', '2+1', '3+1'])
+        else:
+            offers = offers.filter(bed=room_qty)
+
+    if extra_area != 'all':
+        offers = offers.filter(elave_sahe=extra_area)
+
+    if installment != 'all':
+        if installment == 'var':
+            offers = offers.filter(installment='var')
+        else:
+            offers = offers.exclude(installment='var')
+
+    if suitable_for_citizenship != 'all':
+        if suitable_for_citizenship == 'var':
+            offers = offers.filter(suitable_for_citizenship='var')
+        else:
+            offers = offers.exclude(suitable_for_citizenship='var')
+
+    # Retrieve locations to populate the dropdown menu
+    locations = Location.objects.all()
+    if location_id != 'all':
+        location_id = int(location_id)
+    # Pass filter selections to the template to retain selections on reload
+
     general = General.objects.last()
     socials = Social.objects.all()
     why = Why.objects.all()
@@ -488,15 +491,13 @@ def offers(request):
 
 
         'offers': offers,
-        'offer_type': offer_type,
-        'price_min': price_min,
-        'price_max': price_max,
-        'rooms': rooms,
-        'balcon': balcon,
-        'beds': beds,
-        'wc_qty': wc_qty,
-        'square_min': square_min,
-        'square_max': square_max,
+        'locations': locations,
+        'selected_location': location_id,
+        'selected_property_type': property_type,
+        'selected_room_qty': room_qty,
+        'selected_extra_area': extra_area,
+        'selected_installment': installment,
+        'selected_suitable_for_citizenship': suitable_for_citizenship,
     }
 
     return render(request, 'offers.html', context)
