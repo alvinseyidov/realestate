@@ -1680,7 +1680,7 @@ font-size: 14px !important;
         <div class="row  " style="padding-left: 142px; padding-right:142px;">
             <div class="col-lg-12 col-md-12" style="  ">
                 <div class="row ">
-                     <div class="col-lg-7 col-md-12">
+                     <div class="col-lg-8 col-md-12" style=" padding-top: 30px; ">
                          <div class="calculatortitle desktopp" style="display:block;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 0px;">
 
                              {{calculator.title |safe}}
@@ -1703,13 +1703,36 @@ font-size: 14px !important;
     color: #11218D;
   }
 </style>
-                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks active" onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
+                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks active" onclick="openCity(event, 'five')">Aylıq ödənişlər</button>
+                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'one')">Yatırım Net Dəyəri</button>
                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'two')">Əmlakın Dəyəri</button>
                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'three')">Yatırım Net Qazancı</button>
                         <button style="margin-top: 9px;margin-bottom: 10px;font-size: 12px; padding: 10px 17px;" class="tablinks" onclick="openCity(event, 'four')">Qazanc Marjası</button>
    <br><br>
 
-<div id="one" class="tabcontent" style="display: block;">
+                         <div id="five" class="tabcontent" style="display: block;">
+  <div id="" style=" overflow: auto; margin-bottom: 21px; ">
+
+        <table id="resultsTable" style="width:95%">
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Year 1</th>
+            <th>Year 2</th>
+            <th>Year 3</th>
+            <th>Year 4</th>
+            <th>Year 5</th>
+            <!-- Additional years can be added dynamically -->
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Rows will be dynamically added here -->
+    </tbody>
+</table>
+  </div>
+</div>
+
+<div id="one" class="tabcontent" style="display: none;">
   <div id="chart1"></div>
 </div>
 
@@ -1761,7 +1784,7 @@ function openCity(evt, cityName) {
 
 
                      </div>
-                     <div class="col-lg-5 col-md-12 {% if is_mobile %}order-first{% endif%}">
+                     <div class="col-lg-4 col-md-12 {% if is_mobile %}order-first{% endif%}">
             <div class="calculatortitle mobilee" style="display:none;font-size: 37px;font-weight: 500;padding: 0px 70px 40px 60px;">Real olaraq investisiyanın <br>gəlirlərini hesabla!</div>
 
                        <div style="border-radius: 20px; border: 1px solid #DDDCE0; background: #FFF;">
@@ -1812,7 +1835,7 @@ function openCity(evt, cityName) {
                             </style>
                             <div style=" display: flex; ">
                                 <button class="loading" id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
-                                <button id="openModalBtny" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block;   text-align: center; margin-top: 25px; margin-left:10px;">Ətraflı Məlumat</button>
+
                             </div>
                         </div>
                    </div>
@@ -1831,22 +1854,7 @@ function openCity(evt, cityName) {
   <div class="modal-contenty">
     <span class="closey">&times;</span>
     <div style=" overflow: auto; margin-top: 21px; ">
-      <table id="resultsTable">
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Year 1</th>
-            <th>Year 2</th>
-            <th>Year 3</th>
-            <th>Year 4</th>
-            <th>Year 5</th>
-            <!-- Additional years can be added dynamically -->
-        </tr>
-    </thead>
-    <tbody id="tableBody">
-        <!-- Rows will be dynamically added here -->
-    </tbody>
-</table>
+
 </div>
 
   </div>
@@ -1864,9 +1872,10 @@ function openCity(evt, cityName) {
         }
 
         th, td {
-            padding: 15px;
+            padding: 5px;
             text-align: left;
             border: 1px solid #ddd; /* Inner borders for cells */
+                font-size: 12px;
         }
 
         th {
@@ -1897,12 +1906,9 @@ function openCity(evt, cityName) {
         }
 
         const variableNames = [
-            "Ümumi Gəlir",
-            "Aylıq net geri ödəmə məbləği",
-            "Yatırımın Net Dəyəri",
+            "Aylıq kredit ödəməsi",
+            "Aylıq kirayə gəliri",
             "Əmlakın gözlənilən dəyəri",
-            "Gözlənilən yatırım qazancı (Net)",
-            "Qazanc Marjası %"
         ];
 
         // Iterate through each variable name to create rows
@@ -1919,12 +1925,9 @@ function openCity(evt, cityName) {
     // Example of how to call populateTable with dummy data
     const exampleYears = 5; // Change this to test with different years
     const exampleResults = [
-        [100, 200, 300, 400, 500], // Ümumi gəlir
         [100, 200, 300, 400, 500], // Aylıq net geri ödəmə məbləği
         [1000, 2000, 3000, 4000, 5000], // Yatırımın Net Dəyəri
         [1100, 2100, 3100, 4100, 5100], // Əmlakın gözlənilən dəyəri
-        [1200, 2200, 3200, 4200, 5200], // Gözlənilən yatırım qazancı (Net)
-        [10, 20, 30, 40, 50] // Qazanc Marjası %
     ];
 
     populateTable(exampleYears, exampleResults);
@@ -3889,12 +3892,12 @@ boxesss.forEach(box => {
         console.log("response");
         console.log(response.monthly_return_amount);
         populateTable(year, [
-        response.general_income,
-        response.monthly_return_amount,
-        response.investment_net_value,
+        response.monthly_loan_payments,
+        response.rental_income_monthly,
         response.expected_property_value,
-        response.expected_investment_income,
-        response.profit_margin_percent,]);
+        ]);
+
+
 
             // Update your HTML table with the response data
             $("#net_return_amount").text(response.monthly_return_amount);
@@ -4760,12 +4763,10 @@ chart1.updateOptions({
         console.log("response");
         console.log(response.monthly_return_amount);
         populateTable(10, [
-        response.general_income,
-        response.monthly_return_amount,
-        response.investment_net_value,
+        response.monthly_loan_payments,
+        response.rental_income_monthly,
         response.expected_property_value,
-        response.expected_investment_income,
-        response.profit_margin_percent,]);
+        ]);
 
             // Update your HTML table with the response data
             $("#net_return_amount").text(response.monthly_return_amount);

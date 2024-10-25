@@ -75,6 +75,22 @@ def calculate_rental_income_yearly(total_investment, rental_income_coefficient, 
     return rental_income_yearly
 
 
+def calculate_rental_income_monthly(total_investment, rental_income_coefficient, rental_growth, years):
+    # Initialize list to store monthly rental income for each year
+    rental_income_monthly = []
+
+    # Calculate rental income for the first year and convert it to monthly income
+    first_year_income = (total_investment * rental_income_coefficient / 100) / 12
+    rental_income_monthly.append(first_year_income)
+
+    # Loop through subsequent years to calculate monthly rental income with rental growth
+    for year in range(1, years):
+        next_year_income = (rental_income_monthly[-1] * 12) * (1 + rental_growth / 100) / 12
+        rental_income_monthly.append(next_year_income)
+
+    return rental_income_monthly
+
+
 def calculate_general_income_over_years(total_investment, loan_amount, appraisal_rate, rental_income_coefficient,
                                         rental_growth, years, repair_expense=600, life_insurance=120, loan_interest_rate=6 ):
     # Calculate monthly loan payment
@@ -249,6 +265,13 @@ def calculate_investment_view(request):
             expected_investment_income, total_investment * 0.555, total_investment, other_expense_percent=5
         )
 
+        rental_income_monthly = calculate_rental_income_monthly(
+            total_investment,
+            rental_income_coefficient=5.33,
+            rental_growth=7.5,
+            years=year
+        )
+
         # Calculate monthly return amount
         monthly_return_amounts = calculate_monthly_return_amount(
             total_investment,  # Total investment
@@ -260,8 +283,10 @@ def calculate_investment_view(request):
             loan_interest_rate=6,  # Loan interest rate
             initial_capital_percentage=55.5  # Initial capital percentage
         )
-
+        monthly_loan_payment = calculate_mortgage(loan_amount, year, 6)
+        monthly_loan_payments = [round(monthly_loan_payment, 0) for _ in range(year)]
         # Round values to zero decimal points
+        rounded_rental_income_monthly = [round(value) for value in rental_income_monthly]
         rounded_monthly_return_amounts = [round(value) for value in monthly_return_amounts]
         rounded_general_income = [round(value) for value in general_income]
         rounded_investment_net_value = [round(value) for value in investment_net_value]
@@ -272,6 +297,8 @@ def calculate_investment_view(request):
 
         # Return the values as a JSON response
         return JsonResponse({
+            'monthly_loan_payments': monthly_loan_payments,  # Using calculated monthly return amounts
+            'rental_income_monthly': rounded_rental_income_monthly,  # Using calculated monthly return amounts
             'monthly_return_amount': rounded_monthly_return_amounts,  # Using calculated monthly return amounts
             'general_income': rounded_general_income,  # Add general income
             'investment_net_value': rounded_investment_net_value,
