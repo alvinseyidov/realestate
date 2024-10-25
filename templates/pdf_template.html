@@ -494,9 +494,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 
- <div class=" mt-5"  style=" background: #F6F8FA; ">
+ <div class=" mt-5" >
      <div class="container">
-            <div class="row  " style=" padding-top: 46px;    padding-bottom: 40px; ">
+            <div class="row  " >
                 <div class="col-lg-12 col-md-12">
 
                     <div style="color: #2B2B2B; font-family: Montserrat; font-size: 35px; font-style: normal; font-weight: 600; line-height: 60px; /* 171.429% */ letter-spacing: -0.5px;">{{offer.name}}</div>
@@ -526,48 +526,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
      <div>
-         <style>
-              .swiper {
-      width: 100%;
-      height: 100%;
-    }
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper-slide {
-      width: 60%;
-    }
-
-    .swiper-slide:nth-child(2n) {
-      width: 40%;
-    }
-
-    .swiper-slide:nth-child(3n) {
-      width: 20%;
-    }
-
-
-        .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
-    content: unset;
-}
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
-    content: unset;
-}
-</style>
 
 
 
@@ -620,7 +579,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
        <div class="container" style="margin-top:50px;">
             <div class="row  ">
 
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Layihənin tipi</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -635,7 +594,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
                 {% if offer.project_status %}
 
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Layihənin vəziyyəti</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -648,7 +607,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
                 {% if offer.mertebe %}
 
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Mərtəbə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -661,7 +620,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
                 {% if offer.year_built %}
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>İnşaat tarixi</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -672,7 +631,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </div>
                 {% endif%}
                 {% if offer.distance_to_beach %}
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dənizə məsafə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -683,7 +642,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </div>
                 {% endif%}
                 {% if offer.distance_to_center %}
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div style="font-size: 15px;margin-bottom: -21px;">Şəhər mərkəzinə məsafə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -694,7 +653,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </div>
                 {% endif%}
                 {% if offer.distance_to_airport %}
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Hava limanına məsafə</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -705,7 +664,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </div>
                 {% endif%}
                 {% if offer.state_guaranteed %}
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dövlət təminatlı</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -716,7 +675,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </div>
                 {% endif%}
                 {% if offer.sea_view %}
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Dəniz mənzərəli</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -727,7 +686,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </div>
                 {% endif%}
                 {% if offer.installment %}
-                <div class="col-lg-2 col-md-12 col-6">
+                <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div>Kreditə uyğun</div>
                     <div style=" display: flex;    margin-top: 21px; ">
@@ -738,7 +697,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </div>
                 {% endif%}
                 {% if offer.suitable_for_citizenship %}
-                 <div class="col-lg-2 col-md-12 col-6">
+                 <div class="col-lg-2 col-md-12 col-4">
                     <div class="nnbjg" style=" margin-top: 37px;border: 1px solid #dadada;padding: 17px 0px 14px 10px; ">
                     <div style=" font-size: 14px; line-height: 22px;   ">Vətəndaşlığa uyğun</div>
                     <div style=" display: flex;    margin-top: 21px; ">
