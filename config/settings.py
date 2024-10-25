@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-cm7p=e=@4&z7o0*9r8ayl$3pofwcca6ytvt)hkbnrxk$ras*n6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['smartinvest.az','www.smartinvest.az']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'offer',
     'statik',
     'contact',
-    'django_summernote'
+    'django_summernote',
+    'calculator'
 ]
 
 MIDDLEWARE = [
