@@ -120,7 +120,7 @@ def offer(request, id):
         "socials": socials
     }
 
-    return render(request, "pdf_template.html", context)
+    return render(request, "offer.html", context)
 
 from django.templatetags.static import static
 from django.utils.html import mark_safe
