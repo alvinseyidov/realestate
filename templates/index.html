@@ -15,6 +15,204 @@
 
  <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 
+
+      <style>
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utiliti ]*/
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #c850c0;
+  background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+  background: linear-gradient(45deg, #4158d0, #c850c0);
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1170px;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 260px;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 160px;
+}
+
+.column3 {
+  width: 245px;
+}
+
+.column4 {
+  width: 110px;
+  text-align: right;
+}
+
+.column5 {
+  width: 170px;
+  text-align: right;
+}
+
+.column6 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+
+
+
+    /* Basic styling for the modal */
+    .modaly {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-contenty {
+      position: relative;
+      background-color: white;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .closey {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+
 <script>
     var which_form = 0;
 </script>
@@ -1571,8 +1769,8 @@ function openCity(evt, cityName) {
                         <div class="row  " style=" padding: 5px 15px 34px 62px; ">
                             <div class="col-lg-12 col-md-12" style=" margin-bottom: 20px; ">
                                 <div style="margin-top:40px;color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Yatırmaq istədiyiniz ilkin kapital</div>
-                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="20000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="50,000"></div>
-                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="50000" max="2000000" step="1000" value="50000" style="       margin: 10px 0 0 0; width: 88%;"></div>
+                                <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input min="30000" id="ilkinid" class="calculatorinput" style="border-radius: 8px; width: 88%;border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="30,000"></div>
+                                <div>  <input id="ilkinsliderid" class="slider calculatorinput" type="range" min="30000" max="2000000" step="1000" value="50000" style="       margin: 10px 0 0 0; width: 88%;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12" style=" padding-top: 12px; padding-bottom: 24px; ">
                               <input type="radio" id="radio1" checked="" name="ipoteka" value="1">
@@ -1612,8 +1810,9 @@ function openCity(evt, cityName) {
                                         text-transform: uppercase;
                                 }
                             </style>
-                            <div>
+                            <div style=" display: flex; ">
                                 <button class="loading" id="hesabla" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block; width: 153px; text-align: center; margin-top: 25px;">Hesabla</button>
+                                <button id="openModalBtny" style="cursor:pointer;background-color: #000; color: #fff; text-decoration: none; padding: 8px 23px; border-radius: 26px; display: block;   text-align: center; margin-top: 25px; margin-left:10px;">Ətraflı Məlumat</button>
                             </div>
                         </div>
                    </div>
@@ -1627,6 +1826,109 @@ function openCity(evt, cityName) {
 
 
 
+<!-- Modal Structure -->
+<div id="excelModaly" class="modaly">
+  <div class="modal-contenty">
+    <span class="closey">&times;</span>
+    <div style=" overflow: auto; margin-top: 21px; ">
+      <table id="resultsTable">
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Year 1</th>
+            <th>Year 2</th>
+            <th>Year 3</th>
+            <th>Year 4</th>
+            <th>Year 5</th>
+            <!-- Additional years can be added dynamically -->
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Rows will be dynamically added here -->
+    </tbody>
+</table>
+</div>
+
+  </div>
+</div>
+
+ <style>
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Ensure borders are collapsed into a single line */
+            margin: 20px 0;
+            background-color: #ffffff;
+            border: 1px solid #ddd; /* Outer border for the table */
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd; /* Inner borders for cells */
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+
+
+<script>
+    function populateTable(years, results) {
+        const tableBody = document.getElementById("tableBody");
+        const tableHead = document.querySelector("#resultsTable thead tr");
+
+        // Clear previous rows and headers
+        tableBody.innerHTML = "";
+        tableHead.innerHTML = "<th>#</th>"; // Reset the header
+
+        // Add year headers dynamically
+        for (let year = 1; year <= years; year++) {
+            const th = document.createElement("th");
+            th.innerText = year + ". il";
+            tableHead.appendChild(th);
+        }
+
+        const variableNames = [
+            "Ümumi Gəlir",
+            "Aylıq net geri ödəmə məbləği",
+            "Yatırımın Net Dəyəri",
+            "Əmlakın gözlənilən dəyəri",
+            "Gözlənilən yatırım qazancı (Net)",
+            "Qazanc Marjası %"
+        ];
+
+        // Iterate through each variable name to create rows
+        for (let i = 0; i < variableNames.length; i++) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${variableNames[i]}</td>
+                ${results[i].map(value => `<td>${value}</td>`).join('')}
+            `;
+            tableBody.appendChild(row);
+        }
+    }
+
+    // Example of how to call populateTable with dummy data
+    const exampleYears = 5; // Change this to test with different years
+    const exampleResults = [
+        [100, 200, 300, 400, 500], // Ümumi gəlir
+        [100, 200, 300, 400, 500], // Aylıq net geri ödəmə məbləği
+        [1000, 2000, 3000, 4000, 5000], // Yatırımın Net Dəyəri
+        [1100, 2100, 3100, 4100, 5100], // Əmlakın gözlənilən dəyəri
+        [1200, 2200, 3200, 4200, 5200], // Gözlənilən yatırım qazancı (Net)
+        [10, 20, 30, 40, 50] // Qazanc Marjası %
+    ];
+
+    populateTable(exampleYears, exampleResults);
+</script>
 
 
 <div class=" mobilee mt-5" style="display:none;margin-top:70px !important;">
@@ -1877,7 +2179,7 @@ function openCity(evt, cityName) {
                  <div id="villaborder" onclick="openCityy(event, 'c1')" class="bbbx9 tablinkk " style="    display: flex; cursor:pointer;margin-right:10px;border: 1px solid #3A453B; border-radius: 27px; padding: 10px 55px 0 55px; "><img id="villablack" style=" display: inline-block;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villagreen.svg'%}"><img id="villawhite" style=" display: none;    margin: 0px 5px 0 -8px;width: 20px; height: 20px; " src="{% static 'villa.svg'%}"><p id="villap" style="  color:#3A453B;  margin: 2px 0 13px 0; display: inline-block; ">Villa</p> </div>
              </div>
           </div>
-         <div class="col-lg-4 col-md-12"style="text-align: center;">
+         <div class="col-lg-4 col-md-12"style="text-align: center;display: flex;">
               <div id="evbuttons" style=" display: flex; justify-content: center; ">
                                 <div  class="swiper-button-prevev" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
                                 <div  class="swiper-button-nextev" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
@@ -1887,6 +2189,8 @@ function openCity(evt, cityName) {
                                 <div  class="swiper-button-prevvilla" style="background-image:url({% static 'left.svg'%});background-color: #E0E3EB;margin:0px 12px 23px 1px; border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
                                 <div  class="swiper-button-nextvilla" style="background-image:url({% static 'right.svg'%});background-color: #3A453B; margin:0px 24px 23px 1px;border-radius: 50%; width: 45px; height: 45px; background-size: cover;"></div>
                         </div>
+
+             <a href="{% url 'offers'%}" style=" margin-top: 9px; font-size: 17px;text-decoration: none; color: unset; ">Bütün təkliflər <img src="{% static 'arrowright.png'%}" style="width:20px;margin: 0px 0 4px 5px;"></a>
           </div>
     </div>
 
@@ -3574,7 +3878,35 @@ boxesss.forEach(box => {
     $('#yearspan').text(year);
     $('#yearspann').text(year);
 
+    $.ajax({
+        url: '/calculate-investment/',  // URL of your Django view
+        type: 'GET',
+        data: {
+            'year': year,
+            'amount': amount
+        },
+        success: function(response) {
+        console.log("response");
+        console.log(response.monthly_return_amount);
+        populateTable(year, [
+        response.general_income,
+        response.monthly_return_amount,
+        response.investment_net_value,
+        response.expected_property_value,
+        response.expected_investment_income,
+        response.profit_margin_percent,]);
 
+            // Update your HTML table with the response data
+            $("#net_return_amount").text(response.monthly_return_amount);
+            $("#net_investment_value").text(response.investment_net_value);
+            $("#property_value").text(response.expected_property_value);
+            $("#expected_investment_income").text(response.expected_investment_income);
+            $("#profit_margin").text(response.profit_margin_percent);
+        },
+        error: function(xhr, status, error) {
+            console.error("Error:", error);
+        }
+    });
 
 
         $.ajax({
@@ -4416,10 +4748,46 @@ chart1.updateOptions({
 
 
  <script>
+
+     $.ajax({
+        url: '/calculate-investment/',  // URL of your Django view
+        type: 'GET',
+        data: {
+            'year': 10,
+            'amount': 30000
+        },
+        success: function(response) {
+        console.log("response");
+        console.log(response.monthly_return_amount);
+        populateTable(10, [
+        response.general_income,
+        response.monthly_return_amount,
+        response.investment_net_value,
+        response.expected_property_value,
+        response.expected_investment_income,
+        response.profit_margin_percent,]);
+
+            // Update your HTML table with the response data
+            $("#net_return_amount").text(response.monthly_return_amount);
+            $("#net_investment_value").text(response.investment_net_value);
+            $("#property_value").text(response.expected_property_value);
+            $("#expected_investment_income").text(response.expected_investment_income);
+            $("#profit_margin").text(response.profit_margin_percent);
+        },
+        error: function(xhr, status, error) {
+            console.error("Error:", error);
+        }
+    });
+
       $.ajax({
     type:"GET",
-    url:`/data/10/50000/1/`,
+    url:`/data/10/30000/1/`,
     success:function(data){
+
+        console.log("general_income");
+        console.log(data);
+
+
     if($('input[name="ipoteka"]:checked').val() == 1){
             $("#field3").val(data['deyer2']);
             console.log("=======================================================================");
@@ -4514,48 +4882,6 @@ chart4.updateSeries([{
   });
 </script>
 
-  <script>
-    function updateTimer() {
-  future  = Date.parse("{{general.countdown_enddate|date:'M d, Y H:i:s'}}");
-  now     = new Date();
-  diff    = future - now;
-
-  days  = Math.floor( diff / (1000*60*60*24) );
-  hours = Math.floor( diff / (1000*60*60) );
-  mins  = Math.floor( diff / (1000*60) );
-  secs  = Math.floor( diff / 1000 );
-
-  d = days;
-  if (d < 0){d = 0}
-  h = hours - days  * 24;
-  m = mins  - hours * 60;
-  s = secs  - mins  * 60;
-
-  document.getElementById("timer")
-    .innerHTML =
-      '<div class="spann2"><div class="spann1">' + d + '</div><div class="spann">gün</div></div>' +
-      '<div class="spann2"><div class="spann1">' + h + '</div><div class="spann">saat</div></div>' +
-      '<div class="spann2"><div class="spann1">' + m + '</div><div class="spann">dəq.</div></div>' +
-      '<div class="spann2"><div class="spann1">' + s + '</div><div class="spann">san.</div></div>' ;
-
-      document.getElementById("timerr")
-    .innerHTML =
-      '<div class="spann2 cc2"><div class="spann1 cc1">' + d + '</div><div class="spann">gün</div></div>' +
-      '<div class="spann2 cc2"><div class="spann1 cc1">' + h + '</div><div class="spann">saat</div></div>' +
-      '<div class="spann2 cc2"><div class="spann1 cc1">' + m + '</div><div class="spann">dəq.</div></div>' +
-      '<div class="spann2 cc2"><div class="spann1 cc1">' + s + '</div><div class="spann">san.</div></div>' ;
-
-      document.getElementById("timer2")
-    .innerHTML =
-      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + d + '</div><div class="spann">gün</div></div>' +
-      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + h + '</div><div class="spann">saat</div></div>' +
-      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + m + '</div><div class="spann">dəq.</div></div>' +
-      '<div class="spann2 cc2"><div class="spann1 spann1x cc1">' + s + '</div><div class="spann">san.</div></div>' ;
-}
-
-setInterval('updateTimer()', 1000 );
-
-  </script>
 
    <script>
         $('#prefix').on('keyup', function() {
@@ -4991,6 +5317,35 @@ window.onclick = function(event) {
     });
 });
   </script>
+
+
+
+  <script>
+  // Get modal elements
+  const modaly = document.getElementById("excelModaly");
+  const openModalBtny = document.getElementById("openModalBtny");
+  const closeModalBtny = document.querySelector(".closey");
+
+  // Open modal and set iframe source
+  openModalBtny.onclick = function() {
+    modaly.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+
+  // Close the modal when clicking on the close button
+  closeModalBtny.onclick = function() {
+    modaly.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  // Close the modal when clicking outside the modal content
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modaly.style.display = "none";
+      excelFramey.src = "";
+    }
+  }
+</script>
 
   </body>
 </html>

@@ -1,9 +1,9 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from core.models import *
 from offer.models import *
 from statik.models import *
-
+from django.http import HttpResponse
 
 def loadfaq(request):
 
@@ -119,6 +119,7 @@ def offer(request, id):
     }
 
     return render(request, "offer.html", context)
+
 
 def offertr(request, id):
     form1 = Form1TR.objects.last()
@@ -333,3 +334,72 @@ def tr(request):
         return render(request, "trm.html", context)
     else:
         return render(request, "tr.html", context)
+
+
+
+
+def offers(request):
+    TYPE = (
+        ('V', 'Villa'),
+        ('A', 'Mənzil'),
+        ('E', 'Ev'),
+        ('T', 'Torpaq'),
+        ('Q', 'Qeyri-yaşayış'),
+        ('N', 'Bina'),
+    )
+    # Get the filtered offers based on query parameters or default to "Bina" type
+    offers = Offer.objects.all()
+
+    # Default filter for 'Bina'
+    offer_type = request.GET.get('type', 'A')  # Default is 'N' for Bina
+    if offer_type:
+        offers = offers.filter(type=offer_type)
+
+    # Apply additional filters if provided
+    price_min = request.GET.get('price_min')
+    price_max = request.GET.get('price_max')
+    rooms = request.GET.get('rooms')
+    beds = request.GET.get('beds')
+    balcon = request.GET.get('balcon')
+    wc_qty = request.GET.get('wc_qty')
+    square_min = request.GET.get('square_min')
+    square_max = request.GET.get('square_max')
+
+    if price_min:
+        offers = offers.filter(price__gte=price_min)
+    if price_max:
+        offers = offers.filter(price__lte=price_max)
+    if rooms:
+        offers = offers.filter(rooms=rooms)
+    if balcon:
+        offers = offers.filter(balcon=balcon)
+    if beds:
+        offers = offers.filter(bed=beds)
+    if wc_qty:
+        offers = offers.filter(wc_qty=wc_qty)
+    if square_min:
+        offers = offers.filter(square__gte=square_min)
+    if square_max:
+        offers = offers.filter(square__lte=square_max)
+    general = General.objects.last()
+    socials = Social.objects.all()
+    why = Why.objects.all()
+    context = {
+        "general": general,
+        "why": why,
+        "socials": socials,
+
+
+        'offers': offers,
+        'offer_type': offer_type,
+        'price_min': price_min,
+        'price_max': price_max,
+        'rooms': rooms,
+        'balcon': balcon,
+        'beds': beds,
+        'wc_qty': wc_qty,
+        'square_min': square_min,
+        'square_max': square_max,
+    }
+
+    return render(request, 'offers.html', context)

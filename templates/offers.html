@@ -1,0 +1,2146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{{general.site_title}}</title>
+      <link rel="icon" type="image/x-icon" href="{{general.favicon.url}}">
+      <meta name="description" content="{{general.meta_description}}">
+      <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+      <link rel="stylesheet" href="{% static 'input/build/css/intlTelInput.css'%}">
+      <style>
+         .carousel {
+         background: #FAFAFA;
+         }
+         .carousel-cell {
+         width: 66%;
+         height: 200px;
+         margin-right: 10px;
+         border-radius: 5px;
+         }
+         /* cell number */
+         .carousel-cell:before {
+         display: block;
+         text-align: center;
+         line-height: 200px;
+         font-size: 80px;
+         color: white;
+         }
+      </style>
+      {% for h in body %}
+      {% if h.location == 'H' %}
+      {{h.script | safe}}
+      {% endif%}
+      {% endfor%}
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+      <style>
+         @media only screen and (max-width: 600px){
+         .mmnnv {
+         text-align: left !important;
+         margin: 0 0 -21px 0 !important;
+         }}
+         @media screen and (max-width: 600px){
+         .header {
+         padding-left: 15px !important;
+         padding-right: 15px !important;
+         }
+         .sdfvsdfvsdf{
+         padding-bottom: 30px !important;
+         }
+         .sdsdcsdc{
+         margin-bottom: 30px !important;
+         height: 30px;
+         }
+         }
+         .cc1 {
+         text-align: center;
+         }
+         /* -- CTA bar top -- */
+         .cta-bar {
+         position: relative;
+         z-index: 99;
+         font-weight: 700;
+         padding: 13px;
+         color: #fff;
+         background: #83BF4F;
+         text-align: center;
+         padding-bottom: 3px;
+         }
+         .cta-bar p {
+         margin-bottom: 0 !important;
+         }
+         /* -- cta button -- */
+         /* -- close button -- */
+         .xit {
+         position: absolute;
+         top: 15px;
+         right: 19px;
+         cursor: pointer;
+         font-size: 20px;
+         color: #fff;
+         }
+         .button-4 {
+         min-width: 150px !important;
+         font-size: 1rem !important;
+         padding: 13px 30px 13px 30px !important;
+         border: 1px solid #ff6600;
+         transition: .3s;
+         }
+         .button-4:hover {
+         background-color: #ffffff !important;
+         color: #ff6600 !important;
+         border: 1px solid #ff6600;
+         }
+         .linkk {
+         transition: .3s;
+         }
+         .linkk:hover {
+         color: #ff6600 !important;
+         }
+         @keyframes pulse {
+         0% {
+         transform: scale(1);
+         }
+         70% {
+         transform: scale(.9);
+         }
+         100% {
+         transform: scale(.9);
+         }
+         }
+         @media only screen and (max-width: 600px) {
+         .xx1{
+         display: none !important;
+         }
+         .xxx0 {
+         z-index: 0 !important;
+         }
+         .xx2{
+         font-size: 28px !important;
+         }
+         .xx3 {
+         font-size: 15px !important;
+         margin-top: 15px !important;
+         margin-bottom: 21px !important;
+         line-height: 21px !important;
+         }
+         .xx4{
+         font-size: 16px !important;
+         }
+         .xx5{
+         font-size: 16px !important;
+         margin-bottom: 21px !important;
+         }
+         .xx0 {
+         height: 461px !important;
+         }
+         }
+         @media only screen and (max-width: 600px) {
+         .redffg{
+         margin-top: -22px !important;
+         }
+         .dfdfv{
+         margin-top: -27px !important;
+         }
+         }
+         * {
+         font-family: 'Montserrat' !important;
+         }
+         @media only screen and (min-width: 700px) {
+         }
+         @media only screen and (max-width: 600px) {
+         .ggg {
+         float:left;
+         }
+         .cta-bar{
+         display:none !important;
+         }
+         .cccc{
+         padding: 14px 19px 14px 19px !important;
+         }
+         .ccc1{
+         font-size: 14px !important;
+         }
+         .ccc2{
+         margin-top: 31px !important;
+         width: 247px !important;
+         margin-bottom: 32px !important;
+         }
+         .ccc3{
+         top: 6px !important;
+         }
+         .ccc4{
+         padding: 20px 11px 20px 19px !important;
+         }
+         .ccc5{
+         padding-left: 69px !important;
+         }
+         .ccc6{
+         display: none !important;
+         }
+         }
+         #timerr {
+         font-size: 3em;
+         font-weight: 100;
+         color: white;
+         text-shadow: 0 0 20px #48C8FF;
+         font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+         div {
+         display: inline-block;
+         min-width: 90px;
+         .spann {
+         color: #B1CDF1;
+         display: block;
+         font-size: .35em;
+         font-weight: 400;
+         }
+         }
+         }
+         #timer {
+         font-size: 3em;
+         font-weight: 100;
+         color: white;
+         text-shadow: 0 0 20px #48C8FF;
+         font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+         div {
+         display: inline-block;
+         min-width: 90px;
+         .spann {
+         color: #B1CDF1;
+         display: block;
+         font-size: .35em;
+         font-weight: 400;
+         }
+         }
+         }
+         .spann1 {
+         font-size: 19px;
+         font-weight: 400;
+         width: 36px !important;
+         height: 35px !important;
+         border-radius: 5px;
+         padding-top:5px;
+         box-shadow: inset 0px 2px 7px 1px #065245ad !important;
+         }
+         .spann2 {
+         margin-top: 3px;
+         }
+         .spann {
+         font-size: 10px;
+         }
+         .spann2 {
+         display: block;
+         width: 41px !important;
+         }
+      </style>
+      <style>
+         /* The Modal (background) */
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         padding-top: 100px; /* Location of the box */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content */
+         .modal-content {
+         background-color: #fefefe;
+         margin: auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 80%;
+         }
+         /* The Close Button */
+         .close {
+         color: #aaaaaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close:hover,
+         .close:focus {
+         color: #000;
+         text-decoration: none;
+         cursor: pointer;
+         }
+         .swiper-container {
+         padding-left: 9px !important;}
+         @media only screen and (max-width: 600px) {
+         .modal-content {
+         width: 90% !important;
+         }
+         .carousel-cell{
+         height:350px !important;
+         }
+         .cccx1{
+         display: block !important;
+         }
+         .cccx2{
+         display:none !important;
+         }
+         .cccx3 {
+         width: unset !important;
+         padding: 0 5px 0 5px !important;
+         }
+         .cccx4 {
+         width: unset !important;
+         padding: 0 5px 0 5px !important;
+         }
+         .cccx5 {
+         width: unset !important;
+         padding: 0 5px 0 5px !important;
+         }
+         }
+         .row {
+         --bs-gutter-x: unset !important;
+         }
+      </style>
+      <style>
+         body {font-family: Arial, Helvetica, sans-serif;}
+         /* The Modal (background) */
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 100000; /* Sit on top */
+         padding-top: 30px; /* Location of the box */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content */
+         .modal-content {
+         background-color: #fefefe;
+         margin: auto;
+         padding: 10px;
+         border: 1px solid #888;
+         width: 35%;
+         }
+         /* The Close Button */
+         .close {
+         color: #aaaaaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close:hover,
+         .close:focus {
+         color: #000;
+         text-decoration: none;
+         cursor: pointer;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="myModal" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span class="close" style=" text-align: right; margin-right: 6px; ">&times;</span>
+            <div class="col-lg-12 col-md-12" style=" padding: 0 15px 0 15px; ">
+               <div id="formm2" class="formm" style="border-radius: 10px;text-align: center;padding: 0 0 39px 0;width: 347px;margin: auto;background-color: #fff;margin-top: 48px;">
+                  <form id="form_offer_diger_teklifler" action="{% url 'contactform'%}" method="post">
+                     {% csrf_token%}
+                     <div><input required name="name" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; " type="text" placeholder="Ad Soyad"> </div>
+                     <div><input required name="email"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="email" placeholder="E-mail"> </div>
+                     <div style=" position: relative; ">
+                        <span style=" position: absolute; left: 45px; top: 1px; font-weight: 500; ">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone3">
+                        </span>
+                        <input required name="phone" id="phone3"  placeholder="(55)-888-88-88" style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding:1px 0 12px 62px " type="text">
+                     </div>
+                     {% for i in form_menzil_form %}
+                     <div><input required name="{{i.name}}"  style=" width: 250px;border: none !important; border-bottom: 2px solid #474747 !important; margin-bottom: 20px; padding: 4px 0 8px 0; "type="text" placeholder="{{i.placeholder}}"> </div>
+                     {% endfor%}
+                     <div><button style=" background-color: #000; color: #fff; border: none; padding: 11px 14px; border-radius: 24px; margin-top: 26px; width: 250px; " type="submit">
+                        {{form2.button_text}}</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      {% for h in body %}
+      {% if h.location == 'T' %}
+      {{h.script | safe}}
+      {% endif%}
+      {% endfor%}
+      {% if general.is_active %}
+      <div class="cta-bar" style="   padding-bottom: 10px; padding-top: 10px;display: flex; justify-content: center; background-color:{{general.banner_background_color}};background-image:url({%if general.banner_background_image%}{{general.banner_background_image.url}}{%endif%});background-size: cover; background-position: center;">
+         <p style=" margin-right: 24px;display: inline;  margin-top: 15px; color:{{general.banner_text_color}} !important; ">{{general.banner_text}}</p>
+         <div id="timer" style=" display: contents; width: 100px; gap: 13px; "></div>
+         <a href="{% url 'index' %}" class="btn btn_orange rounded-5 text-white cccc button-4 " style="margin-left: 19px;margin-top: 0; padding: 14px 40px 14px 44px !important;font-size: 1rem !important;min-width: 100px !important;display: inline;">Enroll Now</a>
+         <span class="xit"><img src="{% static 'close.png'%}" style=" width: 15px; " > </span>
+      </div>
+      {% endif %}
+      <header class="header bg-white container" id="headerr" style="     padding-bottom: 0px; width: 100% !important; max-width: 100%; padding-right: 140px; padding-left: 140px; ">
+         <div class="container">
+            <div class="row" style=" padding-top: 40px; margin-bottom: -11px; ">
+               <div class="col-lg-6 col-4"><a class="navbar-brand" href="{% url 'index'%}"><img src="{{general.logo.url}}" style=" height: 55px; " alt="NavbarLogo" /></a></div>
+               <div class="col-lg-6 col-8">
+                  <div style="display: inline-block;float: right;">
+                     <div class="cccx3" style=" width: 50px; display: inline-block;"><a href="{{general.telegram_link}}" target="_blank"> <img src="{% static 'telegram.svg'%}"> </a></div>
+                     <div class="cccx4" style=" width: 70px;display: inline-block; "><a href="{{general.whatsapp_link}}" target="_blank"><img src="{% static 'whatsapp.svg'%}"></a></div>
+                     <div style=" width: 190px;    display: inline-block; " class="cccx2"><a href="tel:{{general.phone}}" style="text-decoration: none; font-weight: 600; display: inline-block; ">{{general.phone}}</a> </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <style>
+         /* Style the tab */
+         .tab {
+         overflow: hidden;
+         border: 1px solid #ccc;
+         background-color: #f1f1f1;
+         }
+         /* Style the buttons inside the tab */
+         .tab button {
+         background-color: inherit;
+         float: left;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding: 14px 16px;
+         transition: 0.3s;
+         font-size: 17px;
+         }
+         /* Change background color of buttons on hover */
+         .tab button:hover {
+         background-color: #ddd;
+         }
+         /* Create an active/current tablink class */
+         .tab button.active {
+         background-color: #ccc;
+         }
+         /* Style the tab content */
+         .tabcontent {
+         display: none;
+         }
+      </style>
+
+      <style>
+    /* Form container styling */
+    .filter-form {
+      max-width: 300px; /* Adjust width as needed */
+      background-color: #f8f9fa; /* Light background for form */
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 20px; /* Add space around the form */
+    }
+
+    /* Label styling */
+    .filter-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    /* Input and select styling */
+    .filter-form input[type="number"],
+    .filter-form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    /* Button styling */
+    .filter-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Button hover effect */
+    .filter-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+
+      <style>
+    /* Resetting body margin and padding */
+
+    /* Burger menu styling */
+    .burger-menu {
+      font-size: 24px;
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    /* Sidebar container */
+    .sidebar {
+      height: 100%; /* Full height */
+      width: 0; /* Initial hidden state */
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #f8f9fa;
+      overflow-x: hidden;
+      transition: 0.3s; /* Slide-in effect */
+      padding-top: 60px; /* Space for close button */
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Sidebar content */
+    .sidebar-content {
+      padding: 20px;
+      width: 100%; /* Sidebar width */
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Form elements styling (same as before) */
+    .filter-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .filter-form input[type="number"],
+    .filter-form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .filter-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .filter-form button:hover {
+      background-color: #0056b3;
+    }
+
+          @media (max-width: 768px) {
+  /* Show the sidebar and burger menu on mobile screens */
+  .burger-menu {
+    display: block;
+  }
+
+  .desktopp {
+  display: none !important;
+  }
+
+  .sidebar {
+    display: block;
+  }
+}
+
+/* Hide the sidebar and burger menu on larger screens */
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+  </style>
+      <div class=" mt-5"  style=" background: #F6F8FA; ">
+
+          <div class="burger-menu" onclick="openSidebar()">☰</div>
+         <div class="container">
+            <div class="row  " style=" padding-top: 46px;    padding-bottom: 40px; ">
+               <div class="col-lg-3 col-md-12">
+
+                   <div id="sidebar" class="sidebar" style="width:90%;">
+  <div class="sidebar-content">
+    <span class="close-btn" onclick="closeSidebar()">&times;</span>
+               <div class="filter-form">
+  <form method="get">
+    <label for="type">Əmlakın növü:</label>
+    <select name="type" id="type" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 8px 10px 8px 20px;">
+      <option value="N" {% if offer_type == 'N' %}selected{% endif %}>Bina</option>
+      <option value="V" {% if offer_type == 'V' %}selected{% endif %}>Villa</option>
+      <option value="A" {% if offer_type == 'A' %}selected{% endif %}>Mənzil</option>
+      <option value="E" {% if offer_type == 'E' %}selected{% endif %}>Ev</option>
+      <option value="T" {% if offer_type == 'T' %}selected{% endif %}>Torpaq</option>
+      <option value="Q" {% if offer_type == 'Q' %}selected{% endif %}>Qeyri-yaşayış</option>
+    </select>
+
+    <label for="price_min">Min. qiymət:</label>
+    <input type="number" name="price_min" id="price_min" value="{{ price_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="price_max">Max. qiymət:</label>
+    <input type="number" name="price_max" id="price_max" value="{{ price_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="rooms">Otaq sayı:</label>
+    <input type="number" name="rooms" id="rooms" value="{{ rooms }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="beds">Yataq otağı sayı:</label>
+    <input type="number" name="beds" id="beds" value="{{ beds }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="balcon">Balkon sayı:</label>
+    <input type="number" name="balcon" id="balcon" value="{{ balcon }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="wc_qty">WC sayı:</label>
+    <input type="number" name="wc_qty" id="wc_qty" value="{{ wc_qty }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="square_min">Min. sahə (m2):</label>
+    <input type="number" name="square_min" id="square_min" value="{{ square_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="square_max">Max.sahə (m2):</label>
+    <input type="number" name="square_max" id="square_max" value="{{ square_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <button type="submit" style="    font-size: 16px; margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px;  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 11px 48px; background: #000; ">Filterlə</button>
+  </form>
+</div>
+
+
+               </div>
+               </div>
+
+                    <div class="desktopp filter-form">
+  <form method="get">
+    <label for="type">Əmlakın növü:</label>
+    <select name="type" id="type" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 8px 10px 8px 20px;">
+      <option value="N" {% if offer_type == 'N' %}selected{% endif %}>Bina</option>
+      <option value="V" {% if offer_type == 'V' %}selected{% endif %}>Villa</option>
+      <option value="A" {% if offer_type == 'A' %}selected{% endif %}>Mənzil</option>
+      <option value="E" {% if offer_type == 'E' %}selected{% endif %}>Ev</option>
+      <option value="T" {% if offer_type == 'T' %}selected{% endif %}>Torpaq</option>
+      <option value="Q" {% if offer_type == 'Q' %}selected{% endif %}>Qeyri-yaşayış</option>
+    </select>
+
+    <label for="price_min">Min. qiymət:</label>
+    <input type="number" name="price_min" id="price_min" value="{{ price_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="price_max">Max. qiymət:</label>
+    <input type="number" name="price_max" id="price_max" value="{{ price_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="rooms">Otaq sayı:</label>
+    <input type="number" name="rooms" id="rooms" value="{{ rooms }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="beds">Yataq otağı sayı:</label>
+    <input type="number" name="beds" id="beds" value="{{ beds }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="balcon">Balkon sayı:</label>
+    <input type="number" name="balcon" id="balcon" value="{{ balcon }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="wc_qty">WC sayı:</label>
+    <input type="number" name="wc_qty" id="wc_qty" value="{{ wc_qty }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="square_min">Min. sahə (m2):</label>
+    <input type="number" name="square_min" id="square_min" value="{{ square_min }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <label for="square_max">Max.sahə (m2):</label>
+    <input type="number" name="square_max" id="square_max" value="{{ square_max }}" style="border-radius: 8px; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;">
+
+    <button type="submit" style="    font-size: 16px; margin-right: 13px;text-decoration:none;  display: block;text-align: center;margin-top: 25px;  text-decoration: none;border: 1px solid #000; color: #fff; border-radius: 27px; padding: 11px 48px; background: #000; ">Filterlə</button>
+  </form>
+</div>
+               </div>
+
+                <script>
+  // Function to open the sidebar
+  function openSidebar() {
+    document.getElementById("sidebar").style.width = "85%";
+    document.body.style.overflow = "hidden"; // Disable scroll on body
+  }
+
+  // Function to close the sidebar
+  function closeSidebar() {
+    document.getElementById("sidebar").style.width = "0";
+    document.body.style.overflow = "auto"; // Enable scroll on body
+  }
+</script>
+               <div class="col-lg-9 col-md-12">
+                  <div class="row">
+                      {% for o in offers %}
+                     <div class="col-12 col-lg-4 col-md-12">
+
+
+                    <div class="evleritem" style="{%if o.is_sold_out%}opacity:0.6;{% endif%}width: 95%;border-radius: 10px;box-shadow: 2px 3px 7px 3px #88888885;margin-bottom: 27px;    padding: 0 0px 3px 0px;">
+                    <a {%if not o.is_sold_out%}href="{% url 'offer' o.id %}"{% endif%} >
+                        <div style="background-image:url({{o.image.url}});width: 100%; height: 270px; border-radius: 10px; background-size: cover; background-position: center; ">
+
+                    </div>
+                        </a>
+
+                      <div style="display: flex;">
+                        <div style="display: flex; color: #939393; padding: 8px 20px; margin: 14px 16px 0 15px; border: 2px solid #cccccc; border-radius: 10px;    font-size: 14px; "><img src="{% static 'bed.png'%}" style="width:20px;   height: auto !important; object-fit: contain; margin-right: 12px;"><span>{{o.bed}}</span> </div>
+                        <div style=" display: flex;color: #939393; padding: 8px 20px; margin: 14px 16px 0 0; border: 2px solid #cccccc; border-radius: 10px;     font-size: 14px;"><img src="{% static 'sq.png'%}" style="width:20px;    height: auto !important; object-fit: contain;margin-right: 12px;"><span>{{o.square}} </span></div>
+                    </div>
+                    <div style="    margin: 0px 0 10px 15px;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 19.4px; font-style: normal; font-weight: 500; line-height: normal;margin-top: 21px; font-size: 19px;">{{o.name}}</div>
+
+                   <div style="display:flex;       margin-top: 26px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Yatırım Kapitalı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.ilkin_kapital}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (bugün)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.price}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Əmlakın dəyəri (10 il sonra)</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.emlakın_deyeri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;">
+                        <div style=" font-size: 10px; ">Ortalama kirayə gəliri</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.kiraye_geliri}} €</div>
+                    </div>
+
+                     <div style="display:flex;       margin-top: 10px; padding-left: 14px; padding-right: 8px;    margin-bottom: 30px;">
+                        <div style=" font-size: 10px; ">İnvestisiyanın net qazancı</div>
+                        <div style=" font-size: 10px;margin-left: auto; margin-right: 12px; ">{{o.net_qazanc}} €</div>
+                    </div>
+
+                </div>
+
+
+
+                     </div>
+                     {% endfor%}
+                  </div>
+
+               </div>
+            </div>
+         </div>
+
+      </div>
+
+      <footer class="pt-5" style="background-color: #f9f9f9;">
+         <section class="container-fluid bg-white d-flex justify-content-center align-items-center" style=" background-color: #E3E5EA !important; ">
+            <div class="bcvx row container p-5">
+               <hr class="w-100" style=" margin-bottom: 49px; " />
+               <div class="col-md-6 xt-center   justify-content-center align-items-center">
+                  <p class="text-black font_normal" style="color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                     {{general.address}}
+                  </p>
+                  <a href="tel:{{general.phone}}" class="text-black font_normal" style="       width: 250px; margin: 0 0 16px;text-decoration: none; display: block;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                  <img style=" margin-right: 8px; " src="{% static 'phone.svg'%}"> {{general.phone}}
+                  </a>
+                  <a  href="mailto:{{general.email}}" class="text-black font_normal" style="       width: 250px; margin: 0 0 16px;text-decoration: none; display: block;color: var(--Text-Colour-2, #2B2B2B); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 500; line-height: normal;">
+                  <img style=" margin-right: 8px; " src="{% static 'email.svg'%}">{{general.email}}
+                  </a>
+               </div>
+               <div class=" bnmg col-md-6    justify-content-center align-items-center" style="text-align: center;">
+                  <a    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">Bizi İzləyin:</a>
+                  <div style="    margin-bottom: 5px;    margin-top: 14px;">
+                     {% for s in socials %}
+                     <a style=" text-decoration: none; " target="_blank" href="{{s.link}}"><img style=" width: 30px; " src="{{s.icon.url}}"> </a>
+                     {% endfor%}
+                  </div>
+                  {% for p in pages %}
+                  <div style=" padding-top: 8px; "><a href="{% url 'page' p.link%}"    style="   margin: auto !important;  margin-bottom: 1rem;text-decoration: none; color: black; margin-right: 21px; ">{{p.title}}</a></div>
+                  {% endfor%}
+               </div>
+            </div>
+         </section>
+         <section style=" height: 60px; background-color: #000; ">
+            <div class="container" style=" text-align: center; color: #fff !important; ">
+               <div style="    padding-top: 16px;color: var(--Text-Colour-4, #AAA); leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400;color:#fff; line-height: 26px; /* 162.5% */">{{general.copyright}}</div>
+            </div>
+         </section>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://kit.fontawesome.com/d5c98c56f9.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="{% static 'js/main.js'%}"></script>
+      <script type="text/javascript">
+         window.omnisend = window.omnisend || [];
+         omnisend.push(["accountID", "6526f28b8530cf73f8d2e6d3"]);
+         omnisend.push(["track", "$pageViewed"]);
+         !function(){var e=document.createElement("script");
+         e.type="text/javascript",e.async=!0,
+         e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
+         var t=document.getElementsByTagName("script")[0];
+         t.parentNode.insertBefore(e,t)}();
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+      <script>
+         var swiper = new Swiper('.sdsfsdfdsf', {
+         slidesPerView: 4,
+         spaceBetween: 10,
+         navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+         },
+         breakpoints: {
+          960: {
+            slidesPerView: 1,
+          }
+         }
+         });
+      </script>
+      <script>
+         var swiper = new Swiper('.swiper-containerr', {
+         slidesPerView: 3,
+         spaceBetween: 10,
+         pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+         },
+
+         breakpoints: {
+          960: {
+            slidesPerView: 2,
+          }
+         }
+         });
+      </script>
+      <!-- Start of HubSpot Embed Code -->
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/143823551.js"></script>
+      <!-- End of HubSpot Embed Code -->
+      <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
+      <script>
+         var options = {
+                 yaxis: {
+             labels: {
+               formatter: function (value) {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+               }
+             },
+           },
+         zoom: {
+               enabled: false,
+             },
+             series: [{
+             name: 'Türkiyədə Yatırımın Net Dəyəri',
+             data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+           },
+           {
+             name: 'Azərbaycanda Yatırımın Net Dəyəri',
+             data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+           },  {
+             name: 'Bank Depoziti Yatırımın Net Dəyəri',
+             data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
+           }],
+             chart: {
+             height: 350,
+             type: 'area'
+           },
+           dataLabels: {
+             enabled: false
+           },
+
+           stroke: {
+             curve: 'smooth'
+           },
+           xaxis: {
+             type: 'String',
+             categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+           },
+           tooltip: {
+               show: false
+           },
+           };
+
+
+
+           var options2 = {
+                 yaxis: {
+             labels: {
+               formatter: function (value) {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+               }
+             },
+           },
+         zoom: {
+               enabled: false,
+             },
+             series: [{
+             name: 'Türkiyədə Əmlakın Dəyəri',
+             data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+           },
+           {
+             name: 'Azərbaycanda Əmlakın Dəyəri',
+             data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+           },  {
+             name: 'Bank Depoziti Yatırımın Net Dəyəri',
+             data: [210, 220, 350, 420, 340,340,340,340, 520, 610]
+           }],
+             chart: {
+             height: 350,
+             type: 'area'
+           },
+           dataLabels: {
+             enabled: false
+           },
+
+           stroke: {
+             curve: 'smooth'
+           },
+           xaxis: {
+             type: 'String',
+             categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+           },
+           tooltip: {
+               show: false
+           },
+           };
+
+           var options3 = {
+                 yaxis: {
+             labels: {
+               formatter: function (value) {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+               }
+             },
+           },
+         zoom: {
+               enabled: false,
+             },
+             series: [{
+             name: 'Türkiyədə Yatırım Qazancı',
+             data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+           },
+           {
+             name: 'Azərbaycanda Yatırım Qazancı',
+             data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+           }],
+             chart: {
+             height: 350,
+             type: 'area'
+           },
+           dataLabels: {
+             enabled: false
+           },
+
+           stroke: {
+             curve: 'smooth'
+           },
+           xaxis: {
+             type: 'String',
+             categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+           },
+           tooltip: {
+               show: false
+           },
+           };
+
+           var options4 = {
+                 yaxis: {
+             labels: {
+               formatter: function (value) {
+                return value + "%";
+               }
+             },
+           },
+         zoom: {
+               enabled: false,
+             },
+             series: [{
+             name: 'Türkiyədə Qazanc Marjası',
+             data: [110, 320, 450, 320, 340,340,340,340, 520, 410]
+           },
+           {
+             name: 'Azərbaycanda Qazanc Marjası',
+             data: [310, 400, 280, 510, 420,420, 420,420,1090, 1000]
+           }],
+             chart: {
+             height: 350,
+             type: 'area'
+           },
+           dataLabels: {
+             enabled: false
+           },
+
+           stroke: {
+             curve: 'smooth'
+           },
+           xaxis: {
+             type: 'String',
+             categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+           },
+           tooltip: {
+               show: false
+           },
+           };
+
+           var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+           var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+           var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+           var chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
+           chart1.render();
+           chart2.render();
+           chart3.render();
+           chart4.render();
+
+
+
+
+         window.onload = function() {
+         var year = 10
+         var amount =  {{amount}}
+         $(document).ready(function(){
+         $("#muddetid").keyup(function(){
+           year = (this.value);
+         });
+         });
+
+         $(document).ready(function(){
+         $("#muddetsliderid").change(function(){
+           year = (this.value);
+
+         });
+         });
+
+         $(document).ready(function(){
+         $("#ilkinsliderid").change(function(){
+           amount = (this.value);
+
+         });
+         });
+
+
+
+
+         $(document).ready(function(){
+         $("#ilkinid").keyup(function(){
+           amount = (this.value);
+         });
+         });
+
+         var mortgage = 1;
+         console.log("--------");
+         console.log($('input[name="ipoteka"]:checked').val());
+         console.log("--------");
+
+
+
+
+
+
+
+         $("#hesabla").on("click",function(){
+         $(this).addClass("loading");
+         console.log("1");
+
+         if($('input[name="ipoteka"]:checked').val() == 1){
+         mortgage = 1;
+         }
+         else{
+         mortgage = 0;
+
+         }
+
+         $('#yearspan').text(year);
+         $('#yearspann').text(year);
+
+
+
+
+           $.ajax({
+               type:"GET",
+               url:`/data/${year}/${amount}/${mortgage}/`,
+               success:function(data){
+               if($('input[name="ipoteka"]:checked').val() == 1){
+                $("#field3").val(data['deyer2']);
+                   }
+                   else{
+                   $("#field3").val(data['ilkin']);
+
+                   }
+
+
+               chart1.updateSeries([ {
+             name: 'Türkiyədə Yatırımın Net Dəyəri',
+             data: data['datatr']
+           },
+            {
+             name: 'Azərbaycanda Yatırımın Net Dəyəri',
+             data: data['dataaz']
+           },{
+             name: 'Bank Depoziti Yatırımın Net Dəyəri',
+             data: data['databank']
+           }])
+
+           chart2.updateSeries([ {
+             name: 'Türkiyədə Əmlakın Dəyəri',
+             data: data['deyertr']
+           },
+            {
+             name: 'Azərbaycanda Əmlakın Dəyəri',
+             data: data['deyeraz']
+           },{
+             name: 'Bank Depoziti Yatırımın Net Dəyəri',
+             data: data['databank']
+           }])
+
+           chart3.updateSeries([ {
+             name: 'Türkiyədə Yatırım Qazancı',
+             data: data['yatirim_qazanci_tr']
+           },
+            {
+             name: 'Azərbaycanda Yatırım Qazancı',
+             data: data['yatirim_qazanci_az']
+           }])
+
+           chart4.updateSeries([ {
+             name: 'Türkiyədə Qazanc Marjası',
+             data: data['yatirim_qazanci_marja_tr']
+           },
+            {
+             name: 'Azərbaycanda Qazanc Marjası',
+             data: data['yatirim_qazanci_marja_az']
+           }])
+
+
+
+
+
+
+               if(data['year'] == 2){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il"]
+         },
+
+         });
+
+         }
+         else if(data['year'] == 3){
+
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il"]
+         },
+
+         });
+
+         }
+         else if(data['year'] == 4){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il"]
+         },
+
+         });
+         }
+         else if(data['year'] == 5){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il"]
+         },
+
+         });
+
+         }
+         else if(data['year'] == 6){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il"]
+         },
+
+         });
+         }
+         else if(data['year'] == 7){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il"]
+         },
+
+         });
+         }
+         else if(data['year'] == 8){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il"]
+         },
+
+         });
+         }
+         else if(data['year'] == 9){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il"]
+         },
+
+         });
+         }
+         else if(data['year'] == 10){
+         chart1.updateOptions({
+         name: 'Azərbaycanda Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Türkiyədə Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+
+         chart1.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+         chart2.updateOptions({
+         name: 'Azərbaycanda Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Türkiyədə Əmlakın Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+
+         chart2.updateOptions({
+         name: 'Bank Depoziti Yatırımın Net Dəyəri',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+         chart3.updateOptions({
+         name: 'Türkiyədə Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+
+         chart3.updateOptions({
+         name: 'Azərbaycanda Yatırım Qazancı',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+         chart4.updateOptions({
+         name: 'Türkiyədə Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+
+         chart4.updateOptions({
+         name: 'Azərbaycanda Qazanc Marjası',
+         xaxis: {
+         categories: ["1-ci il", "2-ci il", "3-cü il", "4-cü il", "5-ci il", "6-cı il", "7-ci il","8-ci il","9-cu il","10-cu il"]
+         },
+
+         });
+         }
+
+
+
+               console.log("succes");
+
+                $('#hesabla').removeClass("loading");
+
+                 if($('input[name="ipoteka"]:checked').val() == 1){
+                 $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                 $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                 $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                 }
+                 else{
+                   $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                 $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                 }
+
+
+                 console.log("dataaaa");
+                 console.log(data)
+                 console.log(data['datatr'])
+                 console.log(data['databank'])
+
+
+
+           chart2.updateSeries([{
+             name: 'Türkiyədə Əmlakın Dəyəri',
+             data: data['deyertr']
+               },{
+                 name: 'Azərbaycanda Əmlakın Dəyəri',
+                 data: data['deyeraz']
+               },  {
+                 name: 'Bank Depoziti Yatırımın Net Dəyəri',
+                 data: data['databank']
+               }])
+
+
+               }
+           });
+
+           chart3.updateSeries([{
+             name: 'Türkiyədə Əmlakın Dəyəri',
+             data: data['yatirim_qazanci_tr']
+               },{
+                 name: 'Azərbaycanda Əmlakın Dəyəri',
+                 data: data['yatirim_qazanci_az']
+               }])
+
+
+
+
+           chart4.updateSeries([{
+             name: 'Türkiyədə Əmlakın Dəyəri',
+             data: data['yatirim_qazanci_marja_tr']
+               },{
+                 name: 'Azərbaycanda Əmlakın Dəyəri',
+                 data: data['yatirim_qazanci_marja_az']
+               }])
+
+
+
+         });
+         }
+      </script>
+      <script>
+         var mount = {{amount}}
+              $.ajax({
+            type:"GET",
+            url:`/data/10/${mount}/1/`,
+            success:function(data){
+             if($('input[name="ipoteka"]:checked').val() == 1){
+                    $("#field3").val(data['deyer2']);
+                    }
+
+
+
+
+
+
+
+            console.log("success");
+
+             $('#hesabla').removeClass("loading");
+
+              if($('input[name="ipoteka"]:checked').val() == 1){
+              $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              }
+              else{
+                $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              }
+
+
+              console.log("dataaaa");
+              console.log(data)
+              console.log(data['datatr'])
+              console.log(data['databank'])
+
+             chart1.updateSeries([{
+          name: 'Türkiyədə Yatırımın Net Dəyəri',
+          data: data['datatr']
+         },{
+          name: 'Azərbaycanda Yatırımın Net Dəyəri',
+          data: data['dataaz']
+         },  {
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
+          data: data['databank']
+         }])
+
+         chart2.updateSeries([{
+          name: 'Türkiyədə Əmlakın Dəyəri',
+          data: data['deyertr']
+         },{
+          name: 'Azərbaycanda Əmlakın Dəyəri',
+          data: data['deyeraz']
+         },  {
+          name: 'Bank Depoziti Yatırımın Net Dəyəri',
+          data: data['databank']
+         }])
+
+         chart3.updateSeries([{
+          name: 'Türkiyədə Yatırım Qazancı',
+          data: data['yatirim_qazanci_tr']
+         },{
+          name: 'Azərbaycanda Yatırım Qazancı',
+          data: data['yatirim_qazanci_az']
+         }])
+
+
+         chart4.updateSeries([{
+          name: 'Türkiyədə Qazanc Marjası',
+          data: data['yatirim_qazanci_marja_tr']
+         },{
+          name: 'Azərbaycanda Qazanc Marjası',
+          data: data['yatirim_qazanci_marja_az']
+         }])
+
+            }
+         });
+
+
+      </script>
+      <script>
+         $("#muddetsliderid").on("input change", function(e) {
+             console.log("fdfd")
+           $("#muddetid").val(e.target.value)
+         });
+
+         $("#ilkinsliderid").on("input change", function(e) {
+             console.log("fdfd")
+           $("#ilkinid").val(e.target.value)
+         });
+      </script>
+      {% for h in body %}
+      {% if h.location == 'B' %}
+      {{h.script | safe}}
+      {% endif%}
+      {% endfor%}
+      <script src="{% static 'input/build/js/intlTelInput.min.js'%}"></script>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+      <script src="{% static 'input/build/js/intlTelInput-jquery.min.js'%}"></script>
+      <script>
+         // Vanilla Javascript
+         var input = document.querySelector("#telephone");
+         window.intlTelInput(input,({
+         // options here
+         }));
+
+         // jQuery
+         $("#telephone").intlTelInput({
+         initialCountry:"az",
+
+         });
+
+
+
+         // Vanilla Javascript
+         var input = document.querySelector("#telephone3");
+         window.intlTelInput(input,({
+         // options here
+         }));
+
+         // jQuery
+         $("#telephone3").intlTelInput({
+         initialCountry:"az",
+
+         });
+
+         console.log("======");
+         console.log( $("#telephone").intlTelInput('getSelectedCountryData').dialCode);
+          console.log("======");
+      </script>
+      <script type="text/javascript">
+         $("#form_offer_diger_teklifler").submit(function(){
+         // Let's find the input to check
+         var $input = $(this).find("input[name=prefix]");
+         if (!$input.val()) {
+           // Value is falsey (i.e. null), lets set a new one
+           $input.val($("#telephone3").intlTelInput('getSelectedCountryData').dialCode);
+         }
+         });
+
+
+      </script>
+      <script type="text/javascript">
+         var frmx = $('#form_offer_diger_teklifler');
+         frmx.submit(function () {
+             $.ajax({
+                 type: frmx.attr('method'),
+                 url: frmx.attr('action'),
+                 data: frmx.serialize(),
+                 success: function (data) {
+                 window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
+                   'event': 'form-submit-listing-offer'
+                  });
+                 console.log("form-submit-listing-offer");
+                     $("#form_offer_diger_teklifler").html(
+                     `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
+                     <div style="     text-align: center;padding: 20px 44px; font-size: 20px; font-weight: 500; ">{{form2.success_text}}</div>
+                     `);
+                 },
+                 error: function(data) {
+                     $("#MESSAGE-DIV").html("Something went wrong!");
+                 }
+             });
+             return false;
+         });
+      </script>
+      <script>
+         $("#form").submit(function(){
+         // Let's find the input to check
+         var $input = $(this).find("input[name=prefix]");
+         if (!$input.val()) {
+         // Value is falsey (i.e. null), lets set a new one
+         $input.val($("#telephone").intlTelInput('getSelectedCountryData').dialCode);
+         }
+         });
+      </script>
+      <script type="text/javascript">
+         var frm = $('#form_offer_viewing');
+         frm.submit(function () {
+             $.ajax({
+                 type: frm.attr('method'),
+                 url: frm.attr('action'),
+                 data: frm.serialize(),
+                 success: function (data) {
+                 window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
+                   'event': 'form-submit-property-viewing'
+                  });
+                 console.log("form-submit-property-viewing");
+                     $("#form_offer_viewing").html(
+                     `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
+                     <div style="    text-align: center; padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form4.success_text}}</div>
+                     `);
+                 },
+                 error: function(data) {
+                     $("#MESSAGE-DIV").html("Something went wrong!");
+                 }
+             });
+             return false;
+         });
+      </script>
+      <script>
+         // Get the modal
+         var modal = document.getElementById("myModal");
+
+         // Get the button that opens the modal
+         var btn = document.getElementById("myBtn");
+
+
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close")[0];
+
+         // When the user clicks the button, open the modal
+         btn.onclick = function() {
+           modal.style.display = "block";
+           document.body.style.overflowY = "hidden";
+           console.log('adasds');
+         }
+
+
+
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() {
+           modal.style.display = "none";
+           document.body.style.overflowY = "scroll";
+         }
+
+         // When the user clicks anywhere outside of the modal, close it
+         window.onclick = function(event) {
+           if (event.target == modal) {
+             modal.style.display = "none";
+             document.body.style.overflowY = "scroll";
+           }
+         }
+      </script>
+   </body>
+</html>
