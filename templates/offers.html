@@ -491,7 +491,7 @@
 
  <div class="container">
             <div class="row  " style=" padding-top: 46px;    padding-bottom: 10px; ">
-      <form method="get" class="filter-container">
+      <form method="get" class="filter-container" id="filterForm">
   <!-- Location Filter -->
   <div class="filter-field">
     <label for="location">Lokasiya</label>
@@ -559,6 +559,25 @@
       <option value="uyğun deyil" {% if selected_suitable_for_citizenship == 'uyğun deyil' %}selected{% endif %}>Uyğun Deyil</option>
     </select>
   </div>
+          <!-- Square Footage Filter -->
+<div class="filter-field">
+  <label for="min_square">Min. Sahə (m²)</label>
+  <input type="number" name="min_square" id="min_square" value="{{ min_square }}" placeholder="Min Square">
+</div>
+
+          <div class="filter-field" style=" max-width: 172px; ">
+  <label for="min_price">Min. Qiymət (€)</label>
+  <input type="number" name="min_price" id="min_price" value="{{ min_price }}" placeholder="€">
+</div>
+
+<div class="filter-field" style=" max-width: 172px; ">
+  <label for="max_price">Max. Qiymət (€)</label>
+  <input type="number" name="max_price" id="max_price" value="{{ max_price }}" placeholder="€">
+</div>
+
+
+
+
 
   <!-- Filter and Reset Buttons -->
           <div>
@@ -566,6 +585,22 @@
   <a class="reset-button" onclick="resetFilters()" style=" background: none; color: black; ">Filteri sıfırla</a>
 </div>
       </form>
+
+                <script>
+  // Reset all filter fields to 'All'
+  function resetFilters() {
+    document.getElementById('location').value = 'all';
+    document.getElementById('property_type').value = 'all';
+    document.getElementById('room_qty').value = 'all';
+    document.getElementById('extra_area').value = 'all';
+    document.getElementById('installment').value = 'all';
+    document.getElementById('suitable_for_citizenship').value = 'all';
+    document.getElementById('min_square').value = '';
+    document.getElementById('min_price').value = '';
+    document.getElementById('max_price').value = '';
+    document.getElementById('filterForm').submit();
+  }
+</script>
 
             </div>
             </div>

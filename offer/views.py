@@ -443,6 +443,9 @@ def offers(request):
     extra_area = request.GET.get('extra_area', 'all')
     installment = request.GET.get('installment', 'all')
     suitable_for_citizenship = request.GET.get('suitable_for_citizenship', 'all')
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+    min_square = request.GET.get('min_square')
 
     # Start with all offers
     offers = Offer.objects.all()
@@ -475,7 +478,15 @@ def offers(request):
         else:
             offers = offers.exclude(suitable_for_citizenship='var')
 
-    # Retrieve locations to populate the dropdown menu
+    if min_price:
+        offers = offers.filter(price__gte=min_price)
+    if max_price:
+        offers = offers.filter(price__lte=max_price)
+
+        # Apply square footage filters (assuming square is stored as an integer in a CharField)
+    if min_square:
+        offers = offers.filter(square__gte=int(min_square))
+
     locations = Location.objects.all()
     if location_id != 'all':
         location_id = int(location_id)
@@ -498,6 +509,9 @@ def offers(request):
         'selected_extra_area': extra_area,
         'selected_installment': installment,
         'selected_suitable_for_citizenship': suitable_for_citizenship,
+        'min_price': min_price,
+        'max_price': max_price,
+        'min_square': min_square,
     }
 
     return render(request, 'offers.html', context)
