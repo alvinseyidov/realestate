@@ -1,8 +1,9 @@
 import os
-
+from calculator.views import calculate_investment_net_value_for_years, calculate_profit_margin_for_all_years, \
+    calculate_expected_investment_income_for_years
 from django.shortcuts import render
 
-from calculator.views import calculate_general_income_over_years
+from calculator.views import calculate_general_income_over_years, calculate_investment_net_income_yearly
 from core.models import *
 from contact.models import *
 from offer.models import *
@@ -29,6 +30,21 @@ def calculate_mortgage(loanAmount,years, interestRate):
     # Prints monthly payment on next line and reformat the string to a float using 2 decimal places
     return mortgagePayment
 def data(request, year, amount, mortgage):
+    total_investment = amount / 0.555  # Initial capital is 55.5% of total investment
+    loan_amount = total_investment - amount  # Loan is the remainder of total investment
+    yearly_loan_payment = 12 * calculate_mortgage(loan_amount, year, 6)  # Using correct loan amount
+    general_income = calculate_general_income_over_years(
+        total_investment,
+        loan_amount,  # Include loan amount here
+        appraisal_rate=7.3,  # Adjust as needed
+        rental_income_coefficient=5.33,
+        rental_growth=7.5,
+        years=year
+    )
+    investment_net_value = calculate_investment_net_value_for_years(
+        total_investment, general_income, yearly_loan_payment, year
+    )
+    rounded_investment_net_value = [round(value) for value in investment_net_value]
     parametr = Parametr.objects.last()
 
     data = {}
@@ -135,24 +151,10 @@ def data(request, year, amount, mortgage):
                           round(y8_yatirim_net_deyeri, 0),
                           round(y9_yatirim_net_deyeri, 0),
                           round(y10_yatirim_net_deyeri, 0)]
-        from calculator.views import calculate_investment_net_value_for_years
+
 
         # Calculate total investment based on initial capital
-        total_investment = amount / 0.555  # Initial capital is 55.5% of total investment
-        loan_amount = total_investment - amount  # Loan is the remainder of total investment
-        yearly_loan_payment = 12 * calculate_mortgage(loan_amount, year, 6)  # Using correct loan amount
-        general_income = calculate_general_income_over_years(
-            total_investment,
-            loan_amount,  # Include loan amount here
-            appraisal_rate=7.3,  # Adjust as needed
-            rental_income_coefficient=5.33,
-            rental_growth=7.5,
-            years=year
-        )
-        investment_net_value = calculate_investment_net_value_for_years(
-            total_investment, general_income, yearly_loan_payment, year
-        )
-        rounded_investment_net_value = [round(value) for value in investment_net_value]
+
         data['datatr'] = rounded_investment_net_value
 
     y1_value = estate_investment * appraisal
@@ -843,8 +845,10 @@ def data(request, year, amount, mortgage):
                    round(yatirim_qazanci_tr_8, 0),
                    round(yatirim_qazanci_tr_9, 0),
                    round(yatirim_qazanci_tr_10, 0)]
-
+        investment_net_income_yearly = calculate_investment_net_income_yearly(total_investment, investment_net_value, amount, year)
+        rounded_investment_net_income_yearly = [round(value) for value in investment_net_income_yearly]
         data['yatirim_qazanci_tr'] = yatirim_qazanci_tr[:year]
+        data['yatirim_qazanci_tr'] = rounded_investment_net_income_yearly
     else:
         diger_xercler = (amount) * diger_xercler_precent_tr
         yatirim_qazanci_tr_1 = y1_yatirim_net_deyeri_nagd - amount - diger_xercler
@@ -953,8 +957,15 @@ def data(request, year, amount, mortgage):
                                     round(yatirim_qazanci_marja_tr_8, 0),
                                     round(yatirim_qazanci_marja_tr_9, 0),
                                     round(yatirim_qazanci_marja_tr_10, 0)]
-
+        expected_investment_income = calculate_expected_investment_income_for_years(
+            total_investment, general_income, yearly_loan_payment, year, other_expenses=5
+        )
+        profit_margin_percent = calculate_profit_margin_for_all_years(
+            expected_investment_income, total_investment * 0.555, total_investment, other_expense_percent=5
+        )
+        rounded_profit_margin_percent = [round(value) for value in profit_margin_percent]
         data['yatirim_qazanci_marja_tr'] = yatirim_qazanci_marja_tr[:year]
+        data['yatirim_qazanci_marja_tr'] = rounded_profit_margin_percent
     else:
         diger_xercler_tr_marja = (estate_investment) * diger_xercler_precent_tr
         yatirim_qazanci_marja_tr_1 = (y1_yatirim_net_deyeri_nagd - amount - diger_xercler_tr_marja) / (

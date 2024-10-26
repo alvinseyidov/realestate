@@ -234,6 +234,22 @@ def test(request):
 from django.http import JsonResponse
 
 
+def calculate_investment_net_income_yearly(total_investment, investment_net_value, initial_capital, years):
+    """
+    Calculate the investment net income for each year by adding investment net value,
+    initial capital, and 5% of total investment.
+    """
+    # 5% of total investment
+    investment_expense_deduction = total_investment * 0.05
+    print("ggggggggggggggggggggg")
+    print(investment_net_value)
+    investment_net_income_yearly = [
+        value - initial_capital - investment_expense_deduction for value in investment_net_value
+    ]
+
+    return investment_net_income_yearly
+
+
 def calculate_investment_view(request):
     if request.method == 'GET':
         year = int(request.GET.get('year'))
