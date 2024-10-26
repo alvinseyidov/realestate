@@ -446,6 +446,8 @@ def offers(request):
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
     min_square = request.GET.get('min_square')
+    head = Head.objects.all()
+    body = Body.objects.all()
 
     # Start with all offers
     offers = Offer.objects.all()
@@ -496,6 +498,8 @@ def offers(request):
     socials = Social.objects.all()
     why = Why.objects.all()
     context = {
+        "body": body,
+        "head": head,
         "general": general,
         "why": why,
         "socials": socials,
