@@ -1,6 +1,8 @@
 import os
 
 from django.shortcuts import render
+
+from calculator.views import calculate_general_income_over_years
 from core.models import *
 from contact.models import *
 from offer.models import *
@@ -133,8 +135,25 @@ def data(request, year, amount, mortgage):
                           round(y8_yatirim_net_deyeri, 0),
                           round(y9_yatirim_net_deyeri, 0),
                           round(y10_yatirim_net_deyeri, 0)]
+        from calculator.views import calculate_investment_net_value_for_years
 
-        data['datatr'] = datatr[:year]
+        # Calculate total investment based on initial capital
+        total_investment = amount / 0.555  # Initial capital is 55.5% of total investment
+        loan_amount = total_investment - amount  # Loan is the remainder of total investment
+        yearly_loan_payment = 12 * calculate_mortgage(loan_amount, year, 6)  # Using correct loan amount
+        general_income = calculate_general_income_over_years(
+            total_investment,
+            loan_amount,  # Include loan amount here
+            appraisal_rate=7.3,  # Adjust as needed
+            rental_income_coefficient=5.33,
+            rental_growth=7.5,
+            years=year
+        )
+        investment_net_value = calculate_investment_net_value_for_years(
+            total_investment, general_income, yearly_loan_payment, year
+        )
+        rounded_investment_net_value = [round(value) for value in investment_net_value]
+        data['datatr'] = rounded_investment_net_value
 
     y1_value = estate_investment * appraisal
     y2_value = (y1_value) * appraisal
@@ -212,6 +231,7 @@ def data(request, year, amount, mortgage):
                   round(y10_yatirim_net_deyeri_nagd, 0)]
 
         data['datatr'] = datatr[:year]
+
 
 
     #--------------------TR----------------------------
