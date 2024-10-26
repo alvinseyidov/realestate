@@ -1532,7 +1532,7 @@ function openCity(evt, cityName) {
 
                             <div class="col-lg-12 col-md-12">
                                 <div style="color: #000; font-family: Montserrat; font-size: 14px; font-style: normal; font-weight: 600; line-height: 182%; /* 25.48px */">Əmlakın dəyəri</div>
-                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input readonly id="field3" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="0.00"></div>
+                              <div style=" position: relative; "><span style=" font-weight: 500; font-size: 17px; position: absolute; top: 5px; left: 5px; color: #747474; ">€</span><input readonly id="field3" class="calculatorinput" style="border-radius: 8px;width: 88%; border: 1px solid #D9D9D9; background: #FFF; padding: 5px 10px 5px 30px;" type="text" value="{{offer.price}}"></div>
                             </div>
 
                             <div class="col-lg-12 col-md-12" style="padding-top: 24px; ">
@@ -2927,7 +2927,7 @@ chart1.updateOptions({
     url:`/data/10/${mount}/1/`,
     success:function(data){
      if($('input[name="ipoteka"]:checked').val() == 1){
-            $("#field3").val(data['deyer2']);
+
             }
 
 
@@ -2943,7 +2943,7 @@ chart1.updateOptions({
       if($('input[name="ipoteka"]:checked').val() == 1){
       $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       $('#field2').val(data['deyer'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-      $('#field3').val(data['deyer2'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+       
       }
       else{
         $('#field1').val(data['kiraye'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
