@@ -486,6 +486,9 @@
     .reset-button:hover {
       background-color: #c82333;
     }
+
+
+
   </style>
 
 
@@ -493,15 +496,15 @@
             <div class="row  " style=" padding-top: 46px;    padding-bottom: 10px; ">
       <form method="get" class="filter-container" id="filterForm">
   <!-- Location Filter -->
-  <div class="filter-field">
+<div class="filter-field">
     <label for="location">Lokasiya</label>
-    <select name="location" id="location">
-      <option value="all">Hamısı</option>
-      {% for location in locations %}
-      <option value="{{ location.id }}" {% if selected_location == location.id %}selected{% endif %}>{{ location.name }}</option>
-      {% endfor %}
+    <select name="location" id="location" multiple style=" max-height: 86px; ">
+        <option value="all" {% if 'all' in selected_locations %}selected{% endif %}>Hamısı</option>
+        {% for location in locations %}
+            <option value="{{ location.id }}" {% if location.id|stringformat:"s" in selected_locations %}selected{% endif %}>{{ location.name }}</option>
+        {% endfor %}
     </select>
-  </div>
+</div>
 
   <!-- Property Type Filter -->
   <div class="filter-field">

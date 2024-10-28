@@ -438,6 +438,7 @@ def tr(request):
 def offers(request):
     # Retrieve filter values from the request or set defaults
     location_id = request.GET.get('location', 'all')
+    location_ids = request.GET.getlist('location', ['all'])  # Default to 'all' if no locations selected
     property_type = request.GET.get('property_type', 'all')
     room_qty = request.GET.get('room_qty', 'all')
     extra_area = request.GET.get('extra_area', 'all')
@@ -453,8 +454,8 @@ def offers(request):
     offers = Offer.objects.all()
 
     # Apply filters if they’re not set to "all"
-    if location_id != 'all':
-        offers = offers.filter(location_id=location_id)
+    if 'all' not in location_ids:
+        offers = offers.filter(location_id__in=location_ids)
 
     if property_type != 'all':
         offers = offers.filter(type=property_type)
@@ -508,6 +509,7 @@ def offers(request):
         'offers': offers,
         'locations': locations,
         'selected_location': location_id,
+        "selected_locations": location_ids,  # Pass list of selected location IDs
         'selected_property_type': property_type,
         'selected_room_qty': room_qty,
         'selected_extra_area': extra_area,
