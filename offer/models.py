@@ -84,13 +84,7 @@ class Offer(models.Model):
         if not self.ilkin_kapital:
             self.ilkin_kapital = self.price * 0.55
         import requests
-        response = requests.get("https://smartinvest.az/data/10/"+ str(int(self.ilkin_kapital))+"/1")
-        if not self.kiraye_geliri:
-            self.kiraye_geliri = response.json()['kiraye']/10
-        if not self.emlakın_deyeri:
-            self.emlakın_deyeri = response.json()['deyer']
-        if not self.net_qazanc:
-            self.net_qazanc = response.json()['yatirim_qazanci_tr'][9]
+         
         response = requests.get("https://smartinvest.az/calculate-investment/?year=10&amount="+ str(int(self.ilkin_kapital)))
 
 
