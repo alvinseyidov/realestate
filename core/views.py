@@ -1476,9 +1476,7 @@ def contactformtr(request):
 
  
 def index(request):
-    off = Offer.objects.all()
-    for o in off:
-        o.save()
+     
     vebinar_form = VebinarForm.objects.all()
     form_menzil_form = MenzilForm.objects.all()
     message = request.GET.get('form')
