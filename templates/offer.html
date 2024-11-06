@@ -1013,6 +1013,17 @@ IMask(
   }
 )
   </script>
+<script src="https://unpkg.com/imask"></script>
+         <script>
+
+
+IMask(
+  document.getElementById('phone4'),
+  {
+    mask: '(00) 000-00-00'
+  }
+)
+  </script>
 
 
 <style>
@@ -1595,15 +1606,15 @@ function openCity(evt, cityName) {
                         {{form4.title}}</div>
                     <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
                         {{form4.sub_title}}</div>
-                    <form id="form_offer_viewing" style=" padding: 39px 40px; " method="post" >
+                    <form id="form_offer_viewing2" style=" padding: 39px 40px; " method="post" >
                         {% csrf_token%}
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
                         <div style="    border-bottom: 1px solid #000; display: flex; position:relative;">
                             <span style=" position: absolute; left: 0px; top: 18px; font-weight: 500; ">
-                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone4">
                         </span>
-                            <input style="    margin-left: 50px; width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required>
+                            <input style="    margin-left: 50px; width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone4"  placeholder="(55)-888-88-88" required>
                         </div>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="email" name="email" placeholder="Email *" required>
                         <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Mesajınız">
@@ -3084,6 +3095,19 @@ $("#telephone").intlTelInput({
 });
 
 
+   // Vanilla Javascript
+var input = document.querySelector("#telephone4");
+window.intlTelInput(input,({
+  // options here
+}));
+
+// jQuery
+$("#telephone4").intlTelInput({
+  	initialCountry:"az",
+
+});
+
+
 
  // Vanilla Javascript
 var input = document.querySelector("#telephone3");
@@ -3168,6 +3192,32 @@ console.log("======");
              });
             console.log("form-submit-property-viewing");
                 $("#form_offer_viewing").html(
+                `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
+                <div style="    text-align: center; padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form4.success_text}}</div>
+                `);
+            },
+            error: function(data) {
+                $("#MESSAGE-DIV").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
+</script>
+
+     <script type="text/javascript">
+    var frm2 = $('#form_offer_viewing2');
+    frm2.submit(function () {
+        $.ajax({
+            type: frm2.attr('method'),
+            url: frm2.attr('action'),
+            data: frm2.serialize(),
+            success: function (data) {
+            window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'form-submit-property-viewing'
+             });
+            console.log("form-submit-property-viewing");
+                $("#form_offer_viewing2").html(
                 `<div style="    text-align: center;"><img src="/static/check.png" style="width:60px;"></div>
                 <div style="    text-align: center; padding: 20px 44px; font-size: 20px; font-weight: 500; "> {{form4.success_text}}</div>
                 `);
