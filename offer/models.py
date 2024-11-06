@@ -84,7 +84,7 @@ class Offer(models.Model):
         if not self.ilkin_kapital:
             self.ilkin_kapital = self.price * 0.55
         import requests
-
+        self.ilkin_kapital = self.price * 0.55
         response = requests.get("https://smartinvest.az/calculate-investment/?year=10&amount="+ str(int(self.ilkin_kapital)))
 
 
