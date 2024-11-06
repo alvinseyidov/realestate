@@ -61,10 +61,16 @@ class Offer(models.Model):
 
     ilkin_mebleg = models.CharField(max_length=256, null=True,blank=True)
     maks_ayliq_kiraye = models.CharField(max_length=256, null=True,blank=True)
+    max_ayliq_odenis = models.CharField(max_length=256, null=True,blank=True)
+    emlakın_deyeri_10 = models.CharField(max_length=256, null=True,blank=True)
+    kiraye_geliri = models.CharField(max_length=256, null=True,blank=True)
     real_bazar_qiymeti = models.CharField(max_length=256, null=True,blank=True)
     umumi_mebleg = models.CharField(max_length=256, null=True,blank=True)
     on_il_sonraki_qiymet = models.CharField(max_length=256, null=True,blank=True)
     umumi_net_gelir = models.CharField(max_length=256, null=True,blank=True)
+
+
+
 
     class Meta:
         verbose_name = "Ev, Villa"
@@ -76,9 +82,10 @@ class Offer(models.Model):
     def save(self, *args, **kwargs):
         # set the value of the read_only_field using the regular field
         if not self.ilkin_kapital:
-            self.ilkin_kapital = self.price * 0.6
+            self.ilkin_kapital = self.price * 0.55
         import requests
         response = requests.get("https://smartinvest.az/data/10/"+ str(int(self.ilkin_kapital))+"/1")
+        response = requests.get("https://smartinvest.az/calculate-investment/?year=10&amount="+ str(int(self.ilkin_kapital)))
         print(response.json()['kiraye'])
 
         if not self.kiraye_geliri:
@@ -87,6 +94,9 @@ class Offer(models.Model):
             self.emlakın_deyeri = response.json()['deyer']
         if not self.net_qazanc:
             self.net_qazanc = response.json()['yatirim_qazanci_tr'][9]
+        self.kiraye_geliri = int(round(sum(response.json()['rental_income_monthly']) / len(response.json()['rental_income_monthly']), 0))
+        self.emlakın_deyeri_10 = int(round(response.json()['expected_property_value'][9], 0))
+        self.max_ayliq_odenis = int(round(response.json()['monthly_loan_payments'][1], 0))
 
         # call the save() method of the parent
         super(Offer, self).save(*args, **kwargs)
