@@ -85,15 +85,15 @@ class Offer(models.Model):
             self.ilkin_kapital = self.price * 0.55
         import requests
         response = requests.get("https://smartinvest.az/data/10/"+ str(int(self.ilkin_kapital))+"/1")
-        response = requests.get("https://smartinvest.az/calculate-investment/?year=10&amount="+ str(int(self.ilkin_kapital)))
-        print(response.json()['kiraye'])
-
         if not self.kiraye_geliri:
             self.kiraye_geliri = response.json()['kiraye']/10
         if not self.emlakın_deyeri:
             self.emlakın_deyeri = response.json()['deyer']
         if not self.net_qazanc:
             self.net_qazanc = response.json()['yatirim_qazanci_tr'][9]
+        response = requests.get("https://smartinvest.az/calculate-investment/?year=10&amount="+ str(int(self.ilkin_kapital)))
+
+
         self.kiraye_geliri = int(round(sum(response.json()['rental_income_monthly']) / len(response.json()['rental_income_monthly']), 0))
         self.emlakın_deyeri_10 = int(round(response.json()['expected_property_value'][9], 0))
         self.max_ayliq_odenis = int(round(response.json()['monthly_loan_payments'][1], 0))
