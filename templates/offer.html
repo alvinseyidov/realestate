@@ -16,7 +16,15 @@
 
 <link rel="stylesheet" href="{% static 'input/build/css/intlTelInput.css'%}">
       <style>
+@media only screen and (max-width: 600px){
+.mobilee {
+    display: block !important;
 
+}
+.desktopp{
+display: none !important;
+}
+}
 
           .carousel {
   background: #FAFAFA;
@@ -968,7 +976,7 @@ function numberWithCommas(x) {
             </div>
                 <div class="col-lg-1"></div>
             <div class="col-lg-5 col-md-12" style=" padding: 0 15px 0 15px; ">
-                <div style="background:#fff;">
+                <div style="background:#fff;" class="desktopp">
                     <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">
                         {{form4.title}}</div>
                     <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
@@ -1575,6 +1583,35 @@ function openCity(evt, cityName) {
                         </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+             <div style="background:#fff;display:none;margin-top: 20px; box-shadow: 3px 4px 9px 5px #cfcfcf;" class="mobilee">
+                    <div style="padding-top: 58px;    margin-top:14px;color: #000; text-align: center; font-family: Montserrat; font-size: 20px; font-style: normal; font-weight: 500; line-height: 28px; /* 140% */ text-transform: uppercase;">
+                        {{form4.title}}</div>
+                    <div style="    margin-top: 23px;color: var(--Text-Colour-3, #808080); text-align: center; leading-trim: both; text-edge: cap; font-family: Montserrat; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;">
+                        {{form4.sub_title}}</div>
+                    <form id="form_offer_viewing" style=" padding: 39px 40px; " method="post" >
+                        {% csrf_token%}
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="first_name" placeholder="Ad *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="last_name" placeholder="Soyad *" required>
+                        <div style="    border-bottom: 1px solid #000; display: flex; position:relative;">
+                            <span style=" position: absolute; left: 0px; top: 18px; font-weight: 500; ">
+                        <input type="tel" name="prefix" style=" width: 10px; padding: 0 38px 0 4px;     border: none;" placeholder="" id="telephone">
+                        </span>
+                            <input style="    margin-left: 50px; width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none;   "type="text" name="phone" id="phone"  placeholder="(55)-888-88-88" required>
+                        </div>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="email" name="email" placeholder="Email *" required>
+                        <input style=" width: 100%;padding: 8px 0; margin-top: 10px;display: block; background: none; border: none; border-bottom: 1px solid #000; "type="text" name="message" placeholder="Mesajınız">
+                        <button type="submit" style="        margin: auto;margin-top: 28px;display:block;background:#302D54; border-radius:10px;color: #fff; border: none; padding: 12px 32px;">
+                            {{form4.button_text}}</button>
+                    </form>
+
+                </div>
         </div>
 </div>
 
