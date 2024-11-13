@@ -498,6 +498,10 @@ def offers(request):
     general = General.objects.last()
     socials = Social.objects.all()
     why = Why.objects.all()
+    location = Location.objects.last()
+    for o in offers:
+        o.location = location
+        o.save()
     context = {
         "body": body,
         "head": head,
