@@ -498,7 +498,7 @@ def offers(request):
     general = General.objects.last()
     socials = Social.objects.all()
     why = Why.objects.all()
-     
+
     context = {
         "body": body,
         "head": head,

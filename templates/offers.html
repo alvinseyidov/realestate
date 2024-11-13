@@ -496,15 +496,52 @@
             <div class="row  " style=" padding-top: 46px;    padding-bottom: 10px; ">
       <form method="get" class="filter-container" id="filterForm">
   <!-- Location Filter -->
-<div class="filter-field">
-    <label for="location">Lokasiya</label>
-    <select name="location" id="location" multiple style=" max-height: 86px; ">
-        <option value="all" {% if 'all' in selected_locations %}selected{% endif %}>Hamısı</option>
+ 
+
+
+          <div class="filter-field">
+    <label>Lokasiya</label>
+    <div style="max-height: 86px; overflow-y: auto;">
+        <div style=" display: flex; ">
+            <input type="checkbox" name="location" value="all" id="location_all"
+                   style=" width: 20%; margin-right: 3px; height: 18px; margin-top: 1px; "
+                {% if 'all' in selected_locations %}checked{% endif %} onclick="toggleAll()">
+            <label for="location_all">Hamısı</label>
+        </div>
         {% for location in locations %}
-            <option value="{{ location.id }}" {% if location.id|stringformat:"s" in selected_locations %}selected{% endif %}>{{ location.name }}</option>
+        <div style=" display: flex; ">
+            <input type="checkbox" name="location" value="{{ location.id }}" id="location_{{ location.id }}"
+                   style=" width: 20%; margin-right: 3px; height: 18px; margin-top: 1px; "
+                {% if location.id|stringformat:"s" in selected_locations %}checked{% endif %} onclick="toggleIndividual()">
+            <label for="location_{{ location.id }}">{{ location.name }}</label>
+        </div>
         {% endfor %}
-    </select>
+    </div>
 </div>
+
+          <script>
+    function toggleAll() {
+        const allCheckbox = document.getElementById('location_all');
+        const otherCheckboxes = document.querySelectorAll('input[name="location"]:not(#location_all)');
+
+        if (allCheckbox.checked) {
+            otherCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+    }
+
+    function toggleIndividual() {
+        const allCheckbox = document.getElementById('location_all');
+        const otherCheckboxes = document.querySelectorAll('input[name="location"]:not(#location_all)');
+
+        otherCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                allCheckbox.checked = false;
+            }
+        });
+    }
+</script>
 
   <!-- Property Type Filter -->
   <div class="filter-field">
